@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>GUI.RasterificFFI</title><link rel="stylesheet" href="Agda.css"></head><body><pre><a id="1" class="Keyword">module</a> <a id="8" href="GUI.RasterificFFI.html" class="Module">GUI.RasterificFFI</a> <a id="26" class="Keyword">where</a>
+
+<a id="33" class="Keyword">open</a> <a id="38" class="Keyword">import</a> <a id="45" href="Data.String.Base.html" class="Module">Data.String.Base</a>
+<a id="62" class="Keyword">open</a> <a id="67" class="Keyword">import</a> <a id="74" href="Data.List.Base.html" class="Module">Data.List.Base</a>
+<a id="89" class="Keyword">open</a> <a id="94" class="Keyword">import</a> <a id="101" href="Data.Unit.Base.html" class="Module">Data.Unit.Base</a>
+<a id="116" class="Keyword">open</a> <a id="121" class="Keyword">import</a> <a id="128" href="Data.Maybe.html" class="Module">Data.Maybe</a>
+<a id="139" class="Keyword">open</a> <a id="144" class="Keyword">import</a> <a id="151" href="Data.Nat.html" class="Module">Data.Nat</a>
+<a id="160" class="Keyword">open</a> <a id="165" class="Keyword">import</a> <a id="172" href="Data.Product.html" class="Module">Data.Product</a>
+
+<a id="186" class="Keyword">open</a> <a id="191" class="Keyword">import</a> <a id="198" href="NativeIO.html" class="Module">NativeIO</a> <a id="207" class="Keyword">renaming</a> <a id="216" class="Symbol">(</a><a id="217" href="NativeIO.html#260" class="Postulate">NativeIO</a> <a id="226" class="Symbol">to</a> <a id="229" href="NativeIO.html#260" class="Postulate">IO</a><a id="231" class="Symbol">;</a>
+                               <a id="264" href="NativeIO.html#287" class="Postulate">nativeReturn</a> <a id="277" class="Symbol">to</a> <a id="280" href="NativeIO.html#287" class="Postulate">return</a><a id="286" class="Symbol">;</a>
+                               <a id="319" href="NativeIO.html#331" class="Postulate Operator">_native&gt;&gt;=_</a> <a id="331" class="Symbol">to</a> <a id="334" href="NativeIO.html#331" class="Postulate Operator">_&gt;&gt;=_</a><a id="339" class="Symbol">;</a>
+                               <a id="372" href="NativeIO.html#405" class="Postulate Operator">_native&gt;&gt;_</a> <a id="383" class="Symbol">to</a> <a id="386" href="NativeIO.html#405" class="Postulate Operator">_&gt;&gt;_</a><a id="390" class="Symbol">)</a>
+
+
+<a id="394" class="Keyword">open</a> <a id="399" class="Keyword">import</a>  <a id="407" href="GUI.GUIDefinitions.html" class="Module">GUI.GUIDefinitions</a>
+
+<a id="427" class="Symbol">{-#</a> <a id="431" class="Keyword">FOREIGN</a> GHC import qualified DeclareGUI.AgdaInterface        as AI <a id="498" class="Symbol">#-}</a>
+<a id="502" class="Symbol">{-#</a> <a id="506" class="Keyword">FOREIGN</a> GHC import qualified DeclareGUI.Definitions          as D <a id="572" class="Symbol">#-}</a>
+<a id="576" class="Symbol">{-#</a> <a id="580" class="Keyword">FOREIGN</a> GHC import qualified DeclareGUI.SDLLIB               as SDL <a id="648" class="Symbol">#-}</a>
+
+
+<a id="654" class="Comment">-- delete:</a>
+<a id="665" class="Comment">--{-# FOREIGN GHC import qualified DeclareGUI.GUI                  as G #-}</a>
+<a id="741" class="Comment">--{-# FOREIGN GHC import qualified DeclareGUI.RenderEvents         as R #-}</a>
+
+
+
+<a id="820" class="Comment">--</a>
+<a id="823" class="Comment">-- Types</a>
+<a id="832" class="Comment">--</a>
+<a id="835" class="Keyword">postulate</a>
+  <a id="SDLWindow"></a><a id="847" href="GUI.RasterificFFI.html#847" class="Postulate">SDLWindow</a> <a id="857" class="Symbol">:</a> <a id="859" class="PrimitiveType">Set</a>     <a id="867" class="Comment">-- Window to render on</a>
+  <a id="FFIFrame"></a><a id="892" href="GUI.RasterificFFI.html#892" class="Postulate">FFIFrame</a>  <a id="902" class="Symbol">:</a> <a id="904" class="PrimitiveType">Set</a>     <a id="912" class="Comment">-- Frame definition of Buttons, etc.</a>
+  <a id="FFIComponent"></a><a id="951" href="GUI.RasterificFFI.html#951" class="Postulate">FFIComponent</a> <a id="964" class="Symbol">:</a> <a id="966" class="PrimitiveType">Set</a>  <a id="971" class="Comment">-- Components such as Buttons, etc.</a>
+
+<a id="1008" class="Symbol">{-#</a> <a id="1012" class="Keyword">COMPILE</a> GHC <a id="1024" href="GUI.RasterificFFI.html#892" class="Postulate">FFIFrame</a>       = type D.Frame <a id="1054" class="Symbol">#-}</a>
+<a id="1058" class="Symbol">{-#</a> <a id="1062" class="Keyword">COMPILE</a> GHC <a id="1074" href="GUI.RasterificFFI.html#847" class="Postulate">SDLWindow</a>      = type SDL.SDLWindow  <a id="1111" class="Symbol">#-}</a>
+<a id="1115" class="Symbol">{-#</a> <a id="1119" class="Keyword">COMPILE</a> GHC <a id="1131" href="GUI.RasterificFFI.html#951" class="Postulate">FFIComponent</a>   = type D.Component <a id="1165" class="Symbol">#-}</a>
+
+<a id="1170" class="Comment">--</a>
+<a id="1173" class="Comment">-- Components and conversion</a>
+<a id="1202" class="Comment">--</a>
+<a id="FFIComponents"></a><a id="1205" href="GUI.RasterificFFI.html#1205" class="Function">FFIComponents</a> <a id="1219" class="Symbol">:</a> <a id="1221" class="PrimitiveType">Set</a>
+<a id="1225" href="GUI.RasterificFFI.html#1205" class="Function">FFIComponents</a> <a id="1239" class="Symbol">=</a> <a id="1241" href="Agda.Builtin.List.html#80" class="Datatype">List</a> <a id="1246" href="GUI.RasterificFFI.html#951" class="Postulate">FFIComponent</a>
+
+
+
+<a id="1262" class="Keyword">postulate</a>
+<a id="1272" class="Comment">--  components2frame : FFIComponents → FFIFrame</a>
+  <a id="ffiButton"></a><a id="1322" href="GUI.RasterificFFI.html#1322" class="Postulate">ffiButton</a>  <a id="1333" class="Symbol">:</a> <a id="1335" href="Agda.Builtin.String.html#165" class="Postulate">String</a> <a id="1342" class="Symbol">→</a> <a id="1344" href="GUI.RasterificFFI.html#951" class="Postulate">FFIComponent</a>
+  <a id="ffiLabel"></a><a id="1359" href="GUI.RasterificFFI.html#1359" class="Postulate">ffiLabel</a>    <a id="1371" class="Symbol">:</a> <a id="1373" href="Agda.Builtin.String.html#165" class="Postulate">String</a> <a id="1380" class="Symbol">→</a> <a id="1382" href="GUI.RasterificFFI.html#951" class="Postulate">FFIComponent</a>
+  <a id="ffiTextbox"></a><a id="1397" href="GUI.RasterificFFI.html#1397" class="Postulate">ffiTextbox</a>  <a id="1409" class="Symbol">:</a> <a id="1411" href="Agda.Builtin.String.html#165" class="Postulate">String</a> <a id="1418" class="Symbol">→</a> <a id="1420" href="GUI.RasterificFFI.html#951" class="Postulate">FFIComponent</a>
+
+<a id="1434" class="Comment">--{-# COMPILE GHC components2frame      = D.frame2gui #-}</a>
+<a id="1492" class="Symbol">{-#</a> <a id="1496" class="Keyword">COMPILE</a> GHC <a id="1508" href="GUI.RasterificFFI.html#1322" class="Postulate">ffiButton</a>         = (\x -&gt; D.ButtonComponent (Data.Text.unpack x))  <a id="1576" class="Symbol">#-}</a>
+<a id="1580" class="Symbol">{-#</a> <a id="1584" class="Keyword">COMPILE</a> GHC <a id="1596" href="GUI.RasterificFFI.html#1359" class="Postulate">ffiLabel</a>          = (\x -&gt; D.LabelComponent (Data.Text.unpack x))   <a id="1664" class="Symbol">#-}</a>
+<a id="1668" class="Symbol">{-#</a> <a id="1672" class="Keyword">COMPILE</a> GHC <a id="1684" href="GUI.RasterificFFI.html#1397" class="Postulate">ffiTextbox</a>        = (\x -&gt; D.TextboxComponent (Data.Text.unpack x)) <a id="1752" class="Symbol">#-}</a>
+
+<a id="frame2FFI"></a><a id="1757" href="GUI.RasterificFFI.html#1757" class="Function">frame2FFI</a> <a id="1767" class="Symbol">:</a> <a id="1769" href="GUI.GUIDefinitions.html#584" class="Datatype">Frame</a> <a id="1775" class="Symbol">→</a> <a id="1777" href="GUI.RasterificFFI.html#1205" class="Function">FFIComponents</a>
+<a id="1791" href="GUI.RasterificFFI.html#1757" class="Function">frame2FFI</a> <a id="1801" href="GUI.GUIDefinitions.html#605" class="InductiveConstructor">emptyFrame</a> <a id="1812" class="Symbol">=</a> <a id="1814" href="Agda.Builtin.List.html#117" class="InductiveConstructor">[]</a>
+<a id="1817" href="GUI.RasterificFFI.html#1757" class="Function">frame2FFI</a> <a id="1827" class="Symbol">(</a><a id="1828" href="GUI.GUIDefinitions.html#628" class="InductiveConstructor">addButton</a> <a id="1838" href="GUI.RasterificFFI.html#1838" class="Bound">str</a> <a id="1842" href="GUI.RasterificFFI.html#1842" class="Bound">fr</a><a id="1844" class="Symbol">)</a> <a id="1846" class="Symbol">=</a> <a id="1848" href="GUI.RasterificFFI.html#1322" class="Postulate">ffiButton</a> <a id="1858" href="GUI.RasterificFFI.html#1838" class="Bound">str</a> <a id="1862" href="Agda.Builtin.List.html#132" class="InductiveConstructor Operator">∷</a> <a id="1864" href="GUI.RasterificFFI.html#1757" class="Function">frame2FFI</a> <a id="1874" href="GUI.RasterificFFI.html#1842" class="Bound">fr</a>
+<a id="1877" href="GUI.RasterificFFI.html#1757" class="Function">frame2FFI</a> <a id="1887" class="Symbol">(</a><a id="1888" href="GUI.GUIDefinitions.html#668" class="InductiveConstructor">addLabel</a> <a id="1897" href="GUI.RasterificFFI.html#1897" class="Bound">str</a> <a id="1901" href="GUI.RasterificFFI.html#1901" class="Bound">fr</a><a id="1903" class="Symbol">)</a> <a id="1905" class="Symbol">=</a> <a id="1907" href="GUI.RasterificFFI.html#1359" class="Postulate">ffiLabel</a> <a id="1916" href="GUI.RasterificFFI.html#1897" class="Bound">str</a> <a id="1920" href="Agda.Builtin.List.html#132" class="InductiveConstructor Operator">∷</a> <a id="1922" href="GUI.RasterificFFI.html#1757" class="Function">frame2FFI</a> <a id="1932" href="GUI.RasterificFFI.html#1901" class="Bound">fr</a>
+<a id="1935" href="GUI.RasterificFFI.html#1757" class="Function">frame2FFI</a> <a id="1945" class="Symbol">(</a><a id="1946" href="GUI.GUIDefinitions.html#708" class="InductiveConstructor">addTextbox</a> <a id="1957" href="GUI.RasterificFFI.html#1957" class="Bound">str</a> <a id="1961" href="GUI.RasterificFFI.html#1961" class="Bound">fr</a><a id="1963" class="Symbol">)</a> <a id="1965" class="Symbol">=</a> <a id="1967" href="GUI.RasterificFFI.html#1397" class="Postulate">ffiTextbox</a> <a id="1978" href="GUI.RasterificFFI.html#1957" class="Bound">str</a> <a id="1982" href="Agda.Builtin.List.html#132" class="InductiveConstructor Operator">∷</a> <a id="1984" href="GUI.RasterificFFI.html#1757" class="Function">frame2FFI</a> <a id="1994" href="GUI.RasterificFFI.html#1961" class="Bound">fr</a>
+
+<a id="1998" class="Keyword">postulate</a>
+   <a id="NumAndStringList"></a><a id="2011" href="GUI.RasterificFFI.html#2011" class="Postulate">NumAndStringList</a> <a id="2028" class="Symbol">:</a> <a id="2030" class="PrimitiveType">Set</a>
+   <a id="2037" class="Comment">--</a>
+   <a id="getNum"></a><a id="2043" href="GUI.RasterificFFI.html#2043" class="Postulate">getNum</a> <a id="2050" class="Symbol">:</a> <a id="2052" href="GUI.RasterificFFI.html#2011" class="Postulate">NumAndStringList</a> <a id="2069" class="Symbol">→</a> <a id="2071" href="Agda.Builtin.Nat.html#97" class="Datatype">ℕ</a>
+   <a id="getStringList"></a><a id="2076" href="GUI.RasterificFFI.html#2076" class="Postulate">getStringList</a> <a id="2090" class="Symbol">:</a> <a id="2092" href="GUI.RasterificFFI.html#2011" class="Postulate">NumAndStringList</a> <a id="2109" class="Symbol">→</a> <a id="2111" href="Agda.Builtin.List.html#80" class="Datatype">List</a> <a id="2116" href="Agda.Builtin.String.html#165" class="Postulate">String</a>
+   <a id="2126" class="Comment">--</a>
+   <a id="getEventsFFIhs"></a><a id="2132" href="GUI.RasterificFFI.html#2132" class="Postulate">getEventsFFIhs</a> <a id="2147" class="Symbol">:</a> <a id="2149" href="GUI.RasterificFFI.html#847" class="Postulate">SDLWindow</a> <a id="2159" class="Symbol">→</a> <a id="2161" href="GUI.RasterificFFI.html#1205" class="Function">FFIComponents</a> <a id="2175" class="Symbol">→</a> <a id="2177" href="NativeIO.html#260" class="Postulate">IO</a> <a id="2180" href="GUI.RasterificFFI.html#2011" class="Postulate">NumAndStringList</a>
+
+
+<a id="2199" class="Symbol">{-#</a> <a id="2203" class="Keyword">COMPILE</a> GHC <a id="2215" href="GUI.RasterificFFI.html#2011" class="Postulate">NumAndStringList</a>       = type AI.NumAndStringList <a id="2265" class="Symbol">#-}</a>
+<a id="2269" class="Symbol">{-#</a> <a id="2273" class="Keyword">COMPILE</a> GHC <a id="2285" href="GUI.RasterificFFI.html#2043" class="Postulate">getNum</a>                 = AI.getNum <a id="2320" class="Symbol">#-}</a>
+<a id="2324" class="Symbol">{-#</a> <a id="2328" class="Keyword">COMPILE</a> GHC <a id="2340" href="GUI.RasterificFFI.html#2076" class="Postulate">getStringList</a>          = AI.getStringList <a id="2382" class="Symbol">#-}</a>
+<a id="2386" class="Symbol">{-#</a> <a id="2390" class="Keyword">COMPILE</a> GHC <a id="2402" href="GUI.RasterificFFI.html#2132" class="Postulate">getEventsFFIhs</a>         = AI.getEventsFFI <a id="2443" class="Symbol">#-}</a>
+
+
+
+<a id="getEventsFFI"></a><a id="2450" href="GUI.RasterificFFI.html#2450" class="Function">getEventsFFI</a> <a id="2463" class="Symbol">:</a> <a id="2465" href="GUI.RasterificFFI.html#847" class="Postulate">SDLWindow</a> <a id="2475" class="Symbol">→</a> <a id="2477" href="GUI.GUIDefinitions.html#584" class="Datatype">Frame</a> <a id="2483" class="Symbol">→</a> <a id="2485" href="NativeIO.html#260" class="Postulate">IO</a> <a id="2488" class="Symbol">(</a><a id="2489" href="Agda.Builtin.Nat.html#97" class="Datatype">ℕ</a> <a id="2491" href="Data.Product.html#1329" class="Function Operator">×</a> <a id="2493" class="Symbol">(</a><a id="2494" href="Agda.Builtin.List.html#80" class="Datatype">List</a> <a id="2499" href="Agda.Builtin.String.html#165" class="Postulate">String</a><a id="2505" class="Symbol">))</a>
+<a id="2508" href="GUI.RasterificFFI.html#2450" class="Function">getEventsFFI</a> <a id="2521" href="GUI.RasterificFFI.html#2521" class="Bound">win</a> <a id="2525" href="GUI.RasterificFFI.html#2525" class="Bound">fr</a> <a id="2528" class="Symbol">=</a> <a id="2530" class="Keyword">do</a>
+  <a id="2535" href="GUI.RasterificFFI.html#2535" class="Bound">x</a> <a id="2537" href="NativeIO.html#331" class="Postulate Operator">&lt;-</a> <a id="2540" href="GUI.RasterificFFI.html#2132" class="Postulate">getEventsFFIhs</a> <a id="2555" href="GUI.RasterificFFI.html#2521" class="Bound">win</a> <a id="2559" class="Symbol">(</a><a id="2560" href="GUI.RasterificFFI.html#1757" class="Function">frame2FFI</a> <a id="2570" href="GUI.RasterificFFI.html#2525" class="Bound">fr</a><a id="2572" class="Symbol">)</a>
+  <a id="2576" href="NativeIO.html#287" class="Postulate">return</a> <a id="2583" class="Symbol">(</a> <a id="2585" href="GUI.RasterificFFI.html#2043" class="Postulate">getNum</a> <a id="2592" href="GUI.RasterificFFI.html#2535" class="Bound">x</a> <a id="2594" href="Data.Product.html#543" class="InductiveConstructor Operator">,</a> <a id="2596" href="GUI.RasterificFFI.html#2076" class="Postulate">getStringList</a> <a id="2610" href="GUI.RasterificFFI.html#2535" class="Bound">x</a><a id="2611" class="Symbol">)</a>
+
+
+<a id="2615" class="Comment">--</a>
+<a id="2618" class="Comment">-- Functions</a>
+<a id="2631" class="Comment">--</a>
+<a id="2634" class="Keyword">postulate</a>
+  <a id="createWindowFFI"></a><a id="2646" href="GUI.RasterificFFI.html#2646" class="Postulate">createWindowFFI</a> <a id="2662" class="Symbol">:</a> <a id="2664" href="NativeIO.html#260" class="Postulate">IO</a> <a id="2667" href="GUI.RasterificFFI.html#847" class="Postulate">SDLWindow</a>
+  <a id="renderFrameToScreenFFIhs"></a><a id="2679" href="GUI.RasterificFFI.html#2679" class="Postulate">renderFrameToScreenFFIhs</a> <a id="2704" class="Symbol">:</a> <a id="2706" href="GUI.RasterificFFI.html#847" class="Postulate">SDLWindow</a> <a id="2716" class="Symbol">→</a> <a id="2718" href="GUI.RasterificFFI.html#1205" class="Function">FFIComponents</a> <a id="2732" class="Symbol">→</a> <a id="2734" href="NativeIO.html#260" class="Postulate">IO</a> <a id="2737" href="Unit.html#28" class="Record">Unit</a>
+
+<a id="2743" class="Symbol">{-#</a> <a id="2747" class="Keyword">COMPILE</a> GHC <a id="2759" href="GUI.RasterificFFI.html#2646" class="Postulate">createWindowFFI</a>      = SDL.createWindow <a id="2799" class="Symbol">#-}</a>
+<a id="2803" class="Symbol">{-#</a> <a id="2807" class="Keyword">COMPILE</a> GHC <a id="2819" href="GUI.RasterificFFI.html#2679" class="Postulate">renderFrameToScreenFFIhs</a>  = AI.renderFrameToScreen <a id="2870" class="Symbol">#-}</a>
+
+
+<a id="renderFrameToScreenFFI"></a><a id="2876" href="GUI.RasterificFFI.html#2876" class="Function">renderFrameToScreenFFI</a> <a id="2899" class="Symbol">:</a> <a id="2901" href="GUI.RasterificFFI.html#847" class="Postulate">SDLWindow</a> <a id="2911" class="Symbol">→</a> <a id="2913" href="GUI.GUIDefinitions.html#584" class="Datatype">Frame</a> <a id="2919" class="Symbol">→</a> <a id="2921" href="NativeIO.html#260" class="Postulate">IO</a> <a id="2924" href="Unit.html#28" class="Record">Unit</a>
+<a id="2929" href="GUI.RasterificFFI.html#2876" class="Function">renderFrameToScreenFFI</a> <a id="2952" href="GUI.RasterificFFI.html#2952" class="Bound">win</a> <a id="2956" href="GUI.RasterificFFI.html#2956" class="Bound">fr</a> <a id="2959" class="Symbol">=</a> <a id="2961" href="GUI.RasterificFFI.html#2679" class="Postulate">renderFrameToScreenFFIhs</a> <a id="2986" href="GUI.RasterificFFI.html#2952" class="Bound">win</a> <a id="2990" class="Symbol">(</a><a id="2991" href="GUI.RasterificFFI.html#1757" class="Function">frame2FFI</a> <a id="3001" href="GUI.RasterificFFI.html#2956" class="Bound">fr</a><a id="3003" class="Symbol">)</a>
+
+
+
+
+
+
+
+
+
+
+</pre></body></html>

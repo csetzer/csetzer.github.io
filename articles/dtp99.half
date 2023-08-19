@@ -1,0 +1,765 @@
+{- 
+  Modelling IO in dependent type theory.
+  
+  Input Output depends on a set of states
+
+  While is an additional construction of the trees
+
+
+
+
+  We start with some basic amenities.
+
+
+   We need to deal with predicates -}
+
+Pred = \ S -> ( s : S )-> Set
+     : ( S : Set )-> Type,
+
+{- The disjoint union of a family of sets. -}
+
+Sigma
+     = \ A B -> data { $p ( a : A, s : B a ) }
+     : ( A : Set, B : Pred A )-> Set,
+
+PLUS = \ A B -> data { $i ( a : A ), $j ( b : B ) }
+     : ( A : Type,  B : Type )-> Type,
+
+
+{- A World consists of:
+
+   - A set of states of objective knowledge about the outside world,
+     (giving information like printer switched on/off, windows
+      with certain names are active etc.)
+   - Depending on a state a set of commands C, which can be carried out.
+     Such commands might be
+     * an output of something on some device
+     * an input of something on some device
+     * a test about the status of a certain device
+     * or a change of the state of the system
+
+  - Depending on state s and command c a set R s c of possible responses 
+    one gets.
+    This could be
+    * in case of an output the empty information, i.e. an element of One
+      or possible some more information about whether this was successfully
+      carried out or not
+    * in case of an input a set, the input will be an element of 
+      (i.e. char, string, integer)
+    * in case of a test the information about the status of the device
+    * in case of a state change, the empty information or again
+      some status information
+
+  - depending on state s, command c response r the next status
+    ns s c r the system is in.
+
+-}
+
+Worldtype
+     = sig {
+	 S  : Set,
+	 C  : Pred S,
+	 R  : ( s : S )-> Pred (C s),
+	 ns : ( s : S, c : C s, r : R s c )-> S }
+     : Type,
+
+{- We define now a theory, so as to have an Worldtype as a global parameter -}
+
+IOtheory
+     = \ w ->
+       theory {
+	 {- First, we must unpack the parameter into the objects we
+           need to refer to. -}
+	 
+	 S     = w.S
+	       : Set,
+
+	 C     = w.C
+	       : Pred S,
+
+	 R     = w.R
+	       : ( s : S )-> Pred (C s),
+
+	 ns    = w.ns
+	       : ( s : S, c : C s, r : R s c )-> S,
+
+ {- The set IO A s will depend now on a state s, and
+    a predicate on output states A.
+    It will return when it terminates in state s an element of A s 
+
+   We will have three possibilities:
+   - $d c nt: do command c, and depending on the result r proceed
+   - $l a   : stop and output a ("leaf a")
+   - $w B b p: while loop:
+       As long as program p(b) is in IO(B), run this program and
+       continue, if the result is b' with $w B b' p
+       If the program p(b) is in IO(A), continue with this program
+       and return the result this program yields.
+
+     In order to avoid black hole recursion (if we apply this to a  leaf)
+     we have to define simultaneously IO' A s, which contains
+    the trees which execute at least one command.
+
+   Therefore IO will have  constructors
+   $l a     (as before a leaf)
+   $w A p   for while
+   $min p   the insertion of an element of IO' into IO
+            (p^-; $min for minus)
+
+   IO' will have
+   $d c nt for do
+
+-}
+
+	 IOdef = let {
+		   IO = IOdef.IO
+			  : ( A : Pred S, s  : S )-> Type,
+
+		   IO' = IOdef.IO'
+			  : ( A : Pred S, s  : S )-> Type }
+		 in struct {
+		      IO = \ A s ->
+			       data {
+				 $l   ( a : A s ),
+                                 $w   (B : Pred S,
+                                       b : B s,
+                                       p: (s: S, b: B s)
+                                          -> PLUS (IO A s) (IO' B s)),
+				 $min ( p : IO' A s ) },
+		      IO'
+			     = \ A s ->
+			       data {
+				 $d ( c  : C s,
+				      nt : ( r : R s c )
+					   -> IO A (ns s c r) )}}
+	       : sig {
+		   IO : ( A : Pred S, s  : S )-> Type,
+		   IO': ( A : Pred S, s  : S )-> Type },
+
+
+
+	 IO
+	       = IOdef.IO
+	       : ( A : Pred S, s  : S )-> Type,
+
+	 IO'
+	       = IOdef.IO'
+	       : ( A : Pred S, s  : S )-> Type,
+
+
+	 {- The degenerate program  that simply returns an element of A s
+            In the slides it was called "eta" -}
+
+
+	 return
+	       = \ A s a -> $l a
+	       : ( A : Pred S,
+                   s : S,
+		   a : A s)
+		 -> IO A s,
+
+{- The bind operation, denoted by * in the slides -}
+
+	 
+	 binddef
+	       = let {
+		   bind = binddef.bind
+			 : ( A : Pred S,
+			     B : Pred S,
+			     s   : S,
+			     p   : IO A s,
+			     q  : (s: S, a: A s) -> IO B s)
+			   -> IO B s,
+
+		   bind'
+			 = binddef.bind'
+			 : ( A : Pred S,
+			     B : Pred S,
+			     s   : S,
+			     p   : IO' A s,
+			     q  : (s: S, a: A s) -> IO B s)
+ 			   -> IO' B s }
+		 in struct {
+		      bind  = \ A B s p q ->
+			       case p of {
+				 $l a  -> q s a,
+                                 $w D b p
+                                 -> $w D b
+                                    (\s1 b1
+                                     ->case p s1 b1 of {
+                                        $i pa 
+                                        -> $i (bind A B s1 pa q),
+                                        $j pb -> $j pb}),
+				 $min p -> $min (bind' A B s p q) },
+		      bind' = \ A B s p q ->
+			       case p of {
+				 $d c np -> $d c
+					    (\ r ->
+					     bind A B (ns s c r) (np r) q)}}
+
+	       : sig {
+		   bind  : ( A : Pred S,
+			      B : Pred S,
+			      s   : S,
+			      p   : IO A s,
+			      q  : (s: S, a: A s)-> IO B s )
+			    -> IO B s,
+		   bind' : ( A   : Pred S,
+			     B   : Pred S,
+			     s   : S,
+			     p   : IO' A s,
+			     q   : (s: S, a: A s)-> IO B s)
+			    -> IO' B s },
+
+
+
+	 bind = binddef.bind
+	       : ( A : Pred S,
+		   B : Pred S,
+		   s   : S,
+		   p   : IO A s,
+		   q  : (s: S, a: A s)-> IO B s)
+		 -> IO B s,
+
+	 bind'
+	       = binddef.bind'
+	       : ( A : Pred S,
+		   B : Pred S,
+		   s   : S,
+		   p   : IO' A s,
+		   q  : (s: S, a : A s)-> IO B s)
+		 -> IO' B s,
+
+
+	 {- A degenerate program that causes one interaction and applies
+            a function to the answer and returns the result -}
+	 
+	 interact
+	       = \ A s c f ->
+		 $min ($d c (\ r -> $l (f r)))
+	       : ( A : Pred S,
+                   s : S,
+		   c : C s,
+		   f  : (r : R s c) 
+			-> A (ns s c r))
+		 -> IO A s,
+
+
+
+	 {- We can now as usual define map using bind.        -}
+            
+	 
+	 map  = \ A B s p f -> bind A B s p (\s' a-> return B s' (f s' a))
+	       : ( A  : Pred S,
+		   B  : Pred S,
+                   s  : S,
+		   p  : IO A s,
+		   f   : ( s'  : S, a : A s' )-> B s')
+		 -> IO B s,
+
+	 map'  = \ A B s p f -> bind' A B s p (\s' a-> return B s' (f s' a))
+	       : ( A  : Pred S,
+		   B  : Pred S,
+                   s  : S,
+		   p  : IO' A s,
+		   f   : ( s'  : S, a : A s' )-> B s')
+		 -> IO' B s,
+
+	 {- decompose will take an element of IO A s and look whether
+            the corresponding non-well-foudned tree is 
+            - a leaf $l a; then it outputs $l a.
+            - or a command $d c p; then it outputs $d c p.
+            The run-construction has to be analyzed accordingly.
+
+            Since we define IO A s and IO' A s simultaneously, we 
+            will have one function decompose analyzing IO A s,
+            and decompose' analyzing IO' A s. 
+
+            The results of decompose and decompose' will be in
+            decomposeresult, decomposeresult', which are now datatypes
+            corresponding to the above -}
+	 
+	 decomposeresult'
+	       = \ A s ->
+		 data {
+		   $d ( c    : C s,
+			next : ( r : R s c )-> IO A (ns s c r) ) }
+	       : ( A : Pred S, s  : S )-> Type,
+
+	 decomposeresult
+	       = \ A s ->
+		 data { $min ( p : decomposeresult' A s ), $l   ( p : A s ) }
+	       : ( A : Pred S, s  : S )-> Type,
+
+     {- In the definition decompose applied to a program $w B b q
+        we apply first decompose to q.
+        The result will be of the for $d c q1
+        and then we need to bind q1 to $w B b q.
+        This is done with the following auxiliary function -}
+     
+     decomposebind
+     = \A B s dec q
+       ->case dec of {
+          $d c next 
+          -> $min ($d c (\r
+                   ->bind A B (ns s c r) (next r) q))}
+     : (A : Pred S,
+        B : Pred S,
+        s : S,
+        dec: decomposeresult' A s,
+        q  : (s: S, a: A s)-> IO B s)
+      -> decomposeresult B s,
+     
+
+
+	 decomposedef
+	       = let {
+		   decompose = decomposedef.decompose
+			      : ( A : Pred S, s  : S, p  : IO A s )
+				-> decomposeresult A s,
+
+		   decompose'
+			      = decomposedef.decompose'
+			      : ( A : Pred S, s  : S, p  : IO' A s )
+				-> decomposeresult' A s }
+		 in struct {
+		      decompose = \ A s p ->
+				   case p of {
+				     $l a    -> $l a,
+                                     $w B b q
+                                     -> case q s b of {
+                                         $i pa 
+                                         -> decompose A s pa,
+                                         $j pb 
+                                         -> decomposebind B A s
+                                             (decompose' B s pb) 
+                                              (\s1 b'->$w B b' q)},
+				     $min p1 -> $min
+						(decompose' A s p1) },
+		      decompose'
+				 = \ A s p ->
+				   case p of {
+				     $d c nt -> $d c nt}}
+
+	       : sig {
+		   decompose : ( A : Pred S, s  : S, p  : IO A s )
+				-> decomposeresult A s,
+		   decompose'
+			      : ( A : Pred S, s  : S, p  : IO' A s )
+				-> decomposeresult' A s },
+
+
+
+
+
+	 decompose
+	       = decomposedef.decompose
+	       : ( A : Pred S, s  : S, p  : IO A s )
+		 -> decomposeresult A s,
+
+	 decompose'
+	       = decomposedef.decompose'
+	       : ( A : Pred S, s  : S, p  : IO' A s )
+		 -> decomposeresult' A s,
+
+
+	 {- Now we assign to every element of IO A s a corresponding
+            non-well-founded tree.
+            Note that this is a dangerous definition.
+            It should be only used immediately before applying execute to it
+
+            First we define the set of possibly non-wellfounded sets
+            (In the Half system, one does not distinguish between
+             well-founded and non-well-founded sets) -}
+
+
+
+	 
+	 IOnonwf
+	       = \ A s ->
+		 data {
+		   $l ( a : A s ),
+		   $d ( c  : C s,
+			nt : ( r : R s c )-> IOnonwf A (ns s c r) ) }
+	       : ( A : Pred S )-> Pred S,
+
+
+
+
+
+	 preexecute
+	       = \ A s p ->
+		 case decompose A s p of {
+		   $min p1 -> case p1 of {
+				$d c next -> $d c
+					     (\ r ->
+					      preexecute A (ns s c r)
+					      (next r)) },
+		   $l p1   -> $l p1 }
+	       : ( A : Pred S, s  : S, p  : IO A s )
+		 -> IOnonwf A s }
+
+
+     : ( w : Worldtype )-> Theory,
+
+
+
+{- Now pull the interesting stuff out of the theory. -}
+
+IO
+     = \ w -> (IOtheory w).IO
+     : ( w  : Worldtype, A : Pred w.S, s  : w.S )-> Type,
+
+
+
+IO'
+     = \ w -> (IOtheory w).IO'
+     : ( w  : Worldtype, A : Pred w.S, s  : w.S )-> Type,
+
+
+
+
+
+return
+     = \ w -> (IOtheory w).return
+     : ( w  : Worldtype,
+	 A : Pred w.S,
+         s : w.S,
+         a : A s)
+       -> IO w A s,
+
+
+
+bind = \ w -> (IOtheory w).bind
+     : ( w   : Worldtype,
+         A : Pred w.S,
+         B : Pred w.S,
+         s   : w.S,
+         p   : IO w A s,
+         q  : (s: w.S, a: A s)-> IO w B s)
+      -> IO w B s,
+
+bind' = \ w -> (IOtheory w).bind'
+     : ( w   : Worldtype,
+         A : Pred w.S,
+         B : Pred w.S,
+         s   : w.S,
+         p   : IO' w A s,
+         q  : (s: w.S, a: A s)-> IO w B s)
+      -> IO' w B s,
+
+map = \ w -> (IOtheory w).map
+    : ( w   : Worldtype,
+        A  : Pred w.S,
+        A' : Pred w.S,
+        s   : w.S,
+        p   : IO w A s,
+        f   : ( s  : w.S, a : A s )-> A' s)
+      -> IO w A' s,
+
+
+
+map'
+     = \ w -> (IOtheory w).map'
+    : ( w   : Worldtype,
+        A  : Pred w.S,
+        A' : Pred w.S,
+        s   : w.S,
+        p   : IO' w A s,
+        f   : ( s  : w.S, a : A s )-> A' s)
+      -> IO' w A' s,
+
+
+
+
+interact
+     = \ w -> (IOtheory w).interact
+     : ( w : Worldtype,
+         A : Pred w.S,
+         s : w.S,
+         c : w.C s,
+         f  : (r : w.R s c) -> A (w.ns s c r))
+        -> IO w A s,
+
+
+decomposeresult'
+     = \ w -> (IOtheory w).decomposeresult'
+     : ( w  : Worldtype, A : Pred w.S, s  : w.S )-> Type,
+
+decomposeresult
+     = \ w -> (IOtheory w).decomposeresult
+     : ( w  : Worldtype, A : Pred w.S, s  : w.S )-> Type,
+
+
+
+decompose
+     = \ w -> (IOtheory w).decompose
+     : ( w  : Worldtype,
+	 A  : Pred w.S,
+         s  : w.S,
+	 p  : IO w A s)
+       -> decomposeresult w A s,
+
+decompose'
+     = \ w -> (IOtheory w).decompose'
+     : ( w  : Worldtype,
+	 A  : Pred w.S,
+         s  : w.S,
+	 p  : IO' w A s)
+       -> decomposeresult' w A s,
+
+{- *** Dangerous set; only for use with execute *** -}
+
+IOnonwf
+     = \ w -> (IOtheory w).IOnonwf
+     : ( w  : Worldtype, A : Pred w.S )-> Pred w.S,
+
+
+
+{- *** Dangerous definition; only for use with execute *** -}
+
+
+preexecute
+     = \ w -> (IOtheory w).preexecute
+     : ( w  : Worldtype,
+         A  : Pred w.S, 
+         s  : w.S, 
+         p  : IO w A s )
+        -> IOnonwf w A s,
+
+
+
+{-                 redirect
+
+    In redirection, we take a program in one world w and 
+    replace the input and output commands with programs which
+    act in another world w'.
+    The two worlds are related via a predicate Rel between the states
+    of w and w': whenever we execute a command in w, and for every
+    state of w' related to it, we should get a program in w', 
+    which ends in a state which is related to the next state of 
+    the first program.
+
+    First some auxiliary functions:
+ 
+
+     predStoS' w w' A 
+            \s'-> Sigma s: S.((Rel s s') \land A s)  
+            or the transfer of a predicate on S via Rel to a predicate
+            on S'  
+
+   -}
+
+	 predStoS'
+	     = \ w w' Rel A s'
+               -> sig{s: w.S, r: Rel s s', a: A s}
+	     : ( w : Worldtype,
+                 w': Worldtype,
+               Rel : ( s : w.S )-> Pred w'.S, 
+               A   : Pred w.S )
+              -> Pred w'.S,
+
+         {- When defining redirect we need for every command c
+            of world w a program in world w' which returns the information
+            we need:
+            - The program should (if it stops) stop in a state s' and give
+            - a response r to the command c
+            - s.t. the next state in world w corresponding to this response
+              is in the relationship Rel with s'.
+            subprogranswer provides the type of answers required -}
+
+
+	 subproganswer
+	     = \ w w' Rel s c s'        
+               -> sig { r : w.R s c, rel : Rel (w.ns s c r) s' }
+	     : ( w : Worldtype,
+                 w': Worldtype,
+	       Rel : ( s : w.S )-> Pred w'.S, 
+               s   : w.S, 
+               c   : w.C s, 
+               s'  : w'.S )
+	       -> Set,
+
+
+
+
+redirecttheory
+     = \ w w' ->
+       theory {
+	 S   = w.S
+	     : Set,
+
+	 C   = w.C
+	     : Pred S,
+
+	 R   = w.R
+	     : ( s : S )-> Pred (C s),
+
+	 ns  = w.ns
+	     : ( s : S, c : C s, r : R s c )-> S,
+
+	 S'  = w'.S
+	     : Set,
+
+        {- Local versions of predStoS', supprogtype -}
+
+        predStoS'loc
+        = predStoS' w w' 
+          :  (Rel : ( s : S )-> Pred S', 
+               A   : Pred S )
+              -> Pred S',
+
+	 subproganswerloc
+	     = subproganswer w w' 
+	       : ( Rel : ( s : S )-> Pred S', 
+                   s   : S, 
+                   c   : C s, 
+                   s'  : S' )
+	          -> Set,
+
+
+	 redirectdef
+	     = \Rel p1
+               -> let {
+		 redirect0 = (redirectdef Rel p1).redirect0
+			  :  (s   : S,
+                              s'  : S',
+                              rel : Rel s s',
+			      A   : Pred S,
+			      p   : IO w A s)
+			    -> IO w' (predStoS'loc Rel A) s',
+
+		 redirect0'
+			   = (redirectdef Rel p1).redirect0'
+			   : ( s   : S,
+                               s'  : S',
+                               rel : Rel s s',
+			       A  : Pred S,
+			       p   : IO' w A s)
+			     -> IO' w' (predStoS'loc Rel A) s'}
+
+
+	       in struct {
+		    redirect0 = \s s' rel A p ->
+				case p of {
+				  $l a    
+                                  -> $l (struct {s=s,r=rel,a=a}),
+                                  $w B b p
+                                  -> $w
+                                      (predStoS'loc Rel B)
+                                      (struct {
+                                        s=s,
+                                        r=rel,
+                                        a=b})
+                                     (\s1 b1
+                                      ->case p b1.s b1.a of {
+                                        $i pa 
+                                        -> $i (redirect0 b1.s s1 b1.r A pa),
+                                        $j pb 
+                                        -> $j (redirect0' b1.s s1 b1.r B pb)}),
+				  $min q -> $min
+					     (redirect0' s  s'
+					      rel A q) },
+		    redirect0'
+			      = \ s s' rel A p ->
+				case p of {
+				  $d c next -> bind' w' 
+					     (subproganswerloc Rel s c)
+					     (predStoS'loc Rel A) 
+                                             s'
+                                             (p1 s c s' rel)
+                                             (\s1 rrel
+                                              ->redirect0 
+                                                (ns s c rrel.r) 
+                                                s1 
+                                                rrel.rel
+                                                A 
+                                                (next rrel.r))}}
+	     : ( Rel : ( s : S )-> Pred S',
+                 p1  : ( s : S, c : C s, s': S', rel: Rel s s' )
+				     -> IO' w' (subproganswerloc Rel s c) s')
+               ->sig {
+		 redirect0 : (  s   : S,
+                               s'  : S',
+                               rel : Rel s s',
+			       A   : Pred S,
+			       p   : IO w A s)
+			     -> IO w' (predStoS'loc Rel A) s',
+
+		 redirect0': (  s   : S,
+                               s'  : S',
+                               rel : Rel s s',
+			       A  : Pred S,
+			       p   : IO' w A s)
+			     -> IO' w' (predStoS'loc Rel A) s'},
+
+
+
+
+
+	 redirect
+	     = \s A p Rel p1 s' rel
+               -> (redirectdef Rel p1).redirect0 s s' rel A p
+	     : ( s   : S,
+		 A  : Pred S,
+		 p   : IO w A s,
+                 Rel : ( s : S )-> Pred S',
+		 p1  : ( s : S, c : C s, s': S', rel: Rel s s')
+		       -> IO' w' (subproganswerloc Rel s c) s',
+                 s'  : S',
+                 rel : Rel s s')
+	       -> IO w' (predStoS'loc Rel A) s',
+
+	 redirect'
+	     = \s A p Rel p1 s' rel
+               -> (redirectdef Rel p1).redirect0' s s' rel A p
+	     : ( s   : S,
+		 A  : Pred S,
+		 p   : IO' w A s,
+                 Rel : ( s : S )-> Pred S',
+		 p1  : ( s : S, c : C s, s': S', rel: Rel s s')
+		       -> IO' w' (subproganswerloc Rel s c) s',
+                 s'  : S',
+                 rel : Rel s s')
+	       -> IO' w' (predStoS'loc Rel A) s'
+
+
+
+
+     }
+     : ( w  : Worldtype, w' : Worldtype )-> Theory,
+
+
+
+	 redirect
+	     = \w w' -> (redirecttheory w w').redirect
+	     : ( w : Worldtype,
+                 w': Worldtype,
+		 s   : w.S,
+		 A  : Pred w.S,
+		 p   : IO w A s,
+	       Rel : ( s : w.S )-> Pred w'.S,
+		 p1  : ( s : w.S, c : w.C s, s': w'.S, rel: Rel s s')
+		       -> IO' w' (subproganswer w w' Rel s c) s',
+                 s'  : w'.S,
+                 rel : Rel s s')
+	       -> IO w' (predStoS' w w' Rel A) s',
+
+
+	 redirect'
+	     = \w w' -> (redirecttheory w w').redirect'
+	     : ( w : Worldtype,
+                 w': Worldtype,
+		 s   : w.S,
+		 A  : Pred w.S,
+		 p   : IO' w A s,
+	       Rel : ( s : w.S )-> Pred w'.S,
+		 p1  : ( s : w.S, c : w.C s, s': w'.S, rel: Rel s s')
+		       -> IO' w' (subproganswer w w' Rel s c) s',
+                 s'  : w'.S,
+                 rel : Rel s s')
+	       -> IO' w' (predStoS' w w' Rel A) s'
+
+
+
+

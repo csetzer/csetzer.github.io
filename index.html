@@ -1,1 +1,1398 @@
-Hello World
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+
+       
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="keywords"
+content="proof theory, logic, mathematical logic, theoretical computer science, type theory,
+Martin-Lof type theory, Martin-Loef type theory, Martin-L&ouml;f type theory, Martin-L&ouml;f type theory, proof theoretic strength,
+interactive programs, inductive-recursive, induction-recursion, dependent type theory">
+<title>Anton Setzer</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'cy,en'}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+<!-- <h1><a href="https://www.swansea.ac.uk/compsci/"><img SRC="images/cslogo.jpg"
+ALT="cslogo.jpg (15052 bytes)" BORDER="0" height="57" width="300"></a></h1>
+-->
+<h1><img SRC="images/cslogo.jpg"
+ALT="cslogo.jpg (15052 bytes)" BORDER="0" height="57" width="300"></img></h1>
+
+<h1><font face="Arial">Anton Setzer, Dipl-math. (Munich), Dr. rer. nat. (Munich), 
+docent (for mathematical logic, Uppsala)</font></h1>
+
+
+
+<h1><font face="Arial">Reader</font></h1>
+<h1><font face="Arial"><a href="http://orcid.org/0000-0001-5322-6060">ORCID 0000-0001-5322-6060</a></a></h1>
+
+
+<hr size="1">
+<table border="0" CELLPADDING="10">
+  <tr>
+<td><img src="pictures/antonSetzer.jpg" border="0"  width="250" height = "263">
+</img></td>
+<td>
+<!-- <A HREF="http://petition.eurolinux.org"><img src="http://aful.org/images/patent_square.gif" border="0"></A> -->
+</td>
+<tr>
+<td><table border="0" CELLPADDING="0">
+<tr valign="left">
+
+
+<tr valign="left">
+
+<!--
+<td><font face="Arial"><b>Modules:</font><br><br><br><br><br></b></td>
+<td>
+These pages are currently under revision in order to make them compliant
+with restrictions by Swansea University</a>
+For students this material is available via blackboard
+</td>
+-->
+
+
+<tr valign="left">
+<td><font face="Arial"><b>Administrative duties:</font></td>
+</tr>
+<tr valign="left">
+<td></td>
+<td><table>
+<td>Coordinator MSc in Advanced Computer Science and MSc in Advanced
+Software Technology
+<!--<a href="admin/mscAdvancedComputerScienceOrganisation/2016/">Information about MSc Advanced Computer Science and
+MSc in Advanced Software Technology</a>-->
+</td></tr>
+</table>
+</td>
+
+<tr valign="left">
+
+
+
+
+
+<!--
+<td><font face="Arial"><b>Misc</font><br></b></td>
+</tr>
+<tr valign="left">
+<td></td>
+
+-->
+
+<tr valign="left">
+<td><font face="Arial"><b>Misc:</font></td>
+</tr>
+<tr valign="left">
+<td></td>
+<td><table>
+<tr valign="left">
+<td><font face="Arial"><a href="tutorials/index.html">General material related to Projects, Essays etc</a></td></tr>
+<tr valign="left">
+<td><font face="Arial"><a href="software/index.html">Software</a></td></tr>
+<tr valign="left">
+<td>Maintainer of 
+<font face="Arial"><a href="logic-server/index.html">
+links to logic-servers world wide</a></td></tr>
+<tr valign="left">
+<!--
+<td><font face="Arial"><a href="admin/timetablelentterm2007.html">My
+      current timetable can be found here</a></td>
+-->
+</tr>
+<tr valign="left">
+<td><font face="Arial"><a href="index2.html">Further information on A. Setzer</a></td>
+</tr>
+<tr valign="left">
+<td><font face="Arial"><a href="links/index.html"> 
+Links</a></td>
+</tr>
+<tr valign="left">
+<td><font face="Arial"><a href="lectures/critsys/current/SPARK_Ada/index.html">Anton Setzer's SPARK Ada Main Page</a> (<a href="lectures/critsys/current/SPARK_Ada/labSessions.html">Lab Sessions</a>)</td> 
+</tr>
+
+</table>
+</tr>
+<tr valign="left">
+<tr valign="left">
+<td>
+<font face="Arial"><strong>Contact</strong><br><br></font></td>
+</tr><p>
+
+<tr valign="left">
+<td><font face="Arial"><strong>Tel. :</strong> </font></td> 
+<td><table  border="0" CELLPADDING="0">
+<tr valign="left">
+<td><font face="Arial">International:</font></td>
+<td><font face="Arial">+44 1792 513368</font></td>
+</tr>
+<tr valign="left">
+<td><font face="Arial">National:</font></td>
+<td><font face="Arial">01792 513368</font></td>
+</tr>
+</table></td></tr>
+<tr valign="left">
+<td><font face="Arial"><strong>Fax: </strong></font></td>
+<td><table  border="0" CELLPADDING="0">
+<tr valign="left">
+<td><font face="Arial">International:</font></td>
+<td><font face="Arial">+44 1792 295708</font></td></tr>
+<tr valign="left">
+<td><font face="Arial">National:</font></td>
+<td><font face="Arial">(01792) 295708</font></td>
+</tr></table></td></tr>
+
+<tr valign="left">
+<td><font face="Arial"><strong>Email: </strong></font></td>
+<td><font face="Arial"><img src="images/signature.gif" height="30" width="300" alt="Replace '_dot_' by '.' and '_at_' by '@' in 'a_dot_g_dot_setzer_at_swan_dot_ac_dot_uk'"></font>
+</td></tr>
+
+<tr valign="left">
+<td><font face="Arial"><strong>Address: </strong></font></td>
+<td><font face="Arial">Dr. Anton Setzer, 
+<a href="https://www.swansea.ac.uk/compsci/">Dept. of 
+Computer Science</a>,
+<a href="https://www.swansea.ac.uk/science/computationalfoundry/">Computational Foundry</a>, 
+<a href="http://www.swan.ac.uk/">Swansea University Bay Campus</a>,
+Fabian Way, Swansea, SA1 8EN&nbsp;UK</font></td></tr>
+
+<tr valign="left">
+<td><font face="Arial"><strong>Visiting<br>Address:<br><br></strong></font></td>
+<td><font face="Arial"><br><a href="https://www.swansea.ac.uk/science/computationalfoundry/">Computational Foundry</a>, 
+<a href="https://www.swansea.ac.uk/compsci/">Computer Science Department</a>, 4th floor, room 403<br>
+</td></tr>
+<tr valign="left">
+<td><font face="Arial"><strong>ORCID: </strong></font></td>
+<td><font face="Arial">
+<a href="http://orcid.org/0000-0001-5322-6060">0000-0001-5322-6060</a>
+</td></tr>
+
+
+<tr valign="left">
+
+<td><font face="Arial"><b>Conference Organisation/</b></font><br>
+<font face="Arial"><b>Programme Committee</b></font><br>
+</td>
+</tr>
+<tr valign="left">
+<td></td>
+<td>
+<table>
+
+
+
+<tr valign="left">
+<td><font face="Arial"><a href="http://www.cs.swan.ac.uk/blc09/">British Logic Colloquium 2009</a>
+</td></tr>
+
+<tr valign="left">
+<td><font face="Arial"><a href="http://www.mat.uc.pt/~csl/">CSL 2009</a>
+</td></tr>
+
+
+
+
+<tr valign="left">
+<td><font face="Arial"><a href="russell08/index.html">Russell'08 - Proof theory meets Type Theory</a>
+</td></tr>
+
+<tr valign="left">
+<td><font face="Arial"><a href="http://www.cs.swan.ac.uk/pcc07/">PCC 2007</a>
+</td></tr>
+
+
+
+<tr valign="left">
+<td><font face="Arial"><a href="http://www.cs.swan.ac.uk/cie06/">Computability in Europe, CiE 2006</a>
+</td></tr>
+
+
+<tr valign="left">
+<td><font face="Arial"><a href="http://www.dcs.kcl.ac.uk/events/past/2005/clase/index.html">Constructive Logic in Software Engineering, 
+CLASE 2005 (ETAPS)</a>
+</td></tr>
+</table>
+</tr>
+
+<tr valign="left">
+<td><font face="Arial"><strong>More<br>information:<br><br></strong></font></td>
+<td><font face="Arial"><strong><br><a href="index2.html">Further information on A. Setzer
+(research, other courses, links)  can be found here</a></strong></font></td>
+<tr valign="left">
+</tr>
+<tr valign="left">
+<td><font face="Arial"><b>Research Areas:<br><br><br></b></font></td>
+<td><font face="Arial">Proof Theory, esp. of Martin-L&ouml;f Type Theory,
+Programming with Dependent Types, esp. Interaction and Induction-Recursion.<br>
+
+<a href="research/researchprofile.html">More on A. Setzer's Research</a><br>
+
+<a href="TYPES/index.html">Chair person of the 
+Swansea subsite of the TYPES project</a><br>
+
+<a href="grants/EPSRC/EPG0333741/index.html">EPSRC Grant EP/G033374/1: Theory and Applications of Induction Recursion</a><br>
+
+<a href="grants/EPSRC/extensionsDependentTypeTheory/index.html">EPSRC Grant GR/S30450/01: Extension of Dependent Type Theory - Induction, Interaction, Universes</a><br>
+
+</td></tr>
+
+<tr valign="left">
+<td><font face="Arial"><b>Talks given:</font><br><br></td>
+<td>
+<table>
+<tr valign="left">
+<strong>
+<a href="slides/index.html">Slides of talks given</a></strong><br>
+</tr>
+</table>
+</td>
+</tr>
+
+<tr valign="left">
+<td><font face="Arial"><b>Lecture notes</font><br><br></td>
+<td>
+<table>
+<tr valign="left">
+<strong>
+<a href="teaching.html">Lecture Notes (pre 2016/17)</a></strong><br>
+</tr>
+</table>
+</td>
+</tr>
+
+
+<tr valign="left">
+<td><font face="Arial"><b>Articles from PhD students and RAs</font><br><br></td>
+<td>
+<table>
+<tr valign="left">
+<strong>
+<a href="articlesFromOthers/index.html">Articles from PhD students and RAs</a></strong><br>
+</tr>
+</table>
+</td>
+</tr>
+
+
+
+<tr valign="left">
+<td><font face="Arial"><b>Rare Articles</font><br><br></td>
+<td>
+<table>
+<tr valign="left">
+<strong>
+<a href="rareArticles/index.html">Rare
+  articles from others</a></strong><br>
+</tr>
+</table>
+</td>
+
+
+</tr>
+<tr>
+<td></td>
+<td><font face="Arial"><a href="https://www.swansea.ac.uk/compsci/ourstaff/academicstaff/">Back
+to academic staff at the Dep. of Computer Science</a>
+</td>
+</table></td></tr>
+
+</table>
+
+<hr size="1">
+
+<h2><font face="Arial"><a name="publications">Publications</a>
+of Anton Setzer </font></h2>
+<h3>(Reportform, theses etc see <a href="index.html#Reports">below</a>, slides of talks see <a href="slides/index.html">here</a>)</h3>
+
+<ul>
+
+<li> Anton Setzer <a href="articles/arXiv/modellingBitcoinInAgda/antonSetzerArXivModellingBitoinAgda1804.06398.pdf">Modelling Bitcoin in Agda</a>
+<ul>
+<li> <a href="https://arxiv.org/abs/1804.06398">arXiv:1804.06398v1 [cs.CR]</a>, 17 April 2018.
+<li> <a href="articles/arXiv/modellingBitcoinInAgdna/antonSetzerArXivBitcoinModel2018.bib">BibTeX</a>
+<li><a href="articles/arXiv/modellingBitcoinInAgda/antonSetzerArXivModellingBitoinAgda1804.06398.pdf">Pdf (authors copy)</a>
+<li><a href="https://arxiv.org/pdf/1804.06398.pdf">Pdf (ArXiv)</a>
+<li><a href="https://github.com/csetzer/bitcoinAgda">Agda Code (Git Repository)</a>
+</ul>
+
+
+<li>Stephan Adelsberger, Bashar Igried, Markus Moser, Vadim Savenkov and Anton Setzer <a href="articles/SERENE/SERENE18/SERENE18AdelsbergerIgriedMoserSavenkovSetzerfinal.pdf">Formal Verification for Feature-based Composition of Workflows</a>
+<ul>
+<li> In: Proceedings of <a href="http://serene.disim.univaq.it/2018/home">SERENE 2018</a>, 2018 14th European Dependable Computing Conference (EDCC), 
+September 2018. <a href="https://doi.org/10.1109/EDCC.2018.00039">doi 10.1109/EDCC.2018.00039</a>
+<li><a href="articles/SERENE/serene18Code/ScreencastMonadic.gif">Demo of App created</a>
+<li> <a href="articles/SERENE/SERENE18/SERENE18AdelsbergerIgriedMoserSavenkovSetzer.bib">BibTeX</a>
+<li> <a href="articles/SERENE/SERENE18/SERENE18AdelsbergerIgriedMoserSavenkovSetzerfinal.pdf">pdf-file (Author's version)</a>
+<li><a href="https://gitlab.com/Stefanad/FeatureAgda">Git repository</a>
+<li><a href="articles/SERENE/serene18Code/GUI.LoadAllSERENE18.html">Agda code for viewing without installing Agda</a>
+</ul>
+
+<li>Stephan Adelsberger, Anton Setzer and Eric Walkingshaw: <a href="articles/SETTA2018a/SETTA2018adelsbergerSetzerWalkingshawfinal.pdf">Developing GUI Applications in a Verified Setting</a> 
+In: Xinyu Feng and Markus Muller-Olm and Zijang Yang: Dependable Software Engineering. Theories, Tools, and Applications. Springer Lecture Notes in 
+Computer Science 10998, <a href="https://doi.org/10.1007/978-3-319-99933-3_6">doi 10.1007/978-3-319-99933-3_6</a/>.
+<ul>
+<li><a href="articles/SETTA2018a/settaCode/PatientsDB.gif">Demo of App created</a>
+<li> Proceedings of <a href="http://lcs.ios.ac.cn/setta2018/">SETTA 18</a>
+<li> <a href="articles/SETTA2018a/SETTA2018adelsbergerSetzerWalkingshaw.bib">BibTeX</a>
+<li> <a href="articles/SETTA2018a/SETTA2018adelsbergerSetzerWalkingshawfinal.pdf">pdf-file (Author's version)</a>
+<li> <a href="https://github.com/stephanpaper/SETTA18">Git repository</a>
+<li><a href="articles/SETTA2018a/settaCode/GUIgeneric.loadAllSETTA18.html">Agda code for viewing without installing Agda</a>
+</ul>
+
+
+<li>Stephan Adelsberger, Anton Setzer and Eric Walkingshaw: <a href="articles/PPDP18/PPDP18adelsbergerSetzerWalkingshawFinal.pdf">Declarative GUIs: Simple, Consistent, and Verified</a>
+<ul>
+<li> In: Proceedings of  the 20th International Symposium on Principles and Practice of Declarative Programming (<a href="http://ppdp-lopstr-18.cs.uni-frankfurt.de/ppdp18.html">PPDP 18</a>), 2018, pages 4:1 - 4:15.
+<a href="http://doi.acm.org/10.1145/3236950.3236962">doi 10.1145/3236950.3236962</a>
+<li><a href="articles/PPDP18/ppdp18Code/demoPPDP18AdelsbergerSetzerWalkingshaw.gif">Demo of App created</a>
+<li> <a href="articles/PPDP18/PPDP18adelsbergerSetzerWalkingshawFinal.bib">BibTeX</a>
+<li> <a href="articles/PPDP18/PPDP18adelsbergerSetzerWalkingshawFinal.pdf">pdf-file (Author's version)</a>
+<li><a href="https://github.com/stephanadelsb/PPDP18">Git repository</a>
+<li><a href="articles/PPDP18/ppdp18Code/GUI.LoadAllPPDP18.html">Agda code for viewing without installing Agda</a>
+</ul>
+
+
+
+
+<li>Ulrich Berger and Anton Setzer: <a href="articles/CMCS2018/bergerSetzerProceedingsCMCS18.pdf">Undecidability of Equality for Codata Types</a>, <a href="https://doi.org/10.1007/978-3-030-00389-0_4">doi 10.1007/978-3-030-00389-0_4</a>
+<ul>
+
+<li> In: Corina Cirstea (Ed): Coalgebraic Methods in computer Science. Springer 
+Lectuer Notes in Computer Science 11202, 2018.
+<li> Proceedings of <a href="http://www.coalg.org/cmcs18/">CMCS'18</a>
+<li><a href="articles/CMCS2018/bergerSetzerProceedingsCMCS18.bib">BibTeX</a>
+<li><a href="articles/CMCS2018/bergerSetzerProceedingsCMCS18.pdf">pdf-file (Author's version)</a>
+</ul>
+
+
+<li>Bashar Igried and Anton Setzer: <a href="articles/types2016PostProceedings/igriedSetzerTypes2016Postproceedings.pdf">Defining Trace Semantics in CSP-Agda</a>
+<ul>
+
+<li> Accepted for publication in Postproceedings TYPES 2016. 23 pp.
+<li><a href="articles/types2016PostProceedings/igriedSetzerTypes2016Postproceedings.bib">BibTeX</a>
+<li><a href="articles/types2016PostProceedings/igriedSetzerTypes2016Postproceedings.pdf">pdf-file (Author's version)</a>
+</ul>
+
+
+<li> Andreas Abel, Stephan Adelsberger, Anton Setzer: <a href="articles/ooAgda.pdf">Interactive Programming in Agda - 
+Objects and Graphical User Interfaces</a>
+<ul>
+<li> Journal of Functional Programming, 27, 2017. 
+<a href="https://www.cambridge.org/core/journals/journal-of-functional-programming/article/div-classtitleinteractive-programming-in-agda-objects-and-graphical-user-interfacesdiv/56ECE95C3A0C208D5ABCD072643BC8FB">Doi 10.1017/S0956796816000319</a>
+<li><a href="https://www.cambridge.org/core/journals/journal-of-functional-programming/article/div-classtitleinteractive-programming-in-agda-objects-and-graphical-user-interfacesdiv/56ECE95C3A0C208D5ABCD072643BC8FB">Published Version</a>
+<li><a href="articles/ooAgda.bib">BibTeX</a>
+<li><a href="articles/ooAgda.pdf">pdf-file (Author's version)</a>
+<li><a href="https://github.com/agda/ooAgda">Git repository</a>
+</ul>
+
+
+<li>Bashar Igried and Anton Setzer: <a href="articles/coalp2017SetzerIgriedTraceStableFailuresSemantics.pdf">Trace and Stable Failures Semantics for CSP-Agda</a>
+<ul>
+
+<li> In: Komendantskaya, Ekaterina and Power, John (Eds.): 
+Proceedings of the First Workshop on
+Coalgebra, Horn Clause Logic Programming and Types,
+Edinburgh, UK, 28-29 November 2016. Electronic Proceedings in Theoretical Computer Science 258, Open Publishing Association, 2017, pp. 36 - 51. 
+<a href="http://dx.doi.org/10.4204/EPTCS.258.3">doi 10.4204/EPTCS.258.3</a>
+<li> <a href="http://eptcs.web.cse.unsw.edu.au/paper.cgi?LPTI2016.3">Publishers Page</a>
+<li><a href="http://dx.doi.org/10.4204/EPTCS.258.3">Published Version (open access)</a>
+<li><a href="articles/coalp2017SetzerIgriedTraceStableFailuresSemantics.bib">BibTeX</a>
+<li><a href="articles/coalp2017SetzerIgriedTraceStableFailuresSemantics.pdf">pdf-file (Author's version)</a>
+</ul>
+
+<li>Bashar Igried and Anton Setzer: <a href="articles/TyDe2016.pdf">Programming with Monadic CSP-Style Processes in Dependent Type Theory</a>
+<ul>
+<li> In Proceedings of the 1st International Workshop on Type-Driven Development, TyDe 2016, Nara, Japan. ACM, 2016, pp. 28 -- 38. <a href="http://dx.doi.org/10.1145/2976022.2976032">Doi 10.1145/2976022.2976032</a>
+<li> <a href="http://dx.doi.org/10.1145/2976022.2976032">Published Version</a>
+<li><a href="articles/TyDe2016.bib">BibTeX</a>
+<li><a href="articles/TyDe2016.pdf">pdf-file (Author's version)</a>
+<li> Workshop presentation
+<ul>
+<li><a href="https://www.youtube.com/watch?v=0pnqynBqGOQ&list=PLnqUlCo055hUFzMkHyGOvOc0jNbv_bd26&index=7">Video</a>
+<li><a href="slides/TyDe/2016/slidesTyDe2016BasharIgried.pdf">Slides</a>
+</ul>
+</ul>
+
+
+<li>Anton Setzer: <a href="articles/jaeger60Birthdaymain.pdf">How to Reason Coinductively Informally.</a> 
+<ul>
+<li> In Reinhard Kahle, Thomas Strahm, Thomas Studer (Eds.): 
+Advances in Proof Theory. Springer, 2016, pp. 377 -- 408.
+ISBN 978-3-319-29198-7.
+<a href="http://dx.doi.org/10.1007/978-3-319-29198-7_12">Doi  10.1007/978-3-319-29198-7_12</a>
+<li><a href="http://dx.doi.org/10.1007/978-3-319-29198-7_12">Published Version</a>
+<li> <a href="articles/jaeger60Birthdaymain.bib">BibTex</a>
+<li> <a href="articles/jaeger60Birthdaymain.pdf">pdf-file (Author's Copy)</a>
+</ul>
+
+
+<li> Anton Setzer: <a href="articles/setzerGentzenCentenary.pdf">The Use of Trustworthy Principles in a Revised Hilbert s Program.</a> 
+<ul>
+<li> In Kahle, Reinhard and Rathjen, Michael (Eds.): Gentzen's Centenary. Springer, 2015. ISBN 978-3-319-10102-6. <a href="http://dx.doi.org/10.1007/978-3-319-10103-3_3">Doi 10.1007/978-3-319-10103-3_3</a>
+<li> <a href="http://dx.doi.org/10.1007/978-3-319-10103-3_3">Published Version</a>
+<li> <a href="articles/setzerGentzenCentenary.bib">BibTex</a>
+<li> <a href="articles/setzerGentzenCentenary.pdf">pdf-file (Author's Copy)</a>
+</ul>
+
+<li>Karim Kanso, Anton Setzer: A light-weight integration of automated
+and interactive theorem proving.
+<ul>
+<li> Math. Struct. in Comp. Science, Online First, pp. 1 - 25, 2014.
+<a href="http://dx.doi.org/10.1017/S0960129514000140">Doi 10.1017/S0960129514000140</a> 
+<li><a href="http://journals.cambridge.org/article_S0960129514000140">Published Version</a>
+<li><a href="articles/kansoSetzerLightweightIntegrationATPITP.bib">BibTeX</a>
+<li><a href="articles/kansoSetzerLightweightIntegrationATPITP.pdf">pdf-file (Author's Copy)</a>
+</ul>
+
+
+<li> Anton Setzer, Andreas Abel, Brigitte Pientka and David Thibodeau: Unnesting of Copatterns. In Gilles Dowek (Ed): Rewriting and Typed Lambda Calculi. 
+Proceedings RTA-TLCA 2014. LNCS 8560, 2014, pp. 31 - 45. <a href="http://dx.doi.org/10.1007/978-3-319-08918-8_3">Doi 10.1007/978-3-319-08918-8_3</a>
+<ul>
+<li><a href="http://dx.doi.org/10.1007/978-3-319-08918-8_3">Published version</a>
+<li><a href="articles/setzerEtAlRTATLCA2014.bib">BibTeX</a>
+<li><a href="articles/setzerEtAlRTATLCA2014.pdf">Pdf (Author's version)</a>
+</ul>
+
+<li> Philip James,  Andy Lawrence, Faron Moller,  Markus Roggenbach, Monika
+  Seisenberger, Anton Setzer, Karim Kanso and  Simon Chadwick:
+<a href="articles/fmRailBookLectureNotesVersion.pdf">Verification
+  of solid state interlocking programs</a>
+<ul>
+<li> In: Steve Counsell and Manuel Núñez: <a href="http://link.springer.com/book/10.1007/978-3-319-05032-4">Software Engineering and Formal Methods</a>
+SEFM 2013 Collocated Workshops: BEAT2, WS-FMDS, FM-RAIL-Bok, MoKMaSD, and OpenCert, Madrid, Spain, September 23-24, 2013, Revised Selected Papers.
+LNCS 8368, 2014, pp. 253 - 268. <a href="http://dx.doi.org/10.1007/978-3-319-05032-4_19">Doi 10.1007/978-3-319-05032-4_19</a>
+<li> <a href="http://link.springer.com/chapter/10.1007/978-3-319-05032-4_19">Published Version</a>
+<li><a href="articles/fmRailBookLectureNotesVersion.bib">BibTex</a>
+<li><a href="articles/fmRailBookLectureNotesVersion.pdf">Pdf (Author's version)</a>
+</ul>
+
+
+
+<li> Philip James,  Andy Lawrence, Faron Moller,  Markus Roggenbach, Monika
+  Seisenberger, Anton Setzer, Karim Kanso and  Simon Chadwick:
+<a href="articles/fmrailbok2013_swanseagroup_acceptedVersion.pdf">Verification
+  of solid state interlocking programs</a>
+<ul>
+<li> In Stefan Gruner, Haxthausen, Anne Elisabeth, Tom Maibaum and Markus
+  Roggenbach: <a href="http://orbit.dtu.dk/en/publications/towards-a-formal-methods-body-of-knowledge-for-railway-control-and-safety-systems%28e058a0fe-c2c1-4b67-9172-622b555a9d7d%29.html">FM-RAIL-BOK WORKSHOP 2013. Towards a formal methods body of knowledge for railway control and safety systems. Madrid, 23 Sept 2013, affiliated to 
+SEFM'2013 11th International Conference on Software Engineering and Formal
+  Methods,</a> <a href="http://ssfmgroup.wordpress.com/">http://ssfmgroup.wordpress.com/</a>
+<li> Proceedings of <a href="http://ssfmgroup.wordpress.com/">FM-RAIL-BOK WORKSHOP 2013</a>
+<li><a href="http://orbit.dtu.dk/en/publications/towards-a-formal-methods-body-of-knowledge-for-railway-control-and-safety-systems%28e058a0fe-c2c1-4b67-9172-622b555a9d7d%29.html">Published
+    full report</a>
+<li><a href="articles/fmrailbok2013_report_swanseagroup.bib">BibTex</a>
+<li><a href="articles/fmrailbok2013_report_swanseagroup_acceptedVersion.pdf">Pdf (Author's version)</a>
+</ul>
+
+<li> Neal Ghani, Lorenzo Malatesta, Fredrik Nordvall Forsberg and 
+Anton Setzer:<a href="articles/fibred_lics2013.pdf">Fibred Data Types</a>
+<ul>
+<li>LICS 2013, pp. 243 -252. <a href="http://dx.doi.org/10.1109/LICS.2013.30">Doi: 10.1109/LICS.2013.30</a>
+<li><a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6571556">Published Version</a>
+<li><a href="articles/fibred_lics2013.bib">BibTeX</a>
+<li><a href="articles/fibred_lics2013.pdf">Pdf (Author's version)</a>
+</ul>
+
+<li> Andreas Abel, Brigitte Pientka, Anton Setzer and David Thibodeau: 
+<a href="articles/popl13Draft.pdf">Copatterns:
+  programming infinite structures by observations</a>
+<ul>
+<li>Proceedings of POPL 2013, 2013, pp. 27 - 38. <a href="http://dx.doi.org/10.1145/2429069.2429075">Doi 10.1145/2429069.2429075</a>
+<li><a href="http://dl.acm.org/citation.cfm?id=2429075">Published version</a>
+<li><a href="articles/popl2013.bib">BibTex</a>
+<li><a href="articles/popl13Draft.pdf">Author's version</a>
+</ul>
+
+<li><a href="https://personal.cis.strath.ac.uk/fredrik.nordvall-forsberg/">Fredrik Forsberg</a>, Anton Setzer: Inductive-inductive Definitions.
+In: Ulrich Berger, Hannes Diener, Peter Schuster and Monika Seisenberger:
+Logic, Construction, Computation. Ontos mathematical logic 3, 
+De Gruyter, 2012, pp. 259 -- 287, 
+<a href="https://www.degruyter.com/view/product/208943">ISBN 9783110324921</a>,
+doi: <a href="http://dx.doi.org/10.1515/9783110324921.259">10.1515/9783110324921.259</a>
+<ul>
+<li><a href="http://dx.doi.org/10.1515/9783110324921.259">Published Version</a>
+<li><a href="articles/forsbergSetzerInductionInductionSchwichtenbergFestschrift.bib">BibTeX</a>
+<li><a href="articles/forsbergSetzerInductionInductionSchwichtenbergFestschrift.pdf">Pdf (Author's version)</a>
+</ul>
+
+
+<li>Anton Setzer: Coalgebras as Types determined by their Elimination Rules
+<ul>
+<li> In: Peter Dybjer, Sten Lindstr&ouml;m, Erik Palmgren, G&ouml;ran
+  Sundholm: Epistemology versus ontology: Essays on the foundations of
+  mathematics in honour of Per Martin-L&ouml;f. Springer, 2012, pp. 351 --
+  369,
+<a href="http://dx.doi.org/10.1007/978-94-007-4435-6_16">Doi: 10.1007/978-94-007-4435-6_16</a>
+<li> <a href="http://dx.doi.org/10.1007/978-94-007-4435-6_16">Published version </a>
+<li> Author's version
+<ul>
+<li> <a href="articles/setzerMartinLoefFestschrift.dvi">dvi</a>
+<li> <a href="articles/setzerMartinLoefFestschrift.ps">ps</a>
+<li> <a href="articles/setzerMartinLoefFestschrift.pdf">pdf</a>
+<li> <a href="articles/setzerMartinLoefFestschrift.bib">BibTex</a>
+</ul>
+</ul>
+
+
+<li>Thorsten Altenkirch, Peter
+  Morris, <a href="https://personal.cis.strath.ac.uk/fredrik.nordvall-forsberg/">Fredrik
+    Forsberg</a> and  Anton Setzer: A categorical semantics for inductive-inductive definitions.
+<ul>
+<li>In Corradini, Andrea and Klin, Bartek (Eds.) Algebra and Coalgebra in Computer Science. Proceedings of CALCO 2011, LNCS 6859, pp. 70 - 84. 
+<a href="http://dx.doi.org/10.1007/978-3-642-22944-2_6">Doi 10.1007/978-3-642-22944-2_6</a>
+<li><a href="http://dx.doi.org/10.1007/978-3-642-22944-2_6">Published version</a>
+<li><a href="articles/altenkirchForsbergMorrisSetzerCALCO2011.bib">BibTeX</a>
+<li> Author's version
+<ul>
+<li><a href="articles/altenkirchForsbergMorrisSetzerCALCO2011.pdf">Pdf</a>
+</ul>
+</ul>
+
+
+<li><a href="https://personal.cis.strath.ac.uk/fredrik.nordvall-forsberg/">Fredrik Nordvall Forsberg</a>, Anton Setzer: Inductive-inductive Definitions. 
+<ul>
+<li>In Anuj Dawar and Helmut Veith: CSL 2010. Proceedings. Lecture Notes in Computer Science,
+454 - 468. <a href="http://dx.doi.org/10.1007/978-3-642-15205-4_35">Doi 10.1007/978-3-642-15205-4_35</a>
+<li><a href="articles/forsbergSetzerInductionInductionCsl2010.bib">BibTeX</a>
+<li> Author's version
+<ul>
+<li><a href="articles/forsbergSetzerInductionInductionCsl2010.pdf">pdf</a>
+<li><a href="articles/forsbergSetzerInductionInductionCsl2010.ps">ps</a>
+<li><a href="articles/forsbergSetzerInductionInductionCsl2010.dvi">dvi</a>
+</ul>
+</ul>
+
+<li><a href="http://www.mat.uc.pt/~kahle/index.en.html">Reinhard Kahle</a>, Anton Setzer: An extended predicative definition of the Mahlo universe.
+<ul>
+<li>In: <a href="http://www.degruyter.com/view/product/208942">Ralf Schindler (Eds): Ways of ProofTheory. 
+Ontos Series in Mathematical Logic, Ontos Verlag, Frankfurt (Main), Germany, 2010</a>, pp. 315 - 340. ISBN: 978-3-86838-087-3, 
+<a href="http://dx.doi.org/10.1515/9783110324907.315">Doi 10.1515/9783110324907.315</a>
+<li><a href="http://wwwmath.uni-muenster.de/logik/Personen/rds/pohlersfest.html">Webpage with articles of the Festschrift</a> 
+<li><a href="articles/kahleSetzerExtendedPredicativeMahloPohlersFestschrift.bib">BibTeX</a>
+<li> Author's version
+<ul>
+<li><a href="articles/kahleSetzerExtendedPredicativeMahloPohlersFestschrift.pdf">pdf</a>
+<li><a href="articles/kahleSetzerExtendedPredicativeMahloPohlersFestschrift.ps">ps</a>
+<li><a href="articles/kahleSetzerExtendedPredicativeMahloPohlersFestschrift.dvi">dvi</a>
+</ul>
+</ul>
+
+<li>Karim Kanso, <a href="http://www.cs.swan.ac.uk/~csfm/">Faron Moller</a>, Anton Setzer:
+<a href="articles/avocs08postproceedings.dvi">Automated Verification of Signalling Principles in Railway Interlocking Systems</a>
+<ul>
+<li> Electronic Notes in Theoretical Computer Science 250 (2009) 19 - 31.
+<a href="http://dx.doi.org/10.1016/j.entcs.2009.08.015">Doi 10.1016/j.entcs.2009.08.015</a>
+<li><a href="articles/avocs08postproceedings.dvi">Author's version (dvi)</a>
+<li><a href="articles/avocs08postproceedings.pdf">Author's version (pdf)</a>
+<li><a href="articles/avocs08postproceedings.bib">BibTeX</a>
+</ul>
+
+<li>Anton Setzer: <a href="articles/setzerProofTheoryAndMartinLoefTypeTheory.dvi">Proof Theory and Martin-L&ouml;f Type Theory</a>
+<ul>
+<li>In M. v. Atten, P. Boldini, M. Bourdeau, G. Heinzmann (Eds): One Hundred Years of Intuitionism (1907 -- 2007). Birkh&auml;user, 2008, pp. 257 -- 279. ISBN: 978-3764386528. 
+<a href="http://dx.doi.org/10.1007/978-3-7643-8653-5_16">Doi 10.1007/978-3-7643-8653-5_16</a>
+<li><a href="articles/setzerProofTheoryAndMartinLoefTypeTheory.bib">BibTeX</a>
+<li>Author's version:
+<ul>
+<li><a href="articles/setzerProofTheoryAndMartinLoefTypeTheory.dvi">dvi</a>
+<li><a href="articles/setzerProofTheoryAndMartinLoefTypeTheory.ps">ps</a>
+<li><a href="articles/setzerProofTheoryAndMartinLoefTypeTheory.pdf">pdf</a>
+</ul>
+</ul>
+
+<li>A. Setzer: Universes in Type Theory I -- Inacccessibles and Mahlo
+<ul>
+<li> In: A. Andretta, K. Kearnes and D. Zambella: Logic Colloquium 2004. 
+Association of Symbolic Logic, Lecture
+Notes in Logic, 29, Cambridge University Press, 2008, pp. 123 - 156. ISBN: 978-0521884242. 
+<a href="http://dx.doi.org/10.1017/CBO9780511721151.009">Doi 10.1017/CBO9780511721151.009</a>
+<li><a href="articles/modeltypetheoryinaccessiblemahlo.bib">BibTeX-Entry</a>.
+<li> Author's version:
+<ul>
+<li><a href="articles/modeltypetheoryinaccessiblemahlo.dvi">dvi</a>
+<li><a href="articles/modeltypetheoryinaccessiblemahlo.ps">postscript</a>.
+<li><a href="articles/modeltypetheoryinaccessiblemahlo.pdf">pdf-file</a>.
+</ul>
+</ul>
+
+<li>Rose H. Abdul Rauf, <a href="http://cs.swan.ac.uk/~csulrich/">Ulrich Berger</a>, Anton Setzer: <a href="articles/rosebergersetzerIntegratingFunctionalProgrammingIntoCplusplus.dvi">A provably 
+correct translation of the lambda-calculus into a mathematical model of C++</a>
+<ul>
+<li> Jour. Theory of Computing Systems, Vol. 43, Issue 3, December 2008, pp. 298 - 321. 
+<a href="http://dx.doi.org/10.1007/s00224-007-9062-1">Doi: 10.1007/s00224-007-9062-1</a>
+<li><a href="articles/rosebergersetzerIntegratingFunctionalProgrammingIntoCplusplus.bib">BibTeX</a>
+<li> Author's version:
+<ul>
+<li><a href="articles/rosebergersetzerIntegratingFunctionalProgrammingIntoCplusplus.dvi">dvi file</a>
+<li><a href="articles/rosebergersetzerIntegratingFunctionalProgrammingIntoCplusplus.ps">Postscript</a>
+<li><a href="articles/rosebergersetzerIntegratingFunctionalProgrammingIntoCplusplus.pdf">Pdf version</a>
+</ul>
+</ul>
+<li>Rose H. Abdul Rauf, <a href="http://cs.swan.ac.uk/~csulrich/">Ulrich Berger</a>, Anton Setzer: <a href="articles/rosebergersetzerFunctionalConceptsCplusplusPostProceedings.dvi">Functional Concepts in C++</a>.
+<ul>
+<li>In: Henrik Nilsson (Ed.): Trends in Functional Programming. Volume 7, <a href="http://www.intellectbooks.co.uk/series.php?series=1">Series Trends in Functional Programming, Intellect</a>,
+Intellect, Bristol and Chicago, 2007, pp. 163 -- 179. ISBN 978-184150-188-8.
+<li><a href="articles/rosebergersetzerFunctionalConceptsCplusplusPostProceedings.bib">BibTeX</a>
+<li> Author's version:
+<ul>
+<li><a href="articles/rosebergersetzerFunctionalConceptsCplusplusPostProceedings.dvi">dvi file</a>
+<li><a href="articles/rosebergersetzerFunctionalConceptsCplusplusPostProceedings.ps">Postscript</a>
+<li><a href="articles/rosebergersetzerFunctionalConceptsCplusplusPostProceedings.pdf">Pdf version</a>
+</ul>
+</ul>
+
+<li><a href="http://www.cs.swan.ac.uk/~cswill/">Will Harwood</a>,
+<a href="http://www.cs.swan.ac.uk/~csfm/">Faron Moller</a>, 
+Anton Setzer: <a href="articles/csl2006BisimulationApproximants.dvi">Weak Bisimulation Approximants</a>
+<ul>
+<li>In: Zolt&aacute;n &Eacute;sik (Ed): 
+Computer Science Logic.
+20th International Workshop, CSL 2006, 15th Annual Conference of the EACSL, Szeged, Hungary, September 25-29, 2006. Proceedings. Springer Lecture Notes in Computer Science 4207,
+2006, pp. 365 - 379. 
+<a href="http://dx.doi.org/10.1007/11874683_24">Doi 10.1007/11874683_24</a>
+<li>&copy; Springer-Verlag. See as well <a href="http://www.springer.de/comp/lncs/index.html">Lecture Notes in Computer Science</a>
+<li><a href="http://dx.doi.org/10.1007/11874683_24">Published Version</a>
+<li><a href="articles/csl2006BisimulationApproximants.bib">BibTeX</a>
+<li>Author's version
+<ul>
+<li><a href="articles/csl2006BisimulationApproximants.ps">Postscript</a>
+<li><a href="articles/csl2006BisimulationApproximants.pdf">Pdf</a>
+</ul>
+</ul>
+
+
+
+<li>Anton Setzer: <a href="articles/objectOrientedProgrammingInDepTypeTheoryTfp2006PostProceedings.dvi">Object-oriented programming in dependent type theory</a>
+<ul>
+<li>In: Henrik Nilsson (Ed.): Trends in Functional Programming. Volume 7, <a href="http://www.intellectbooks.co.uk/series.php?series=1">Series Trends in Functional Programming, Intellect</a>,
+Intellect, Bristol and Chicago, 2007, pp. 91 -- 108.
+ISBN 978-184150-188-8.
+<li><a href="articles/objectOrientedProgrammingInDepTypeTheoryTfp2006PostProceedings.bib">BibTeX</a>
+<li> Author's version:
+<ul>
+<li><a href="articles/objectOrientedProgrammingInDepTypeTheoryTfp2006PostProceedings.dvi">dvi file</a>
+<li><a href="articles/objectOrientedProgrammingInDepTypeTheoryTfp2006PostProceedings.ps">Postscript</a>
+<li><a href="articles/objectOrientedProgrammingInDepTypeTheoryTfp2006PostProceedings.pdf">Pdf version</a>
+</ul>
+</ul>
+
+
+
+
+
+<li>Anton Setzer: <a href="articles/partialRecFunctionsMLTT.ps">Partial recursive functions
+in Martin-L&ouml;f Type Theory</a>
+<ul>
+<li>&copy; Springer-Verlag. See as well <a href="http://www.springer.de/comp/lncs/index.html">Lecture
+Notes in Computer Science</a>
+<li>In: Arnold Beckmann, Ulrich Berger, Benedikt L&ouml;we, John V. Tucker (Eds): Logical Approaches to Computational Barriers: Second Conference on Computability in Europe, CiE 2006, Swansea, UK, June 30-July 5, 2006. Springer Lecture Notes in Computer Science, 3988, pp. 505 -- 515, 2006. 
+<a href="http://dx.doi.org/10.1007/11780342_51">Doi 10.1007/11780342_51</a>
+<li><a href="http://dx.doi.org/10.1007/11780342_51">Published Version by Springer</a>
+<li><a href="articles/partialRecFunctionsMLTT.bib">BibTeX</a>
+<li>Author's version
+<ul>
+<li><a href="articles/partialRecFunctionsMLTT.dvi">dvi</a>
+<li><a href="articles/partialRecFunctionsMLTT.ps">ps</a>
+<li><a href="articles/partialRecFunctionsMLTT.pdf">pdf</a>
+</ul>
+</ul>
+
+
+<li><a name="DS05"><a href="http://www.cs.chalmers.se/~peterd/">P. Dybjer</a>, A. Setzer: Indexed
+Induction-Recursion. Long version.
+<ul>
+<li>Journal of Logic and Algebraic Programming 66, 1 - 49, 2006. 
+<a href="http://dx.doi.org/10.1007/3-540-45504-3_7">Doi 10.1007/3-540-45504-3_7</a>
+<li><a href="articles/indexedinductionrecursionlong.bib">BibTeX-Entry</a>.
+<li><a href="http://dx.doi.org/10.1016/j.jlap.2005.07.001">Published version</a>
+<li> Author's version:
+<ul>
+<li><a href="articles/indexedinductionrecursionlong.dvi">dvi</a>.
+<li><a href="articles/indexedinductionrecursionlong.ps">postscript</a>.
+<li><a href="articles/indexedinductionrecursionlong.pdf">pdf-file</a>.
+</ul>
+</ul>
+
+<li><a name="MS04"><a href="http://www.cs.swan.ac.uk/~csmichel/">Markus Michelbrink</a>, Anton Setzer: 
+<a href="articles/michelbrinksetzer2004.dvi">State-dependent IO monads in type theory</a></a>
+<ul>
+<li>Electronic Notes in Theoretical Computer Science, 122 (2005).
+127 -- 146. <a href="http://dx.doi.org/10.1016/j.entcs.2004.06.055">Doi 10.1016/j.entcs.2004.06.055</a>
+<li><a href="http://www.sciencedirect.com/science/journal/15710661">Published Version</a>
+<li><a href="articles/michelbrinksetzer2004.bib">BibTeX</a>.
+<li> Author's version:
+<ul>
+<li><a href="articles/michelbrinksetzer2004.ps">postscript</a>.
+<li><a href="articles/michelbrinksetzer2004.pdf">pdf-file</a>.
+</ul>
+</ul>
+
+<li><a href="http://www.dcs.ed.ac.uk/home/pgh/"><a name="HS04a">Peter Hancock</a></a>, Anton Setzer: 
+Interactive programs and weakly final coalgebras
+in dependent type theory.
+<ul>
+<li>In: L. Crosilla and P. Schuster (Eds.): From Sets and Types to Topology and Analysis. Towards Practicable 
+Foundations for Constructive Mathematics, Clarendon Press,
+Oxford, 2005, pp. 115 - 136. ISBN 9780198566519
+<li><a href="articles/venice2004.bib">BibTeX</a>.
+<li> Author's version:
+<ul>
+<li><a href="articles/venice2004.dvi">dvi</a> (diagrams don't  show well; use ps or pdf instead).
+<li><a href="articles/venice2004.ps">postscript</a>.
+<li><a href="articles/venice2004.pdf">pdf-file</a>.
+</ul>
+</ul>
+
+
+<li><a name="Se04">A. Setzer</a>: <a href="articles/overviewProofTheoryTypeTheory2004.dvi">Proof Theory of Martin-L&ouml;f Type Theory -- An Overview</a>. 
+<ul>
+<li><a href="http://msh.revues.org/2959">Mathematiques et Sciences Humaines</a>, 
+42 ann&eacute;e, 165, 2004, p. 59--99.
+<li><a href="articles/overviewProofTheoryTypeTheory2004.bib">BibTex</a>
+<li> Author's version:
+<ul>
+<li><a href="articles/overviewProofTheoryTypeTheory2004.ps">Postscript</a>
+<li><a href="articles/overviewProofTheoryTypeTheory2004.pdf">Pdf</a>
+</ul>
+</ul>
+
+
+
+
+<li><a href="http://www.cs.chalmers.se/~peterd/"><a name="DS03a">P. Dybjer</a></a>,
+(<a href="http://www.cs.chalmers.se/ComputingScience/Research/Logic/">G&ouml;teborg</a>) and 
+A. Setzer: Induction-Recursion and initial algebras. Annals of pure and applied
+logic, 124 (2003), 1 -- 47. <a href="http://dx.doi.org/10.1016/S0168-0072(02)00096-9">Doi 10.1016/S0168-0072(02)00096-9</a>
+<ul>
+<li><a href="http://www.sciencedirect.com/science?_ob=MImg&_imagekey=B6TYB-499F8N1-1-1&_cdi=5614&_user=144092&_orig=browse&_coverDate=12%2F15%2F2003&_sk=998759998&view=c&wchp=dGLbVtz-zSkWA&md5=97b5f8cfe9f6820dd1ee117956a128bb&ie=/sdarticle.pdf">Published Version
+</a> 
+<li><a href="articles/inductionrecursion.bib">BibTeX</a> 
+<li> Author's version:
+<ul>
+<li><a href="articles/inductionrecursion.dvi">dvi Version</a> (Diagrams look better in the postscript version).
+<li><a href="articles/inductionrecursion.ps">postscript</a>.
+<li><a href="articles/inductionrecursion.pdf">pdf-file</a> 
+</ul>
+</ul>
+
+
+<li><a name="Se03a">A. Setzer</a>:  Java as a functional programming language. 
+<ul>
+<li>&copy; Springer-Verlag. See as well <a href="http://www.springer.de/comp/lncs/index.html">Lecture
+Notes in Computer Science</a>
+<li>In: Herman Geuvers, Freek Wiedijk (Eds.): Types for Proofs 
+and Programs: International Workshop, TYPES 2002, Berg en Dal, 
+The Netherlands, April 24-28, 2002. Selected Papers. 
+Springer Lecture Notes in Computer science 2646, 2003, 
+pp. 279 - 298. <a href="http://dx.doi.org/10.1007/3-540-39185-1_16">Doi 10.1007/3-540-39185-1_16</a>
+<li><a href="articles/javafunctional.bib">BibTeX Entry</a>
+<li><a href="http://dx.doi.org/10.1007/3-540-39185-1_16">Published Version</a>
+<li> Author's version:
+<ul>
+<li><a href="articles/javafunctional.dvi">dvi</a>
+<li><a href="articles/javafunctional.ps">postscript</a>
+<li><a href="articles/javafunctional.pdf">pdf-file</a>
+</ul>
+</ul>
+
+
+
+
+<li><a name="DS01"><a href="http://www.cs.chalmers.se/~peterd/">P. Dybjer</a>, A. Setzer</a>: <a href="articles/indexedinductionrecursionshortversion.dvi">Indexed
+Induction-Recursion</a> (Diagrams look better in ps/pdf version).
+<ul>
+<li>In: R. Kahle, P. Schroeder-Heister, R. St&auml;rk (Eds.): 
+Proof Theory in Computer Science. LNCS 2183, pp. 93 -- 113, 2001.
+<a href="http://dx.doi.org/10.1007/3-540-45504-3_7">Doi 10.1007/3-540-45504-3_7</a>
+<li>&copy; Springer-Verlag. See as well <a href="http://www.springer.de/comp/lncs/index.html">Lecture
+Notes in Computer Science</a>
+<li><a href="http://dx.doi.org/10.1007/3-540-45504-3_7">Published Version</a>
+<li><a href="articles/indexedinductionrecursionshortversion.bib">BibTeX</a>.
+<li> Author's version
+<ul>
+<li><a href="articles/indexedinductionrecursionshortversion.ps">postscript</a>.
+<li><a href="articles/indexedinductionrecursionshortversion.pdf">pdf-file</a>.
+</ul>
+</ul>
+
+<li><a href="http://www.dcs.ed.ac.uk/home/pgh/"><a name="HS00a">Peter Hancock</a></a>, Anton Setzer: 
+<a href="articles/ioconf.dvi">Interactive
+programs in dependent type theory</a>
+<ul>
+<li>In: P. Clote, H. Schwichtenberg: Computer Science Logic. 14th 
+international workshop, CSL 2000. Springer Lecture Notes in Computer
+Science, Vol. 1862, pp. 317 - 331, 2000. 
+<a href="http://dx.doi.org/10.1007/3-540-44622-2_21">Doi 10.1007/3-540-44622-2_21</a>
+<li>&copy; Springer-Verlag. 
+See as well <a href="http://www.springer.de/comp/lncs/index.html">Lecture
+Notes in Computer Science</a>
+<li><a href="http://dx.doi.org/10.1007/3-540-44622-2_21">Published Version</a>
+<li><a href="articles/ioconf.bib">BibTeX</a>.
+<li> Author's version
+<ul>
+<li><a href="articles/ioconf.ps">postscript</a>.
+<li><a href="articles/ioconf.pdf">pdf-file</a>.
+</ul>
+<li> Preprint Version
+<ul>
+<li><a href="articles/iopreprint.dvi">Interactive
+programs in dependent type theory</a>.
+U.U.D.M. Report 2000:5, ISSN 1101-3591, Dept. of Mathematics, Uppsala
+University, February 2000.
+<li><a href="articles/iopreprint.ps">postscript</a>
+<li><a href="articles/iopreprint.pdf">pdf-file</a>
+</ul>
+</ul>
+
+<li><a name="Se00a">A. Setzer</a>: Extending Martin-L&ouml;f Type Theory by one
+Mahlo-Universe. Arch. Math. Log (2000), 39: 155 - 181. 
+<a href="http://dx.doi.org/10.1007/s001530050140">Doi: 10.1007/s001530050140</a>
+<ul>
+<li><a href="http://dx.doi.org/10.1007/s001530050140">Published Version</a>
+<li><a href="articles/mahlo.bib">BibTeX Entry</a>.
+<li> Author's version:
+<ul>
+<li><a href="articles/mahlo.dvi">dvi</a>
+<li><a href="articles/mahlo.ps">postscript</a>.
+<li><a href="articles/mahlo.pdf">pdf-file</a>.
+</ul>
+</ul>
+
+<li><a name="Se00b">A. Setzer</a>:Ordinal systems part 2: One inaccessible.
+<ul>
+<li> In: S. Buss, P. Hajek, P. Pudlak (Eds.): 
+Logic Colloquium '98. ASL Lecture Notes in Logic 13, 
+Peters Ltd, Natick, Massachusetts, 2000, pp. 426 - 448.
+ISBN 1-56881-114-4
+<li><a href="articles/ordsystwo.bib">
+BibTeX</a>.
+<li> Author's version:
+<ul>
+<li><a href="articles/ordsystwo.dvi">dvi</a>
+<li><a href="articles/ordsystwo.ps">
+postscript</a>. 
+<li><a href="articles/ordsystwo.pdf">
+pdf-file</a>.
+</ul>
+</ul>
+
+
+
+<li><a name="DS99"><a href="http://www.cs.chalmers.se/~peterd/">P. Dybjer</a>,
+(<a href="http://www.cs.chalmers.se/ComputingScience/Research/Logic/">G&ouml;teborg</a>) and 
+A. Setzer 
+<a href="articles/tlca99.dvi">
+A finite axiomatization of inductive-recursive definitions.</a></a>
+<ul>
+<li>In: Girard, J.-Y. (Ed.): Typed Lambda Calculi and Applications.
+Proceedings of TLCA'99, L'Aquila, Italy, Springer Lecture Notes in Computer
+Science, Vol. 1581, pp. 129 - 146, 1999.
+<a href="http://dx.doi.org/10.2307/2586750">Doi 10.2307/2586750</a>
+<li>&copy; Springer-Verlag. See as well <a href="http://www.springer.de/comp/lncs/index.html">Lecture
+Notes in Computer Science</a>
+<li><a href="http://dx.doi.org/10.2307/2586750">Published Version</a>
+<li><a href="articles/tlca99.bib">BibTeX</a>. 
+<li> Author's version
+<ul>
+<li><a href="articles/tlca99.ps">postscript</a>. 
+<li><a href="articles/tlca99.pdf">pdf-file</a>. 
+</ul>
+</ul>
+
+
+
+
+
+<li><a href="http://www.iamwww.unibe.ch/~til/staff/jaeger.html"><a name="JKSS99">G. J&auml;ger</a></a>,
+<a href="http://www-ls.informatik.uni-tuebingen.de/logik/kahle/index.html">Reinhard Kahle</a>,
+Anton Setzer, 
+<a href="http://www.iamwww.unibe.ch/~til/staff/strahm.html">T. Strahm</a>:
+The 
+proof-theoretic analysis of transfinitely iterated fixed point theories.
+<ul>
+<li>In Journal of Symbolic Logic 64, 1: 53 - 67, 1999.
+<a href="http://dx.doi.org/10.2307/2586750">Doi 10.2307/2586750</a>
+<li><a href="articles/jkss.bib">BibTeX</a>
+<li><a href="http://projecteuclid.org/euclid.jsl/1183745691">Published Version</a>
+<li> Author's version:
+<ul>
+<li><a href="articles/jkss.pdf">pdf</a>
+</ul>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+<li><a name="Se99a">A. Setzer</a>: Ordinal systems.</a>
+<ul>
+<li>In B. Cooper and J. Truss (Eds.): Sets and Proofs, Cambridge University
+Press, Cambridge, pp. 301 - 331, 1999. ISBN 0-521-63549-7.
+<li><a href="articles/ordsys.bib">BibTeX</a>
+<li>Some mistakes have been detected. Here are the corrections:
+<ul>
+<li><a href="articles/corrordsys.dvi">Corrections</a>
+<ul>
+<li><a href="articles/corrordsys.ps">postscript</a>
+<li><a href="articles/corrordsys.pdf">pdf-file</a>
+</ul>
+<li><a href="articles/ordsyscor010124.dvi">Corrected
+version of Ordinal Systems</a>
+<ul>
+<li><a href="articles/ordsyscor010124.ps">postscript</a> 
+<li><a href="articles/ordsyscor010124.pdf">pdf-file</a>
+<li> Some people have problems with printing this file, therefore
+here is the 
+<a href="articles/ordsys010124.tex">Latex-source</a>
+</ul> 
+</ul>
+</ul>
+
+<li><a href="http://www.tcs.informatik.uni-muenchen.de/~clote/">Peter Clote</a>, 
+Anton Setzer:
+<a href="articles/clote.ps">On PHP, st-connectivity, and odd charged graphs</a>
+<ul>
+<li>In: P. Beame, S. Buss (Eds.): Proof complexity and feasible arithemetics.
+DIMACS workshop April 21 - 24, 1996. American Mathematical Society,
+1998, pp. 73 - 92.
+<li> Author's version:
+<ul>
+<LI><a href="articles/clote.pdf">pdf-file</a>.
+</ul>
+</ul>
+
+
+
+
+<li> <a name="Se98a">A. Setzer</a>: 
+Well-ordering proofs for Martin-L&ouml;f Type Theory with 
+W-type and one Universe. Annals of Pure and applied
+Logic, 92 (1998), 113 - 159. <a href="http://dx.doi.org/10.1016/S0168-0072(97)00078-X">Doi 10.1016/S0168-0072(97)00078-X</a>
+<ul>
+<li><a href="articles/2papdiss.bib">BibTeX</a>
+<li> Author's version:
+<ul>
+<li><a href="articles/2papdiss.dvi">dvi</a>
+<li><a href="articles/2papdiss.ps">postscript</a>. 
+<li><a href="articles/2papdiss.pdf">pdf-file</a>. 
+</ul>
+<li>Reviewed in Bulletin of Symbolic Logic, Vol. 6, Number 4, Dec 2000,
+pp. 478 - 479
+</ul>
+
+
+
+
+
+
+<li><a name="Se98b">A. Setzer</a>: 
+An introduction to well-ordering proofs in Martin-L&ouml;f's type theory.
+<ul>
+<li>In: G. Sambin and J. Smith (Ed.): 
+Twenty-five years of constructive type theory,
+Clarendon Press, Oxford, 1998, pp. 245 - 263. ISBN: 978-0-19-850127-5
+<li><a href="articles/venedig.bib">BibTeX</a>
+<li> Author's version:
+<ul>
+<li><a href="articles/venedig.dvi">dvi</a>
+<li><a href="articles/venedig.ps">postscript</a>.
+<li><a href="articles/venedig.pdf">pdf-file</a>.
+</ul>
+</ul>
+
+<li> <a name="Se97a">A. Setzer</a>: <a href="articles/kgc97.dvi">Translating set theoretical proofs into type theoretical
+programs.</a> 
+<ul>
+<li>In: G. Gottlob, A. Leitsch, D. Mundici (Eds.): Computational
+Logic and Proof Theory. 5th Kurt G&ouml;del Colloquium, KGC' 97.
+Springer Lecture Notes in Computer
+Science, 1289, 1997, pp. 278 - 289.
+<a href="http://dx.doi.org/10.1007/3-540-63385-5_50">Doi 10.1007/3-540-63385-5_50</a>
+<li>&copy; Springer-Verlag. See as well <a href="http://www.springer.de/comp/lncs/index.html">Lecture
+Notes in Computer Science</a>
+<li><a href="http://dx.doi.org/10.1007/3-540-63385-5_50">Published Version by Springer</a>
+<li><a href="articles/kgc97.pdf">BibTeX</a>.
+<li> Author's version
+<ul>
+<li><a href="articles/kgc97.ps">postscript</a>.
+<li><a href="articles/kgc97.pdf">pdf-file</a>.
+</ul>
+</ul>
+
+
+
+
+<li><a name="Se96a">A. Setzer</a>: <a href="articles/csl96.dvi">Inductive definitions with decidable atomic formulas.</a>
+<ul>
+<li>In: D. van Dalen, M. Bezem (Eds.): Computer Science Logic.
+10th International workshop CSL '96. Springer Lecture Notes in Computer
+Science, 1258, 1997, pp. 414 - 431.
+<a href="http://dx.doi.org/10.1007/3-540-63172-0_53">Doi 10.1007/3-540-63172-0_53</a>
+<li>&copy; Springer-Verlag. See as well <a href="http://www.springer.de/comp/lncs/index.html">Lecture
+Notes in Computer Science</a>
+<li><a href="http://dx.doi.org/10.1007/3-540-63172-0_53">Published Version by Springer</a>
+<li><a href="articles/csl96.bib">BibTeX</a>.
+<li> Author's version
+<ul>
+<li><a href="articles/csl96.ps">postscript</a>.
+<li><a href="articles/csl96.pdf">pdf-file</a>.
+</ul>
+</ul>
+</ul>
+
+
+
+
+<h2><font face="Arial">Theses</font></h2>
+<ul>
+<li><a name="Se93">A. Setzer</a>: <a href="articles/weor0.dvi"> 
+Proof theoretical analysis of Martin-L&ouml;f Type Theory with 
+W-type and one Universe.</a>
+<ul>
+<li>PhD-thesis, 140 pp., 1993.
+<li><a href="articles/weor0.ps">postscript</a>. 
+<li><a href="articles/weor0.pdf">pdf-file</a>. 
+<li><a href="articles/weor0.bib">BibTeX</a>. 
+</ul>
+<li><a name="Se90">A. Setzer</a>: <a href="articles/diplcha0.dvi"> 
+Ordinalzahlanalyse pr&auml;dikativer Theorien unter Verwendung von
+Fundamentalfolgen.</a>
+Master's Thesis, 116 pp., 1990.
+<ul>
+<li><a href="articles/diplcha0.ps">postscript</a>.
+<li><a href="articles/diplcha0.pdf">pdf-file</a>. 
+<li><a href="articles/diplcha0.bib">BibTeX</a>. 
+</ul>
+</ul>
+
+
+<h2><font face="Arial">Reports, <a name="Reports">Submissions, Electronic Proceedings</a></font></h2>
+
+
+<ul>
+
+<Li> Bashar Igried and Anton setzer: <a href="articles/basharIgriedTraceSemanticsCSPAgdaSubmitted.pdf">Defining Trace Semantics for CSP-Agda</a>
+<ul>
+<li>Submitted, 22 January 2017.
+<li><a href="articles/basharIgriedTraceSemanticsCSPAgdaSubmitted.pdf">Pdf (Draft)</a>
+<li><a href="articles/basharIgriedTraceSemanticsCSPAgdaSubmitted.bib">BibTeX</a>
+</ul>
+
+
+<li>Karim Kanso, Anton Setzer: Integrating Automated and Interactive 
+Theorem Proving in Type Theory. 
+<ul>
+<li> In: 
+Jens Bendisposto, Michael Leuschel, Markus Roggenbach (Eds.): 
+<a href="http://www.formal-methods.de/avocs10/programme.html">Proceedings of AVOCS 2010</a>.
+<li><a href="articles/kansoSetzerAvocs2010.bib">BibTeX</a>
+<li><a href="articles/kansoSetzerAvocs2010.pdf">Pdf</a>
+</ul>
+<li>Anton Setzer: Universes in Type Theory Part II -- Autonomous Mahlo.
+<ul>
+<li>After revision accepted for publication in Journal of Symbolic Logic, 2010
+<li><a href="articles/modelautomahlomain.bib">BibTeX</a>
+<li> Author's version:
+<ul>
+<li><a href="articles/modelautomahlomain.pdf">pdf</a>
+
+<li><a href="articles/modelautomahlomain.ps">ps</a>
+<li><a href="articles/modelautomahlomain.dvi">dvi</a>
+</ul>
+</ul>
+
+
+
+
+<li>Karim Kanso, Anton Setzer: Specifying Railway Interlocking Systems.
+<ul>
+<li>In: Liam O'Reilly and Markus Roggenbach: AVoCS'09 -- 
+PreProceedings of the Ninth International Workshop on Automated Verification of Critical Systems. Swansea University, Wales, UK, Technical Report of Computer
+Science CSR-2-2009, 2009, pp 233 -- 236, <a href="http://www.cs.swan.ac.uk/avocs09/PreProceedings.pdf">http://www.cs.swan.ac.uk/avocs09/PreProceedings.pdf</a>.
+<li><a href="articles/avocs09.dvi">dvi</a>
+<li><a href="articles/avocs09.pdf">pdf</a>
+<li><a href="articles/avocs09.bib">BibTeX</a>
+</ul>
+
+<li>Karim Kanso, <a href="http://www.cs.swan.ac.uk/~csfm/">Faron Moller</a>, Anton Setzer:
+<a href="articles/avocs08.dvi">Automated Verification of Safety Properties 
+in Railway Interlocking Systems Defined with Ladder Logic</a>
+<ul>
+<li>In: Muffy Calder and Alice Miller (Eds.): 
+<a href="http://www.dcs.gla.ac.uk/avocs08/AVoCsProgramme.pdf">Proceedings of AVOCS'08. Eighth International Workshop on Automated Verification of Critical
+Systems. University of Glasgow, 30. Sept. -- 1 Oct 2008</a>, 2008, pp. 77 -- 79.
+<li><a href="articles/avocs08.dvi">dvi</a>
+<li><a href="articles/avocs08.ps">ps</a>
+<li><a href="articles/avocs08.pdf">pdf</a>
+<li><a href="articles/avocs08.bib">BibTeX</a>
+</ul>
+<li>Anton Setzer: <a href="articles/setzerDataTypeParRecPostProceedings.ps">A data type of partial recursive functions in Martin-L&ouml;f type theory</a>
+<ul>
+<li>Submitted.
+<li><a href="articles/setzerDataTypeParRecPostProceedings.dvi">dvi</a>
+<li><a href="articles/setzerDataTypeParRecPostProceedings.ps">ps</a>
+<li><a href="articles/setzerDataTypeParRecPostProceedings.pdf">pdf</a>
+<li><a href="articles/setzerDataTypeParRecPostProceedings.bib">BibTeX</a>
+</ul>
+
+<li>Anton Setzer: <a href="articles/objectOrientedProgrammingInDepTypeTheoryTfp2006.dvi">Object-oriented programming in dependent type theory</a>
+<ul>
+<li>In <a href="http://www.cs.nott.ac.uk/~nhn/TFP2006/TFP2006-Programme.html">conference proceedings of TFP 2006</a>, 2006.
+<li><a href="articles/objectOrientedProgrammingInDepTypeTheoryTfp2006.dvi">dvi file</a>
+<li><a href="articles/objectOrientedProgrammingInDepTypeTheoryTfp2006.ps">Postscript</a>
+<li><a href="articles/objectOrientedProgrammingInDepTypeTheoryTfp2006.pdf">Pdf version</a>
+<li><a href="articles/objectOrientedProgrammingInDepTypeTheoryTfp2006.bib">BibTeX</a>
+</ul>
+
+
+<li>Rose H. Abdul Rauf, <a href="http://cs.swan.ac.uk/~csulrich/">Ulrich Berger</a>, Anton Setzer: <a href="articles/rosebergersetzerFunctionalConceptsCplusplus.dvi">Functional 
+Concepts in C++</a>
+<ul>
+<li>In <a href="http://www.cs.nott.ac.uk/~nhn/TFP2006/TFP2006-Programme.html">conference proceedings of TFP 2006</a>, 2006.
+<li><a href="articles/rosebergersetzerFunctionalConceptsCplusplus.dvi">dvi file</a>
+<li><a href="articles/rosebergersetzerFunctionalConceptsCplusplus.ps">Postscript</a>
+<li><a href="articles/rosebergersetzerFunctionalConceptsCplusplus.pdf">Pdf version</a>
+<li><a href="articles/rosebergersetzerFunctionalConceptsCplusplus.bib">BibTeX</a>
+</ul>
+
+
+<li>Anton Setzer: <a href="articles/modelpi3refluniv.dvi">Universes in Type Theory Part II -- Autonomous Mahlo and Pi_3-Reflection</a>. 
+<ul>
+<li>32 pages, submitted, 2005.
+<li><a href="articles/modelpi3refluniv.dvi">dvi</a>
+<li><a href="articles/modelpi3refluniv.ps">postscript</a>
+<li><a href="articles/modelpi3refluniv.pdf">pdf-file</a>
+<li><a href="articles/modelpi3refluniv.bib">BibTeX-Entry</a>
+</ul>
+
+<li><a href="http://www.dcs.ed.ac.uk/home/pgh/"><a name="HS04b">Peter Hancock</a></a>, Anton Setzer: 
+<a href="articles/dagstuhl2004.ps">Guarded induction and weakly final coalgebras
+in dependent type theory (Extended Version)</a>
+<ul>
+<li>30 pages. In electronic proceedings of the 
+workshop No. 04381 ``Dependently typed programming'',
+Dagstuhl, 2004, <a href="http://drops.dagstuhl.de/opus/volltexte/2005/176/">http://drops.dagstuhl.de/opus/volltexte/2005/176/</a>.
+<li><a href="articles/dagstuhl2004.dvi">dvi</a> (diagrams don't  show well; use ps or pdf instead).
+<li><a href="articles/dagstuhl2004.ps">postscript</a>.
+<li><a href="articles/dagstuhl2004.pdf">pdf-file</a>.
+<li><a href="articles/dagstuhl2004.bib">BibTeX</a>.
+</ul>
+
+
+
+
+<li><a href="http://www.dcs.ed.ac.uk/home/pgh/"><a name="HS00b">Peter Hancock</a></a>,
+Anton Setzer: 
+<a href="articles/dtp00.ps">Specifying interactions with dependent types</a>,<br>
+<a href="http://www-sop.inria.fr/oasis/DTP00/">
+      Workshop on subtyping and dependent types in programming</a>,
+      Ponte de Lima, Portugal, 7 July 2000. 13 pages.
+<ul>
+<li><a href="articles/dtp00.pdf">pdf-file</a>
+<li><a href="articles/dtp00.ps">postscript</a>
+<li><a href="articles/dtp00.bib">BibTeX-Entry</a>
+</ul>
+
+
+
+
+
+<li><a href="http://www.dcs.ed.ac.uk/home/pgh/"><a name="HS99">Peter Hancock</a></a>,
+Anton Setzer: The IO monad in dependent type theory<br>
+(<a href="http://www.md.chalmers.se/Cs/Research/Semantics/APPSEM/dtp99.html">
+      Workshop on Dependent Types in Programming</a>,
+      G&ouml;teborg 27-28 March 1999)
+<ul>
+<li> Extended slides: 
+<ul>
+<li><a href="articles/dtp99.dvi">dvi</a>,
+<li><a href="articles/dtp99.ps">postscript</a>,
+<li><a href="articles/dtp99.pdf">pdf-file</a>,
+<li><a href="articles/dtp99.bib">BibTeX-Entry</a>.
+</ul>
+<li> <a href="articles/dtp99.half">Normalizing version with state-dependend
+IO, type checked in Half</a>
+</ul>
+
+
+<li><a href="http://www.cs.chalmers.se/~peterd/"><a name="DS98">P. Dybjer</a></a>,
+(<a href="http://www.cs.chalmers.se/ComputingScience/Research/Logic/">G&ouml;teborg</a>) and 
+Anton Setzer:
+Finite axiomatizations of inductive and inductive-recursive definitions.<br>
+(<a href="http://www.cs.ruu.nl/people/johanj/programme_wgp98.html">Workshop
+on Generic Programming</a> Marstrand, Sweden, 18 June 1998)
+<ul>
+<li><a href="articles/genprog98.ps">postscript</a>.
+<li><a href="articles/genprog98.pdf">pdf-file</a>.
+<li><a href="articles/genprog98.bib">BibTeX</a>.
+</ul>
+
+
+</ul>
+
+<h2><font face="Reviews">Reviews</font></h2>
+<ul>
+<li>Bulletin of Symboli Logic
+<ul>
+<li>Review of J. Roger Hindley, Basic simple
+type theory, Bull. Sym. Log., 64, 4: 1832 - 1833, 1999
+</ul>
+<li>Zentralblatt MATH
+<ul>
+<li> Tupailo, Sergei: Finitary reductions for local predicativity. 
+I: Recursively regular ordinals. In 
+Buss, Samuel R. (ed.) et al., Logic colloquium '98. 
+A K Peters, Lect. Notes Log. 13, 465-499 (2000). 
+Zentralblatt MATH, 0949.03053 
+<li>J. Avigad. Interpreting classical theories in constructive ones. J. Symb. Log. 65, No. 4, 1785-1812 (2000). Review No. 0981.03061.
+<li>A. Troelstra; H. Schwichtenberg: Basic proof theory. 2nd Ed. Cambridge University Press. 417 p., 2000. Review No. 0957.03053.
+<li>W. Buchholz: Explaining the Gentzen-Takeuti reduction steps: A second-order system. Arch. Math. Log. 40, No. 4, 255-272 (2001). Review No. Zbl 1007.03051.
+<li>S. Buss; P. Pudlak: On the computational content of intuitionistic propositional proofs. Ann. Pure Appl. Logic 109, No. 1-2, 255-272 (2001). Review No. Zbl 1009.03027.
+<li>T. Carlson: Elementary patterns of resemblance. Ann. Pure Appl. Logic 108, No. 1-3, 19-77 (2001). Review No. Zbl. 1009.03026.
+<li>C. Urban; G. Bierman: Strong normalisation of cut-elimination in classical logic. Fundam. Inform. 45, No. 1-2, 123-155 (2001). Review No. Zbl 0982.03032.
+</ul>
+<li>Mathematical Reviews
+<ul>
+<li>Kachapova, F. A generalization of Beth model to functionals of high types. Proceedings of the 12th Asian Logic Conference, 185--209, World Sci. Publ., Hackensack, NJ, 2013. 03F55 (03B15). Review MR3289543 submitted.
+<li>P. Dybjer: A general formulation of simultaneous inductive-recursive definitions in type theory. J. Symb. Log. 65 (2000), no. 2, 525-549. Review No. 2001i:03025.
+<li>S. Feferman: Does reductive proof theory have a viable rationale? Erkenntnis 53, 63-96 (2000). Review No. 2002a:03116.B. 
+<li>Nordstr&ouml;m, K. Petersson, J. M. Smith: Martin-L&ouml;f's type theory. In: Handbook of logic in computer science, Vol. 5, 1-37, Oxford Univ. Press, 2000. Review No. 2002k:03015.
+<li>D. Fridlender: A proof-irrelevant model of Martin-L&ouml;f's logical framework. Math. Structures Comput. Sci. 12 (2002), no. 6, 771-795. Review submitted.
+<li>S. Valentini, Extensionality versus constructivity. Math. Log. Quaterly 48 (2002), no. 2, 179-187. Review No. 2002a:03116.
+<li>A. Beckmann, C. Pollett, R. Samuel: Ordinal notations and well-orderings in bounded arithmetic. Ann. Pure Appl. Logic 120 (2003), no. 1-2, 63-96. Review No. 2002a:03116.
+<li>R. Kahle Universes over Frege structures. Ann. Pure Appl. Logic 119 (2003), no. 1 -3, 191-223. Review submitted.
+<li>M. Rathjen:  Realizing Mahlo set theory in type theory. Arch. Math. Log. 42 (2003), no. 1, 89 - 101. Review submitted.
+<li>S. Valentini: A Cartesian closed category in Martin -L&ouml;f's intuitionistic type theory. Theoret. Comput. Sci. 290 (2003), no. 1, 189-219. Review submitted. 
+</ul>
+</ul>
+
+<h2><font face="Arial">Abstracts</font></h2>
+<ul>
+<li>A. Setzer: <a href="articles/logcoll08.dvi">Weakly final coalgebras in Martin-L&ouml;f type theory.</a> 
+Abstract for Logic Colloquium '08. To appear in Bulletin of Symbolic Logic. 
+(<a href="articles/logcoll08.ps">postscript</a>, <a href="articles/logcoll08.pdf">pdf</a>)
+<li>A. Setzer: <a href="articles/logcoll98.ps">The role of large cardinals in ordinal notation systems.</a> 
+Abstract for Logic Colloquium '98. Bulletin of Symbolic Logic, 5:66-67, 1999.
+(<a href="articles/logcoll98.pdf">pdf</a>)
+<li>A. Setzer: <a href="articles/logcoll97.ps">Why large cardinals are not needed for denoting small ordinals.</a>
+Abstract for Logic Colloquium '97. Bulletin of Symbolic Logic,
+4:72, 1998. (<a href="articles/logcoll97.pd">pdf-file</a>)
+<li>A. Setzer: <a href="articles/logcoll96.ps">Defining the least universe in Martin-L&ouml;f's type theory.</a>
+Abstract for Logic Colloquium '96. Bulletin of Symbolic Logic,
+3:276 - 277, 1997. (<a href="articles/logcoll96.pdf">pdf-file</a>, <a href="articles/logcoll96.bib">BibTeX</a>)
+<li> A. Setzer:
+<a href="articles/logcoll95.ps">A type theory 
+with one Mahlo universe.</a> Abstract for Logic
+  Colloquium 95. Bulletin of Symbolic Logic, 3:128 - 129, 1997.
+(<a href="articles/logcoll95.pdf">pdf-file</a>).
+<li> A. Setzer: <a href="articles/logcoll94.ps">Proof theoretical strength of Martin-L&ouml;f Type Theory.</a> Abstract for Logic Colloquium 1994. 
+Bulletin of Symbolic Logic, 1:260, 1995.
+(<a href="articles/logcoll94.pdf">pdf-file</a>).
+</ul>
+</ul>
+
+
+<h2><font face="Arial">Drafts</font></h2>
+<ul>
+
+<li><a href="articles/researchMethodologiesInComputerScience.pdf">Research Methodologies</a>
+<ul>
+<li><a href="articles/researchMethodologiesInComputerScience.bib">BibTex</a>
+</ul>
+
+</ul>
+
+
+<li><a name="Se98c">A. Setzer</a>:  <a href="articles/pi37.dvi">Rules for the
+Pi_3-reflecting Universe</A>, 1998. 
+(<a href="articles/pi37.ps">postscript</a>,
+<a href="articles/pi37.pdf">pdf-file</a>)
+<li><a name="Se97b">A. Setzer</a>:<a href="articles/wheel.dvi">Wheels</a>,
+8 pp, 1997. (<a href="articles/wheel.ps">postscript</a>,
+<a href="articles/wheel.pdf">pdf-file</a>,
+<a href="articles/wheel.bib">BibTex</a>))
+<li>A. Setzer: <a href="articles/1papdiss.dvi"> 
+An upper bound for the proof theoretical strength of 
+Martin-L&ouml;f Type Theory with W-type and one Universe </a>, 33pp,  1996.
+(<a href="articles/1papdiss.ps">postscript</a>, 
+<a href="articles/1papdiss.pdf">pdf-file</a>) 
+<li>A. Setzer:  <a href="articles/embkpiml.dvi"> 
+Set theoretical proofs as type theoretical programs. </a>
+10pp. Draft. (<a href="articles/embkpiml.ps">postscript</a>,
+<a href="articles/embkpiml.pdf">pdf-file</a>). 
+<li><a name="Se96c">A. Setzer</a>:  <a href="articles/uppermahlo.dvi">A Model for a type theory with one Mahlo Universe</a>,
+10pp, 1996. (<a href="articles/uppermahlo.ps">postscript</a>,
+<a href="articles/uppermahlo.pdf">pdf-file</a>,<a href="articles/uppermahlo.bib">BibTeX-Entry</a>)
+<li><a name="Se94a">A. Setzer</a>:  <a href="articles/PP.dvi">A type theory for iterated inductive definitions</a>,
+14pp. , 1994. (<a href="articles/PP.ps">postscript</a>, <a href="articles/PP.pdf">pdf-file</a>,
+<a href="articles/PP.bib">Bib-Entry</a>) 
+</ul>
+
+<h2><font face="Arial">Lecture Notes</font></h2>
+<ul>
+<li> <a href="articles/logikmn2.dvi">Logik MN2</a> (Logic 2 course)
+(<a href="articles/logikmn2.ps">postscript</a>,
+<a href="articles/logikmn2.pdf">pdf-file</a>).
+<li> <a href="articles/constrmath.dvi">HA^omega, 
+constructive reals and lambda-calculus</a>
+(Contains the later parts of the course 
+<a href="foerelaesning/constrmath/index.html">"Constructive Mathematics and Lambda Calculus"</a>,
+<a href="articles/constrmath.ps">postscript</a>,
+<a href="articles/constrmath.pdf">pdf-file</a>).
+</ul>
+
+<HR>
+
+<!-- <BASE HREF="https://www.swansea.ac.uk/compsci/"> -->
+
+<!-- <P ALIGN=CENTER><IMG ISMAP SRC="images/Navigation.gif" USEMAP="#Navigation" BORDER=0 HEIGHT=68 WIDTH=600>
+<MAP NAME="Navigation">
+<AREA SHAPE="RECT" COORDS="  0,0, 60,67" HREF="http://www.swan.ac.uk/">
+<AREA SHAPE="RECT" COORDS=" 80,0,155,67" HREF="index.html">
+<AREA SHAPE="RECT" COORDS="170,0,245,67" HREF="dept/index.html">
+<AREA SHAPE="RECT" COORDS="260,0,335,67" HREF="https://www.swansea.ac.uk/compsci/researchandimpact/">
+<AREA SHAPE="RECT" COORDS="350,0,425,67" HREF="https://www.swansea.ac.uk/compsci/undergraduate/">
+</MAP>
+-->
+
+<P ALIGN=CENTER>
+<A HREF="http://www.swan.ac.uk/">University Home</A> |
+<A HREF="https://www.swansea.ac.uk/compsci/">Computer Science Home</A><BR>
+<A HREF="https://www.swansea.ac.uk/compsci/">About the Department</A> |
+<A HREF="https://www.swansea.ac.uk/compsci/researchandimpact/">Research</A> |
+<A HREF="https://www.swansea.ac.uk/compsci/undergraduate/">Teaching</A> |
+<A HREF="resources/Resources.html">Online Resources</A> |
+
+
+
+    &nbsp; <p>&nbsp; <br>
+    &nbsp; <br>
+    &nbsp; <br>
+    &nbsp; <br>
+    &nbsp;</p>
+  </li>
+</ol>
+    <address><img src="images/signature.gif" height="20" width="200" alt="Replace '_dot_' by '.' and '_at_' by '@' in 'a_dot_g_dot_setzer_at_swan_dot_ac_dot_uk'"></address>
+<!-- Created: Sun Oct 28 21:04:30 GMT 2001 -->
+<!-- hhmts start -->
+Last modified: Wed Oct 17 22:11:49 BST 2012
+<!-- hhmts end -->
+</body>
+
+</html>
+
+

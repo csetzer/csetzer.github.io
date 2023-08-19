@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>GUI.GUIExample</title><link rel="stylesheet" href="Agda.css"></head><body><pre><a id="1" class="Keyword">open</a> <a id="6" class="Keyword">import</a> <a id="13" href="Data.Bool.html" class="Module">Data.Bool</a>
+
+<a id="24" class="Keyword">module</a> <a id="31" href="GUI.GUIExample.html" class="Module">GUI.GUIExample</a>   <a id="48" class="Keyword">where</a>
+
+<a id="55" class="Comment">-- open import GUIgeneric.Prelude renaming (inj₁ to secondBtn; inj₂ to firstBtn)</a>
+
+<a id="137" class="Comment">-- open import GUIgeneric.PreludeGUI renaming (WxColor to Color) hiding ( _&gt;&gt;_)</a>
+
+<a id="218" class="Keyword">open</a> <a id="223" class="Keyword">import</a> <a id="230" href="StateSizedIO.GUI.BaseStateDependent.html" class="Module">StateSizedIO.GUI.BaseStateDependent</a>
+<a id="266" class="Keyword">open</a> <a id="271" class="Keyword">import</a> <a id="278" href="StateSizedIO.writingOOsUsingIOVers4ReaderMethods.html" class="Module">StateSizedIO.writingOOsUsingIOVers4ReaderMethods</a> <a id="327" class="Keyword">hiding</a> <a id="334" class="Symbol">(</a><a id="335" href="StateSizedIO.writingOOsUsingIOVers4ReaderMethods.html#20924" class="Function">nˢ</a><a id="337" class="Symbol">)</a> <a id="339" class="Keyword">renaming</a><a id="347" class="Symbol">(</a><a id="348" href="StateSizedIO.writingOOsUsingIOVers4ReaderMethods.html#3601" class="InductiveConstructor">execˢⁱ</a> <a id="355" class="Symbol">to</a> <a id="358" href="StateSizedIO.writingOOsUsingIOVers4ReaderMethods.html#3601" class="InductiveConstructor">execᵢ</a> <a id="364" class="Symbol">;</a> <a id="366" href="StateSizedIO.writingOOsUsingIOVers4ReaderMethods.html#3684" class="InductiveConstructor">returnˢⁱ</a> <a id="375" class="Symbol">to</a> <a id="378" href="StateSizedIO.writingOOsUsingIOVers4ReaderMethods.html#3684" class="InductiveConstructor">returnᵢ</a><a id="385" class="Symbol">)</a>
+<a id="387" class="Keyword">open</a> <a id="392" class="Keyword">import</a> <a id="399" href="GUI.Vers1.GUIDefinitions.html" class="Module">GUI.Vers1.GUIDefinitions</a>
+<a id="424" class="Keyword">open</a> <a id="429" class="Keyword">import</a> <a id="436" href="GUI.Vers1.GUIDefinitionsBase.html" class="Module">GUI.Vers1.GUIDefinitionsBase</a>
+<a id="465" class="Keyword">open</a> <a id="470" class="Keyword">import</a> <a id="477" href="SizedIO.Base.html" class="Module">SizedIO.Base</a> <a id="490" class="Keyword">hiding</a> <a id="497" class="Symbol">(</a><a id="498" href="SizedIO.Base.html#1840" class="Function Operator">_&gt;&gt;_</a><a id="502" class="Symbol">)</a>
+<a id="504" class="Keyword">open</a> <a id="509" class="Keyword">import</a> <a id="516" href="SizedIO.Console.html" class="Module">SizedIO.Console</a>
+
+<a id="533" class="Keyword">open</a> <a id="538" class="Keyword">import</a> <a id="545" href="Data.String.html" class="Module">Data.String</a>
+<a id="557" class="Keyword">open</a> <a id="562" class="Keyword">import</a> <a id="569" href="GUI.Vers1.GUIExampleLib.html" class="Module">GUI.Vers1.GUIExampleLib</a>
+
+<a id="594" class="Keyword">open</a> <a id="599" class="Keyword">import</a> <a id="606" href="Data.Fin.html" class="Module">Data.Fin</a>
+
+<a id="616" class="Keyword">open</a> <a id="621" class="Keyword">import</a> <a id="628" href="Size.html" class="Module">Size</a>
+<a id="633" class="Keyword">open</a> <a id="638" class="Keyword">import</a> <a id="645" href="Data.Unit.html" class="Module">Data.Unit</a>
+<a id="655" class="Keyword">open</a> <a id="660" class="Keyword">import</a> <a id="667" href="Data.Product.html" class="Module">Data.Product</a>
+
+<a id="681" class="Comment">-- TODO later Properties of Buttons?</a>
+<a id="718" class="Comment">--</a>
+
+<a id="oneBtnFrame"></a><a id="722" href="GUI.GUIExample.html#722" class="Function">oneBtnFrame</a> <a id="734" class="Symbol">:</a> <a id="736" href="GUI.Vers1.GUIDefinitions.html#3218" class="Function">Frame</a>
+<a id="742" href="GUI.GUIExample.html#722" class="Function">oneBtnFrame</a> <a id="754" class="Symbol">=</a> <a id="756" href="GUI.Vers1.GUIExampleLib.html#1444" class="Function">addButton</a> <a id="766" class="String">&quot;OK&quot;</a> <a id="771" href="GUI.Vers1.GUIExampleLib.html#1423" class="Function">emptyFrame</a>
+
+<a id="twoBtnFrame"></a><a id="783" href="GUI.GUIExample.html#783" class="Function">twoBtnFrame</a> <a id="795" class="Symbol">:</a> <a id="797" href="GUI.Vers1.GUIDefinitions.html#3218" class="Function">Frame</a>
+<a id="803" href="GUI.GUIExample.html#783" class="Function">twoBtnFrame</a> <a id="815" class="Symbol">=</a> <a id="817" href="GUI.Vers1.GUIExampleLib.html#1444" class="Function">addButton</a> <a id="827" class="String">&quot;Cancel&quot;</a> <a id="836" href="GUI.GUIExample.html#722" class="Function">oneBtnFrame</a>
+
+
+<a id="putStrLine&#39;"></a><a id="850" href="GUI.GUIExample.html#850" class="Function">putStrLine&#39;</a> <a id="862" class="Symbol">:</a> <a id="864" class="Symbol">{</a><a id="865" href="GUI.GUIExample.html#865" class="Bound">A</a> <a id="867" class="Symbol">:</a> <a id="869" class="PrimitiveType">Set</a><a id="872" class="Symbol">}</a> <a id="874" class="Symbol">→</a> <a id="876" href="Agda.Builtin.String.html#165" class="Postulate">String</a> <a id="883" class="Symbol">→</a> <a id="885" class="Symbol">(</a><a id="886" href="GUI.GUIExample.html#886" class="Bound">f</a> <a id="888" class="Symbol">:</a> <a id="890" href="SizedIO.Base.html#540" class="Record">IO</a> <a id="893" href="SizedIO.Console.html#360" class="Function">consoleI</a> <a id="902" href="Agda.Builtin.Size.html#210" class="Postulate">∞</a> <a id="904" href="GUI.GUIExample.html#865" class="Bound">A</a><a id="905" class="Symbol">)</a> <a id="907" class="Symbol">→</a>
+           <a id="920" href="SizedIO.Base.html#540" class="Record">IO</a> <a id="923" href="SizedIO.Console.html#360" class="Function">consoleI</a> <a id="932" href="Agda.Builtin.Size.html#210" class="Postulate">∞</a> <a id="934" href="GUI.GUIExample.html#865" class="Bound">A</a>
+<a id="936" href="GUI.GUIExample.html#850" class="Function">putStrLine&#39;</a> <a id="948" href="GUI.GUIExample.html#948" class="Bound">s</a> <a id="950" href="GUI.GUIExample.html#950" class="Bound">f</a> <a id="952" class="Symbol">=</a> <a id="954" href="SizedIO.Base.html#1363" class="Function">exec</a> <a id="959" class="Symbol">(</a><a id="960" href="SizedIO.Console.html#182" class="InductiveConstructor">putStrLn</a> <a id="969" href="GUI.GUIExample.html#948" class="Bound">s</a><a id="970" class="Symbol">)</a> <a id="972" class="Symbol">(λ</a> <a id="975" href="GUI.GUIExample.html#975" class="Bound">_</a> <a id="977" class="Symbol">→</a> <a id="979" href="GUI.GUIExample.html#950" class="Bound">f</a><a id="980" class="Symbol">)</a>
+
+<a id="983" class="Keyword">syntax</a> <a id="990" href="GUI.GUIExample.html#850" class="Function">putStrLine&#39;</a> s f <a id="1006" class="Symbol">=</a> putStrLine s &gt;&gt; f
+
+
+
+
+<a id="1030" class="Keyword">mutual</a>
+ <a id="obj2Btn"></a><a id="1038" href="GUI.GUIExample.html#1038" class="Function">obj2Btn</a> <a id="1046" class="Symbol">:</a> <a id="1048" class="Symbol">∀</a> <a id="1050" class="Symbol">{</a><a id="1051" href="GUI.GUIExample.html#1051" class="Bound">i</a><a id="1052" class="Symbol">}</a> <a id="1054" class="Symbol">→</a> <a id="1056" href="GUI.Vers1.GUIDefinitions.html#3265" class="Function">FrameObj</a> <a id="1065" class="Symbol">{</a><a id="1066" href="GUI.GUIExample.html#1051" class="Bound">i</a><a id="1067" class="Symbol">}</a> <a id="1069" href="GUI.GUIExample.html#783" class="Function">twoBtnFrame</a>
+ <a id="1082" href="GUI.GUIExample.html#1038" class="Function">obj2Btn</a> <a id="1090" class="Symbol">.</a><a id="1091" href="StateSizedIO.GUI.BaseStateDependent.html#6639" class="Field">method</a> <a id="1098" class="Symbol">(</a><a id="1099" href="Data.Fin.html#932" class="InductiveConstructor">zero</a> <a id="1104" href="Data.Product.html#543" class="InductiveConstructor Operator">,</a> <a id="1106" class="Symbol">_</a> <a id="1108" class="Symbol">)</a> <a id="1110" class="Symbol">=</a> <a id="1112" href="GUI.GUIExample.html#850" class="Function">putStrLine</a> <a id="1123" class="String">&quot;OK! Redefining GUI.&quot;</a> <a id="1145" href="GUI.GUIExample.html#850" class="Function">&gt;&gt;</a>
+                        <a id="1172" href="SizedIO.Base.html#1288" class="Function">return</a> <a id="1179" class="Symbol">(</a><a id="1180" href="GUI.GUIExample.html#722" class="Function">oneBtnFrame</a> <a id="1192" href="Data.Product.html#543" class="InductiveConstructor Operator">,</a> <a id="1194" href="GUI.GUIExample.html#1518" class="Function">obj1Btn</a><a id="1201" class="Symbol">)</a>
+ <a id="1204" href="GUI.GUIExample.html#1038" class="Function">obj2Btn</a> <a id="1212" class="Symbol">.</a><a id="1213" href="StateSizedIO.GUI.BaseStateDependent.html#6639" class="Field">method</a> <a id="1220" class="Symbol">(</a><a id="1221" href="Data.Fin.html#963" class="InductiveConstructor">suc</a> <a id="1225" href="Data.Fin.html#932" class="InductiveConstructor">zero</a> <a id="1230" href="Data.Product.html#543" class="InductiveConstructor Operator">,</a> <a id="1232" class="Symbol">_)</a> <a id="1235" class="Symbol">=</a> <a id="1237" href="GUI.GUIExample.html#850" class="Function">putStrLine</a> <a id="1248" class="String">&quot;Cancel.&quot;</a> <a id="1258" href="GUI.GUIExample.html#850" class="Function">&gt;&gt;</a>
+                              <a id="1291" href="SizedIO.Base.html#1288" class="Function">return</a> <a id="1298" class="Symbol">(</a><a id="1299" href="GUI.GUIExample.html#783" class="Function">twoBtnFrame</a> <a id="1311" href="Data.Product.html#543" class="InductiveConstructor Operator">,</a> <a id="1313" href="GUI.GUIExample.html#1038" class="Function">obj2Btn</a><a id="1320" class="Symbol">)</a>
+
+
+
+<a id="1325" class="Comment">{-
+--
+-- CORRECT:
+--
+--
+
+ obj2Btn .method (suc zero) = putStrLine &quot;Cancel! No change.&quot; &gt;&gt;
+                              return (twoBtnFrame , obj2Btn)
+-}</a>
+ <a id="1480" href="GUI.GUIExample.html#1038" class="Function">obj2Btn</a> <a id="1488" class="Symbol">.</a><a id="1489" href="StateSizedIO.GUI.BaseStateDependent.html#6639" class="Field">method</a> <a id="1496" class="Symbol">(</a><a id="1497" href="Data.Fin.html#963" class="InductiveConstructor">suc</a> <a id="1501" class="Symbol">(</a><a id="1502" href="Data.Fin.html#963" class="InductiveConstructor">suc</a> <a id="1506" class="Symbol">())</a> <a id="1510" href="Data.Product.html#543" class="InductiveConstructor Operator">,</a> <a id="1512" class="Symbol">_)</a>
+
+
+ <a id="obj1Btn"></a><a id="1518" href="GUI.GUIExample.html#1518" class="Function">obj1Btn</a> <a id="1526" class="Symbol">:</a> <a id="1528" class="Symbol">∀</a> <a id="1530" class="Symbol">{</a><a id="1531" href="GUI.GUIExample.html#1531" class="Bound">i</a><a id="1532" class="Symbol">}</a> <a id="1534" class="Symbol">→</a> <a id="1536" href="GUI.Vers1.GUIDefinitions.html#3265" class="Function">FrameObj</a> <a id="1545" class="Symbol">{</a><a id="1546" href="GUI.GUIExample.html#1531" class="Bound">i</a><a id="1547" class="Symbol">}</a> <a id="1549" href="GUI.GUIExample.html#722" class="Function">oneBtnFrame</a>
+ <a id="1562" href="GUI.GUIExample.html#1518" class="Function">obj1Btn</a> <a id="1570" class="Symbol">.</a><a id="1571" href="StateSizedIO.GUI.BaseStateDependent.html#6639" class="Field">method</a> <a id="1578" class="Symbol">(</a><a id="1579" href="Data.Fin.html#932" class="InductiveConstructor">zero</a> <a id="1584" href="Data.Product.html#543" class="InductiveConstructor Operator">,</a> <a id="1586" class="Symbol">_</a> <a id="1588" class="Symbol">)</a>  <a id="1591" class="Symbol">=</a> <a id="1593" href="GUI.GUIExample.html#850" class="Function">putStrLine</a> <a id="1604" class="String">&quot;OK! Redefining GUI.&quot;</a> <a id="1626" href="GUI.GUIExample.html#850" class="Function">&gt;&gt;</a>
+                        <a id="1653" href="SizedIO.Base.html#1288" class="Function">return</a> <a id="1660" class="Symbol">(</a><a id="1661" href="GUI.GUIExample.html#783" class="Function">twoBtnFrame</a> <a id="1673" href="Data.Product.html#543" class="InductiveConstructor Operator">,</a> <a id="1675" href="GUI.GUIExample.html#1038" class="Function">obj2Btn</a><a id="1682" class="Symbol">)</a>
+ <a id="1685" href="GUI.GUIExample.html#1518" class="Function">obj1Btn</a> <a id="1693" class="Symbol">.</a><a id="1694" href="StateSizedIO.GUI.BaseStateDependent.html#6639" class="Field">method</a> <a id="1701" class="Symbol">(</a><a id="1702" href="Data.Fin.html#963" class="InductiveConstructor">suc</a> <a id="1706" class="Symbol">()</a> <a id="1709" href="Data.Product.html#543" class="InductiveConstructor Operator">,</a> <a id="1711" class="Symbol">_)</a>
+
+
+
+<a id="1717" class="Keyword">mutual</a>
+  <a id="oneBtnGUI"></a><a id="1726" href="GUI.GUIExample.html#1726" class="Function">oneBtnGUI</a> <a id="1736" class="Symbol">:</a> <a id="1738" class="Symbol">∀</a> <a id="1740" class="Symbol">{</a><a id="1741" href="GUI.GUIExample.html#1741" class="Bound">i</a><a id="1742" class="Symbol">}</a> <a id="1744" class="Symbol">→</a> <a id="1746" href="GUI.Vers1.GUIDefinitions.html#3422" class="Function">GUI</a> <a id="1750" class="Symbol">{</a><a id="1751" href="GUI.GUIExample.html#1741" class="Bound">i</a><a id="1752" class="Symbol">}</a>
+  <a id="1756" href="GUI.GUIExample.html#1726" class="Function">oneBtnGUI</a> <a id="1766" class="Symbol">.</a><a id="1767" href="GUI.Vers1.GUIDefinitions.html#2801" class="Field">gui</a> <a id="1771" class="Symbol">=</a> <a id="1773" href="GUI.Vers1.GUIExampleLib.html#1444" class="Function">addButton</a> <a id="1783" class="String">&quot;OK&quot;</a> <a id="1788" href="GUI.Vers1.GUIExampleLib.html#1423" class="Function">emptyFrame</a>
+  <a id="1801" href="GUI.GUIExample.html#1726" class="Function">oneBtnGUI</a> <a id="1811" class="Symbol">.</a><a id="1812" href="GUI.Vers1.GUIDefinitions.html#2828" class="Field">obj</a> <a id="1816" class="Symbol">.</a><a id="1817" href="StateSizedIO.GUI.BaseStateDependent.html#6639" class="Field">method</a> <a id="1824" class="Symbol">(</a><a id="1825" href="Data.Fin.html#932" class="InductiveConstructor">zero</a> <a id="1830" href="Data.Product.html#543" class="InductiveConstructor Operator">,</a> <a id="1832" class="Symbol">_</a> <a id="1834" class="Symbol">)</a>  <a id="1837" class="Symbol">=</a> <a id="1839" href="GUI.GUIExample.html#850" class="Function">putStrLine</a> <a id="1850" class="String">&quot;OK! Redefining GUI.&quot;</a> <a id="1872" href="GUI.GUIExample.html#850" class="Function">&gt;&gt;</a>
+                                        <a id="1915" href="GUI.Vers1.GUIDefinitions.html#3855" class="Function">returnGUI</a> <a id="1925" href="GUI.GUIExample.html#1978" class="Function">twoBtnGUI</a>
+  <a id="1937" href="GUI.GUIExample.html#1726" class="Function">oneBtnGUI</a> <a id="1947" class="Symbol">.</a><a id="1948" href="GUI.Vers1.GUIDefinitions.html#2828" class="Field">obj</a> <a id="1952" class="Symbol">.</a><a id="1953" href="StateSizedIO.GUI.BaseStateDependent.html#6639" class="Field">method</a> <a id="1960" class="Symbol">(</a><a id="1961" href="Data.Fin.html#963" class="InductiveConstructor">suc</a> <a id="1965" class="Symbol">()</a> <a id="1968" href="Data.Product.html#543" class="InductiveConstructor Operator">,</a> <a id="1970" class="Symbol">_</a> <a id="1972" class="Symbol">)</a>
+
+
+  <a id="twoBtnGUI"></a><a id="1978" href="GUI.GUIExample.html#1978" class="Function">twoBtnGUI</a> <a id="1988" class="Symbol">:</a> <a id="1990" class="Symbol">∀</a> <a id="1992" class="Symbol">{</a><a id="1993" href="GUI.GUIExample.html#1993" class="Bound">i</a><a id="1994" class="Symbol">}</a> <a id="1996" class="Symbol">→</a> <a id="1998" href="GUI.Vers1.GUIDefinitions.html#3422" class="Function">GUI</a> <a id="2002" class="Symbol">{</a><a id="2003" href="GUI.GUIExample.html#1993" class="Bound">i</a><a id="2004" class="Symbol">}</a>
+  <a id="2008" href="GUI.GUIExample.html#1978" class="Function">twoBtnGUI</a> <a id="2018" class="Symbol">.</a><a id="2019" href="GUI.Vers1.GUIDefinitions.html#2801" class="Field">gui</a> <a id="2023" class="Symbol">=</a> <a id="2025" href="GUI.Vers1.GUIExampleLib.html#1444" class="Function">addButton</a> <a id="2035" class="String">&quot;Cancel&quot;</a> <a id="2044" class="Symbol">(</a><a id="2045" href="GUI.Vers1.GUIExampleLib.html#1444" class="Function">addButton</a> <a id="2055" class="String">&quot;OK&quot;</a> <a id="2060" href="GUI.Vers1.GUIExampleLib.html#1423" class="Function">emptyFrame</a><a id="2070" class="Symbol">)</a>
+  <a id="2074" href="GUI.GUIExample.html#1978" class="Function">twoBtnGUI</a> <a id="2084" class="Symbol">.</a><a id="2085" href="GUI.Vers1.GUIDefinitions.html#2828" class="Field">obj</a> <a id="2089" class="Symbol">.</a><a id="2090" href="StateSizedIO.GUI.BaseStateDependent.html#6639" class="Field">method</a> <a id="2097" class="Symbol">(</a><a id="2098" href="Data.Fin.html#932" class="InductiveConstructor">zero</a> <a id="2103" href="Data.Product.html#543" class="InductiveConstructor Operator">,</a> <a id="2105" class="Symbol">_</a> <a id="2107" class="Symbol">)</a> <a id="2109" class="Symbol">=</a> <a id="2111" href="GUI.GUIExample.html#850" class="Function">putStrLine</a> <a id="2122" class="String">&quot;OK! Redefining GUI.&quot;</a> <a id="2144" href="GUI.GUIExample.html#850" class="Function">&gt;&gt;</a>
+                                      <a id="2185" href="GUI.Vers1.GUIDefinitions.html#3855" class="Function">returnGUI</a> <a id="2195" href="GUI.GUIExample.html#1726" class="Function">oneBtnGUI</a>
+  <a id="2207" href="GUI.GUIExample.html#1978" class="Function">twoBtnGUI</a> <a id="2217" class="Symbol">.</a><a id="2218" href="GUI.Vers1.GUIDefinitions.html#2828" class="Field">obj</a> <a id="2222" class="Symbol">.</a><a id="2223" href="StateSizedIO.GUI.BaseStateDependent.html#6639" class="Field">method</a> <a id="2230" class="Symbol">(</a><a id="2231" href="Data.Fin.html#963" class="InductiveConstructor">suc</a> <a id="2235" href="Data.Fin.html#932" class="InductiveConstructor">zero</a> <a id="2240" href="Data.Product.html#543" class="InductiveConstructor Operator">,</a> <a id="2242" class="Symbol">_)</a> <a id="2245" class="Symbol">=</a> <a id="2247" href="GUI.GUIExample.html#850" class="Function">putStrLine</a> <a id="2258" class="String">&quot;Cancel.&quot;</a> <a id="2268" href="GUI.GUIExample.html#850" class="Function">&gt;&gt;</a>
+                              <a id="2301" href="GUI.Vers1.GUIDefinitions.html#3855" class="Function">returnGUI</a> <a id="2311" href="GUI.GUIExample.html#1978" class="Function">twoBtnGUI</a>
+  <a id="2323" href="GUI.GUIExample.html#1978" class="Function">twoBtnGUI</a> <a id="2333" class="Symbol">.</a><a id="2334" href="GUI.Vers1.GUIDefinitions.html#2828" class="Field">obj</a> <a id="2338" class="Symbol">.</a><a id="2339" href="StateSizedIO.GUI.BaseStateDependent.html#6639" class="Field">method</a> <a id="2346" class="Symbol">(</a><a id="2347" href="Data.Fin.html#963" class="InductiveConstructor">suc</a> <a id="2351" class="Symbol">(</a><a id="2352" href="Data.Fin.html#963" class="InductiveConstructor">suc</a> <a id="2356" class="Symbol">())</a> <a id="2360" href="Data.Product.html#543" class="InductiveConstructor Operator">,</a> <a id="2362" class="Symbol">_)</a>
+
+<a id="2366" class="Comment">-- GUIObj</a>
+
+
+<a id="2378" class="Comment">{-
+Not yet supported:
+addTxtBox : String → Frame → Frame
+addTxtBox str fr = addTxtBox&#39; str fr optimized
+-}</a>
+
+<a id="2486" class="Comment">{-
+Attributes/Properties not yet supported:
+-- Attributes
+--
+Cols = ℕ
+Margin  = ℕ
+HSpace  = ℕ
+VSpace  = ℕ
+
+-
+oneColumnLayout : Cols × Margin × HSpace × VSpace
+oneColumnLayout = (1 , 10 , 2 , 2)
+-
+
+
+
+-
+black : Color
+-
+black = rgb 0 0 0
+
+-
+propOneBtn : properties oneBtnFrame
+propOneBtn = black , oneColumnLayout
+-
+
+-
+propTwoBtn : properties twoBtnFrame
+propTwoBtn = black , black , oneColumnLayout
+-
+-}</a>
+
+<a id="2889" class="Comment">{-
+Doesn&#39;t make sense any longer. We always change the GUI currently!
+keepGUI : {j : Size} → HandlerObject j twoBtnFrame →
+            IO consoleI ∞
+      (Σ-syntax (returnType twoBtnFrame)
+       (λ r →
+          IOObjectˢ consoleI handlerInterface j
+          (nextStateFrame twoBtnFrame r)))
+keepGUI = λ obj → return (noChange , obj)
+
+
+changeGUI : ∀ {j} (g : CompEls frame) {g&#39;} (prop : properties g) obj →
+              IO consoleI ∞ (Σ (returnType g&#39;) (\r -&gt; IOObjectˢ consoleI handlerInterface j (nextStateFrame g&#39; r)))
+changeGUI = λ g prop obj →  return (changedGUI g prop , obj)
+-}</a>
+
+
+
+
+<a id="3483" class="Comment">{- ######
+compileProg : ∀ (a : CompEls frame) (b : properties a)
+             (c : {i : Size} → GUIObj {i} a) → NativeIO Unit
+compileProg = λ a b c →  compileProgram a b (c {∞})
+
+-
+main : NativeIO Unit
+main = compileProg twoBtnFrame propTwoBtn obj2Btn
+-
+
+--old
+--main : NativeIO Unit
+--main = compileProgram  twoBtnFrame propTwoBtn
+--                       (obj2Btn {∞})
+###-}</a>
+</pre></body></html>

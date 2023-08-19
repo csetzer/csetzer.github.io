@@ -1,0 +1,420 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>demo.AgdaDemoSERENE</title><link rel="stylesheet" href="Agda.css"></head><body><pre><a id="1" class="Keyword">module</a> <a id="8" href="demo.AgdaDemoSERENE.html" class="Module">demo.AgdaDemoSERENE</a> <a id="28" class="Keyword">where</a>
+
+
+<a id="36" class="Keyword">data</a> <a id="color"></a><a id="41" href="demo.AgdaDemoSERENE.html#41" class="Datatype">color</a> <a id="47" class="Symbol">:</a> <a id="49" class="PrimitiveType">Set</a> <a id="53" class="Keyword">where</a>
+ <a id="color.Red"></a><a id="60" href="demo.AgdaDemoSERENE.html#60" class="InductiveConstructor">Red</a> <a id="64" class="Symbol">:</a> <a id="66" href="demo.AgdaDemoSERENE.html#41" class="Datatype">color</a>
+ <a id="color.Green"></a><a id="73" href="demo.AgdaDemoSERENE.html#73" class="InductiveConstructor">Green</a> <a id="79" class="Symbol">:</a> <a id="81" href="demo.AgdaDemoSERENE.html#41" class="Datatype">color</a>
+ <a id="color.Blue"></a><a id="88" href="demo.AgdaDemoSERENE.html#88" class="InductiveConstructor">Blue</a> <a id="93" class="Symbol">:</a> <a id="95" href="demo.AgdaDemoSERENE.html#41" class="Datatype">color</a>
+
+
+
+
+<a id="swapColor"></a><a id="105" href="demo.AgdaDemoSERENE.html#105" class="Function">swapColor</a> <a id="115" class="Symbol">:</a> <a id="117" href="demo.AgdaDemoSERENE.html#41" class="Datatype">color</a> <a id="123" class="Symbol">→</a> <a id="125" href="demo.AgdaDemoSERENE.html#41" class="Datatype">color</a>
+<a id="131" href="demo.AgdaDemoSERENE.html#105" class="Function">swapColor</a> <a id="141" href="demo.AgdaDemoSERENE.html#60" class="InductiveConstructor">Red</a> <a id="145" class="Symbol">=</a> <a id="147" href="demo.AgdaDemoSERENE.html#73" class="InductiveConstructor">Green</a>
+<a id="153" href="demo.AgdaDemoSERENE.html#105" class="Function">swapColor</a> <a id="163" href="demo.AgdaDemoSERENE.html#73" class="InductiveConstructor">Green</a> <a id="169" class="Symbol">=</a> <a id="171" href="demo.AgdaDemoSERENE.html#60" class="InductiveConstructor">Red</a>
+
+
+<a id="177" href="demo.AgdaDemoSERENE.html#105" class="Function">swapColor</a> <a id="187" href="demo.AgdaDemoSERENE.html#88" class="InductiveConstructor">Blue</a> <a id="192" class="Symbol">=</a> <a id="194" href="demo.AgdaDemoSERENE.html#60" class="InductiveConstructor">Red</a>
+
+
+
+
+<a id="202" class="Keyword">data</a> <a id="ℕ"></a><a id="207" href="demo.AgdaDemoSERENE.html#207" class="Datatype">ℕ</a> <a id="209" class="Symbol">:</a> <a id="211" class="PrimitiveType">Set</a> <a id="215" class="Keyword">where</a>
+ <a id="ℕ.zero"></a><a id="222" href="demo.AgdaDemoSERENE.html#222" class="InductiveConstructor">zero</a> <a id="227" class="Symbol">:</a> <a id="229" href="demo.AgdaDemoSERENE.html#207" class="Datatype">ℕ</a>
+ <a id="ℕ.succ"></a><a id="232" href="demo.AgdaDemoSERENE.html#232" class="InductiveConstructor">succ</a> <a id="237" class="Symbol">:</a> <a id="239" href="demo.AgdaDemoSERENE.html#207" class="Datatype">ℕ</a> <a id="241" class="Symbol">→</a> <a id="243" href="demo.AgdaDemoSERENE.html#207" class="Datatype">ℕ</a>
+
+
+
+<a id="_+_"></a><a id="248" href="demo.AgdaDemoSERENE.html#248" class="Function Operator">_+_</a> <a id="252" class="Symbol">:</a> <a id="254" href="demo.AgdaDemoSERENE.html#207" class="Datatype">ℕ</a> <a id="256" class="Symbol">→</a> <a id="258" href="demo.AgdaDemoSERENE.html#207" class="Datatype">ℕ</a> <a id="260" class="Symbol">→</a> <a id="262" href="demo.AgdaDemoSERENE.html#207" class="Datatype">ℕ</a>
+<a id="264" href="demo.AgdaDemoSERENE.html#222" class="InductiveConstructor">zero</a>    <a id="272" href="demo.AgdaDemoSERENE.html#248" class="Function Operator">+</a>  <a id="275" href="demo.AgdaDemoSERENE.html#275" class="Bound">m</a>  <a id="278" class="Symbol">=</a>  <a id="281" href="demo.AgdaDemoSERENE.html#275" class="Bound">m</a>
+<a id="283" href="demo.AgdaDemoSERENE.html#232" class="InductiveConstructor">succ</a> <a id="288" href="demo.AgdaDemoSERENE.html#288" class="Bound">n</a>  <a id="291" href="demo.AgdaDemoSERENE.html#248" class="Function Operator">+</a>  <a id="294" href="demo.AgdaDemoSERENE.html#294" class="Bound">m</a>  <a id="297" class="Symbol">=</a>  <a id="300" href="demo.AgdaDemoSERENE.html#232" class="InductiveConstructor">succ</a> <a id="305" class="Symbol">(</a><a id="306" href="demo.AgdaDemoSERENE.html#288" class="Bound">n</a> <a id="308" href="demo.AgdaDemoSERENE.html#248" class="Function Operator">+</a> <a id="310" href="demo.AgdaDemoSERENE.html#294" class="Bound">m</a><a id="311" class="Symbol">)</a>
+
+
+
+<a id="double"></a><a id="316" href="demo.AgdaDemoSERENE.html#316" class="Function">double</a> <a id="323" class="Symbol">:</a> <a id="325" href="demo.AgdaDemoSERENE.html#207" class="Datatype">ℕ</a> <a id="327" class="Symbol">→</a> <a id="329" href="demo.AgdaDemoSERENE.html#207" class="Datatype">ℕ</a>
+<a id="331" href="demo.AgdaDemoSERENE.html#316" class="Function">double</a> <a id="338" href="demo.AgdaDemoSERENE.html#222" class="InductiveConstructor">zero</a> <a id="343" class="Symbol">=</a> <a id="345" href="demo.AgdaDemoSERENE.html#222" class="InductiveConstructor">zero</a>
+<a id="350" href="demo.AgdaDemoSERENE.html#316" class="Function">double</a> <a id="357" class="Symbol">(</a><a id="358" href="demo.AgdaDemoSERENE.html#232" class="InductiveConstructor">succ</a> <a id="363" href="demo.AgdaDemoSERENE.html#363" class="Bound">n</a><a id="364" class="Symbol">)</a> <a id="366" class="Symbol">=</a> <a id="368" href="demo.AgdaDemoSERENE.html#232" class="InductiveConstructor">succ</a> <a id="373" class="Symbol">(</a><a id="374" href="demo.AgdaDemoSERENE.html#316" class="Function">double</a> <a id="381" href="demo.AgdaDemoSERENE.html#363" class="Bound">n</a><a id="382" class="Symbol">)</a>
+
+
+
+<a id="fib"></a><a id="387" href="demo.AgdaDemoSERENE.html#387" class="Function">fib</a> <a id="391" class="Symbol">:</a> <a id="393" href="demo.AgdaDemoSERENE.html#207" class="Datatype">ℕ</a> <a id="395" class="Symbol">→</a> <a id="397" href="demo.AgdaDemoSERENE.html#207" class="Datatype">ℕ</a>
+<a id="399" href="demo.AgdaDemoSERENE.html#387" class="Function">fib</a> <a id="403" href="demo.AgdaDemoSERENE.html#222" class="InductiveConstructor">zero</a> <a id="408" class="Symbol">=</a> <a id="410" href="demo.AgdaDemoSERENE.html#222" class="InductiveConstructor">zero</a>
+<a id="415" href="demo.AgdaDemoSERENE.html#387" class="Function">fib</a> <a id="419" class="Symbol">(</a><a id="420" href="demo.AgdaDemoSERENE.html#232" class="InductiveConstructor">succ</a> <a id="425" href="demo.AgdaDemoSERENE.html#222" class="InductiveConstructor">zero</a><a id="429" class="Symbol">)</a> <a id="431" class="Symbol">=</a> <a id="433" href="demo.AgdaDemoSERENE.html#232" class="InductiveConstructor">succ</a> <a id="438" href="demo.AgdaDemoSERENE.html#222" class="InductiveConstructor">zero</a>
+<a id="443" href="demo.AgdaDemoSERENE.html#387" class="Function">fib</a> <a id="447" class="Symbol">(</a><a id="448" href="demo.AgdaDemoSERENE.html#232" class="InductiveConstructor">succ</a> <a id="453" class="Symbol">(</a><a id="454" href="demo.AgdaDemoSERENE.html#232" class="InductiveConstructor">succ</a> <a id="459" href="demo.AgdaDemoSERENE.html#459" class="Bound">n</a><a id="460" class="Symbol">))</a> <a id="463" class="Symbol">=</a> <a id="465" href="demo.AgdaDemoSERENE.html#387" class="Function">fib</a> <a id="469" href="demo.AgdaDemoSERENE.html#459" class="Bound">n</a> <a id="471" href="demo.AgdaDemoSERENE.html#248" class="Function Operator">+</a> <a id="473" href="demo.AgdaDemoSERENE.html#387" class="Function">fib</a> <a id="477" class="Symbol">(</a><a id="478" href="demo.AgdaDemoSERENE.html#232" class="InductiveConstructor">succ</a> <a id="483" href="demo.AgdaDemoSERENE.html#459" class="Bound">n</a><a id="484" class="Symbol">)</a>
+
+
+
+<a id="489" class="Keyword">open</a> <a id="494" class="Keyword">import</a> <a id="501" href="Coinduction.html" class="Module">Coinduction</a> <a id="513" class="Keyword">using</a> <a id="519" class="Symbol">(</a><a id="520" href="Agda.Builtin.Coinduction.html#129" class="CoinductiveConstructor Operator">♯_</a> <a id="523" class="Symbol">;</a> <a id="525" href="Agda.Builtin.Coinduction.html#164" class="Field">♭</a> <a id="527" class="Symbol">;</a> <a id="529" href="Agda.Builtin.Coinduction.html#96" class="Record">∞</a><a id="530" class="Symbol">)</a>
+<a id="532" class="Keyword">open</a> <a id="537" class="Keyword">import</a> <a id="544" href="Size.html" class="Module">Size</a> <a id="549" class="Keyword">renaming</a>  <a id="559" class="Symbol">(</a><a id="560" href="Agda.Builtin.Size.html#210" class="Postulate">∞</a> <a id="562" class="Symbol">to</a> <a id="565" href="Agda.Builtin.Size.html#210" class="Postulate">∞&#39;</a><a id="567" class="Symbol">)</a>
+
+
+<a id="571" class="Keyword">data</a> <a id="stream"></a><a id="576" href="demo.AgdaDemoSERENE.html#576" class="Datatype">stream</a> <a id="583" class="Symbol">:</a> <a id="585" class="PrimitiveType">Set</a> <a id="589" class="Keyword">where</a>
+ <a id="stream._::_"></a><a id="596" href="demo.AgdaDemoSERENE.html#596" class="InductiveConstructor Operator">_::_</a> <a id="601" class="Symbol">:</a> <a id="603" href="demo.AgdaDemoSERENE.html#207" class="Datatype">ℕ</a> <a id="605" class="Symbol">→</a> <a id="607" href="Agda.Builtin.Coinduction.html#96" class="Record">∞</a> <a id="609" href="demo.AgdaDemoSERENE.html#576" class="Datatype">stream</a> <a id="616" class="Symbol">→</a> <a id="618" href="demo.AgdaDemoSERENE.html#576" class="Datatype">stream</a>
+
+
+
+<a id="stream₀"></a><a id="628" href="demo.AgdaDemoSERENE.html#628" class="Function">stream₀</a> <a id="636" class="Symbol">:</a> <a id="638" href="demo.AgdaDemoSERENE.html#576" class="Datatype">stream</a>
+<a id="645" href="demo.AgdaDemoSERENE.html#628" class="Function">stream₀</a> <a id="653" class="Symbol">=</a> <a id="655" href="demo.AgdaDemoSERENE.html#222" class="InductiveConstructor">zero</a> <a id="660" href="demo.AgdaDemoSERENE.html#596" class="InductiveConstructor Operator">::</a> <a id="663" class="Symbol">(</a><a id="664" href="Agda.Builtin.Coinduction.html#129" class="CoinductiveConstructor Operator">♯</a> <a id="666" href="demo.AgdaDemoSERENE.html#628" class="Function">stream₀</a><a id="673" class="Symbol">)</a>
+
+
+
+<a id="inc"></a><a id="678" href="demo.AgdaDemoSERENE.html#678" class="Function">inc</a> <a id="682" class="Symbol">:</a> <a id="684" href="demo.AgdaDemoSERENE.html#207" class="Datatype">ℕ</a> <a id="686" class="Symbol">→</a> <a id="688" href="demo.AgdaDemoSERENE.html#576" class="Datatype">stream</a>
+<a id="695" href="demo.AgdaDemoSERENE.html#678" class="Function">inc</a> <a id="699" href="demo.AgdaDemoSERENE.html#699" class="Bound">n</a> <a id="701" class="Symbol">=</a> <a id="703" href="demo.AgdaDemoSERENE.html#699" class="Bound">n</a> <a id="705" href="demo.AgdaDemoSERENE.html#596" class="InductiveConstructor Operator">::</a> <a id="708" class="Symbol">(</a><a id="709" href="Agda.Builtin.Coinduction.html#129" class="CoinductiveConstructor Operator">♯</a> <a id="711" href="demo.AgdaDemoSERENE.html#678" class="Function">inc</a> <a id="715" class="Symbol">(</a><a id="716" href="demo.AgdaDemoSERENE.html#232" class="InductiveConstructor">succ</a> <a id="721" href="demo.AgdaDemoSERENE.html#699" class="Bound">n</a><a id="722" class="Symbol">))</a>
+
+
+
+<a id="addStream"></a><a id="728" href="demo.AgdaDemoSERENE.html#728" class="Function">addStream</a> <a id="738" class="Symbol">:</a> <a id="740" href="demo.AgdaDemoSERENE.html#576" class="Datatype">stream</a> <a id="747" class="Symbol">→</a> <a id="749" href="demo.AgdaDemoSERENE.html#576" class="Datatype">stream</a> <a id="756" class="Symbol">→</a> <a id="758" href="demo.AgdaDemoSERENE.html#576" class="Datatype">stream</a>
+<a id="765" href="demo.AgdaDemoSERENE.html#728" class="Function">addStream</a> <a id="775" class="Symbol">(</a><a id="776" href="demo.AgdaDemoSERENE.html#776" class="Bound">x</a> <a id="778" href="demo.AgdaDemoSERENE.html#596" class="InductiveConstructor Operator">::</a> <a id="781" href="demo.AgdaDemoSERENE.html#781" class="Bound">x₁</a><a id="783" class="Symbol">)</a> <a id="785" class="Symbol">(</a><a id="786" href="demo.AgdaDemoSERENE.html#786" class="Bound">y</a> <a id="788" href="demo.AgdaDemoSERENE.html#596" class="InductiveConstructor Operator">::</a> <a id="791" href="demo.AgdaDemoSERENE.html#791" class="Bound">y₁</a><a id="793" class="Symbol">)</a> <a id="795" class="Symbol">=</a> <a id="797" class="Symbol">(</a><a id="798" href="demo.AgdaDemoSERENE.html#776" class="Bound">x</a> <a id="800" href="demo.AgdaDemoSERENE.html#248" class="Function Operator">+</a> <a id="802" href="demo.AgdaDemoSERENE.html#786" class="Bound">y</a><a id="803" class="Symbol">)</a> <a id="805" href="demo.AgdaDemoSERENE.html#596" class="InductiveConstructor Operator">::</a> <a id="808" class="Symbol">(</a><a id="809" href="Agda.Builtin.Coinduction.html#129" class="CoinductiveConstructor Operator">♯</a> <a id="811" href="demo.AgdaDemoSERENE.html#728" class="Function">addStream</a> <a id="821" class="Symbol">(</a><a id="822" href="Agda.Builtin.Coinduction.html#164" class="Field">♭</a> <a id="824" href="demo.AgdaDemoSERENE.html#781" class="Bound">x₁</a><a id="826" class="Symbol">)</a> <a id="828" class="Symbol">(</a><a id="829" href="Agda.Builtin.Coinduction.html#164" class="Field">♭</a> <a id="831" href="demo.AgdaDemoSERENE.html#791" class="Bound">y₁</a><a id="833" class="Symbol">))</a>
+
+
+
+<a id="839" class="Keyword">mutual</a>
+ <a id="847" class="Keyword">record</a> <a id="∞Delay"></a><a id="854" href="demo.AgdaDemoSERENE.html#854" class="Record">∞Delay</a> <a id="861" class="Symbol">(</a><a id="862" href="demo.AgdaDemoSERENE.html#862" class="Bound">i</a> <a id="864" class="Symbol">:</a> <a id="866" href="Agda.Builtin.Size.html#114" class="Postulate">Size</a><a id="870" class="Symbol">)</a> <a id="872" class="Symbol">(</a><a id="873" href="demo.AgdaDemoSERENE.html#873" class="Bound">A</a> <a id="875" class="Symbol">:</a> <a id="877" class="PrimitiveType">Set</a><a id="880" class="Symbol">)</a> <a id="882" class="Symbol">:</a> <a id="884" class="PrimitiveType">Set</a> <a id="888" class="Keyword">where</a>
+   <a id="897" class="Keyword">coinductive</a>
+   <a id="912" class="Keyword">field</a>
+    <a id="∞Delay.force"></a><a id="922" href="demo.AgdaDemoSERENE.html#922" class="Field">force</a> <a id="928" class="Symbol">:</a> <a id="930" class="Symbol">{</a><a id="931" href="demo.AgdaDemoSERENE.html#931" class="Bound">j</a> <a id="933" class="Symbol">:</a> <a id="935" href="Agda.Builtin.Size.html#146" class="Postulate Operator">Size&lt;</a> <a id="941" href="demo.AgdaDemoSERENE.html#862" class="Bound">i</a><a id="942" class="Symbol">}</a> <a id="944" class="Symbol">→</a> <a id="946" href="demo.AgdaDemoSERENE.html#963" class="Datatype">Delay</a> <a id="952" href="demo.AgdaDemoSERENE.html#931" class="Bound">j</a> <a id="954" href="demo.AgdaDemoSERENE.html#873" class="Bound">A</a>
+
+ <a id="958" class="Keyword">data</a> <a id="Delay"></a><a id="963" href="demo.AgdaDemoSERENE.html#963" class="Datatype">Delay</a> <a id="969" class="Symbol">(</a><a id="970" href="demo.AgdaDemoSERENE.html#970" class="Bound">i</a> <a id="972" class="Symbol">:</a> <a id="974" href="Agda.Builtin.Size.html#114" class="Postulate">Size</a><a id="978" class="Symbol">)</a> <a id="980" class="Symbol">(</a><a id="981" href="demo.AgdaDemoSERENE.html#981" class="Bound">A</a> <a id="983" class="Symbol">:</a> <a id="985" class="PrimitiveType">Set</a><a id="988" class="Symbol">)</a> <a id="990" class="Symbol">:</a> <a id="992" class="PrimitiveType">Set</a>  <a id="997" class="Keyword">where</a>
+    <a id="Delay.now"></a><a id="1007" href="demo.AgdaDemoSERENE.html#1007" class="InductiveConstructor">now</a> <a id="1011" class="Symbol">:</a> <a id="1013" href="demo.AgdaDemoSERENE.html#981" class="Bound">A</a> <a id="1015" class="Symbol">→</a> <a id="1017" href="demo.AgdaDemoSERENE.html#963" class="Datatype">Delay</a> <a id="1023" href="demo.AgdaDemoSERENE.html#970" class="Bound">i</a> <a id="1025" href="demo.AgdaDemoSERENE.html#981" class="Bound">A</a>
+    <a id="Delay.later"></a><a id="1031" href="demo.AgdaDemoSERENE.html#1031" class="InductiveConstructor">later</a> <a id="1037" class="Symbol">:</a> <a id="1039" href="demo.AgdaDemoSERENE.html#854" class="Record">∞Delay</a> <a id="1046" href="demo.AgdaDemoSERENE.html#970" class="Bound">i</a> <a id="1048" href="demo.AgdaDemoSERENE.html#981" class="Bound">A</a> <a id="1050" class="Symbol">→</a> <a id="1052" href="demo.AgdaDemoSERENE.html#963" class="Datatype">Delay</a> <a id="1058" href="demo.AgdaDemoSERENE.html#970" class="Bound">i</a> <a id="1060" href="demo.AgdaDemoSERENE.html#981" class="Bound">A</a>
+
+
+
+
+
+
+
+<a id="1069" class="Keyword">data</a> <a id="Bool"></a><a id="1074" href="demo.AgdaDemoSERENE.html#1074" class="Datatype">Bool</a> <a id="1079" class="Symbol">:</a> <a id="1081" class="PrimitiveType">Set</a> <a id="1085" class="Keyword">where</a>
+ <a id="Bool.true"></a><a id="1092" href="demo.AgdaDemoSERENE.html#1092" class="InductiveConstructor">true</a> <a id="1097" class="Symbol">:</a> <a id="1099" href="demo.AgdaDemoSERENE.html#1074" class="Datatype">Bool</a>
+ <a id="Bool.false"></a><a id="1105" href="demo.AgdaDemoSERENE.html#1105" class="InductiveConstructor">false</a> <a id="1111" class="Symbol">:</a> <a id="1113" href="demo.AgdaDemoSERENE.html#1074" class="Datatype">Bool</a>
+
+
+
+
+
+<a id="_or_"></a><a id="1123" href="demo.AgdaDemoSERENE.html#1123" class="Function Operator">_or_</a> <a id="1128" class="Symbol">:</a> <a id="1130" href="demo.AgdaDemoSERENE.html#1074" class="Datatype">Bool</a> <a id="1135" class="Symbol">→</a> <a id="1137" href="demo.AgdaDemoSERENE.html#1074" class="Datatype">Bool</a> <a id="1142" class="Symbol">→</a> <a id="1144" href="demo.AgdaDemoSERENE.html#1074" class="Datatype">Bool</a>
+<a id="1149" href="demo.AgdaDemoSERENE.html#1105" class="InductiveConstructor">false</a>  <a id="1156" href="demo.AgdaDemoSERENE.html#1123" class="Function Operator">or</a>  <a id="1160" href="demo.AgdaDemoSERENE.html#1160" class="Bound">m</a>   <a id="1164" class="Symbol">=</a>  <a id="1167" href="demo.AgdaDemoSERENE.html#1160" class="Bound">m</a>
+<a id="1169" href="demo.AgdaDemoSERENE.html#1092" class="InductiveConstructor">true</a>   <a id="1176" href="demo.AgdaDemoSERENE.html#1123" class="Function Operator">or</a>  <a id="1180" href="demo.AgdaDemoSERENE.html#1180" class="Bound">m</a>   <a id="1184" class="Symbol">=</a>  <a id="1187" href="demo.AgdaDemoSERENE.html#1092" class="InductiveConstructor">true</a>
+
+
+
+<a id="1195" class="Keyword">postulate</a> <a id="_and_"></a><a id="1205" href="demo.AgdaDemoSERENE.html#1205" class="Postulate Operator">_and_</a> <a id="1211" class="Symbol">:</a> <a id="1213" href="demo.AgdaDemoSERENE.html#1074" class="Datatype">Bool</a> <a id="1218" class="Symbol">→</a> <a id="1220" href="demo.AgdaDemoSERENE.html#1074" class="Datatype">Bool</a> <a id="1225" class="Symbol">→</a> <a id="1227" href="demo.AgdaDemoSERENE.html#1074" class="Datatype">Bool</a>
+<a id="1232" class="Keyword">postulate</a> <a id="if_then_else_"></a><a id="1242" href="demo.AgdaDemoSERENE.html#1242" class="Postulate Operator">if_then_else_</a> <a id="1256" class="Symbol">:</a> <a id="1258" href="demo.AgdaDemoSERENE.html#1074" class="Datatype">Bool</a> <a id="1263" class="Symbol">→</a> <a id="1265" href="demo.AgdaDemoSERENE.html#1074" class="Datatype">Bool</a> <a id="1270" class="Symbol">→</a> <a id="1272" href="demo.AgdaDemoSERENE.html#1074" class="Datatype">Bool</a> <a id="1277" class="Symbol">→</a> <a id="1279" href="demo.AgdaDemoSERENE.html#1074" class="Datatype">Bool</a>
+
+
+
+<a id="1287" class="Keyword">infixl</a>  <a id="1295" class="Number">10</a>  <a id="1299" href="demo.AgdaDemoSERENE.html#1123" class="Function Operator">_or_</a>
+<a id="1304" class="Keyword">infixl</a>  <a id="1312" class="Number">11</a>  <a id="1316" href="demo.AgdaDemoSERENE.html#1205" class="Postulate Operator">_and_</a>
+<a id="1322" class="Keyword">infixl</a>  <a id="1330" class="Number">12</a>  <a id="1334" href="demo.AgdaDemoSERENE.html#1242" class="Postulate Operator">if_then_else_</a>
+
+
+
+<a id="1351" class="Keyword">data</a> <a id="𝔹"></a><a id="1356" href="demo.AgdaDemoSERENE.html#1356" class="Datatype">𝔹</a> <a id="1358" class="Symbol">:</a> <a id="1360" class="PrimitiveType">Set</a> <a id="1364" class="Keyword">where</a>
+ <a id="𝔹.true"></a><a id="1371" href="demo.AgdaDemoSERENE.html#1371" class="InductiveConstructor">true</a>   <a id="1378" class="Symbol">:</a>  <a id="1381" href="demo.AgdaDemoSERENE.html#1356" class="Datatype">𝔹</a>
+ <a id="𝔹.false"></a><a id="1384" href="demo.AgdaDemoSERENE.html#1384" class="InductiveConstructor">false</a>  <a id="1391" class="Symbol">:</a>  <a id="1394" href="demo.AgdaDemoSERENE.html#1356" class="Datatype">𝔹</a>
+
+
+
+<a id="_∨_"></a><a id="1399" href="demo.AgdaDemoSERENE.html#1399" class="Function Operator">_∨_</a> <a id="1403" class="Symbol">:</a> <a id="1405" href="demo.AgdaDemoSERENE.html#1356" class="Datatype">𝔹</a> <a id="1407" class="Symbol">→</a> <a id="1409" href="demo.AgdaDemoSERENE.html#1356" class="Datatype">𝔹</a> <a id="1411" class="Symbol">→</a> <a id="1413" href="demo.AgdaDemoSERENE.html#1356" class="Datatype">𝔹</a>
+<a id="1415" href="demo.AgdaDemoSERENE.html#1371" class="InductiveConstructor">true</a>   <a id="1422" href="demo.AgdaDemoSERENE.html#1399" class="Function Operator">∨</a>  <a id="1425" href="demo.AgdaDemoSERENE.html#1371" class="InductiveConstructor">true</a>   <a id="1432" class="Symbol">=</a>  <a id="1435" href="demo.AgdaDemoSERENE.html#1371" class="InductiveConstructor">true</a>
+<a id="1440" href="demo.AgdaDemoSERENE.html#1371" class="InductiveConstructor">true</a>   <a id="1447" href="demo.AgdaDemoSERENE.html#1399" class="Function Operator">∨</a>  <a id="1450" href="demo.AgdaDemoSERENE.html#1384" class="InductiveConstructor">false</a>  <a id="1457" class="Symbol">=</a>  <a id="1460" href="demo.AgdaDemoSERENE.html#1371" class="InductiveConstructor">true</a>
+<a id="1465" href="demo.AgdaDemoSERENE.html#1384" class="InductiveConstructor">false</a>  <a id="1472" href="demo.AgdaDemoSERENE.html#1399" class="Function Operator">∨</a>  <a id="1475" href="demo.AgdaDemoSERENE.html#1371" class="InductiveConstructor">true</a>   <a id="1482" class="Symbol">=</a>  <a id="1485" href="demo.AgdaDemoSERENE.html#1371" class="InductiveConstructor">true</a>
+<a id="1490" href="demo.AgdaDemoSERENE.html#1384" class="InductiveConstructor">false</a>  <a id="1497" href="demo.AgdaDemoSERENE.html#1399" class="Function Operator">∨</a>  <a id="1500" href="demo.AgdaDemoSERENE.html#1384" class="InductiveConstructor">false</a>  <a id="1507" class="Symbol">=</a>  <a id="1510" href="demo.AgdaDemoSERENE.html#1384" class="InductiveConstructor">false</a>
+
+
+
+<a id="id"></a><a id="1519" href="demo.AgdaDemoSERENE.html#1519" class="Function">id</a> <a id="1522" class="Symbol">:</a> <a id="1524" class="Symbol">{</a><a id="1525" href="demo.AgdaDemoSERENE.html#1525" class="Bound">A</a> <a id="1527" class="Symbol">:</a> <a id="1529" class="PrimitiveType">Set</a><a id="1532" class="Symbol">}</a> <a id="1534" class="Symbol">→</a> <a id="1536" href="demo.AgdaDemoSERENE.html#1525" class="Bound">A</a> <a id="1538" class="Symbol">→</a> <a id="1540" href="demo.AgdaDemoSERENE.html#1525" class="Bound">A</a>
+<a id="1542" href="demo.AgdaDemoSERENE.html#1519" class="Function">id</a> <a id="1545" href="demo.AgdaDemoSERENE.html#1545" class="Bound">x</a> <a id="1547" class="Symbol">=</a> <a id="1549" href="demo.AgdaDemoSERENE.html#1545" class="Bound">x</a>
+
+
+
+<a id="id₁"></a><a id="1554" href="demo.AgdaDemoSERENE.html#1554" class="Function">id₁</a> <a id="1558" class="Symbol">:</a> <a id="1560" class="Symbol">(</a><a id="1561" href="demo.AgdaDemoSERENE.html#1561" class="Bound">A</a> <a id="1563" class="Symbol">:</a> <a id="1565" class="PrimitiveType">Set</a><a id="1568" class="Symbol">)</a> <a id="1570" class="Symbol">→</a> <a id="1572" href="demo.AgdaDemoSERENE.html#1561" class="Bound">A</a> <a id="1574" class="Symbol">→</a> <a id="1576" href="demo.AgdaDemoSERENE.html#1561" class="Bound">A</a>
+<a id="1578" href="demo.AgdaDemoSERENE.html#1554" class="Function">id₁</a> <a id="1582" href="demo.AgdaDemoSERENE.html#1582" class="Bound">A</a> <a id="1584" href="demo.AgdaDemoSERENE.html#1584" class="Bound">x</a> <a id="1586" class="Symbol">=</a> <a id="1588" href="demo.AgdaDemoSERENE.html#1584" class="Bound">x</a>
+
+
+
+
+<a id="True"></a><a id="1594" href="demo.AgdaDemoSERENE.html#1594" class="Function">True</a> <a id="1599" class="Symbol">:</a> <a id="1601" href="demo.AgdaDemoSERENE.html#1074" class="Datatype">Bool</a>
+<a id="1606" href="demo.AgdaDemoSERENE.html#1594" class="Function">True</a> <a id="1611" class="Symbol">=</a> <a id="1613" href="demo.AgdaDemoSERENE.html#1519" class="Function">id</a> <a id="1616" href="demo.AgdaDemoSERENE.html#1092" class="InductiveConstructor">true</a>
+
+
+<a id="Zero"></a><a id="1623" href="demo.AgdaDemoSERENE.html#1623" class="Function">Zero</a> <a id="1628" class="Symbol">:</a> <a id="1630" href="demo.AgdaDemoSERENE.html#207" class="Datatype">ℕ</a>
+<a id="1632" href="demo.AgdaDemoSERENE.html#1623" class="Function">Zero</a> <a id="1637" class="Symbol">=</a> <a id="1639" href="demo.AgdaDemoSERENE.html#1519" class="Function">id</a> <a id="1642" href="demo.AgdaDemoSERENE.html#222" class="InductiveConstructor">zero</a>
+
+
+
+
+<a id="Zero₁"></a><a id="1651" href="demo.AgdaDemoSERENE.html#1651" class="Function">Zero₁</a> <a id="1657" class="Symbol">:</a> <a id="1659" href="demo.AgdaDemoSERENE.html#207" class="Datatype">ℕ</a>
+<a id="1661" href="demo.AgdaDemoSERENE.html#1651" class="Function">Zero₁</a> <a id="1667" class="Symbol">=</a> <a id="1669" href="demo.AgdaDemoSERENE.html#1554" class="Function">id₁</a> <a id="1673" href="demo.AgdaDemoSERENE.html#207" class="Datatype">ℕ</a> <a id="1675" href="demo.AgdaDemoSERENE.html#222" class="InductiveConstructor">zero</a>
+
+
+<a id="true₁"></a><a id="1682" href="demo.AgdaDemoSERENE.html#1682" class="Function">true₁</a> <a id="1688" class="Symbol">:</a> <a id="1690" href="demo.AgdaDemoSERENE.html#1074" class="Datatype">Bool</a>
+<a id="1695" href="demo.AgdaDemoSERENE.html#1682" class="Function">true₁</a> <a id="1701" class="Symbol">=</a> <a id="1703" href="demo.AgdaDemoSERENE.html#1554" class="Function">id₁</a> <a id="1707" href="demo.AgdaDemoSERENE.html#1074" class="Datatype">Bool</a> <a id="1712" href="demo.AgdaDemoSERENE.html#1092" class="InductiveConstructor">true</a>
+
+
+<a id="1719" class="Comment">-- \maine</a>
+
+<a id="1730" class="Keyword">data</a> <a id="Fin"></a><a id="1735" href="demo.AgdaDemoSERENE.html#1735" class="Datatype">Fin</a> <a id="1739" class="Symbol">:</a> <a id="1741" href="demo.AgdaDemoSERENE.html#207" class="Datatype">ℕ</a> <a id="1743" class="Symbol">→</a> <a id="1745" class="PrimitiveType">Set</a> <a id="1749" class="Keyword">where</a>
+  <a id="Fin.zero"></a><a id="1757" href="demo.AgdaDemoSERENE.html#1757" class="InductiveConstructor">zero</a> <a id="1762" class="Symbol">:</a>  <a id="1765" class="Symbol">{</a><a id="1766" href="demo.AgdaDemoSERENE.html#1766" class="Bound">n</a> <a id="1768" class="Symbol">:</a> <a id="1770" href="demo.AgdaDemoSERENE.html#207" class="Datatype">ℕ</a><a id="1771" class="Symbol">}</a>  <a id="1774" class="Symbol">→</a>  <a id="1777" href="demo.AgdaDemoSERENE.html#1735" class="Datatype">Fin</a> <a id="1781" class="Symbol">(</a><a id="1782" href="demo.AgdaDemoSERENE.html#232" class="InductiveConstructor">succ</a> <a id="1787" href="demo.AgdaDemoSERENE.html#1766" class="Bound">n</a><a id="1788" class="Symbol">)</a>
+  <a id="Fin.suc"></a><a id="1792" href="demo.AgdaDemoSERENE.html#1792" class="InductiveConstructor">suc</a>  <a id="1797" class="Symbol">:</a>  <a id="1800" class="Symbol">{</a><a id="1801" href="demo.AgdaDemoSERENE.html#1801" class="Bound">n</a> <a id="1803" class="Symbol">:</a> <a id="1805" href="demo.AgdaDemoSERENE.html#207" class="Datatype">ℕ</a><a id="1806" class="Symbol">}</a>  <a id="1809" class="Symbol">→</a>  <a id="1812" href="demo.AgdaDemoSERENE.html#1735" class="Datatype">Fin</a> <a id="1816" href="demo.AgdaDemoSERENE.html#1801" class="Bound">n</a> <a id="1818" class="Symbol">→</a> <a id="1820" href="demo.AgdaDemoSERENE.html#1735" class="Datatype">Fin</a> <a id="1824" class="Symbol">(</a><a id="1825" href="demo.AgdaDemoSERENE.html#232" class="InductiveConstructor">succ</a> <a id="1830" href="demo.AgdaDemoSERENE.html#1801" class="Bound">n</a><a id="1831" class="Symbol">)</a>
+
+
+<a id="1835" class="Comment">--  constructor pair</a>
+
+<a id="1857" class="Keyword">record</a> <a id="AB"></a><a id="1864" href="demo.AgdaDemoSERENE.html#1864" class="Record">AB</a> <a id="1867" class="Symbol">:</a> <a id="1869" class="PrimitiveType">Set</a> <a id="1873" class="Keyword">where</a> 
+  <a id="1882" class="Keyword">field</a>
+    <a id="AB.a"></a><a id="1892" href="demo.AgdaDemoSERENE.html#1892" class="Field">a</a> <a id="1894" class="Symbol">:</a> <a id="1896" href="demo.AgdaDemoSERENE.html#207" class="Datatype">ℕ</a>
+    <a id="AB.b"></a><a id="1902" href="demo.AgdaDemoSERENE.html#1902" class="Field">b</a> <a id="1904" class="Symbol">:</a> <a id="1906" href="demo.AgdaDemoSERENE.html#1735" class="Datatype">Fin</a> <a id="1910" href="demo.AgdaDemoSERENE.html#1892" class="Field">a</a>
+
+<a id="1913" class="Keyword">open</a> <a id="1918" href="demo.AgdaDemoSERENE.html#1864" class="Module">AB</a>
+
+<a id="1922" class="Keyword">postulate</a> <a id="x"></a><a id="1932" href="demo.AgdaDemoSERENE.html#1932" class="Postulate">x</a> <a id="1934" class="Symbol">:</a> <a id="1936" href="demo.AgdaDemoSERENE.html#207" class="Datatype">ℕ</a>
+<a id="1938" class="Keyword">postulate</a> <a id="y"></a><a id="1948" href="demo.AgdaDemoSERENE.html#1948" class="Postulate">y</a> <a id="1950" class="Symbol">:</a> <a id="1952" href="demo.AgdaDemoSERENE.html#1735" class="Datatype">Fin</a> <a id="1956" href="demo.AgdaDemoSERENE.html#1932" class="Postulate">x</a>
+
+
+<a id="n2"></a><a id="1960" href="demo.AgdaDemoSERENE.html#1960" class="Function">n2</a> <a id="1963" class="Symbol">:</a> <a id="1965" href="demo.AgdaDemoSERENE.html#1864" class="Record">AB</a>
+
+
+<a id="1970" href="demo.AgdaDemoSERENE.html#1960" class="Function">n2</a> <a id="1973" class="Symbol">=</a> <a id="1975" class="Keyword">record</a><a id="1981" class="Symbol">{</a><a id="1982" class="Field">a</a> <a id="1984" class="Symbol">=</a> <a id="1986" href="demo.AgdaDemoSERENE.html#1932" class="Postulate">x</a><a id="1987" class="Symbol">;</a> <a id="1989" class="Field">b</a> <a id="1991" class="Symbol">=</a> <a id="1993" href="demo.AgdaDemoSERENE.html#1948" class="Postulate">y</a><a id="1994" class="Symbol">}</a>
+
+
+
+<a id="n3"></a><a id="1999" href="demo.AgdaDemoSERENE.html#1999" class="Function">n3</a> <a id="2002" class="Symbol">:</a> <a id="2004" href="demo.AgdaDemoSERENE.html#1864" class="Record">AB</a>
+
+<a id="2008" href="demo.AgdaDemoSERENE.html#1892" class="Field">a</a>  <a id="2011" href="demo.AgdaDemoSERENE.html#1999" class="Function">n3</a>  <a id="2015" class="Symbol">=</a>  <a id="2018" href="demo.AgdaDemoSERENE.html#1932" class="Postulate">x</a>
+<a id="2020" href="demo.AgdaDemoSERENE.html#1902" class="Field">b</a>  <a id="2023" href="demo.AgdaDemoSERENE.html#1999" class="Function">n3</a>  <a id="2027" class="Symbol">=</a>  <a id="2030" href="demo.AgdaDemoSERENE.html#1948" class="Postulate">y</a>
+
+
+
+
+
+
+<a id="2038" class="Keyword">postulate</a> <a id="A"></a><a id="2048" href="demo.AgdaDemoSERENE.html#2048" class="Postulate">A</a>  <a id="2051" class="Symbol">:</a> <a id="2053" class="PrimitiveType">Set</a>
+<a id="2057" class="Keyword">postulate</a> <a id="a&#39;"></a><a id="2067" href="demo.AgdaDemoSERENE.html#2067" class="Postulate">a&#39;</a> <a id="2070" class="Symbol">:</a> <a id="2072" href="demo.AgdaDemoSERENE.html#2048" class="Postulate">A</a>
+<a id="2074" class="Keyword">postulate</a> <a id="_==_"></a><a id="2084" href="demo.AgdaDemoSERENE.html#2084" class="Postulate Operator">_==_</a>  <a id="2090" class="Symbol">:</a>  <a id="2093" href="demo.AgdaDemoSERENE.html#2048" class="Postulate">A</a> <a id="2095" class="Symbol">→</a> <a id="2097" href="demo.AgdaDemoSERENE.html#2048" class="Postulate">A</a> <a id="2099" class="Symbol">→</a> <a id="2101" class="PrimitiveType">Set</a>
+<a id="2105" class="Keyword">postulate</a> <a id="_&gt;&#39;_"></a><a id="2115" href="demo.AgdaDemoSERENE.html#2115" class="Postulate Operator">_&gt;&#39;_</a>  <a id="2121" class="Symbol">:</a>  <a id="2124" href="demo.AgdaDemoSERENE.html#2048" class="Postulate">A</a> <a id="2126" class="Symbol">→</a> <a id="2128" href="demo.AgdaDemoSERENE.html#2048" class="Postulate">A</a> <a id="2130" class="Symbol">→</a> <a id="2132" class="PrimitiveType">Set</a>
+
+
+
+<a id="2139" class="Keyword">data</a> <a id="List"></a><a id="2144" href="demo.AgdaDemoSERENE.html#2144" class="Datatype">List</a> <a id="2149" class="Symbol">(</a><a id="2150" href="demo.AgdaDemoSERENE.html#2150" class="Bound">A</a> <a id="2152" class="Symbol">:</a> <a id="2154" class="PrimitiveType">Set</a><a id="2157" class="Symbol">)</a> <a id="2159" class="Symbol">:</a> <a id="2161" class="PrimitiveType">Set</a> <a id="2165" class="Keyword">where</a>
+ <a id="List.[]"></a><a id="2172" href="demo.AgdaDemoSERENE.html#2172" class="InductiveConstructor">[]</a> <a id="2175" class="Symbol">:</a> <a id="2177" href="demo.AgdaDemoSERENE.html#2144" class="Datatype">List</a> <a id="2182" href="demo.AgdaDemoSERENE.html#2150" class="Bound">A</a>
+ <a id="List._::_"></a><a id="2185" href="demo.AgdaDemoSERENE.html#2185" class="InductiveConstructor Operator">_::_</a> <a id="2190" class="Symbol">:</a> <a id="2192" href="demo.AgdaDemoSERENE.html#2150" class="Bound">A</a> <a id="2194" class="Symbol">→</a> <a id="2196" href="demo.AgdaDemoSERENE.html#2144" class="Datatype">List</a> <a id="2201" href="demo.AgdaDemoSERENE.html#2150" class="Bound">A</a> <a id="2203" class="Symbol">→</a> <a id="2205" href="demo.AgdaDemoSERENE.html#2144" class="Datatype">List</a> <a id="2210" href="demo.AgdaDemoSERENE.html#2150" class="Bound">A</a>
+
+
+
+
+<a id="revList"></a><a id="2216" href="demo.AgdaDemoSERENE.html#2216" class="Function">revList</a> <a id="2224" class="Symbol">:</a> <a id="2226" class="Symbol">(</a><a id="2227" href="demo.AgdaDemoSERENE.html#2227" class="Bound">A</a> <a id="2229" class="Symbol">:</a> <a id="2231" class="PrimitiveType">Set</a><a id="2234" class="Symbol">)</a> <a id="2236" class="Symbol">→</a> <a id="2238" href="demo.AgdaDemoSERENE.html#2144" class="Datatype">List</a> <a id="2243" href="demo.AgdaDemoSERENE.html#2227" class="Bound">A</a> <a id="2245" class="Symbol">→</a> <a id="2247" href="demo.AgdaDemoSERENE.html#2144" class="Datatype">List</a> <a id="2252" href="demo.AgdaDemoSERENE.html#2227" class="Bound">A</a>
+<a id="2254" href="demo.AgdaDemoSERENE.html#2216" class="Function">revList</a> <a id="2262" href="demo.AgdaDemoSERENE.html#2262" class="Bound">A</a> <a id="2264" href="demo.AgdaDemoSERENE.html#2264" class="Bound">list</a> <a id="2269" class="Symbol">=</a> <a id="2271" href="demo.AgdaDemoSERENE.html#2307" class="Function">refAux</a> <a id="2278" href="demo.AgdaDemoSERENE.html#2264" class="Bound">list</a> <a id="2283" href="demo.AgdaDemoSERENE.html#2172" class="InductiveConstructor">[]</a>
+       <a id="2293" class="Keyword">where</a>
+        <a id="2307" href="demo.AgdaDemoSERENE.html#2307" class="Function">refAux</a> <a id="2314" class="Symbol">:</a>  <a id="2317" href="demo.AgdaDemoSERENE.html#2144" class="Datatype">List</a> <a id="2322" href="demo.AgdaDemoSERENE.html#2262" class="Bound">A</a> <a id="2324" class="Symbol">→</a> <a id="2326" href="demo.AgdaDemoSERENE.html#2144" class="Datatype">List</a> <a id="2331" href="demo.AgdaDemoSERENE.html#2262" class="Bound">A</a>  <a id="2334" class="Symbol">→</a> <a id="2336" href="demo.AgdaDemoSERENE.html#2144" class="Datatype">List</a> <a id="2341" href="demo.AgdaDemoSERENE.html#2262" class="Bound">A</a>
+        <a id="2351" href="demo.AgdaDemoSERENE.html#2307" class="Function">refAux</a>  <a id="2359" href="demo.AgdaDemoSERENE.html#2172" class="InductiveConstructor">[]</a>         <a id="2370" href="demo.AgdaDemoSERENE.html#2370" class="Bound">xy</a>  <a id="2374" class="Symbol">=</a>  <a id="2377" href="demo.AgdaDemoSERENE.html#2370" class="Bound">xy</a>
+        <a id="2388" href="demo.AgdaDemoSERENE.html#2307" class="Function">refAux</a>  <a id="2396" class="Symbol">(</a><a id="2397" href="demo.AgdaDemoSERENE.html#2397" class="Bound">x</a> <a id="2399" href="demo.AgdaDemoSERENE.html#2185" class="InductiveConstructor Operator">::</a> <a id="2402" href="demo.AgdaDemoSERENE.html#2402" class="Bound">xs</a><a id="2404" class="Symbol">)</a>  <a id="2407" href="demo.AgdaDemoSERENE.html#2407" class="Bound">xy</a>  <a id="2411" class="Symbol">=</a>  <a id="2414" href="demo.AgdaDemoSERENE.html#2307" class="Function">refAux</a> <a id="2421" href="demo.AgdaDemoSERENE.html#2402" class="Bound">xs</a> <a id="2424" class="Symbol">(</a><a id="2425" href="demo.AgdaDemoSERENE.html#2397" class="Bound">x</a> <a id="2427" href="demo.AgdaDemoSERENE.html#2185" class="InductiveConstructor Operator">::</a> <a id="2430" href="demo.AgdaDemoSERENE.html#2407" class="Bound">xy</a><a id="2432" class="Symbol">)</a>
+
+
+
+
+<a id="2438" class="Keyword">mutual</a>
+ <a id="2446" class="Keyword">data</a>  <a id="Even"></a><a id="2452" href="demo.AgdaDemoSERENE.html#2452" class="Datatype">Even</a> <a id="2457" class="Symbol">:</a> <a id="2459" class="PrimitiveType">Set</a> <a id="2463" class="Keyword">where</a>
+  <a id="Even.zero"></a><a id="2471" href="demo.AgdaDemoSERENE.html#2471" class="InductiveConstructor">zero</a> <a id="2476" class="Symbol">:</a> <a id="2478" href="demo.AgdaDemoSERENE.html#2452" class="Datatype">Even</a>
+  <a id="Even.suc"></a><a id="2485" href="demo.AgdaDemoSERENE.html#2485" class="InductiveConstructor">suc</a> <a id="2489" class="Symbol">:</a> <a id="2491" href="demo.AgdaDemoSERENE.html#2509" class="Datatype">Odd</a> <a id="2495" class="Symbol">→</a> <a id="2497" href="demo.AgdaDemoSERENE.html#2452" class="Datatype">Even</a>
+
+ <a id="2504" class="Keyword">data</a> <a id="Odd"></a><a id="2509" href="demo.AgdaDemoSERENE.html#2509" class="Datatype">Odd</a> <a id="2513" class="Symbol">:</a> <a id="2515" class="PrimitiveType">Set</a> <a id="2519" class="Keyword">where</a>
+  <a id="Odd.suc"></a><a id="2527" href="demo.AgdaDemoSERENE.html#2527" class="InductiveConstructor">suc</a> <a id="2531" class="Symbol">:</a> <a id="2533" href="demo.AgdaDemoSERENE.html#2452" class="Datatype">Even</a> <a id="2538" class="Symbol">→</a> <a id="2540" href="demo.AgdaDemoSERENE.html#2509" class="Datatype">Odd</a>
+
+
+
+
+<a id="2548" class="Keyword">data</a>  <a id="Even&#39;"></a><a id="2554" href="demo.AgdaDemoSERENE.html#2554" class="Datatype">Even&#39;</a> <a id="2560" class="Symbol">:</a> <a id="2562" class="PrimitiveType">Set</a>
+<a id="2566" class="Keyword">data</a>  <a id="Odd&#39;"></a><a id="2572" href="demo.AgdaDemoSERENE.html#2572" class="Datatype">Odd&#39;</a>  <a id="2578" class="Symbol">:</a> <a id="2580" class="PrimitiveType">Set</a>
+
+<a id="2585" class="Keyword">data</a>  <a id="2591" href="demo.AgdaDemoSERENE.html#2554" class="Datatype">Even&#39;</a> <a id="2597" class="Keyword">where</a>
+  <a id="Even&#39;.zero"></a><a id="2605" href="demo.AgdaDemoSERENE.html#2605" class="InductiveConstructor">zero</a> <a id="2610" class="Symbol">:</a> <a id="2612" href="demo.AgdaDemoSERENE.html#2554" class="Datatype">Even&#39;</a>
+  <a id="Even&#39;.suc"></a><a id="2620" href="demo.AgdaDemoSERENE.html#2620" class="InductiveConstructor">suc</a>  <a id="2625" class="Symbol">:</a> <a id="2627" href="demo.AgdaDemoSERENE.html#2572" class="Datatype">Odd&#39;</a> <a id="2632" class="Symbol">→</a> <a id="2634" href="demo.AgdaDemoSERENE.html#2554" class="Datatype">Even&#39;</a>
+
+<a id="2641" class="Keyword">data</a>  <a id="2647" href="demo.AgdaDemoSERENE.html#2572" class="Datatype">Odd&#39;</a> <a id="2652" class="Keyword">where</a>
+  <a id="Odd&#39;.suc"></a><a id="2660" href="demo.AgdaDemoSERENE.html#2660" class="InductiveConstructor">suc</a> <a id="2664" class="Symbol">:</a> <a id="2666" href="demo.AgdaDemoSERENE.html#2554" class="Datatype">Even&#39;</a> <a id="2672" class="Symbol">→</a> <a id="2674" href="demo.AgdaDemoSERENE.html#2572" class="Datatype">Odd&#39;</a>
+
+
+
+<a id="_&lt;_"></a><a id="2682" href="demo.AgdaDemoSERENE.html#2682" class="Function Operator">_&lt;_</a> <a id="2686" class="Symbol">:</a> <a id="2688" href="demo.AgdaDemoSERENE.html#207" class="Datatype">ℕ</a> <a id="2690" class="Symbol">→</a> <a id="2692" href="demo.AgdaDemoSERENE.html#207" class="Datatype">ℕ</a> <a id="2694" class="Symbol">→</a> <a id="2696" href="demo.AgdaDemoSERENE.html#1074" class="Datatype">Bool</a>
+<a id="2701" class="Symbol">_</a> <a id="2703" href="demo.AgdaDemoSERENE.html#2682" class="Function Operator">&lt;</a> <a id="2705" href="demo.AgdaDemoSERENE.html#222" class="InductiveConstructor">zero</a> <a id="2710" class="Symbol">=</a> <a id="2712" href="demo.AgdaDemoSERENE.html#1105" class="InductiveConstructor">false</a>
+<a id="2718" href="demo.AgdaDemoSERENE.html#222" class="InductiveConstructor">zero</a> <a id="2723" href="demo.AgdaDemoSERENE.html#2682" class="Function Operator">&lt;</a> <a id="2725" href="demo.AgdaDemoSERENE.html#232" class="InductiveConstructor">succ</a> <a id="2730" href="demo.AgdaDemoSERENE.html#2730" class="Bound">m</a> <a id="2732" class="Symbol">=</a> <a id="2734" href="demo.AgdaDemoSERENE.html#1092" class="InductiveConstructor">true</a>
+<a id="2739" href="demo.AgdaDemoSERENE.html#232" class="InductiveConstructor">succ</a> <a id="2744" href="demo.AgdaDemoSERENE.html#2744" class="Bound">n</a> <a id="2746" href="demo.AgdaDemoSERENE.html#2682" class="Function Operator">&lt;</a> <a id="2748" href="demo.AgdaDemoSERENE.html#232" class="InductiveConstructor">succ</a> <a id="2753" href="demo.AgdaDemoSERENE.html#2753" class="Bound">m</a> <a id="2755" class="Symbol">=</a> <a id="2757" href="demo.AgdaDemoSERENE.html#2744" class="Bound">n</a> <a id="2759" href="demo.AgdaDemoSERENE.html#2682" class="Function Operator">&lt;</a> <a id="2761" href="demo.AgdaDemoSERENE.html#2753" class="Bound">m</a>
+
+
+
+
+<a id="Minℕ"></a><a id="2767" href="demo.AgdaDemoSERENE.html#2767" class="Function">Minℕ</a> <a id="2772" class="Symbol">:</a> <a id="2774" href="demo.AgdaDemoSERENE.html#207" class="Datatype">ℕ</a> <a id="2776" class="Symbol">→</a> <a id="2778" href="demo.AgdaDemoSERENE.html#207" class="Datatype">ℕ</a> <a id="2780" class="Symbol">→</a> <a id="2782" href="demo.AgdaDemoSERENE.html#207" class="Datatype">ℕ</a>
+<a id="2784" href="demo.AgdaDemoSERENE.html#2767" class="Function">Minℕ</a> <a id="2789" href="demo.AgdaDemoSERENE.html#2789" class="Bound">x</a> <a id="2791" href="demo.AgdaDemoSERENE.html#2791" class="Bound">y</a> <a id="2793" class="Keyword">with</a> <a id="2798" class="Symbol">(</a><a id="2799" href="demo.AgdaDemoSERENE.html#2789" class="Bound">x</a> <a id="2801" href="demo.AgdaDemoSERENE.html#2682" class="Function Operator">&lt;</a> <a id="2803" href="demo.AgdaDemoSERENE.html#2791" class="Bound">y</a><a id="2804" class="Symbol">)</a>
+<a id="2806" href="demo.AgdaDemoSERENE.html#2767" class="Function">Minℕ</a> <a id="2811" href="demo.AgdaDemoSERENE.html#2811" class="Bound">x</a> <a id="2813" href="demo.AgdaDemoSERENE.html#2813" class="Bound">y</a> <a id="2815" class="Symbol">|</a> <a id="2817" href="demo.AgdaDemoSERENE.html#1092" class="InductiveConstructor">true</a> <a id="2822" class="Symbol">=</a> <a id="2824" href="demo.AgdaDemoSERENE.html#2811" class="Bound">x</a>
+<a id="2826" href="demo.AgdaDemoSERENE.html#2767" class="Function">Minℕ</a> <a id="2831" href="demo.AgdaDemoSERENE.html#2831" class="Bound">x</a> <a id="2833" href="demo.AgdaDemoSERENE.html#2833" class="Bound">y</a> <a id="2835" class="Symbol">|</a> <a id="2837" href="demo.AgdaDemoSERENE.html#1105" class="InductiveConstructor">false</a> <a id="2843" class="Symbol">=</a> <a id="2845" href="demo.AgdaDemoSERENE.html#2833" class="Bound">y</a>
+
+
+
+
+
+
+<a id="2853" class="Comment">--open import Data.Nat</a>
+
+<a id="2877" class="Keyword">data</a> <a id="Nat"></a><a id="2882" href="demo.AgdaDemoSERENE.html#2882" class="Datatype">Nat</a> <a id="2886" class="Symbol">:</a> <a id="2888" class="PrimitiveType">Set</a> <a id="2892" class="Keyword">where</a>
+  <a id="Nat.zero"></a><a id="2900" href="demo.AgdaDemoSERENE.html#2900" class="InductiveConstructor">zero</a> <a id="2905" class="Symbol">:</a> <a id="2907" href="demo.AgdaDemoSERENE.html#2882" class="Datatype">Nat</a>
+  <a id="Nat.suc"></a><a id="2913" href="demo.AgdaDemoSERENE.html#2913" class="InductiveConstructor">suc</a>  <a id="2918" class="Symbol">:</a> <a id="2920" href="demo.AgdaDemoSERENE.html#2882" class="Datatype">Nat</a> <a id="2924" class="Symbol">→</a> <a id="2926" href="demo.AgdaDemoSERENE.html#2882" class="Datatype">Nat</a>
+
+<a id="2931" class="Comment">--{-# BUILTIN NATURAL Nat #-}</a>
+
+<a id="2962" class="Comment">--{-# BUILTIN NATURAL ℕ #-}</a>
+
+<a id="2991" class="Comment">{-
+aa₁ : ℕ
+aa₁ = 0
+-}</a>
+
+
+<a id="3015" class="Comment">{-
+{-# BUILTIN LIST List  #-}
+{-# BUILTIN NIL  []    #-}
+{-# BUILTIN CONS  _::_ #-}
+-}</a>
+
+
+
+
+
+<a id="3107" class="Keyword">data</a> <a id="List₀"></a><a id="3112" href="demo.AgdaDemoSERENE.html#3112" class="Datatype">List₀</a> <a id="3118" class="Symbol">(</a><a id="3119" href="demo.AgdaDemoSERENE.html#3119" class="Bound">A</a> <a id="3121" class="Symbol">:</a> <a id="3123" class="PrimitiveType">Set</a><a id="3126" class="Symbol">)</a> <a id="3128" class="Symbol">:</a> <a id="3130" class="PrimitiveType">Set</a> <a id="3134" class="Keyword">where</a>
+ <a id="List₀.[]"></a><a id="3141" href="demo.AgdaDemoSERENE.html#3141" class="InductiveConstructor">[]</a> <a id="3144" class="Symbol">:</a> <a id="3146" href="demo.AgdaDemoSERENE.html#3112" class="Datatype">List₀</a> <a id="3152" href="demo.AgdaDemoSERENE.html#3119" class="Bound">A</a>
+ <a id="List₀._::_"></a><a id="3155" href="demo.AgdaDemoSERENE.html#3155" class="InductiveConstructor Operator">_::_</a> <a id="3160" class="Symbol">:</a> <a id="3162" href="demo.AgdaDemoSERENE.html#3119" class="Bound">A</a> <a id="3164" class="Symbol">→</a> <a id="3166" href="demo.AgdaDemoSERENE.html#3112" class="Datatype">List₀</a> <a id="3172" href="demo.AgdaDemoSERENE.html#3119" class="Bound">A</a> <a id="3174" class="Symbol">→</a> <a id="3176" href="demo.AgdaDemoSERENE.html#3112" class="Datatype">List₀</a> <a id="3182" href="demo.AgdaDemoSERENE.html#3119" class="Bound">A</a>
+
+
+<a id="3186" class="Comment">--{-# COMPILED_DATA List List [] (::) #-}</a>
+
+
+<a id="3230" class="Symbol">{-#</a> <a id="3234" class="Keyword">FOREIGN</a> GHC type AgdaList a = [a] <a id="3268" class="Symbol">#-}</a>
+<a id="3272" class="Symbol">{-#</a> <a id="3276" class="Keyword">COMPILE</a> GHC <a id="3288" href="demo.AgdaDemoSERENE.html#2144" class="Datatype">List</a> = data AgdaList ([] | (:)) <a id="3320" class="Symbol">#-}</a>
+
+
+
+
+<a id="3328" class="Keyword">postulate</a> <a id="IO"></a><a id="3338" href="demo.AgdaDemoSERENE.html#3338" class="Postulate">IO</a> <a id="3341" class="Symbol">:</a> <a id="3343" class="PrimitiveType">Set</a> <a id="3347" class="Symbol">→</a> <a id="3349" class="PrimitiveType">Set</a>
+
+<a id="3354" class="Comment">--{-#  COMPILED_TYPE IO IO #-}</a>
+<a id="3385" class="Comment">-- {-# FOREIGN GHC type AgdaIO a = IO a #-}</a>
+<a id="3429" class="Comment">-- {-# COMPILE GHC IO = type AgdaIO #-}</a>
+
+<a id="3470" class="Symbol">{-#</a> <a id="3474" class="Keyword">COMPILE</a> GHC <a id="3486" href="demo.AgdaDemoSERENE.html#3338" class="Postulate">IO</a> = type IO <a id="3499" class="Symbol">#-}</a>
+
+
+
+<a id="3506" class="Keyword">data</a> <a id="Unit"></a><a id="3511" href="demo.AgdaDemoSERENE.html#3511" class="Datatype">Unit</a> <a id="3516" class="Symbol">:</a> <a id="3518" class="PrimitiveType">Set</a> <a id="3522" class="Keyword">where</a>
+ <a id="Unit.unit"></a><a id="3529" href="demo.AgdaDemoSERENE.html#3529" class="InductiveConstructor">unit</a> <a id="3534" class="Symbol">:</a> <a id="3536" href="demo.AgdaDemoSERENE.html#3511" class="Datatype">Unit</a>
+
+
+<a id="3543" class="Comment">--{-#  COMPILED_DATA Unit () () #-}</a>
+
+
+<a id="3581" class="Symbol">{-#</a> <a id="3585" class="Keyword">COMPILE</a> GHC <a id="3597" href="demo.AgdaDemoSERENE.html#3511" class="Datatype">Unit</a> = data () (()) <a id="3617" class="Symbol">#-}</a>
+
+
+
+<a id="3624" class="Keyword">postulate</a> <a id="String"></a><a id="3634" href="demo.AgdaDemoSERENE.html#3634" class="Postulate">String</a> <a id="3641" class="Symbol">:</a> <a id="3643" class="PrimitiveType">Set</a>
+<a id="3647" class="Comment">-- {-# BUILTIN STRING String #-}</a>
+
+<a id="3681" class="Keyword">postulate</a> <a id="putStrLn"></a><a id="3691" href="demo.AgdaDemoSERENE.html#3691" class="Postulate">putStrLn</a> <a id="3700" class="Symbol">:</a> <a id="3702" href="demo.AgdaDemoSERENE.html#3634" class="Postulate">String</a> <a id="3709" class="Symbol">→</a> <a id="3711" href="demo.AgdaDemoSERENE.html#3338" class="Postulate">IO</a> <a id="3714" href="demo.AgdaDemoSERENE.html#3511" class="Datatype">Unit</a>
+<a id="3719" class="Symbol">{-#</a> <a id="3723" class="Keyword">COMPILE</a> GHC <a id="3735" href="demo.AgdaDemoSERENE.html#3691" class="Postulate">putStrLn</a> = (\ s -&gt; putStrLn (Data.Text.unpack s)) <a id="3785" class="Symbol">#-}</a>
+
+<a id="3790" class="Comment">-- {-# COMPILED putStrLn (\ _ s -&gt; Data.Text.IO.putStrLn s) #-}</a>
+
+<a id="3855" class="Comment">--{-# COMPILED_TYPE String String #-}</a>
+
+<a id="3894" class="Comment">--{-# COMPILED putStrLn putStrLn #-}</a>
+
+
+
+<a id="3934" class="Keyword">data</a> <a id="⊥"></a><a id="3939" href="demo.AgdaDemoSERENE.html#3939" class="Datatype">⊥</a> <a id="3941" class="Symbol">:</a> <a id="3943" class="PrimitiveType">Set</a> <a id="3947" class="Keyword">where</a>
+
+
+
+<a id="3956" class="Keyword">data</a> <a id="⊤"></a><a id="3961" href="demo.AgdaDemoSERENE.html#3961" class="Datatype">⊤</a> <a id="3963" class="Symbol">:</a> <a id="3965" class="PrimitiveType">Set</a> <a id="3969" class="Keyword">where</a>
+ <a id="⊤.triv"></a><a id="3976" href="demo.AgdaDemoSERENE.html#3976" class="InductiveConstructor">triv</a> <a id="3981" class="Symbol">:</a> <a id="3983" href="demo.AgdaDemoSERENE.html#3961" class="Datatype">⊤</a>
+
+
+
+<a id="3988" class="Keyword">mutual</a>
+ <a id="3996" class="Keyword">data</a> <a id="U"></a><a id="4001" href="demo.AgdaDemoSERENE.html#4001" class="Datatype">U</a> <a id="4003" class="Symbol">:</a> <a id="4005" class="PrimitiveType">Set</a> <a id="4009" class="Keyword">where</a>
+   <a id="U.⊥&#39;"></a><a id="4018" href="demo.AgdaDemoSERENE.html#4018" class="InductiveConstructor">⊥&#39;</a>     <a id="4025" class="Symbol">:</a>  <a id="4028" href="demo.AgdaDemoSERENE.html#4001" class="Datatype">U</a>
+   <a id="U.⊤&#39;"></a><a id="4033" href="demo.AgdaDemoSERENE.html#4033" class="InductiveConstructor">⊤&#39;</a>     <a id="4040" class="Symbol">:</a>  <a id="4043" href="demo.AgdaDemoSERENE.html#4001" class="Datatype">U</a>
+   <a id="U.Bool&#39;"></a><a id="4048" href="demo.AgdaDemoSERENE.html#4048" class="InductiveConstructor">Bool&#39;</a>  <a id="4055" class="Symbol">:</a>  <a id="4058" href="demo.AgdaDemoSERENE.html#4001" class="Datatype">U</a>
+   <a id="U.Π&#39;"></a><a id="4063" href="demo.AgdaDemoSERENE.html#4063" class="InductiveConstructor">Π&#39;</a>     <a id="4070" class="Symbol">:</a>  <a id="4073" class="Symbol">(</a><a id="4074" href="demo.AgdaDemoSERENE.html#4074" class="Bound">a</a> <a id="4076" class="Symbol">:</a> <a id="4078" href="demo.AgdaDemoSERENE.html#4001" class="Datatype">U</a><a id="4079" class="Symbol">)(</a><a id="4081" href="demo.AgdaDemoSERENE.html#4081" class="Bound">b</a> <a id="4083" class="Symbol">:</a> <a id="4085" href="demo.AgdaDemoSERENE.html#4101" class="Function">T₀</a> <a id="4088" href="demo.AgdaDemoSERENE.html#4074" class="Bound">a</a> <a id="4090" class="Symbol">→</a> <a id="4092" href="demo.AgdaDemoSERENE.html#4001" class="Datatype">U</a><a id="4093" class="Symbol">)</a> <a id="4095" class="Symbol">→</a> <a id="4097" href="demo.AgdaDemoSERENE.html#4001" class="Datatype">U</a>
+
+ <a id="T₀"></a><a id="4101" href="demo.AgdaDemoSERENE.html#4101" class="Function">T₀</a>  <a id="4105" class="Symbol">:</a> <a id="4107" href="demo.AgdaDemoSERENE.html#4001" class="Datatype">U</a> <a id="4109" class="Symbol">→</a> <a id="4111" class="PrimitiveType">Set</a>
+ <a id="4116" href="demo.AgdaDemoSERENE.html#4101" class="Function">T₀</a>  <a id="4120" href="demo.AgdaDemoSERENE.html#4018" class="InductiveConstructor">⊥&#39;</a>        <a id="4130" class="Symbol">=</a>  <a id="4133" href="demo.AgdaDemoSERENE.html#3939" class="Datatype">⊥</a>
+ <a id="4136" href="demo.AgdaDemoSERENE.html#4101" class="Function">T₀</a>  <a id="4140" href="demo.AgdaDemoSERENE.html#4033" class="InductiveConstructor">⊤&#39;</a>        <a id="4150" class="Symbol">=</a>  <a id="4153" href="demo.AgdaDemoSERENE.html#3961" class="Datatype">⊤</a>
+ <a id="4156" href="demo.AgdaDemoSERENE.html#4101" class="Function">T₀</a>  <a id="4160" href="demo.AgdaDemoSERENE.html#4048" class="InductiveConstructor">Bool&#39;</a>     <a id="4170" class="Symbol">=</a>  <a id="4173" href="demo.AgdaDemoSERENE.html#1074" class="Datatype">Bool</a>
+ <a id="4179" href="demo.AgdaDemoSERENE.html#4101" class="Function">T₀</a>  <a id="4183" class="Symbol">(</a><a id="4184" href="demo.AgdaDemoSERENE.html#4063" class="InductiveConstructor">Π&#39;</a> <a id="4187" href="demo.AgdaDemoSERENE.html#4187" class="Bound">a</a> <a id="4189" href="demo.AgdaDemoSERENE.html#4189" class="Bound">b</a><a id="4190" class="Symbol">)</a>  <a id="4193" class="Symbol">=</a>  <a id="4196" class="Symbol">(</a><a id="4197" href="demo.AgdaDemoSERENE.html#4197" class="Bound">x</a> <a id="4199" class="Symbol">:</a> <a id="4201" href="demo.AgdaDemoSERENE.html#4101" class="Function">T₀</a> <a id="4204" href="demo.AgdaDemoSERENE.html#4187" class="Bound">a</a><a id="4205" class="Symbol">)</a> <a id="4207" class="Symbol">→</a> <a id="4209" href="demo.AgdaDemoSERENE.html#4101" class="Function">T₀</a> <a id="4212" class="Symbol">(</a><a id="4213" href="demo.AgdaDemoSERENE.html#4189" class="Bound">b</a> <a id="4215" href="demo.AgdaDemoSERENE.html#4197" class="Bound">x</a><a id="4216" class="Symbol">)</a>
+
+
+
+
+
+
+
+
+<a id="4226" class="Keyword">record</a> <a id="Stream"></a><a id="4233" href="demo.AgdaDemoSERENE.html#4233" class="Record">Stream</a> <a id="4240" class="Symbol">(</a><a id="4241" href="demo.AgdaDemoSERENE.html#4241" class="Bound">i</a> <a id="4243" class="Symbol">:</a> <a id="4245" href="Agda.Builtin.Size.html#114" class="Postulate">Size</a><a id="4249" class="Symbol">)</a> <a id="4251" class="Symbol">:</a> <a id="4253" class="PrimitiveType">Set</a> <a id="4257" class="Keyword">where</a>
+  <a id="4265" class="Keyword">coinductive</a>
+  <a id="4279" class="Keyword">field</a>
+    <a id="Stream.head"></a><a id="4289" href="demo.AgdaDemoSERENE.html#4289" class="Field">head</a>  <a id="4295" class="Symbol">:</a>  <a id="4298" href="demo.AgdaDemoSERENE.html#207" class="Datatype">ℕ</a>
+    <a id="Stream.tail"></a><a id="4304" href="demo.AgdaDemoSERENE.html#4304" class="Field">tail</a>  <a id="4310" class="Symbol">:</a>  <a id="4313" class="Symbol">{</a><a id="4314" href="demo.AgdaDemoSERENE.html#4314" class="Bound">j</a> <a id="4316" class="Symbol">:</a> <a id="4318" href="Agda.Builtin.Size.html#146" class="Postulate Operator">Size&lt;</a> <a id="4324" href="demo.AgdaDemoSERENE.html#4241" class="Bound">i</a><a id="4325" class="Symbol">}</a> <a id="4327" class="Symbol">→</a> <a id="4329" href="demo.AgdaDemoSERENE.html#4233" class="Record">Stream</a> <a id="4336" href="demo.AgdaDemoSERENE.html#4314" class="Bound">j</a>
+
+
+
+
+
+
+<a id="4344" class="Keyword">open</a> <a id="4349" href="demo.AgdaDemoSERENE.html#4233" class="Module">Stream</a>
+
+
+
+
+<a id="cons"></a><a id="4360" href="demo.AgdaDemoSERENE.html#4360" class="Function">cons</a> <a id="4365" class="Symbol">:</a> <a id="4367" class="Symbol">∀</a> <a id="4369" class="Symbol">{</a><a id="4370" href="demo.AgdaDemoSERENE.html#4370" class="Bound">i</a><a id="4371" class="Symbol">}</a> <a id="4373" class="Symbol">→</a> <a id="4375" href="demo.AgdaDemoSERENE.html#207" class="Datatype">ℕ</a> <a id="4377" class="Symbol">→</a>  <a id="4380" href="demo.AgdaDemoSERENE.html#4233" class="Record">Stream</a> <a id="4387" href="demo.AgdaDemoSERENE.html#4370" class="Bound">i</a> <a id="4389" class="Symbol">→</a> <a id="4391" href="demo.AgdaDemoSERENE.html#4233" class="Record">Stream</a> <a id="4398" class="Symbol">(</a><a id="4399" href="Agda.Builtin.Size.html#178" class="Postulate Operator">↑</a> <a id="4401" href="demo.AgdaDemoSERENE.html#4370" class="Bound">i</a><a id="4402" class="Symbol">)</a>
+<a id="4404" href="demo.AgdaDemoSERENE.html#4289" class="Field">head</a>  <a id="4410" class="Symbol">(</a><a id="4411" href="demo.AgdaDemoSERENE.html#4360" class="Function">cons</a> <a id="4416" href="demo.AgdaDemoSERENE.html#4416" class="Bound">n</a> <a id="4418" href="demo.AgdaDemoSERENE.html#4418" class="Bound">s</a><a id="4419" class="Symbol">)</a>  <a id="4422" class="Symbol">=</a>  <a id="4425" href="demo.AgdaDemoSERENE.html#4416" class="Bound">n</a>
+<a id="4427" href="demo.AgdaDemoSERENE.html#4304" class="Field">tail</a>  <a id="4433" class="Symbol">(</a><a id="4434" href="demo.AgdaDemoSERENE.html#4360" class="Function">cons</a> <a id="4439" href="demo.AgdaDemoSERENE.html#4439" class="Bound">n</a> <a id="4441" href="demo.AgdaDemoSERENE.html#4441" class="Bound">s</a><a id="4442" class="Symbol">)</a>  <a id="4445" class="Symbol">=</a>  <a id="4448" href="demo.AgdaDemoSERENE.html#4441" class="Bound">s</a>
+
+
+
+
+
+
+
+
+
+
+<a id="_+s_"></a><a id="4460" href="demo.AgdaDemoSERENE.html#4460" class="Function Operator">_+s_</a> <a id="4465" class="Symbol">:</a> <a id="4467" class="Symbol">∀</a> <a id="4469" class="Symbol">{</a><a id="4470" href="demo.AgdaDemoSERENE.html#4470" class="Bound">i</a><a id="4471" class="Symbol">}</a> <a id="4473" class="Symbol">→</a> <a id="4475" href="demo.AgdaDemoSERENE.html#4233" class="Record">Stream</a> <a id="4482" href="demo.AgdaDemoSERENE.html#4470" class="Bound">i</a> <a id="4484" class="Symbol">→</a> <a id="4486" href="demo.AgdaDemoSERENE.html#4233" class="Record">Stream</a> <a id="4493" href="demo.AgdaDemoSERENE.html#4470" class="Bound">i</a> <a id="4495" class="Symbol">→</a> <a id="4497" href="demo.AgdaDemoSERENE.html#4233" class="Record">Stream</a> <a id="4504" href="demo.AgdaDemoSERENE.html#4470" class="Bound">i</a>
+<a id="4506" href="demo.AgdaDemoSERENE.html#4289" class="Field">head</a>  <a id="4512" class="Symbol">(</a><a id="4513" href="demo.AgdaDemoSERENE.html#4513" class="Bound">s</a>  <a id="4516" href="demo.AgdaDemoSERENE.html#4460" class="Function Operator">+s</a>  <a id="4520" href="demo.AgdaDemoSERENE.html#4520" class="Bound">s&#39;</a><a id="4522" class="Symbol">)</a>  <a id="4525" class="Symbol">=</a>  <a id="4528" href="demo.AgdaDemoSERENE.html#4289" class="Field">head</a>  <a id="4534" href="demo.AgdaDemoSERENE.html#4513" class="Bound">s</a>  <a id="4537" href="demo.AgdaDemoSERENE.html#248" class="Function Operator">+</a>   <a id="4541" href="demo.AgdaDemoSERENE.html#4289" class="Field">head</a>  <a id="4547" href="demo.AgdaDemoSERENE.html#4520" class="Bound">s&#39;</a>
+<a id="4550" href="demo.AgdaDemoSERENE.html#4304" class="Field">tail</a>  <a id="4556" class="Symbol">(</a><a id="4557" href="demo.AgdaDemoSERENE.html#4557" class="Bound">s</a>  <a id="4560" href="demo.AgdaDemoSERENE.html#4460" class="Function Operator">+s</a>  <a id="4564" href="demo.AgdaDemoSERENE.html#4564" class="Bound">s&#39;</a><a id="4566" class="Symbol">)</a>  <a id="4569" class="Symbol">=</a>  <a id="4572" href="demo.AgdaDemoSERENE.html#4304" class="Field">tail</a>  <a id="4578" href="demo.AgdaDemoSERENE.html#4557" class="Bound">s</a>  <a id="4581" href="demo.AgdaDemoSERENE.html#4460" class="Function Operator">+s</a>  <a id="4585" href="demo.AgdaDemoSERENE.html#4304" class="Field">tail</a>  <a id="4591" href="demo.AgdaDemoSERENE.html#4564" class="Bound">s&#39;</a>
+
+
+
+
+
+<a id="T"></a><a id="4599" href="demo.AgdaDemoSERENE.html#4599" class="Function">T</a> <a id="4601" class="Symbol">:</a> <a id="4603" href="demo.AgdaDemoSERENE.html#1074" class="Datatype">Bool</a> <a id="4608" class="Symbol">→</a> <a id="4610" class="PrimitiveType">Set</a>
+<a id="4614" href="demo.AgdaDemoSERENE.html#4599" class="Function">T</a> <a id="4616" href="demo.AgdaDemoSERENE.html#1092" class="InductiveConstructor">true</a> <a id="4621" class="Symbol">=</a>  <a id="4624" href="demo.AgdaDemoSERENE.html#3961" class="Datatype">⊤</a>
+<a id="4626" href="demo.AgdaDemoSERENE.html#4599" class="Function">T</a> <a id="4628" href="demo.AgdaDemoSERENE.html#1105" class="InductiveConstructor">false</a> <a id="4634" class="Symbol">=</a>  <a id="4637" href="demo.AgdaDemoSERENE.html#3939" class="Datatype">⊥</a>
+
+
+
+<a id="4642" class="Keyword">infix</a> <a id="4648" class="Number">4</a> <a id="4650" href="demo.AgdaDemoSERENE.html#4671" class="Datatype Operator">_≡_</a>
+
+<a id="4655" class="Comment">-- \maine</a>
+
+<a id="4666" class="Keyword">data</a> <a id="_≡_"></a><a id="4671" href="demo.AgdaDemoSERENE.html#4671" class="Datatype Operator">_≡_</a> <a id="4675" class="Symbol">{</a><a id="4676" href="demo.AgdaDemoSERENE.html#4676" class="Bound">a</a><a id="4677" class="Symbol">}</a> <a id="4679" class="Symbol">{</a><a id="4680" href="demo.AgdaDemoSERENE.html#4680" class="Bound">A</a> <a id="4682" class="Symbol">:</a> <a id="4684" class="PrimitiveType">Set</a> <a id="4688" href="demo.AgdaDemoSERENE.html#4676" class="Bound">a</a><a id="4689" class="Symbol">}</a> <a id="4691" class="Symbol">(</a><a id="4692" href="demo.AgdaDemoSERENE.html#4692" class="Bound">x</a> <a id="4694" class="Symbol">:</a> <a id="4696" href="demo.AgdaDemoSERENE.html#4680" class="Bound">A</a><a id="4697" class="Symbol">)</a> <a id="4699" class="Symbol">:</a> <a id="4701" href="demo.AgdaDemoSERENE.html#4680" class="Bound">A</a> <a id="4703" class="Symbol">→</a> <a id="4705" class="PrimitiveType">Set</a> <a id="4709" href="demo.AgdaDemoSERENE.html#4676" class="Bound">a</a> <a id="4711" class="Keyword">where</a>
+  <a id="4719" class="Keyword">instance</a> <a id="_≡_.refl"></a><a id="4728" href="demo.AgdaDemoSERENE.html#4728" class="InductiveConstructor">refl</a> <a id="4733" class="Symbol">:</a> <a id="4735" href="demo.AgdaDemoSERENE.html#4692" class="Bound">x</a> <a id="4737" href="demo.AgdaDemoSERENE.html#4671" class="Datatype Operator">≡</a> <a id="4739" href="demo.AgdaDemoSERENE.html#4692" class="Bound">x</a>
+
+
+
+
+<a id="+0&#39;"></a><a id="4745" href="demo.AgdaDemoSERENE.html#4745" class="Function">+0&#39;</a> <a id="4749" class="Symbol">:</a> <a id="4751" class="Symbol">∀</a> <a id="4753" href="demo.AgdaDemoSERENE.html#4753" class="Bound">n</a> <a id="4755" class="Symbol">→</a> <a id="4757" href="demo.AgdaDemoSERENE.html#4753" class="Bound">n</a> <a id="4759" href="demo.AgdaDemoSERENE.html#248" class="Function Operator">+</a> <a id="4761" href="demo.AgdaDemoSERENE.html#222" class="InductiveConstructor">zero</a> <a id="4766" href="demo.AgdaDemoSERENE.html#4671" class="Datatype Operator">≡</a> <a id="4768" href="demo.AgdaDemoSERENE.html#4753" class="Bound">n</a>
+<a id="4770" href="demo.AgdaDemoSERENE.html#4745" class="Function">+0&#39;</a> <a id="4774" href="demo.AgdaDemoSERENE.html#222" class="InductiveConstructor">zero</a> <a id="4779" class="Symbol">=</a> <a id="4781" href="demo.AgdaDemoSERENE.html#4728" class="InductiveConstructor">refl</a>
+<a id="4786" href="demo.AgdaDemoSERENE.html#4745" class="Function">+0&#39;</a> <a id="4790" class="Symbol">(</a><a id="4791" href="demo.AgdaDemoSERENE.html#232" class="InductiveConstructor">succ</a> <a id="4796" href="demo.AgdaDemoSERENE.html#4796" class="Bound">n</a><a id="4797" class="Symbol">)</a> <a id="4799" class="Keyword">with</a> <a id="4804" href="demo.AgdaDemoSERENE.html#4796" class="Bound">n</a> <a id="4806" href="demo.AgdaDemoSERENE.html#248" class="Function Operator">+</a> <a id="4808" href="demo.AgdaDemoSERENE.html#222" class="InductiveConstructor">zero</a> <a id="4813" class="Symbol">|</a> <a id="4815" href="demo.AgdaDemoSERENE.html#4745" class="Function">+0&#39;</a> <a id="4819" href="demo.AgdaDemoSERENE.html#4796" class="Bound">n</a>
+<a id="4821" href="demo.AgdaDemoSERENE.html#4745" class="Function">+0&#39;</a> <a id="4825" class="Symbol">(</a><a id="4826" href="demo.AgdaDemoSERENE.html#232" class="InductiveConstructor">succ</a> <a id="4831" href="demo.AgdaDemoSERENE.html#4831" class="Bound">n</a><a id="4832" class="Symbol">)</a> <a id="4834" class="Symbol">|</a> <a id="4836" class="DottedPattern Symbol">.</a><a id="4837" href="demo.AgdaDemoSERENE.html#4831" class="DottedPattern Bound">n</a> <a id="4839" class="Symbol">|</a> <a id="4841" href="demo.AgdaDemoSERENE.html#4728" class="InductiveConstructor">refl</a> <a id="4846" class="Symbol">=</a> <a id="4848" href="demo.AgdaDemoSERENE.html#4728" class="InductiveConstructor">refl</a>
+
+</pre></body></html>
