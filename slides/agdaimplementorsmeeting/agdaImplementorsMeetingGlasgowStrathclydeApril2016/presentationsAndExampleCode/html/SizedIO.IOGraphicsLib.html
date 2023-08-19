@@ -1,0 +1,2757 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >SizedIO.IOGraphicsLib</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Keyword"
+      >module</a
+      ><a name="7"
+      > </a
+      ><a name="8" href="SizedIO.IOGraphicsLib.html#1" class="Module"
+      >SizedIO.IOGraphicsLib</a
+      ><a name="29"
+      > </a
+      ><a name="30" class="Keyword"
+      >where</a
+      ><a name="35"
+      >
+
+</a
+      ><a name="37" class="Symbol"
+      >{-#</a
+      ><a name="40"
+      > </a
+      ><a name="41" class="Keyword"
+      >IMPORT</a
+      ><a name="47"
+      > Graphics.SOE </a
+      ><a name="61" class="Symbol"
+      >#-}</a
+      ><a name="64"
+      >
+</a
+      ><a name="65" class="Symbol"
+      >{-#</a
+      ><a name="68"
+      > </a
+      ><a name="69" class="Keyword"
+      >IMPORT</a
+      ><a name="75"
+      > Graphics.Rendering.OpenGL </a
+      ><a name="102" class="Symbol"
+      >#-}</a
+      ><a name="105"
+      >
+</a
+      ><a name="106" class="Symbol"
+      >{-#</a
+      ><a name="109"
+      > </a
+      ><a name="110" class="Keyword"
+      >IMPORT</a
+      ><a name="116"
+      > GHC.Int </a
+      ><a name="125" class="Symbol"
+      >#-}</a
+      ><a name="128"
+      >
+</a
+      ><a name="129" class="Symbol"
+      >{-#</a
+      ><a name="132"
+      > </a
+      ><a name="133" class="Keyword"
+      >IMPORT</a
+      ><a name="139"
+      > Foreign.C.Types </a
+      ><a name="156" class="Symbol"
+      >#-}</a
+      ><a name="159"
+      >
+
+</a
+      ><a name="161" class="Keyword"
+      >open</a
+      ><a name="165"
+      > </a
+      ><a name="166" class="Keyword"
+      >import</a
+      ><a name="172"
+      > </a
+      ><a name="173" href="Data.Bool.Base.html#1" class="Module"
+      >Data.Bool.Base</a
+      ><a name="187"
+      >
+</a
+      ><a name="188" class="Keyword"
+      >open</a
+      ><a name="192"
+      > </a
+      ><a name="193" class="Keyword"
+      >import</a
+      ><a name="199"
+      > </a
+      ><a name="200" href="Data.Char.Base.html#1" class="Module"
+      >Data.Char.Base</a
+      ><a name="214"
+      >
+</a
+      ><a name="215" class="Keyword"
+      >open</a
+      ><a name="219"
+      > </a
+      ><a name="220" class="Keyword"
+      >import</a
+      ><a name="226"
+      > </a
+      ><a name="227" href="Data.Nat.Base.html#1" class="Module"
+      >Data.Nat.Base</a
+      ><a name="240"
+      > </a
+      ><a name="241" class="Keyword"
+      >hiding</a
+      ><a name="247"
+      > </a
+      ><a name="248" class="Symbol"
+      >(</a
+      ><a name="249" href="Agda.Builtin.Nat.html#202" class="Primitive Operator"
+      >_+_</a
+      ><a name="252" class="Symbol"
+      >)</a
+      ><a name="253"
+      >
+</a
+      ><a name="254" class="Keyword"
+      >open</a
+      ><a name="258"
+      > </a
+      ><a name="259" class="Keyword"
+      >import</a
+      ><a name="265"
+      > </a
+      ><a name="266" href="Data.List.Base.html#1" class="Module"
+      >Data.List.Base</a
+      ><a name="280"
+      > </a
+      ><a name="281" class="Symbol"
+      >as</a
+      ><a name="283"
+      > </a
+      ><a name="284" class="Module"
+      >L</a
+      ><a name="285"
+      >
+</a
+      ><a name="286" class="Keyword"
+      >open</a
+      ><a name="290"
+      > </a
+      ><a name="291" class="Keyword"
+      >import</a
+      ><a name="297"
+      > </a
+      ><a name="298" href="Data.Integer.Base.html#1" class="Module"
+      >Data.Integer.Base</a
+      ><a name="315"
+      >
+</a
+      ><a name="316" class="Keyword"
+      >open</a
+      ><a name="320"
+      > </a
+      ><a name="321" class="Keyword"
+      >import</a
+      ><a name="327"
+      > </a
+      ><a name="328" href="Data.Product.html#1" class="Module"
+      >Data.Product</a
+      ><a name="340"
+      >
+
+</a
+      ><a name="342" class="Keyword"
+      >open</a
+      ><a name="346"
+      > </a
+      ><a name="347" class="Keyword"
+      >import</a
+      ><a name="353"
+      > </a
+      ><a name="354" href="Data.Maybe.Base.html#1" class="Module"
+      >Data.Maybe.Base</a
+      ><a name="369"
+      >
+
+</a
+      ><a name="371" class="Keyword"
+      >open</a
+      ><a name="375"
+      > </a
+      ><a name="376" class="Keyword"
+      >import</a
+      ><a name="382"
+      > </a
+      ><a name="383" href="Size.html#1" class="Module"
+      >Size</a
+      ><a name="387"
+      > </a
+      ><a name="388" class="Keyword"
+      >renaming</a
+      ><a name="396"
+      > </a
+      ><a name="397" class="Symbol"
+      >(</a
+      ><a name="398" href="Agda.Builtin.Size.html#86" class="Postulate"
+      >Size</a
+      ><a name="402"
+      > </a
+      ><a name="403" class="Symbol"
+      >to</a
+      ><a name="405"
+      > </a
+      ><a name="406" href="Agda.Builtin.Size.html#86" class="Postulate"
+      >AgdaSize</a
+      ><a name="414" class="Symbol"
+      >)</a
+      ><a name="415"
+      >
+
+</a
+      ><a name="417" class="Keyword"
+      >open</a
+      ><a name="421"
+      > </a
+      ><a name="422" class="Keyword"
+      >import</a
+      ><a name="428"
+      > </a
+      ><a name="429" href="SizedIO.Base.html#1" class="Module"
+      >SizedIO.Base</a
+      ><a name="441"
+      >
+
+</a
+      ><a name="443" class="Keyword"
+      >open</a
+      ><a name="447"
+      > </a
+      ><a name="448" class="Keyword"
+      >import</a
+      ><a name="454"
+      > </a
+      ><a name="455" href="NativeIO.html#1" class="Module"
+      >NativeIO</a
+      ><a name="463"
+      >
+</a
+      ><a name="464" class="Keyword"
+      >open</a
+      ><a name="468"
+      > </a
+      ><a name="469" class="Keyword"
+      >import</a
+      ><a name="475"
+      > </a
+      ><a name="476" href="NativeInt.html#1" class="Module"
+      >NativeInt</a
+      ><a name="485"
+      >
+
+
+</a
+      ><a name="488" href="SizedIO.IOGraphicsLib.html#488" class="Function"
+      >AgdaPoint</a
+      ><a name="497"
+      > </a
+      ><a name="498" class="Symbol"
+      >=</a
+      ><a name="499"
+      > </a
+      ><a name="500" class="Symbol"
+      >(</a
+      ><a name="501" href="Agda.Builtin.Int.html#150" class="Datatype"
+      >&#8484;</a
+      ><a name="502"
+      > </a
+      ><a name="503" href="Data.Product.html#1073" class="Function Operator"
+      >&#215;</a
+      ><a name="504"
+      > </a
+      ><a name="505" href="Agda.Builtin.Int.html#150" class="Datatype"
+      >&#8484;</a
+      ><a name="506" class="Symbol"
+      >)</a
+      ><a name="507"
+      >
+
+
+</a
+      ><a name="510" class="Keyword"
+      >postulate</a
+      ><a name="519"
+      > </a
+      ><a name="520" href="SizedIO.IOGraphicsLib.html#520" class="Postulate"
+      >Window</a
+      ><a name="526"
+      > </a
+      ><a name="527" class="Symbol"
+      >:</a
+      ><a name="528"
+      > </a
+      ><a name="529" class="PrimitiveType"
+      >Set</a
+      ><a name="532"
+      >
+</a
+      ><a name="533" class="Symbol"
+      >{-#</a
+      ><a name="536"
+      > </a
+      ><a name="537" class="Keyword"
+      >COMPILED_TYPE</a
+      ><a name="550"
+      > </a
+      ><a name="551" href="SizedIO.IOGraphicsLib.html#520" class="Postulate"
+      >Window</a
+      ><a name="557"
+      > Graphics.SOE.Window </a
+      ><a name="578" class="Symbol"
+      >#-}</a
+      ><a name="581"
+      >
+
+</a
+      ><a name="583" class="Keyword"
+      >postulate</a
+      ><a name="592"
+      > </a
+      ><a name="593" href="SizedIO.IOGraphicsLib.html#593" class="Postulate"
+      >Size</a
+      ><a name="597"
+      > </a
+      ><a name="598" class="Symbol"
+      >:</a
+      ><a name="599"
+      > </a
+      ><a name="600" class="PrimitiveType"
+      >Set</a
+      ><a name="603"
+      >
+</a
+      ><a name="604" class="Symbol"
+      >{-#</a
+      ><a name="607"
+      > </a
+      ><a name="608" class="Keyword"
+      >COMPILED_TYPE</a
+      ><a name="621"
+      > </a
+      ><a name="622" href="SizedIO.IOGraphicsLib.html#593" class="Postulate"
+      >Size</a
+      ><a name="626"
+      > Graphics.SOE.Size </a
+      ><a name="645" class="Symbol"
+      >#-}</a
+      ><a name="648"
+      >
+
+</a
+      ><a name="650" class="Keyword"
+      >postulate</a
+      ><a name="659"
+      > </a
+      ><a name="660" href="SizedIO.IOGraphicsLib.html#660" class="Postulate"
+      >size</a
+      ><a name="664"
+      > </a
+      ><a name="665" class="Symbol"
+      >:</a
+      ><a name="666"
+      > </a
+      ><a name="667" href="Agda.Builtin.Int.html#150" class="Datatype"
+      >&#8484;</a
+      ><a name="668"
+      > </a
+      ><a name="669" class="Symbol"
+      >&#8594;</a
+      ><a name="670"
+      > </a
+      ><a name="671" href="Agda.Builtin.Int.html#150" class="Datatype"
+      >&#8484;</a
+      ><a name="672"
+      > </a
+      ><a name="673" class="Symbol"
+      >&#8594;</a
+      ><a name="674"
+      > </a
+      ><a name="675" href="SizedIO.IOGraphicsLib.html#593" class="Postulate"
+      >Size</a
+      ><a name="679"
+      >
+</a
+      ><a name="680" class="Symbol"
+      >{-#</a
+      ><a name="683"
+      > </a
+      ><a name="684" class="Keyword"
+      >COMPILED</a
+      ><a name="692"
+      > </a
+      ><a name="693" href="SizedIO.IOGraphicsLib.html#660" class="Postulate"
+      >size</a
+      ><a name="697"
+      > (\ x y -&gt; ( (fromInteger x) :: Int, (fromInteger y) :: Int) :: Graphics.SOE.Size) </a
+      ><a name="780" class="Symbol"
+      >#-}</a
+      ><a name="783"
+      >
+
+
+</a
+      ><a name="786" class="Keyword"
+      >postulate</a
+      ><a name="795"
+      > </a
+      ><a name="796" href="SizedIO.IOGraphicsLib.html#796" class="Postulate"
+      >Point</a
+      ><a name="801"
+      > </a
+      ><a name="802" class="Symbol"
+      >:</a
+      ><a name="803"
+      > </a
+      ><a name="804" class="PrimitiveType"
+      >Set</a
+      ><a name="807"
+      >
+</a
+      ><a name="808" class="Symbol"
+      >{-#</a
+      ><a name="811"
+      > </a
+      ><a name="812" class="Keyword"
+      >COMPILED_TYPE</a
+      ><a name="825"
+      > </a
+      ><a name="826" href="SizedIO.IOGraphicsLib.html#796" class="Postulate"
+      >Point</a
+      ><a name="831"
+      > Graphics.SOE.Point </a
+      ><a name="851" class="Symbol"
+      >#-}</a
+      ><a name="854"
+      >
+
+</a
+      ><a name="856" class="Keyword"
+      >postulate</a
+      ><a name="865"
+      > </a
+      ><a name="866" href="SizedIO.IOGraphicsLib.html#866" class="Postulate"
+      >nativePoint</a
+      ><a name="877"
+      > </a
+      ><a name="878" class="Symbol"
+      >:</a
+      ><a name="879"
+      > </a
+      ><a name="880" href="Agda.Builtin.Int.html#150" class="Datatype"
+      >&#8484;</a
+      ><a name="881"
+      > </a
+      ><a name="882" class="Symbol"
+      >&#8594;</a
+      ><a name="883"
+      > </a
+      ><a name="884" href="Agda.Builtin.Int.html#150" class="Datatype"
+      >&#8484;</a
+      ><a name="885"
+      > </a
+      ><a name="886" class="Symbol"
+      >&#8594;</a
+      ><a name="887"
+      > </a
+      ><a name="888" href="SizedIO.IOGraphicsLib.html#796" class="Postulate"
+      >Point</a
+      ><a name="893"
+      >
+</a
+      ><a name="894" class="Symbol"
+      >{-#</a
+      ><a name="897"
+      > </a
+      ><a name="898" class="Keyword"
+      >COMPILED</a
+      ><a name="906"
+      > </a
+      ><a name="907" href="SizedIO.IOGraphicsLib.html#866" class="Postulate"
+      >nativePoint</a
+      ><a name="918"
+      > (\ x y -&gt; (fromInteger x, fromInteger y)::Graphics.SOE.Point) </a
+      ><a name="981" class="Symbol"
+      >#-}</a
+      ><a name="984"
+      >
+
+</a
+      ><a name="986" class="Keyword"
+      >postulate</a
+      ><a name="995"
+      > </a
+      ><a name="996" href="SizedIO.IOGraphicsLib.html#996" class="Postulate"
+      >nativeProj1Point</a
+      ><a name="1012"
+      > </a
+      ><a name="1013" class="Symbol"
+      >:</a
+      ><a name="1014"
+      > </a
+      ><a name="1015" href="SizedIO.IOGraphicsLib.html#796" class="Postulate"
+      >Point</a
+      ><a name="1020"
+      > </a
+      ><a name="1021" class="Symbol"
+      >&#8594;</a
+      ><a name="1022"
+      > </a
+      ><a name="1023" href="Agda.Builtin.Int.html#150" class="Datatype"
+      >&#8484;</a
+      ><a name="1024"
+      >
+</a
+      ><a name="1025" class="Keyword"
+      >postulate</a
+      ><a name="1034"
+      > </a
+      ><a name="1035" href="SizedIO.IOGraphicsLib.html#1035" class="Postulate"
+      >nativeProj2Point</a
+      ><a name="1051"
+      > </a
+      ><a name="1052" class="Symbol"
+      >:</a
+      ><a name="1053"
+      > </a
+      ><a name="1054" href="SizedIO.IOGraphicsLib.html#796" class="Postulate"
+      >Point</a
+      ><a name="1059"
+      > </a
+      ><a name="1060" class="Symbol"
+      >&#8594;</a
+      ><a name="1061"
+      > </a
+      ><a name="1062" href="Agda.Builtin.Int.html#150" class="Datatype"
+      >&#8484;</a
+      ><a name="1063"
+      >
+</a
+      ><a name="1064" class="Symbol"
+      >{-#</a
+      ><a name="1067"
+      > </a
+      ><a name="1068" class="Keyword"
+      >COMPILED</a
+      ><a name="1076"
+      > </a
+      ><a name="1077" href="SizedIO.IOGraphicsLib.html#996" class="Postulate"
+      >nativeProj1Point</a
+      ><a name="1093"
+      > (\(x, y) -&gt; toInteger x) </a
+      ><a name="1119" class="Symbol"
+      >#-}</a
+      ><a name="1122"
+      >
+</a
+      ><a name="1123" class="Symbol"
+      >{-#</a
+      ><a name="1126"
+      > </a
+      ><a name="1127" class="Keyword"
+      >COMPILED</a
+      ><a name="1135"
+      > </a
+      ><a name="1136" href="SizedIO.IOGraphicsLib.html#1035" class="Postulate"
+      >nativeProj2Point</a
+      ><a name="1152"
+      > (\(x, y) -&gt; toInteger y) </a
+      ><a name="1178" class="Symbol"
+      >#-}</a
+      ><a name="1181"
+      >
+
+</a
+      ><a name="1183" class="Comment"
+      >{-
+toNativePoint : Point &#8594; NativePoint
+toNativePoint (x , y) = nativePoint x y 
+-}</a
+      ><a name="1265"
+      >
+
+
+
+</a
+      ><a name="1269" class="Keyword"
+      >data</a
+      ><a name="1273"
+      > </a
+      ><a name="1274" href="SizedIO.IOGraphicsLib.html#1274" class="Datatype"
+      >Event</a
+      ><a name="1279"
+      > </a
+      ><a name="1280" class="Symbol"
+      >:</a
+      ><a name="1281"
+      > </a
+      ><a name="1282" class="PrimitiveType"
+      >Set</a
+      ><a name="1285"
+      > </a
+      ><a name="1286" class="Keyword"
+      >where</a
+      ><a name="1291"
+      >
+   </a
+      ><a name="1295" href="SizedIO.IOGraphicsLib.html#1295" class="InductiveConstructor"
+      >Key</a
+      ><a name="1298"
+      > </a
+      ><a name="1299" class="Symbol"
+      >:</a
+      ><a name="1300"
+      > </a
+      ><a name="1301" href="Agda.Builtin.Char.html#104" class="Postulate"
+      >Char</a
+      ><a name="1305"
+      > </a
+      ><a name="1306" class="Symbol"
+      >&#8594;</a
+      ><a name="1307"
+      > </a
+      ><a name="1308" href="Agda.Builtin.Bool.html#39" class="Datatype"
+      >Bool</a
+      ><a name="1312"
+      > </a
+      ><a name="1313" class="Symbol"
+      >&#8594;</a
+      ><a name="1314"
+      > </a
+      ><a name="1315" href="SizedIO.IOGraphicsLib.html#1274" class="Datatype"
+      >Event</a
+      ><a name="1320"
+      >
+   </a
+      ><a name="1324" href="SizedIO.IOGraphicsLib.html#1324" class="InductiveConstructor"
+      >Button</a
+      ><a name="1330"
+      > </a
+      ><a name="1331" class="Symbol"
+      >:</a
+      ><a name="1332"
+      > </a
+      ><a name="1333" href="SizedIO.IOGraphicsLib.html#796" class="Postulate"
+      >Point</a
+      ><a name="1338"
+      > </a
+      ><a name="1339" class="Symbol"
+      >&#8594;</a
+      ><a name="1340"
+      > </a
+      ><a name="1341" href="Agda.Builtin.Bool.html#39" class="Datatype"
+      >Bool</a
+      ><a name="1345"
+      > </a
+      ><a name="1346" class="Symbol"
+      >&#8594;</a
+      ><a name="1347"
+      > </a
+      ><a name="1348" href="Agda.Builtin.Bool.html#39" class="Datatype"
+      >Bool</a
+      ><a name="1352"
+      > </a
+      ><a name="1353" class="Symbol"
+      >&#8594;</a
+      ><a name="1354"
+      > </a
+      ><a name="1355" href="SizedIO.IOGraphicsLib.html#1274" class="Datatype"
+      >Event</a
+      ><a name="1360"
+      >
+   </a
+      ><a name="1364" href="SizedIO.IOGraphicsLib.html#1364" class="InductiveConstructor"
+      >MouseMove</a
+      ><a name="1373"
+      > </a
+      ><a name="1374" class="Symbol"
+      >:</a
+      ><a name="1375"
+      > </a
+      ><a name="1376" href="SizedIO.IOGraphicsLib.html#796" class="Postulate"
+      >Point</a
+      ><a name="1381"
+      > </a
+      ><a name="1382" class="Symbol"
+      >&#8594;</a
+      ><a name="1383"
+      > </a
+      ><a name="1384" href="SizedIO.IOGraphicsLib.html#1274" class="Datatype"
+      >Event</a
+      ><a name="1389"
+      >
+   </a
+      ><a name="1393" href="SizedIO.IOGraphicsLib.html#1393" class="InductiveConstructor"
+      >Resize</a
+      ><a name="1399"
+      > </a
+      ><a name="1400" class="Symbol"
+      >:</a
+      ><a name="1401"
+      > </a
+      ><a name="1402" href="SizedIO.IOGraphicsLib.html#1274" class="Datatype"
+      >Event</a
+      ><a name="1407"
+      >
+   </a
+      ><a name="1411" href="SizedIO.IOGraphicsLib.html#1411" class="InductiveConstructor"
+      >Closed</a
+      ><a name="1417"
+      > </a
+      ><a name="1418" class="Symbol"
+      >:</a
+      ><a name="1419"
+      > </a
+      ><a name="1420" href="SizedIO.IOGraphicsLib.html#1274" class="Datatype"
+      >Event</a
+      ><a name="1425"
+      >
+
+</a
+      ><a name="1427" class="Symbol"
+      >{-#</a
+      ><a name="1430"
+      > </a
+      ><a name="1431" class="Keyword"
+      >COMPILED_DATA</a
+      ><a name="1444"
+      > </a
+      ><a name="1445" href="SizedIO.IOGraphicsLib.html#1274" class="Datatype"
+      >Event</a
+      ><a name="1450"
+      > Graphics.SOE.Event Graphics.SOE.Key Graphics.SOE.Button Graphics.SOE.MouseMove Graphics.SOE.Resize Graphics.SOE.Closed </a
+      ><a name="1570" class="Symbol"
+      >#-}</a
+      ><a name="1573"
+      >
+
+</a
+      ><a name="1575" class="Keyword"
+      >postulate</a
+      ><a name="1584"
+      > </a
+      ><a name="1585" href="SizedIO.IOGraphicsLib.html#1585" class="Postulate"
+      >nativeMaybeGetWindowEvent</a
+      ><a name="1610"
+      > </a
+      ><a name="1611" class="Symbol"
+      >:</a
+      ><a name="1612"
+      > </a
+      ><a name="1613" href="SizedIO.IOGraphicsLib.html#520" class="Postulate"
+      >Window</a
+      ><a name="1619"
+      > </a
+      ><a name="1620" class="Symbol"
+      >&#8594;</a
+      ><a name="1621"
+      > </a
+      ><a name="1622" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="1630"
+      > </a
+      ><a name="1631" class="Symbol"
+      >(</a
+      ><a name="1632" href="Data.Maybe.Base.html#335" class="Datatype"
+      >Maybe</a
+      ><a name="1637"
+      > </a
+      ><a name="1638" href="SizedIO.IOGraphicsLib.html#1274" class="Datatype"
+      >Event</a
+      ><a name="1643" class="Symbol"
+      >)</a
+      ><a name="1644"
+      >
+</a
+      ><a name="1645" class="Symbol"
+      >{-#</a
+      ><a name="1648"
+      > </a
+      ><a name="1649" class="Keyword"
+      >COMPILED</a
+      ><a name="1657"
+      > </a
+      ><a name="1658" href="SizedIO.IOGraphicsLib.html#1585" class="Postulate"
+      >nativeMaybeGetWindowEvent</a
+      ><a name="1683"
+      > Graphics.SOE.maybeGetWindowEvent </a
+      ><a name="1717" class="Symbol"
+      >#-}</a
+      ><a name="1720"
+      >
+
+</a
+      ><a name="1722" class="Keyword"
+      >postulate</a
+      ><a name="1731"
+      > </a
+      ><a name="1732" href="SizedIO.IOGraphicsLib.html#1732" class="Postulate"
+      >nativeGetWindowEvent</a
+      ><a name="1752"
+      > </a
+      ><a name="1753" class="Symbol"
+      >:</a
+      ><a name="1754"
+      > </a
+      ><a name="1755" href="SizedIO.IOGraphicsLib.html#520" class="Postulate"
+      >Window</a
+      ><a name="1761"
+      > </a
+      ><a name="1762" class="Symbol"
+      >&#8594;</a
+      ><a name="1763"
+      > </a
+      ><a name="1764" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="1772"
+      > </a
+      ><a name="1773" class="Symbol"
+      >(</a
+      ><a name="1774" href="SizedIO.IOGraphicsLib.html#1274" class="Datatype"
+      >Event</a
+      ><a name="1779" class="Symbol"
+      >)</a
+      ><a name="1780"
+      >
+</a
+      ><a name="1781" class="Symbol"
+      >{-#</a
+      ><a name="1784"
+      > </a
+      ><a name="1785" class="Keyword"
+      >COMPILED</a
+      ><a name="1793"
+      > </a
+      ><a name="1794" href="SizedIO.IOGraphicsLib.html#1732" class="Postulate"
+      >nativeGetWindowEvent</a
+      ><a name="1814"
+      > Graphics.SOE.getWindowEvent </a
+      ><a name="1843" class="Symbol"
+      >#-}</a
+      ><a name="1846"
+      >
+
+
+</a
+      ><a name="1849" class="Keyword"
+      >postulate</a
+      ><a name="1858"
+      > </a
+      ><a name="1859" href="SizedIO.IOGraphicsLib.html#1859" class="Postulate"
+      >Graphic</a
+      ><a name="1866"
+      > </a
+      ><a name="1867" class="Symbol"
+      >:</a
+      ><a name="1868"
+      > </a
+      ><a name="1869" class="PrimitiveType"
+      >Set</a
+      ><a name="1872"
+      >
+</a
+      ><a name="1873" class="Symbol"
+      >{-#</a
+      ><a name="1876"
+      > </a
+      ><a name="1877" class="Keyword"
+      >COMPILED_TYPE</a
+      ><a name="1890"
+      > </a
+      ><a name="1891" href="SizedIO.IOGraphicsLib.html#1859" class="Postulate"
+      >Graphic</a
+      ><a name="1898"
+      > Graphics.SOE.Graphic </a
+      ><a name="1920" class="Symbol"
+      >#-}</a
+      ><a name="1923"
+      >
+
+
+</a
+      ><a name="1926" class="Keyword"
+      >postulate</a
+      ><a name="1935"
+      > </a
+      ><a name="1936" href="SizedIO.IOGraphicsLib.html#1936" class="Postulate"
+      >nativeDrawInWindow</a
+      ><a name="1954"
+      > </a
+      ><a name="1955" class="Symbol"
+      >:</a
+      ><a name="1956"
+      > </a
+      ><a name="1957" href="SizedIO.IOGraphicsLib.html#520" class="Postulate"
+      >Window</a
+      ><a name="1963"
+      > </a
+      ><a name="1964" class="Symbol"
+      >&#8594;</a
+      ><a name="1965"
+      > </a
+      ><a name="1966" href="SizedIO.IOGraphicsLib.html#1859" class="Postulate"
+      >Graphic</a
+      ><a name="1973"
+      > </a
+      ><a name="1974" class="Symbol"
+      >&#8594;</a
+      ><a name="1975"
+      > </a
+      ><a name="1976" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="1984"
+      > </a
+      ><a name="1985" href="Unit.html#28" class="Record"
+      >Unit</a
+      ><a name="1989"
+      >
+</a
+      ><a name="1990" class="Symbol"
+      >{-#</a
+      ><a name="1993"
+      > </a
+      ><a name="1994" class="Keyword"
+      >COMPILED</a
+      ><a name="2002"
+      > </a
+      ><a name="2003" href="SizedIO.IOGraphicsLib.html#1936" class="Postulate"
+      >nativeDrawInWindow</a
+      ><a name="2021"
+      > Graphics.SOE.drawInWindow </a
+      ><a name="2048" class="Symbol"
+      >#-}</a
+      ><a name="2051"
+      >
+
+
+</a
+      ><a name="2054" class="Keyword"
+      >postulate</a
+      ><a name="2063"
+      > </a
+      ><a name="2064" href="SizedIO.IOGraphicsLib.html#2064" class="Postulate"
+      >Word32</a
+      ><a name="2070"
+      > </a
+      ><a name="2071" class="Symbol"
+      >:</a
+      ><a name="2072"
+      > </a
+      ><a name="2073" class="PrimitiveType"
+      >Set</a
+      ><a name="2076"
+      >
+</a
+      ><a name="2077" class="Symbol"
+      >{-#</a
+      ><a name="2080"
+      > </a
+      ><a name="2081" class="Keyword"
+      >COMPILED_TYPE</a
+      ><a name="2094"
+      > </a
+      ><a name="2095" href="SizedIO.IOGraphicsLib.html#2064" class="Postulate"
+      >Word32</a
+      ><a name="2101"
+      > Graphics.SOE.Word32 </a
+      ><a name="2122" class="Symbol"
+      >#-}</a
+      ><a name="2125"
+      >
+
+</a
+      ><a name="2127" class="Keyword"
+      >postulate</a
+      ><a name="2136"
+      > </a
+      ><a name="2137" href="SizedIO.IOGraphicsLib.html#2137" class="Postulate"
+      >text</a
+      ><a name="2141"
+      > </a
+      ><a name="2142" class="Symbol"
+      >:</a
+      ><a name="2143"
+      > </a
+      ><a name="2144" href="SizedIO.IOGraphicsLib.html#796" class="Postulate"
+      >Point</a
+      ><a name="2149"
+      > </a
+      ><a name="2150" class="Symbol"
+      >&#8594;</a
+      ><a name="2151"
+      > </a
+      ><a name="2152" href="Agda.Builtin.String.html#137" class="Postulate"
+      >String</a
+      ><a name="2158"
+      > </a
+      ><a name="2159" class="Symbol"
+      >&#8594;</a
+      ><a name="2160"
+      > </a
+      ><a name="2161" href="SizedIO.IOGraphicsLib.html#1859" class="Postulate"
+      >Graphic</a
+      ><a name="2168"
+      >
+</a
+      ><a name="2169" class="Symbol"
+      >{-#</a
+      ><a name="2172"
+      > </a
+      ><a name="2173" class="Keyword"
+      >COMPILED</a
+      ><a name="2181"
+      > </a
+      ><a name="2182" href="SizedIO.IOGraphicsLib.html#2137" class="Postulate"
+      >text</a
+      ><a name="2186"
+      > (\ p s -&gt; Graphics.SOE.text p (Data.Text.unpack s)) </a
+      ><a name="2239" class="Symbol"
+      >#-}</a
+      ><a name="2242"
+      >
+
+
+</a
+      ><a name="2245" class="Keyword"
+      >data</a
+      ><a name="2249"
+      > </a
+      ><a name="2250" href="SizedIO.IOGraphicsLib.html#2250" class="Datatype"
+      >RedrawMode</a
+      ><a name="2260"
+      > </a
+      ><a name="2261" class="Symbol"
+      >:</a
+      ><a name="2262"
+      > </a
+      ><a name="2263" class="PrimitiveType"
+      >Set</a
+      ><a name="2266"
+      > </a
+      ><a name="2267" class="Keyword"
+      >where</a
+      ><a name="2272"
+      >
+</a
+      ><a name="2273" class="Comment"
+      >-- (removed from lib where: DoubleBuffered : RedrawMode, Unbuffered : RedrawMode)</a
+      ><a name="2354"
+      >
+
+</a
+      ><a name="2356" class="Symbol"
+      >{-#</a
+      ><a name="2359"
+      > </a
+      ><a name="2360" class="Keyword"
+      >COMPILED_DATA</a
+      ><a name="2373"
+      > </a
+      ><a name="2374" href="SizedIO.IOGraphicsLib.html#2250" class="Datatype"
+      >RedrawMode</a
+      ><a name="2384"
+      > Graphics.SOE.RedrawMode </a
+      ><a name="2409" class="Symbol"
+      >#-}</a
+      ><a name="2412"
+      >
+
+
+</a
+      ><a name="2415" class="Keyword"
+      >postulate</a
+      ><a name="2424"
+      > </a
+      ><a name="2425" href="SizedIO.IOGraphicsLib.html#2425" class="Postulate"
+      >nativeDrawGraphic</a
+      ><a name="2442"
+      > </a
+      ><a name="2443" class="Symbol"
+      >:</a
+      ><a name="2444"
+      > </a
+      ><a name="2445" href="SizedIO.IOGraphicsLib.html#2250" class="Datatype"
+      >RedrawMode</a
+      ><a name="2455"
+      >
+</a
+      ><a name="2456" class="Symbol"
+      >{-#</a
+      ><a name="2459"
+      > </a
+      ><a name="2460" class="Keyword"
+      >COMPILED</a
+      ><a name="2468"
+      > </a
+      ><a name="2469" href="SizedIO.IOGraphicsLib.html#2425" class="Postulate"
+      >nativeDrawGraphic</a
+      ><a name="2486"
+      > Graphics.SOE.drawGraphic </a
+      ><a name="2512" class="Symbol"
+      >#-}</a
+      ><a name="2515"
+      >
+
+</a
+      ><a name="2517" class="Keyword"
+      >postulate</a
+      ><a name="2526"
+      > </a
+      ><a name="2527" href="SizedIO.IOGraphicsLib.html#2527" class="Postulate"
+      >nativeDrawBufferedGraphic</a
+      ><a name="2552"
+      > </a
+      ><a name="2553" class="Symbol"
+      >:</a
+      ><a name="2554"
+      > </a
+      ><a name="2555" href="SizedIO.IOGraphicsLib.html#2250" class="Datatype"
+      >RedrawMode</a
+      ><a name="2565"
+      >
+</a
+      ><a name="2566" class="Symbol"
+      >{-#</a
+      ><a name="2569"
+      > </a
+      ><a name="2570" class="Keyword"
+      >COMPILED</a
+      ><a name="2578"
+      > </a
+      ><a name="2579" href="SizedIO.IOGraphicsLib.html#2527" class="Postulate"
+      >nativeDrawBufferedGraphic</a
+      ><a name="2604"
+      > Graphics.SOE.drawBufferedGraphic </a
+      ><a name="2638" class="Symbol"
+      >#-}</a
+      ><a name="2641"
+      >
+
+</a
+      ><a name="2643" class="Keyword"
+      >postulate</a
+      ><a name="2652"
+      > </a
+      ><a name="2653" href="SizedIO.IOGraphicsLib.html#2653" class="Postulate"
+      >nativeOpenWindow</a
+      ><a name="2669"
+      > </a
+      ><a name="2670" class="Symbol"
+      >:</a
+      ><a name="2671"
+      > </a
+      ><a name="2672" href="Agda.Builtin.String.html#137" class="Postulate"
+      >String</a
+      ><a name="2678"
+      > </a
+      ><a name="2679" class="Symbol"
+      >&#8594;</a
+      ><a name="2680"
+      > </a
+      ><a name="2681" href="SizedIO.IOGraphicsLib.html#593" class="Postulate"
+      >Size</a
+      ><a name="2685"
+      > </a
+      ><a name="2686" class="Symbol"
+      >&#8594;</a
+      ><a name="2687"
+      > </a
+      ><a name="2688" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="2696"
+      > </a
+      ><a name="2697" href="SizedIO.IOGraphicsLib.html#520" class="Postulate"
+      >Window</a
+      ><a name="2703"
+      >
+</a
+      ><a name="2704" class="Symbol"
+      >{-#</a
+      ><a name="2707"
+      > </a
+      ><a name="2708" class="Keyword"
+      >COMPILED</a
+      ><a name="2716"
+      > </a
+      ><a name="2717" href="SizedIO.IOGraphicsLib.html#2653" class="Postulate"
+      >nativeOpenWindow</a
+      ><a name="2733"
+      > (\ s -&gt; Graphics.SOE.openWindow (Data.Text.unpack s)) </a
+      ><a name="2788" class="Symbol"
+      >#-}</a
+      ><a name="2791"
+      >
+
+</a
+      ><a name="2793" class="Keyword"
+      >postulate</a
+      ><a name="2802"
+      > </a
+      ><a name="2803" href="SizedIO.IOGraphicsLib.html#2803" class="Postulate"
+      >nativeOpenWindowEx</a
+      ><a name="2821"
+      > </a
+      ><a name="2822" class="Symbol"
+      >:</a
+      ><a name="2823"
+      > </a
+      ><a name="2824" href="Agda.Builtin.String.html#137" class="Postulate"
+      >String</a
+      ><a name="2830"
+      > </a
+      ><a name="2831" class="Symbol"
+      >&#8594;</a
+      ><a name="2832"
+      > </a
+      ><a name="2833" class="Symbol"
+      >(</a
+      ><a name="2834" href="Data.Maybe.Base.html#335" class="Datatype"
+      >Maybe</a
+      ><a name="2839"
+      > </a
+      ><a name="2840" href="SizedIO.IOGraphicsLib.html#796" class="Postulate"
+      >Point</a
+      ><a name="2845" class="Symbol"
+      >)</a
+      ><a name="2846"
+      > </a
+      ><a name="2847" class="Symbol"
+      >&#8594;</a
+      ><a name="2848"
+      > </a
+      ><a name="2849" class="Symbol"
+      >(</a
+      ><a name="2850" href="Data.Maybe.Base.html#335" class="Datatype"
+      >Maybe</a
+      ><a name="2855"
+      > </a
+      ><a name="2856" href="SizedIO.IOGraphicsLib.html#593" class="Postulate"
+      >Size</a
+      ><a name="2860" class="Symbol"
+      >)</a
+      ><a name="2861"
+      > </a
+      ><a name="2862" class="Symbol"
+      >&#8594;</a
+      ><a name="2863"
+      > </a
+      ><a name="2864" href="SizedIO.IOGraphicsLib.html#2250" class="Datatype"
+      >RedrawMode</a
+      ><a name="2874"
+      > </a
+      ><a name="2875" class="Symbol"
+      >&#8594;</a
+      ><a name="2876"
+      > </a
+      ><a name="2877" class="Symbol"
+      >(</a
+      ><a name="2878" href="Data.Maybe.Base.html#335" class="Datatype"
+      >Maybe</a
+      ><a name="2883"
+      > </a
+      ><a name="2884" href="SizedIO.IOGraphicsLib.html#2064" class="Postulate"
+      >Word32</a
+      ><a name="2890" class="Symbol"
+      >)</a
+      ><a name="2891"
+      > </a
+      ><a name="2892" class="Symbol"
+      >&#8594;</a
+      ><a name="2893"
+      > </a
+      ><a name="2894" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="2902"
+      > </a
+      ><a name="2903" href="SizedIO.IOGraphicsLib.html#520" class="Postulate"
+      >Window</a
+      ><a name="2909"
+      >
+</a
+      ><a name="2910" class="Symbol"
+      >{-#</a
+      ><a name="2913"
+      > </a
+      ><a name="2914" class="Keyword"
+      >COMPILED</a
+      ><a name="2922"
+      > </a
+      ><a name="2923" href="SizedIO.IOGraphicsLib.html#2803" class="Postulate"
+      >nativeOpenWindowEx</a
+      ><a name="2941"
+      > (\s -&gt; Graphics.SOE.openWindowEx (Data.Text.unpack s)) </a
+      ><a name="2997" class="Symbol"
+      >#-}</a
+      ><a name="3000"
+      >
+
+</a
+      ><a name="3002" class="Keyword"
+      >postulate</a
+      ><a name="3011"
+      > </a
+      ><a name="3012" href="SizedIO.IOGraphicsLib.html#3012" class="Postulate"
+      >nativeCloseWindow</a
+      ><a name="3029"
+      > </a
+      ><a name="3030" class="Symbol"
+      >:</a
+      ><a name="3031"
+      > </a
+      ><a name="3032" href="SizedIO.IOGraphicsLib.html#520" class="Postulate"
+      >Window</a
+      ><a name="3038"
+      > </a
+      ><a name="3039" class="Symbol"
+      >&#8594;</a
+      ><a name="3040"
+      > </a
+      ><a name="3041" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="3049"
+      > </a
+      ><a name="3050" href="Unit.html#28" class="Record"
+      >Unit</a
+      ><a name="3054"
+      >
+</a
+      ><a name="3055" class="Symbol"
+      >{-#</a
+      ><a name="3058"
+      > </a
+      ><a name="3059" class="Keyword"
+      >COMPILED</a
+      ><a name="3067"
+      > </a
+      ><a name="3068" href="SizedIO.IOGraphicsLib.html#3012" class="Postulate"
+      >nativeCloseWindow</a
+      ><a name="3085"
+      > Graphics.SOE.closeWindow </a
+      ><a name="3111" class="Symbol"
+      >#-}</a
+      ><a name="3114"
+      >
+
+
+
+
+</a
+      ><a name="3119" class="Keyword"
+      >postulate</a
+      ><a name="3128"
+      > </a
+      ><a name="3129" href="SizedIO.IOGraphicsLib.html#3129" class="Postulate"
+      >nativeRunGraphics</a
+      ><a name="3146"
+      > </a
+      ><a name="3147" class="Symbol"
+      >:</a
+      ><a name="3148"
+      >  </a
+      ><a name="3150" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="3158"
+      > </a
+      ><a name="3159" href="Unit.html#28" class="Record"
+      >Unit</a
+      ><a name="3163"
+      > </a
+      ><a name="3164" class="Symbol"
+      >&#8594;</a
+      ><a name="3165"
+      > </a
+      ><a name="3166" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="3174"
+      > </a
+      ><a name="3175" href="Unit.html#28" class="Record"
+      >Unit</a
+      ><a name="3179"
+      >
+</a
+      ><a name="3180" class="Symbol"
+      >{-#</a
+      ><a name="3183"
+      > </a
+      ><a name="3184" class="Keyword"
+      >COMPILED</a
+      ><a name="3192"
+      > </a
+      ><a name="3193" href="SizedIO.IOGraphicsLib.html#3129" class="Postulate"
+      >nativeRunGraphics</a
+      ><a name="3210"
+      > Graphics.SOE.runGraphics </a
+      ><a name="3236" class="Symbol"
+      >#-}</a
+      ><a name="3239"
+      >
+
+</a
+      ><a name="3241" class="Keyword"
+      >postulate</a
+      ><a name="3250"
+      > </a
+      ><a name="3251" href="SizedIO.IOGraphicsLib.html#3251" class="Postulate"
+      >word32ToInteger</a
+      ><a name="3266"
+      > </a
+      ><a name="3267" class="Symbol"
+      >:</a
+      ><a name="3268"
+      > </a
+      ><a name="3269" href="SizedIO.IOGraphicsLib.html#2064" class="Postulate"
+      >Word32</a
+      ><a name="3275"
+      > </a
+      ><a name="3276" class="Symbol"
+      >&#8594;</a
+      ><a name="3277"
+      > </a
+      ><a name="3278" href="Agda.Builtin.Int.html#150" class="Datatype"
+      >&#8484;</a
+      ><a name="3279"
+      >
+</a
+      ><a name="3280" class="Symbol"
+      >{-#</a
+      ><a name="3283"
+      > </a
+      ><a name="3284" class="Keyword"
+      >COMPILED</a
+      ><a name="3292"
+      > </a
+      ><a name="3293" href="SizedIO.IOGraphicsLib.html#3251" class="Postulate"
+      >word32ToInteger</a
+      ><a name="3308"
+      > (\w -&gt; toInteger (Graphics.SOE.word32ToInt w)) </a
+      ><a name="3356" class="Symbol"
+      >#-}</a
+      ><a name="3359"
+      >
+
+</a
+      ><a name="3361" class="Keyword"
+      >postulate</a
+      ><a name="3370"
+      > </a
+      ><a name="3371" href="SizedIO.IOGraphicsLib.html#3371" class="Postulate"
+      >nativeTimeGetTime</a
+      ><a name="3388"
+      > </a
+      ><a name="3389" class="Symbol"
+      >:</a
+      ><a name="3390"
+      > </a
+      ><a name="3391" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="3399"
+      > </a
+      ><a name="3400" href="SizedIO.IOGraphicsLib.html#2064" class="Postulate"
+      >Word32</a
+      ><a name="3406"
+      >
+</a
+      ><a name="3407" class="Symbol"
+      >{-#</a
+      ><a name="3410"
+      > </a
+      ><a name="3411" class="Keyword"
+      >COMPILED</a
+      ><a name="3419"
+      > </a
+      ><a name="3420" href="SizedIO.IOGraphicsLib.html#3371" class="Postulate"
+      >nativeTimeGetTime</a
+      ><a name="3437"
+      > Graphics.SOE.timeGetTime </a
+      ><a name="3463" class="Symbol"
+      >#-}</a
+      ><a name="3466"
+      >
+
+
+</a
+      ><a name="3469" class="Keyword"
+      >data</a
+      ><a name="3473"
+      > </a
+      ><a name="3474" href="SizedIO.IOGraphicsLib.html#3474" class="Datatype"
+      >Color</a
+      ><a name="3479"
+      > </a
+      ><a name="3480" class="Symbol"
+      >:</a
+      ><a name="3481"
+      > </a
+      ><a name="3482" class="PrimitiveType"
+      >Set</a
+      ><a name="3485"
+      > </a
+      ><a name="3486" class="Keyword"
+      >where</a
+      ><a name="3491"
+      >
+  </a
+      ><a name="3494" href="SizedIO.IOGraphicsLib.html#3494" class="InductiveConstructor"
+      >black</a
+      ><a name="3499"
+      >   </a
+      ><a name="3502" class="Symbol"
+      >:</a
+      ><a name="3503"
+      > </a
+      ><a name="3504" href="SizedIO.IOGraphicsLib.html#3474" class="Datatype"
+      >Color</a
+      ><a name="3509"
+      >
+  </a
+      ><a name="3512" href="SizedIO.IOGraphicsLib.html#3512" class="InductiveConstructor"
+      >blue</a
+      ><a name="3516"
+      >    </a
+      ><a name="3520" class="Symbol"
+      >:</a
+      ><a name="3521"
+      > </a
+      ><a name="3522" href="SizedIO.IOGraphicsLib.html#3474" class="Datatype"
+      >Color</a
+      ><a name="3527"
+      >
+  </a
+      ><a name="3530" href="SizedIO.IOGraphicsLib.html#3530" class="InductiveConstructor"
+      >green</a
+      ><a name="3535"
+      >   </a
+      ><a name="3538" class="Symbol"
+      >:</a
+      ><a name="3539"
+      > </a
+      ><a name="3540" href="SizedIO.IOGraphicsLib.html#3474" class="Datatype"
+      >Color</a
+      ><a name="3545"
+      >
+  </a
+      ><a name="3548" href="SizedIO.IOGraphicsLib.html#3548" class="InductiveConstructor"
+      >cyan</a
+      ><a name="3552"
+      >    </a
+      ><a name="3556" class="Symbol"
+      >:</a
+      ><a name="3557"
+      > </a
+      ><a name="3558" href="SizedIO.IOGraphicsLib.html#3474" class="Datatype"
+      >Color</a
+      ><a name="3563"
+      >
+  </a
+      ><a name="3566" href="SizedIO.IOGraphicsLib.html#3566" class="InductiveConstructor"
+      >red</a
+      ><a name="3569"
+      >     </a
+      ><a name="3574" class="Symbol"
+      >:</a
+      ><a name="3575"
+      > </a
+      ><a name="3576" href="SizedIO.IOGraphicsLib.html#3474" class="Datatype"
+      >Color</a
+      ><a name="3581"
+      >
+  </a
+      ><a name="3584" href="SizedIO.IOGraphicsLib.html#3584" class="InductiveConstructor"
+      >magenta</a
+      ><a name="3591"
+      > </a
+      ><a name="3592" class="Symbol"
+      >:</a
+      ><a name="3593"
+      > </a
+      ><a name="3594" href="SizedIO.IOGraphicsLib.html#3474" class="Datatype"
+      >Color</a
+      ><a name="3599"
+      >
+  </a
+      ><a name="3602" href="SizedIO.IOGraphicsLib.html#3602" class="InductiveConstructor"
+      >yellow</a
+      ><a name="3608"
+      >  </a
+      ><a name="3610" class="Symbol"
+      >:</a
+      ><a name="3611"
+      > </a
+      ><a name="3612" href="SizedIO.IOGraphicsLib.html#3474" class="Datatype"
+      >Color</a
+      ><a name="3617"
+      >
+  </a
+      ><a name="3620" href="SizedIO.IOGraphicsLib.html#3620" class="InductiveConstructor"
+      >white</a
+      ><a name="3625"
+      >   </a
+      ><a name="3628" class="Symbol"
+      >:</a
+      ><a name="3629"
+      > </a
+      ><a name="3630" href="SizedIO.IOGraphicsLib.html#3474" class="Datatype"
+      >Color</a
+      ><a name="3635"
+      >
+</a
+      ><a name="3636" class="Symbol"
+      >{-#</a
+      ><a name="3639"
+      > </a
+      ><a name="3640" class="Keyword"
+      >COMPILED_DATA</a
+      ><a name="3653"
+      > </a
+      ><a name="3654" href="SizedIO.IOGraphicsLib.html#3474" class="Datatype"
+      >Color</a
+      ><a name="3659"
+      > Graphics.SOE.Color Graphics.SOE.Black Graphics.SOE.Blue Graphics.SOE.Green Graphics.SOE.Cyan Graphics.SOE.Red Graphics.SOE.Magenta Graphics.SOE.Yellow Graphics.SOE.White </a
+      ><a name="3830" class="Symbol"
+      >#-}</a
+      ><a name="3833"
+      >
+
+</a
+      ><a name="3835" class="Keyword"
+      >postulate</a
+      ><a name="3844"
+      > </a
+      ><a name="3845" href="SizedIO.IOGraphicsLib.html#3845" class="Postulate"
+      >withColor</a
+      ><a name="3854"
+      > </a
+      ><a name="3855" class="Symbol"
+      >:</a
+      ><a name="3856"
+      > </a
+      ><a name="3857" href="SizedIO.IOGraphicsLib.html#3474" class="Datatype"
+      >Color</a
+      ><a name="3862"
+      > </a
+      ><a name="3863" class="Symbol"
+      >&#8594;</a
+      ><a name="3864"
+      > </a
+      ><a name="3865" href="SizedIO.IOGraphicsLib.html#1859" class="Postulate"
+      >Graphic</a
+      ><a name="3872"
+      > </a
+      ><a name="3873" class="Symbol"
+      >&#8594;</a
+      ><a name="3874"
+      > </a
+      ><a name="3875" href="SizedIO.IOGraphicsLib.html#1859" class="Postulate"
+      >Graphic</a
+      ><a name="3882"
+      >
+</a
+      ><a name="3883" class="Symbol"
+      >{-#</a
+      ><a name="3886"
+      > </a
+      ><a name="3887" class="Keyword"
+      >COMPILED</a
+      ><a name="3895"
+      > </a
+      ><a name="3896" href="SizedIO.IOGraphicsLib.html#3845" class="Postulate"
+      >withColor</a
+      ><a name="3905"
+      > Graphics.SOE.withColor </a
+      ><a name="3929" class="Symbol"
+      >#-}</a
+      ><a name="3932"
+      >
+
+</a
+      ><a name="3934" class="Keyword"
+      >postulate</a
+      ><a name="3943"
+      > </a
+      ><a name="3944" href="SizedIO.IOGraphicsLib.html#3944" class="Postulate"
+      >polygon</a
+      ><a name="3951"
+      > </a
+      ><a name="3952" class="Symbol"
+      >:</a
+      ><a name="3953"
+      > </a
+      ><a name="3954" href="Agda.Builtin.List.html#52" class="Datatype"
+      >List</a
+      ><a name="3958"
+      > </a
+      ><a name="3959" href="SizedIO.IOGraphicsLib.html#796" class="Postulate"
+      >Point</a
+      ><a name="3964"
+      > </a
+      ><a name="3965" class="Symbol"
+      >&#8594;</a
+      ><a name="3966"
+      > </a
+      ><a name="3967" href="SizedIO.IOGraphicsLib.html#1859" class="Postulate"
+      >Graphic</a
+      ><a name="3974"
+      >
+</a
+      ><a name="3975" class="Symbol"
+      >{-#</a
+      ><a name="3978"
+      > </a
+      ><a name="3979" class="Keyword"
+      >COMPILED</a
+      ><a name="3987"
+      > </a
+      ><a name="3988" href="SizedIO.IOGraphicsLib.html#3944" class="Postulate"
+      >polygon</a
+      ><a name="3995"
+      > Graphics.SOE.polygon </a
+      ><a name="4017" class="Symbol"
+      >#-}</a
+      ><a name="4020"
+      >
+
+</a
+      ><a name="4022" class="Comment"
+      >{-
+polygon : List Point &#8594; Graphic
+polygon l = nativePolygon (L.map toNativePoint l)
+-}</a
+      ><a name="4108"
+      >
+
+</a
+      ><a name="4110" class="Keyword"
+      >data</a
+      ><a name="4114"
+      > </a
+      ><a name="4115" href="SizedIO.IOGraphicsLib.html#4115" class="Datatype"
+      >GraphicsCommands</a
+      ><a name="4131"
+      > </a
+      ><a name="4132" class="Symbol"
+      >:</a
+      ><a name="4133"
+      > </a
+      ><a name="4134" class="PrimitiveType"
+      >Set</a
+      ><a name="4137"
+      > </a
+      ><a name="4138" class="Keyword"
+      >where</a
+      ><a name="4143"
+      >
+  </a
+      ><a name="4146" href="SizedIO.IOGraphicsLib.html#4146" class="InductiveConstructor"
+      >closeWindow</a
+      ><a name="4157"
+      >         </a
+      ><a name="4166" class="Symbol"
+      >:</a
+      ><a name="4167"
+      > </a
+      ><a name="4168" href="SizedIO.IOGraphicsLib.html#520" class="Postulate"
+      >Window</a
+      ><a name="4174"
+      >            </a
+      ><a name="4186" class="Symbol"
+      >&#8594;</a
+      ><a name="4187"
+      > </a
+      ><a name="4188" href="SizedIO.IOGraphicsLib.html#4115" class="Datatype"
+      >GraphicsCommands</a
+      ><a name="4204"
+      >
+  </a
+      ><a name="4207" href="SizedIO.IOGraphicsLib.html#4207" class="InductiveConstructor"
+      >maybeGetWindowEvent</a
+      ><a name="4226"
+      > </a
+      ><a name="4227" class="Symbol"
+      >:</a
+      ><a name="4228"
+      > </a
+      ><a name="4229" href="SizedIO.IOGraphicsLib.html#520" class="Postulate"
+      >Window</a
+      ><a name="4235"
+      >            </a
+      ><a name="4247" class="Symbol"
+      >&#8594;</a
+      ><a name="4248"
+      > </a
+      ><a name="4249" href="SizedIO.IOGraphicsLib.html#4115" class="Datatype"
+      >GraphicsCommands</a
+      ><a name="4265"
+      >
+  </a
+      ><a name="4268" href="SizedIO.IOGraphicsLib.html#4268" class="InductiveConstructor"
+      >getWindowEvent</a
+      ><a name="4282"
+      >      </a
+      ><a name="4288" class="Symbol"
+      >:</a
+      ><a name="4289"
+      > </a
+      ><a name="4290" href="SizedIO.IOGraphicsLib.html#520" class="Postulate"
+      >Window</a
+      ><a name="4296"
+      >            </a
+      ><a name="4308" class="Symbol"
+      >&#8594;</a
+      ><a name="4309"
+      > </a
+      ><a name="4310" href="SizedIO.IOGraphicsLib.html#4115" class="Datatype"
+      >GraphicsCommands</a
+      ><a name="4326"
+      >
+  </a
+      ><a name="4329" href="SizedIO.IOGraphicsLib.html#4329" class="InductiveConstructor"
+      >openWindowNotEx</a
+      ><a name="4344"
+      >     </a
+      ><a name="4349" class="Symbol"
+      >:</a
+      ><a name="4350"
+      > </a
+      ><a name="4351" href="Agda.Builtin.String.html#137" class="Postulate"
+      >String</a
+      ><a name="4357"
+      > </a
+      ><a name="4358" class="Symbol"
+      >&#8594;</a
+      ><a name="4359"
+      > </a
+      ><a name="4360" href="SizedIO.IOGraphicsLib.html#593" class="Postulate"
+      >Size</a
+      ><a name="4364"
+      >    </a
+      ><a name="4368" class="Symbol"
+      >&#8594;</a
+      ><a name="4369"
+      > </a
+      ><a name="4370" href="SizedIO.IOGraphicsLib.html#4115" class="Datatype"
+      >GraphicsCommands</a
+      ><a name="4386"
+      >
+  </a
+      ><a name="4389" href="SizedIO.IOGraphicsLib.html#4389" class="InductiveConstructor"
+      >openWindow</a
+      ><a name="4399"
+      >          </a
+      ><a name="4409" class="Symbol"
+      >:</a
+      ><a name="4410"
+      > </a
+      ><a name="4411" href="Agda.Builtin.String.html#137" class="Postulate"
+      >String</a
+      ><a name="4417"
+      > </a
+      ><a name="4418" class="Symbol"
+      >&#8594;</a
+      ><a name="4419"
+      > </a
+      ><a name="4420" class="Symbol"
+      >(</a
+      ><a name="4421" href="Data.Maybe.Base.html#335" class="Datatype"
+      >Maybe</a
+      ><a name="4426"
+      > </a
+      ><a name="4427" href="SizedIO.IOGraphicsLib.html#796" class="Postulate"
+      >Point</a
+      ><a name="4432" class="Symbol"
+      >)</a
+      ><a name="4433"
+      > </a
+      ><a name="4434" class="Symbol"
+      >&#8594;</a
+      ><a name="4435"
+      > </a
+      ><a name="4436" class="Symbol"
+      >(</a
+      ><a name="4437" href="Data.Maybe.Base.html#335" class="Datatype"
+      >Maybe</a
+      ><a name="4442"
+      > </a
+      ><a name="4443" href="SizedIO.IOGraphicsLib.html#593" class="Postulate"
+      >Size</a
+      ><a name="4447" class="Symbol"
+      >)</a
+      ><a name="4448"
+      > 
+                        </a
+      ><a name="4474" class="Symbol"
+      >&#8594;</a
+      ><a name="4475"
+      > </a
+      ><a name="4476" href="SizedIO.IOGraphicsLib.html#2250" class="Datatype"
+      >RedrawMode</a
+      ><a name="4486"
+      > </a
+      ><a name="4487" class="Symbol"
+      >&#8594;</a
+      ><a name="4488"
+      > </a
+      ><a name="4489" class="Symbol"
+      >(</a
+      ><a name="4490" href="Data.Maybe.Base.html#335" class="Datatype"
+      >Maybe</a
+      ><a name="4495"
+      > </a
+      ><a name="4496" href="SizedIO.IOGraphicsLib.html#2064" class="Postulate"
+      >Word32</a
+      ><a name="4502" class="Symbol"
+      >)</a
+      ><a name="4503"
+      > </a
+      ><a name="4504" class="Symbol"
+      >&#8594;</a
+      ><a name="4505"
+      > </a
+      ><a name="4506" href="SizedIO.IOGraphicsLib.html#4115" class="Datatype"
+      >GraphicsCommands</a
+      ><a name="4522"
+      >
+  </a
+      ><a name="4525" href="SizedIO.IOGraphicsLib.html#4525" class="InductiveConstructor"
+      >timeGetTime</a
+      ><a name="4536"
+      >         </a
+      ><a name="4545" class="Symbol"
+      >:</a
+      ><a name="4546"
+      >                      </a
+      ><a name="4568" href="SizedIO.IOGraphicsLib.html#4115" class="Datatype"
+      >GraphicsCommands</a
+      ><a name="4584"
+      >
+  </a
+      ><a name="4587" href="SizedIO.IOGraphicsLib.html#4587" class="InductiveConstructor"
+      >drawInWindow</a
+      ><a name="4599"
+      >        </a
+      ><a name="4607" class="Symbol"
+      >:</a
+      ><a name="4608"
+      > </a
+      ><a name="4609" href="SizedIO.IOGraphicsLib.html#520" class="Postulate"
+      >Window</a
+      ><a name="4615"
+      > </a
+      ><a name="4616" class="Symbol"
+      >&#8594;</a
+      ><a name="4617"
+      > </a
+      ><a name="4618" href="SizedIO.IOGraphicsLib.html#1859" class="Postulate"
+      >Graphic</a
+      ><a name="4625"
+      > </a
+      ><a name="4626" class="Symbol"
+      >&#8594;</a
+      ><a name="4627"
+      > </a
+      ><a name="4628" href="SizedIO.IOGraphicsLib.html#4115" class="Datatype"
+      >GraphicsCommands</a
+      ><a name="4644"
+      >
+  </a
+      ><a name="4647" href="SizedIO.IOGraphicsLib.html#4647" class="InductiveConstructor"
+      >print</a
+      ><a name="4652"
+      >               </a
+      ><a name="4667" class="Symbol"
+      >:</a
+      ><a name="4668"
+      > </a
+      ><a name="4669" href="Agda.Builtin.String.html#137" class="Postulate"
+      >String</a
+      ><a name="4675"
+      > </a
+      ><a name="4676" class="Symbol"
+      >&#8594;</a
+      ><a name="4677"
+      >             </a
+      ><a name="4690" href="SizedIO.IOGraphicsLib.html#4115" class="Datatype"
+      >GraphicsCommands</a
+      ><a name="4706"
+      >
+
+
+
+
+</a
+      ><a name="4711" href="SizedIO.IOGraphicsLib.html#4711" class="Function"
+      >GraphicsResponses</a
+      ><a name="4728"
+      > </a
+      ><a name="4729" class="Symbol"
+      >:</a
+      ><a name="4730"
+      > </a
+      ><a name="4731" href="SizedIO.IOGraphicsLib.html#4115" class="Datatype"
+      >GraphicsCommands</a
+      ><a name="4747"
+      > </a
+      ><a name="4748" class="Symbol"
+      >&#8594;</a
+      ><a name="4749"
+      > </a
+      ><a name="4750" class="PrimitiveType"
+      >Set</a
+      ><a name="4753"
+      >
+</a
+      ><a name="4754" href="SizedIO.IOGraphicsLib.html#4711" class="Function"
+      >GraphicsResponses</a
+      ><a name="4771"
+      > </a
+      ><a name="4772" class="Symbol"
+      >(</a
+      ><a name="4773" href="SizedIO.IOGraphicsLib.html#4207" class="InductiveConstructor"
+      >maybeGetWindowEvent</a
+      ><a name="4792"
+      > </a
+      ><a name="4793" href="SizedIO.IOGraphicsLib.html#4793" class="Bound"
+      >w</a
+      ><a name="4794" class="Symbol"
+      >)</a
+      ><a name="4795"
+      > </a
+      ><a name="4796" class="Symbol"
+      >=</a
+      ><a name="4797"
+      > </a
+      ><a name="4798" href="Data.Maybe.Base.html#335" class="Datatype"
+      >Maybe</a
+      ><a name="4803"
+      > </a
+      ><a name="4804" href="SizedIO.IOGraphicsLib.html#1274" class="Datatype"
+      >Event</a
+      ><a name="4809"
+      >
+</a
+      ><a name="4810" href="SizedIO.IOGraphicsLib.html#4711" class="Function"
+      >GraphicsResponses</a
+      ><a name="4827"
+      > </a
+      ><a name="4828" class="Symbol"
+      >(</a
+      ><a name="4829" href="SizedIO.IOGraphicsLib.html#4268" class="InductiveConstructor"
+      >getWindowEvent</a
+      ><a name="4843"
+      > </a
+      ><a name="4844" href="SizedIO.IOGraphicsLib.html#4844" class="Bound"
+      >w</a
+      ><a name="4845" class="Symbol"
+      >)</a
+      ><a name="4846"
+      >      </a
+      ><a name="4852" class="Symbol"
+      >=</a
+      ><a name="4853"
+      > </a
+      ><a name="4854" href="SizedIO.IOGraphicsLib.html#1274" class="Datatype"
+      >Event</a
+      ><a name="4859"
+      >
+</a
+      ><a name="4860" href="SizedIO.IOGraphicsLib.html#4711" class="Function"
+      >GraphicsResponses</a
+      ><a name="4877"
+      > </a
+      ><a name="4878" class="Symbol"
+      >(</a
+      ><a name="4879" href="SizedIO.IOGraphicsLib.html#4146" class="InductiveConstructor"
+      >closeWindow</a
+      ><a name="4890"
+      > </a
+      ><a name="4891" href="SizedIO.IOGraphicsLib.html#4891" class="Bound"
+      >w</a
+      ><a name="4892" class="Symbol"
+      >)</a
+      ><a name="4893"
+      >         </a
+      ><a name="4902" class="Symbol"
+      >=</a
+      ><a name="4903"
+      > </a
+      ><a name="4904" href="Unit.html#28" class="Record"
+      >Unit</a
+      ><a name="4908"
+      >
+</a
+      ><a name="4909" href="SizedIO.IOGraphicsLib.html#4711" class="Function"
+      >GraphicsResponses</a
+      ><a name="4926"
+      > </a
+      ><a name="4927" class="Symbol"
+      >(</a
+      ><a name="4928" href="SizedIO.IOGraphicsLib.html#4329" class="InductiveConstructor"
+      >openWindowNotEx</a
+      ><a name="4943"
+      > </a
+      ><a name="4944" href="SizedIO.IOGraphicsLib.html#4944" class="Bound"
+      >s</a
+      ><a name="4945"
+      > </a
+      ><a name="4946" href="SizedIO.IOGraphicsLib.html#4946" class="Bound"
+      >s'</a
+      ><a name="4948" class="Symbol"
+      >)</a
+      ><a name="4949"
+      >  </a
+      ><a name="4951" class="Symbol"
+      >=</a
+      ><a name="4952"
+      > </a
+      ><a name="4953" href="SizedIO.IOGraphicsLib.html#520" class="Postulate"
+      >Window</a
+      ><a name="4959"
+      >
+</a
+      ><a name="4960" href="SizedIO.IOGraphicsLib.html#4711" class="Function"
+      >GraphicsResponses</a
+      ><a name="4977"
+      > </a
+      ><a name="4978" class="Symbol"
+      >(</a
+      ><a name="4979" href="SizedIO.IOGraphicsLib.html#4389" class="InductiveConstructor"
+      >openWindow</a
+      ><a name="4989"
+      > </a
+      ><a name="4990" href="SizedIO.IOGraphicsLib.html#4990" class="Bound"
+      >s</a
+      ><a name="4991"
+      > </a
+      ><a name="4992" href="SizedIO.IOGraphicsLib.html#4992" class="Bound"
+      >p</a
+      ><a name="4993"
+      > </a
+      ><a name="4994" href="SizedIO.IOGraphicsLib.html#4994" class="Bound"
+      >s'</a
+      ><a name="4996"
+      > </a
+      ><a name="4997" href="SizedIO.IOGraphicsLib.html#4997" class="Bound"
+      >r</a
+      ><a name="4998"
+      > </a
+      ><a name="4999" href="SizedIO.IOGraphicsLib.html#4999" class="Bound"
+      >w</a
+      ><a name="5000" class="Symbol"
+      >)</a
+      ><a name="5001"
+      > </a
+      ><a name="5002" class="Symbol"
+      >=</a
+      ><a name="5003"
+      > </a
+      ><a name="5004" href="SizedIO.IOGraphicsLib.html#520" class="Postulate"
+      >Window</a
+      ><a name="5010"
+      >
+</a
+      ><a name="5011" href="SizedIO.IOGraphicsLib.html#4711" class="Function"
+      >GraphicsResponses</a
+      ><a name="5028"
+      > </a
+      ><a name="5029" href="SizedIO.IOGraphicsLib.html#4525" class="InductiveConstructor"
+      >timeGetTime</a
+      ><a name="5040"
+      >             </a
+      ><a name="5053" class="Symbol"
+      >=</a
+      ><a name="5054"
+      > </a
+      ><a name="5055" href="SizedIO.IOGraphicsLib.html#2064" class="Postulate"
+      >Word32</a
+      ><a name="5061"
+      >
+</a
+      ><a name="5062" href="SizedIO.IOGraphicsLib.html#4711" class="Function"
+      >GraphicsResponses</a
+      ><a name="5079"
+      > </a
+      ><a name="5080" class="Symbol"
+      >_</a
+      ><a name="5081"
+      >                       </a
+      ><a name="5104" class="Symbol"
+      >=</a
+      ><a name="5105"
+      > </a
+      ><a name="5106" href="Unit.html#28" class="Record"
+      >Unit</a
+      ><a name="5110"
+      >
+
+
+</a
+      ><a name="5113" href="SizedIO.IOGraphicsLib.html#5113" class="Function"
+      >GraphicsInterface</a
+      ><a name="5130"
+      > </a
+      ><a name="5131" class="Symbol"
+      >:</a
+      ><a name="5132"
+      > </a
+      ><a name="5133" href="SizedIO.Base.html#288" class="Record"
+      >IOInterface</a
+      ><a name="5144"
+      >
+</a
+      ><a name="5145" href="SizedIO.Base.html#326" class="Field"
+      >Command</a
+      ><a name="5152"
+      >  </a
+      ><a name="5154" href="SizedIO.IOGraphicsLib.html#5113" class="Function"
+      >GraphicsInterface</a
+      ><a name="5171"
+      > </a
+      ><a name="5172" class="Symbol"
+      >=</a
+      ><a name="5173"
+      > </a
+      ><a name="5174" href="SizedIO.IOGraphicsLib.html#4115" class="Datatype"
+      >GraphicsCommands</a
+      ><a name="5190"
+      >
+</a
+      ><a name="5191" href="SizedIO.Base.html#346" class="Field"
+      >Response</a
+      ><a name="5199"
+      > </a
+      ><a name="5200" href="SizedIO.IOGraphicsLib.html#5113" class="Function"
+      >GraphicsInterface</a
+      ><a name="5217"
+      > </a
+      ><a name="5218" class="Symbol"
+      >=</a
+      ><a name="5219"
+      > </a
+      ><a name="5220" href="SizedIO.IOGraphicsLib.html#4711" class="Function"
+      >GraphicsResponses</a
+      ><a name="5237"
+      >
+
+</a
+      ><a name="5239" href="SizedIO.IOGraphicsLib.html#5239" class="Function"
+      >IOGraphics</a
+      ><a name="5249"
+      > </a
+      ><a name="5250" class="Symbol"
+      >:</a
+      ><a name="5251"
+      > </a
+      ><a name="5252" href="Agda.Builtin.Size.html#86" class="Postulate"
+      >AgdaSize</a
+      ><a name="5260"
+      > </a
+      ><a name="5261" class="Symbol"
+      >&#8594;</a
+      ><a name="5262"
+      > </a
+      ><a name="5263" class="PrimitiveType"
+      >Set</a
+      ><a name="5266"
+      > </a
+      ><a name="5267" class="Symbol"
+      >&#8594;</a
+      ><a name="5268"
+      > </a
+      ><a name="5269" class="PrimitiveType"
+      >Set</a
+      ><a name="5272"
+      >
+</a
+      ><a name="5273" href="SizedIO.IOGraphicsLib.html#5239" class="Function"
+      >IOGraphics</a
+      ><a name="5283"
+      > </a
+      ><a name="5284" href="SizedIO.IOGraphicsLib.html#5284" class="Bound"
+      >i</a
+      ><a name="5285"
+      > </a
+      ><a name="5286" class="Symbol"
+      >=</a
+      ><a name="5287"
+      > </a
+      ><a name="5288" href="SizedIO.Base.html#499" class="Record"
+      >IO</a
+      ><a name="5290"
+      > </a
+      ><a name="5291" href="SizedIO.IOGraphicsLib.html#5113" class="Function"
+      >GraphicsInterface</a
+      ><a name="5308"
+      > </a
+      ><a name="5309" href="SizedIO.IOGraphicsLib.html#5284" class="Bound"
+      >i</a
+      ><a name="5310"
+      >
+
+</a
+      ><a name="5312" href="SizedIO.IOGraphicsLib.html#5312" class="Function"
+      >IOGraphics+</a
+      ><a name="5323"
+      > </a
+      ><a name="5324" class="Symbol"
+      >:</a
+      ><a name="5325"
+      > </a
+      ><a name="5326" href="Agda.Builtin.Size.html#86" class="Postulate"
+      >AgdaSize</a
+      ><a name="5334"
+      > </a
+      ><a name="5335" class="Symbol"
+      >&#8594;</a
+      ><a name="5336"
+      > </a
+      ><a name="5337" class="PrimitiveType"
+      >Set</a
+      ><a name="5340"
+      > </a
+      ><a name="5341" class="Symbol"
+      >&#8594;</a
+      ><a name="5342"
+      > </a
+      ><a name="5343" class="PrimitiveType"
+      >Set</a
+      ><a name="5346"
+      >
+</a
+      ><a name="5347" href="SizedIO.IOGraphicsLib.html#5312" class="Function"
+      >IOGraphics+</a
+      ><a name="5358"
+      > </a
+      ><a name="5359" href="SizedIO.IOGraphicsLib.html#5359" class="Bound"
+      >i</a
+      ><a name="5360"
+      > </a
+      ><a name="5361" class="Symbol"
+      >=</a
+      ><a name="5362"
+      > </a
+      ><a name="5363" href="SizedIO.Base.html#773" class="Datatype"
+      >IO+</a
+      ><a name="5366"
+      > </a
+      ><a name="5367" href="SizedIO.IOGraphicsLib.html#5113" class="Function"
+      >GraphicsInterface</a
+      ><a name="5384"
+      > </a
+      ><a name="5385" href="SizedIO.IOGraphicsLib.html#5359" class="Bound"
+      >i</a
+      ><a name="5386"
+      >
+
+
+</a
+      ><a name="5389" href="SizedIO.IOGraphicsLib.html#5389" class="Function"
+      >translateIOGraphicsLocal</a
+      ><a name="5413"
+      > </a
+      ><a name="5414" class="Symbol"
+      >:</a
+      ><a name="5415"
+      > </a
+      ><a name="5416" class="Symbol"
+      >(</a
+      ><a name="5417" href="SizedIO.IOGraphicsLib.html#5417" class="Bound"
+      >c</a
+      ><a name="5418"
+      > </a
+      ><a name="5419" class="Symbol"
+      >:</a
+      ><a name="5420"
+      > </a
+      ><a name="5421" href="SizedIO.IOGraphicsLib.html#4115" class="Datatype"
+      >GraphicsCommands</a
+      ><a name="5437" class="Symbol"
+      >)</a
+      ><a name="5438"
+      > </a
+      ><a name="5439" class="Symbol"
+      >&#8594;</a
+      ><a name="5440"
+      > </a
+      ><a name="5441" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="5449"
+      > </a
+      ><a name="5450" class="Symbol"
+      >(</a
+      ><a name="5451" href="SizedIO.IOGraphicsLib.html#4711" class="Function"
+      >GraphicsResponses</a
+      ><a name="5468"
+      > </a
+      ><a name="5469" href="SizedIO.IOGraphicsLib.html#5417" class="Bound"
+      >c</a
+      ><a name="5470" class="Symbol"
+      >)</a
+      ><a name="5471"
+      >
+</a
+      ><a name="5472" href="SizedIO.IOGraphicsLib.html#5389" class="Function"
+      >translateIOGraphicsLocal</a
+      ><a name="5496"
+      > </a
+      ><a name="5497" class="Symbol"
+      >(</a
+      ><a name="5498" href="SizedIO.IOGraphicsLib.html#4207" class="InductiveConstructor"
+      >maybeGetWindowEvent</a
+      ><a name="5517"
+      > </a
+      ><a name="5518" href="SizedIO.IOGraphicsLib.html#5518" class="Bound"
+      >w</a
+      ><a name="5519" class="Symbol"
+      >)</a
+      ><a name="5520"
+      > </a
+      ><a name="5521" class="Symbol"
+      >=</a
+      ><a name="5522"
+      > </a
+      ><a name="5523" href="SizedIO.IOGraphicsLib.html#1585" class="Postulate"
+      >nativeMaybeGetWindowEvent</a
+      ><a name="5548"
+      > </a
+      ><a name="5549" href="SizedIO.IOGraphicsLib.html#5518" class="Bound"
+      >w</a
+      ><a name="5550"
+      >
+</a
+      ><a name="5551" href="SizedIO.IOGraphicsLib.html#5389" class="Function"
+      >translateIOGraphicsLocal</a
+      ><a name="5575"
+      > </a
+      ><a name="5576" class="Symbol"
+      >(</a
+      ><a name="5577" href="SizedIO.IOGraphicsLib.html#4268" class="InductiveConstructor"
+      >getWindowEvent</a
+      ><a name="5591"
+      > </a
+      ><a name="5592" href="SizedIO.IOGraphicsLib.html#5592" class="Bound"
+      >w</a
+      ><a name="5593" class="Symbol"
+      >)</a
+      ><a name="5594"
+      >      </a
+      ><a name="5600" class="Symbol"
+      >=</a
+      ><a name="5601"
+      > </a
+      ><a name="5602" href="SizedIO.IOGraphicsLib.html#1732" class="Postulate"
+      >nativeGetWindowEvent</a
+      ><a name="5622"
+      > </a
+      ><a name="5623" href="SizedIO.IOGraphicsLib.html#5592" class="Bound"
+      >w</a
+      ><a name="5624"
+      >
+</a
+      ><a name="5625" href="SizedIO.IOGraphicsLib.html#5389" class="Function"
+      >translateIOGraphicsLocal</a
+      ><a name="5649"
+      > </a
+      ><a name="5650" class="Symbol"
+      >(</a
+      ><a name="5651" href="SizedIO.IOGraphicsLib.html#4146" class="InductiveConstructor"
+      >closeWindow</a
+      ><a name="5662"
+      > </a
+      ><a name="5663" href="SizedIO.IOGraphicsLib.html#5663" class="Bound"
+      >w</a
+      ><a name="5664" class="Symbol"
+      >)</a
+      ><a name="5665"
+      >         </a
+      ><a name="5674" class="Symbol"
+      >=</a
+      ><a name="5675"
+      > </a
+      ><a name="5676" href="SizedIO.IOGraphicsLib.html#3012" class="Postulate"
+      >nativeCloseWindow</a
+      ><a name="5693"
+      > </a
+      ><a name="5694" href="SizedIO.IOGraphicsLib.html#5663" class="Bound"
+      >w</a
+      ><a name="5695"
+      >
+</a
+      ><a name="5696" href="SizedIO.IOGraphicsLib.html#5389" class="Function"
+      >translateIOGraphicsLocal</a
+      ><a name="5720"
+      > </a
+      ><a name="5721" class="Symbol"
+      >(</a
+      ><a name="5722" href="SizedIO.IOGraphicsLib.html#4329" class="InductiveConstructor"
+      >openWindowNotEx</a
+      ><a name="5737"
+      > </a
+      ><a name="5738" href="SizedIO.IOGraphicsLib.html#5738" class="Bound"
+      >str</a
+      ><a name="5741"
+      > </a
+      ><a name="5742" href="SizedIO.IOGraphicsLib.html#5742" class="Bound"
+      >size</a
+      ><a name="5746" class="Symbol"
+      >)</a
+      ><a name="5747"
+      >   </a
+      ><a name="5750" class="Symbol"
+      >=</a
+      ><a name="5751"
+      > </a
+      ><a name="5752" href="SizedIO.IOGraphicsLib.html#2653" class="Postulate"
+      >nativeOpenWindow</a
+      ><a name="5768"
+      > </a
+      ><a name="5769" href="SizedIO.IOGraphicsLib.html#5738" class="Bound"
+      >str</a
+      ><a name="5772"
+      > </a
+      ><a name="5773" href="SizedIO.IOGraphicsLib.html#5742" class="Bound"
+      >size</a
+      ><a name="5777"
+      >
+</a
+      ><a name="5778" href="SizedIO.IOGraphicsLib.html#5389" class="Function"
+      >translateIOGraphicsLocal</a
+      ><a name="5802"
+      > </a
+      ><a name="5803" class="Symbol"
+      >(</a
+      ><a name="5804" href="SizedIO.IOGraphicsLib.html#4389" class="InductiveConstructor"
+      >openWindow</a
+      ><a name="5814"
+      > </a
+      ><a name="5815" href="SizedIO.IOGraphicsLib.html#5815" class="Bound"
+      >str</a
+      ><a name="5818"
+      > </a
+      ><a name="5819" href="SizedIO.IOGraphicsLib.html#5819" class="Bound"
+      >point</a
+      ><a name="5824"
+      > </a
+      ><a name="5825" href="SizedIO.IOGraphicsLib.html#5825" class="Bound"
+      >size</a
+      ><a name="5829"
+      > </a
+      ><a name="5830" href="SizedIO.IOGraphicsLib.html#5830" class="Bound"
+      >mode</a
+      ><a name="5834"
+      > </a
+      ><a name="5835" href="SizedIO.IOGraphicsLib.html#5835" class="Bound"
+      >word</a
+      ><a name="5839" class="Symbol"
+      >)</a
+      ><a name="5840"
+      > </a
+      ><a name="5841" class="Symbol"
+      >=</a
+      ><a name="5842"
+      > </a
+      ><a name="5843" href="SizedIO.IOGraphicsLib.html#2803" class="Postulate"
+      >nativeOpenWindowEx</a
+      ><a name="5861"
+      > </a
+      ><a name="5862" href="SizedIO.IOGraphicsLib.html#5815" class="Bound"
+      >str</a
+      ><a name="5865"
+      > </a
+      ><a name="5866" href="SizedIO.IOGraphicsLib.html#5819" class="Bound"
+      >point</a
+      ><a name="5871"
+      > </a
+      ><a name="5872" href="SizedIO.IOGraphicsLib.html#5825" class="Bound"
+      >size</a
+      ><a name="5876"
+      > </a
+      ><a name="5877" href="SizedIO.IOGraphicsLib.html#5830" class="Bound"
+      >mode</a
+      ><a name="5881"
+      > </a
+      ><a name="5882" href="SizedIO.IOGraphicsLib.html#5835" class="Bound"
+      >word</a
+      ><a name="5886"
+      >
+</a
+      ><a name="5887" href="SizedIO.IOGraphicsLib.html#5389" class="Function"
+      >translateIOGraphicsLocal</a
+      ><a name="5911"
+      > </a
+      ><a name="5912" href="SizedIO.IOGraphicsLib.html#4525" class="InductiveConstructor"
+      >timeGetTime</a
+      ><a name="5923"
+      >             </a
+      ><a name="5936" class="Symbol"
+      >=</a
+      ><a name="5937"
+      > </a
+      ><a name="5938" href="SizedIO.IOGraphicsLib.html#3371" class="Postulate"
+      >nativeTimeGetTime</a
+      ><a name="5955"
+      >
+</a
+      ><a name="5956" href="SizedIO.IOGraphicsLib.html#5389" class="Function"
+      >translateIOGraphicsLocal</a
+      ><a name="5980"
+      > </a
+      ><a name="5981" class="Symbol"
+      >(</a
+      ><a name="5982" href="SizedIO.IOGraphicsLib.html#4587" class="InductiveConstructor"
+      >drawInWindow</a
+      ><a name="5994"
+      > </a
+      ><a name="5995" href="SizedIO.IOGraphicsLib.html#5995" class="Bound"
+      >w</a
+      ><a name="5996"
+      > </a
+      ><a name="5997" href="SizedIO.IOGraphicsLib.html#5997" class="Bound"
+      >g</a
+      ><a name="5998" class="Symbol"
+      >)</a
+      ><a name="5999"
+      >      </a
+      ><a name="6005" class="Symbol"
+      >=</a
+      ><a name="6006"
+      > </a
+      ><a name="6007" href="SizedIO.IOGraphicsLib.html#1936" class="Postulate"
+      >nativeDrawInWindow</a
+      ><a name="6025"
+      > </a
+      ><a name="6026" href="SizedIO.IOGraphicsLib.html#5995" class="Bound"
+      >w</a
+      ><a name="6027"
+      > </a
+      ><a name="6028" href="SizedIO.IOGraphicsLib.html#5997" class="Bound"
+      >g</a
+      ><a name="6029"
+      >
+</a
+      ><a name="6030" href="SizedIO.IOGraphicsLib.html#5389" class="Function"
+      >translateIOGraphicsLocal</a
+      ><a name="6054"
+      > </a
+      ><a name="6055" class="Symbol"
+      >(</a
+      ><a name="6056" href="SizedIO.IOGraphicsLib.html#4647" class="InductiveConstructor"
+      >print</a
+      ><a name="6061"
+      > </a
+      ><a name="6062" href="SizedIO.IOGraphicsLib.html#6062" class="Bound"
+      >s</a
+      ><a name="6063" class="Symbol"
+      >)</a
+      ><a name="6064"
+      >             </a
+      ><a name="6077" class="Symbol"
+      >=</a
+      ><a name="6078"
+      > </a
+      ><a name="6079" href="NativeIO.html#542" class="Postulate"
+      >nativePutStrLn</a
+      ><a name="6093"
+      > </a
+      ><a name="6094" href="SizedIO.IOGraphicsLib.html#6062" class="Bound"
+      >s</a
+      ><a name="6095"
+      >
+
+
+</a
+      ><a name="6098" href="SizedIO.IOGraphicsLib.html#6098" class="Function"
+      >translateIOGraphics</a
+      ><a name="6117"
+      > </a
+      ><a name="6118" class="Symbol"
+      >:</a
+      ><a name="6119"
+      > </a
+      ><a name="6120" class="Symbol"
+      >{</a
+      ><a name="6121" href="SizedIO.IOGraphicsLib.html#6121" class="Bound"
+      >A</a
+      ><a name="6122"
+      > </a
+      ><a name="6123" class="Symbol"
+      >:</a
+      ><a name="6124"
+      > </a
+      ><a name="6125" class="PrimitiveType"
+      >Set</a
+      ><a name="6128" class="Symbol"
+      >}</a
+      ><a name="6129"
+      > </a
+      ><a name="6130" class="Symbol"
+      >&#8594;</a
+      ><a name="6131"
+      > </a
+      ><a name="6132" href="SizedIO.IOGraphicsLib.html#5239" class="Function"
+      >IOGraphics</a
+      ><a name="6142"
+      > </a
+      ><a name="6143" href="Agda.Builtin.Size.html#182" class="Postulate"
+      >&#8734;</a
+      ><a name="6144"
+      > </a
+      ><a name="6145" href="SizedIO.IOGraphicsLib.html#6121" class="Bound"
+      >A</a
+      ><a name="6146"
+      > </a
+      ><a name="6147" class="Symbol"
+      >&#8594;</a
+      ><a name="6148"
+      > </a
+      ><a name="6149" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="6157"
+      > </a
+      ><a name="6158" href="SizedIO.IOGraphicsLib.html#6121" class="Bound"
+      >A</a
+      ><a name="6159"
+      >
+</a
+      ><a name="6160" href="SizedIO.IOGraphicsLib.html#6098" class="Function"
+      >translateIOGraphics</a
+      ><a name="6179"
+      > </a
+      ><a name="6180" class="Symbol"
+      >=</a
+      ><a name="6181"
+      > </a
+      ><a name="6182" href="SizedIO.Base.html#1608" class="Function"
+      >translateIO</a
+      ><a name="6193"
+      > </a
+      ><a name="6194" href="SizedIO.IOGraphicsLib.html#5389" class="Function"
+      >translateIOGraphicsLocal</a
+      ><a name="6218"
+      >
+</a
+      ></pre
+    ></body
+  ></html
+>

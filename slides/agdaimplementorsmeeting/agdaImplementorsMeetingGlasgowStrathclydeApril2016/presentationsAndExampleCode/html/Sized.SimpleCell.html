@@ -1,0 +1,1061 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >Sized.SimpleCell</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Keyword"
+      >module</a
+      ><a name="7"
+      > </a
+      ><a name="8" href="Sized.SimpleCell.html#1" class="Module"
+      >Sized.SimpleCell</a
+      ><a name="24"
+      > </a
+      ><a name="25" class="Keyword"
+      >where</a
+      ><a name="30"
+      >
+
+</a
+      ><a name="32" class="Keyword"
+      >open</a
+      ><a name="36"
+      > </a
+      ><a name="37" class="Keyword"
+      >import</a
+      ><a name="43"
+      > </a
+      ><a name="44" href="Data.Product.html#1" class="Module"
+      >Data.Product</a
+      ><a name="56"
+      >
+</a
+      ><a name="57" class="Keyword"
+      >open</a
+      ><a name="61"
+      > </a
+      ><a name="62" class="Keyword"
+      >import</a
+      ><a name="68"
+      > </a
+      ><a name="69" href="Data.String.Base.html#1" class="Module"
+      >Data.String.Base</a
+      ><a name="85"
+      >
+
+</a
+      ><a name="87" class="Keyword"
+      >open</a
+      ><a name="91"
+      > </a
+      ><a name="92" class="Keyword"
+      >import</a
+      ><a name="98"
+      > </a
+      ><a name="99" href="SizedIO.Object.html#1" class="Module"
+      >SizedIO.Object</a
+      ><a name="113"
+      >
+</a
+      ><a name="114" class="Keyword"
+      >open</a
+      ><a name="118"
+      > </a
+      ><a name="119" class="Keyword"
+      >import</a
+      ><a name="125"
+      > </a
+      ><a name="126" href="SizedIO.IOObject.html#1" class="Module"
+      >SizedIO.IOObject</a
+      ><a name="142"
+      >
+</a
+      ><a name="143" class="Keyword"
+      >open</a
+      ><a name="147"
+      > </a
+      ><a name="148" class="Keyword"
+      >import</a
+      ><a name="154"
+      > </a
+      ><a name="155" href="SizedIO.ConsoleObject.html#1" class="Module"
+      >SizedIO.ConsoleObject</a
+      ><a name="176"
+      >
+
+</a
+      ><a name="178" class="Keyword"
+      >open</a
+      ><a name="182"
+      > </a
+      ><a name="183" class="Keyword"
+      >import</a
+      ><a name="189"
+      > </a
+      ><a name="190" href="SizedIO.Base.html#1" class="Module"
+      >SizedIO.Base</a
+      ><a name="202"
+      >
+</a
+      ><a name="203" class="Keyword"
+      >open</a
+      ><a name="207"
+      > </a
+      ><a name="208" class="Keyword"
+      >import</a
+      ><a name="214"
+      > </a
+      ><a name="215" href="SizedIO.Console.html#1" class="Module"
+      >SizedIO.Console</a
+      ><a name="230"
+      > </a
+      ><a name="231" class="Keyword"
+      >hiding</a
+      ><a name="237"
+      > </a
+      ><a name="238" class="Symbol"
+      >(</a
+      ><a name="239" href="SizedIO.Console.html#882" class="Function"
+      >main</a
+      ><a name="243" class="Symbol"
+      >)</a
+      ><a name="244"
+      >
+
+</a
+      ><a name="246" class="Keyword"
+      >open</a
+      ><a name="250"
+      > </a
+      ><a name="251" class="Keyword"
+      >import</a
+      ><a name="257"
+      > </a
+      ><a name="258" href="NativeIO.html#1" class="Module"
+      >NativeIO</a
+      ><a name="266"
+      >
+
+</a
+      ><a name="268" class="Keyword"
+      >open</a
+      ><a name="272"
+      > </a
+      ><a name="273" class="Keyword"
+      >import</a
+      ><a name="279"
+      > </a
+      ><a name="280" href="Size.html#1" class="Module"
+      >Size</a
+      ><a name="284"
+      >
+
+</a
+      ><a name="286" class="Keyword"
+      >data</a
+      ><a name="290"
+      > </a
+      ><a name="291" href="Sized.SimpleCell.html#291" class="Datatype"
+      >CellMethod</a
+      ><a name="301"
+      > </a
+      ><a name="302" href="Sized.SimpleCell.html#302" class="Bound"
+      >A</a
+      ><a name="303"
+      > </a
+      ><a name="304" class="Symbol"
+      >:</a
+      ><a name="305"
+      > </a
+      ><a name="306" class="PrimitiveType"
+      >Set</a
+      ><a name="309"
+      > </a
+      ><a name="310" class="Keyword"
+      >where</a
+      ><a name="315"
+      >
+    </a
+      ><a name="320" href="Sized.SimpleCell.html#320" class="InductiveConstructor"
+      >get</a
+      ><a name="323"
+      > </a
+      ><a name="324" class="Symbol"
+      >:</a
+      ><a name="325"
+      > </a
+      ><a name="326" href="Sized.SimpleCell.html#291" class="Datatype"
+      >CellMethod</a
+      ><a name="336"
+      > </a
+      ><a name="337" href="Sized.SimpleCell.html#302" class="Bound"
+      >A</a
+      ><a name="338"
+      >
+    </a
+      ><a name="343" href="Sized.SimpleCell.html#343" class="InductiveConstructor"
+      >put</a
+      ><a name="346"
+      > </a
+      ><a name="347" class="Symbol"
+      >:</a
+      ><a name="348"
+      > </a
+      ><a name="349" href="Sized.SimpleCell.html#302" class="Bound"
+      >A</a
+      ><a name="350"
+      > </a
+      ><a name="351" class="Symbol"
+      >&#8594;</a
+      ><a name="352"
+      > </a
+      ><a name="353" href="Sized.SimpleCell.html#291" class="Datatype"
+      >CellMethod</a
+      ><a name="363"
+      > </a
+      ><a name="364" href="Sized.SimpleCell.html#302" class="Bound"
+      >A</a
+      ><a name="365"
+      >
+
+</a
+      ><a name="367" href="Sized.SimpleCell.html#367" class="Function"
+      >CellResult</a
+      ><a name="377"
+      > </a
+      ><a name="378" class="Symbol"
+      >:</a
+      ><a name="379"
+      > </a
+      ><a name="380" class="Symbol"
+      >&#8704;{</a
+      ><a name="382" href="Sized.SimpleCell.html#382" class="Bound"
+      >A</a
+      ><a name="383" class="Symbol"
+      >}</a
+      ><a name="384"
+      > </a
+      ><a name="385" class="Symbol"
+      >&#8594;</a
+      ><a name="386"
+      > </a
+      ><a name="387" href="Sized.SimpleCell.html#291" class="Datatype"
+      >CellMethod</a
+      ><a name="397"
+      > </a
+      ><a name="398" href="Sized.SimpleCell.html#382" class="Bound"
+      >A</a
+      ><a name="399"
+      > </a
+      ><a name="400" class="Symbol"
+      >&#8594;</a
+      ><a name="401"
+      > </a
+      ><a name="402" class="PrimitiveType"
+      >Set</a
+      ><a name="405"
+      >
+</a
+      ><a name="406" href="Sized.SimpleCell.html#367" class="Function"
+      >CellResult</a
+      ><a name="416"
+      > </a
+      ><a name="417" class="Symbol"
+      >{</a
+      ><a name="418" href="Sized.SimpleCell.html#418" class="Bound"
+      >A</a
+      ><a name="419" class="Symbol"
+      >}</a
+      ><a name="420"
+      > </a
+      ><a name="421" href="Sized.SimpleCell.html#320" class="InductiveConstructor"
+      >get</a
+      ><a name="424"
+      > </a
+      ><a name="425" class="Symbol"
+      >=</a
+      ><a name="426"
+      > </a
+      ><a name="427" href="Sized.SimpleCell.html#418" class="Bound"
+      >A</a
+      ><a name="428"
+      >
+</a
+      ><a name="429" href="Sized.SimpleCell.html#367" class="Function"
+      >CellResult</a
+      ><a name="439"
+      > </a
+      ><a name="440" class="Symbol"
+      >(</a
+      ><a name="441" href="Sized.SimpleCell.html#343" class="InductiveConstructor"
+      >put</a
+      ><a name="444"
+      > </a
+      ><a name="445" class="Symbol"
+      >_)</a
+      ><a name="447"
+      > </a
+      ><a name="448" class="Symbol"
+      >=</a
+      ><a name="449"
+      > </a
+      ><a name="450" href="Unit.html#28" class="Record"
+      >Unit</a
+      ><a name="454"
+      >
+
+</a
+      ><a name="456" class="Comment"
+      >-- cellI is the interface of the object of a simple cell</a
+      ><a name="512"
+      >
+</a
+      ><a name="513" href="Sized.SimpleCell.html#513" class="Function"
+      >cellI</a
+      ><a name="518"
+      > </a
+      ><a name="519" class="Symbol"
+      >:</a
+      ><a name="520"
+      > </a
+      ><a name="521" class="Symbol"
+      >(</a
+      ><a name="522" href="Sized.SimpleCell.html#522" class="Bound"
+      >A</a
+      ><a name="523"
+      > </a
+      ><a name="524" class="Symbol"
+      >:</a
+      ><a name="525"
+      > </a
+      ><a name="526" class="PrimitiveType"
+      >Set</a
+      ><a name="529" class="Symbol"
+      >)</a
+      ><a name="530"
+      > </a
+      ><a name="531" class="Symbol"
+      >&#8594;</a
+      ><a name="532"
+      > </a
+      ><a name="533" href="SizedIO.Object.html#63" class="Record"
+      >Interface</a
+      ><a name="542"
+      >
+</a
+      ><a name="543" href="SizedIO.Object.html#98" class="Field"
+      >Method</a
+      ><a name="549"
+      >  </a
+      ><a name="551" class="Symbol"
+      >(</a
+      ><a name="552" href="Sized.SimpleCell.html#513" class="Function"
+      >cellI</a
+      ><a name="557"
+      > </a
+      ><a name="558" href="Sized.SimpleCell.html#558" class="Bound"
+      >A</a
+      ><a name="559" class="Symbol"
+      >)</a
+      ><a name="560"
+      >    </a
+      ><a name="564" class="Symbol"
+      >=</a
+      ><a name="565"
+      >  </a
+      ><a name="567" href="Sized.SimpleCell.html#291" class="Datatype"
+      >CellMethod</a
+      ><a name="577"
+      > </a
+      ><a name="578" href="Sized.SimpleCell.html#558" class="Bound"
+      >A</a
+      ><a name="579"
+      >
+</a
+      ><a name="580" href="SizedIO.Object.html#116" class="Field"
+      >Result</a
+      ><a name="586"
+      >  </a
+      ><a name="588" class="Symbol"
+      >(</a
+      ><a name="589" href="Sized.SimpleCell.html#513" class="Function"
+      >cellI</a
+      ><a name="594"
+      > </a
+      ><a name="595" href="Sized.SimpleCell.html#595" class="Bound"
+      >A</a
+      ><a name="596" class="Symbol"
+      >)</a
+      ><a name="597"
+      > </a
+      ><a name="598" href="Sized.SimpleCell.html#598" class="Bound"
+      >m</a
+      ><a name="599"
+      >  </a
+      ><a name="601" class="Symbol"
+      >=</a
+      ><a name="602"
+      >  </a
+      ><a name="604" href="Sized.SimpleCell.html#367" class="Function"
+      >CellResult</a
+      ><a name="614"
+      > </a
+      ><a name="615" href="Sized.SimpleCell.html#598" class="Bound"
+      >m</a
+      ><a name="616"
+      >
+
+</a
+      ><a name="618" class="Comment"
+      >-- cellC is the type of consoleObjects with interface (cellI String)</a
+      ><a name="686"
+      >
+</a
+      ><a name="687" href="Sized.SimpleCell.html#687" class="Function"
+      >CellC</a
+      ><a name="692"
+      > </a
+      ><a name="693" class="Symbol"
+      >:</a
+      ><a name="694"
+      > </a
+      ><a name="695" class="Symbol"
+      >(</a
+      ><a name="696" href="Sized.SimpleCell.html#696" class="Bound"
+      >i</a
+      ><a name="697"
+      > </a
+      ><a name="698" class="Symbol"
+      >:</a
+      ><a name="699"
+      > </a
+      ><a name="700" href="Agda.Builtin.Size.html#86" class="Postulate"
+      >Size</a
+      ><a name="704" class="Symbol"
+      >)</a
+      ><a name="705"
+      > </a
+      ><a name="706" class="Symbol"
+      >&#8594;</a
+      ><a name="707"
+      > </a
+      ><a name="708" class="PrimitiveType"
+      >Set</a
+      ><a name="711"
+      >
+</a
+      ><a name="712" href="Sized.SimpleCell.html#687" class="Function"
+      >CellC</a
+      ><a name="717"
+      > </a
+      ><a name="718" href="Sized.SimpleCell.html#718" class="Bound"
+      >i</a
+      ><a name="719"
+      > </a
+      ><a name="720" class="Symbol"
+      >=</a
+      ><a name="721"
+      > </a
+      ><a name="722" href="SizedIO.ConsoleObject.html#210" class="Function"
+      >ConsoleObject</a
+      ><a name="735"
+      > </a
+      ><a name="736" href="Sized.SimpleCell.html#718" class="Bound"
+      >i</a
+      ><a name="737"
+      > </a
+      ><a name="738" class="Symbol"
+      >(</a
+      ><a name="739" href="Sized.SimpleCell.html#513" class="Function"
+      >cellI</a
+      ><a name="744"
+      > </a
+      ><a name="745" href="Agda.Builtin.String.html#137" class="Postulate"
+      >String</a
+      ><a name="751" class="Symbol"
+      >)</a
+      ><a name="752"
+      >
+
+
+</a
+      ><a name="755" class="Comment"
+      >-- cellO is a program for a simple cell which</a
+      ><a name="800"
+      >
+</a
+      ><a name="801" class="Comment"
+      >-- when get is called writes &quot;getting s&quot; for the string s of the object</a
+      ><a name="872"
+      >
+</a
+      ><a name="873" class="Comment"
+      >-- and when putting s writes &quot;putting s&quot; for the string</a
+      ><a name="928"
+      >
+
+</a
+      ><a name="930" class="Comment"
+      >-- cellP is constructor for the consoleObject for interface (cellI String)</a
+      ><a name="1004"
+      >
+</a
+      ><a name="1005" href="Sized.SimpleCell.html#1005" class="Function"
+      >cellP</a
+      ><a name="1010"
+      > </a
+      ><a name="1011" class="Symbol"
+      >:</a
+      ><a name="1012"
+      > </a
+      ><a name="1013" class="Symbol"
+      >&#8704;{</a
+      ><a name="1015" href="Sized.SimpleCell.html#1015" class="Bound"
+      >i</a
+      ><a name="1016" class="Symbol"
+      >}</a
+      ><a name="1017"
+      > </a
+      ><a name="1018" class="Symbol"
+      >(</a
+      ><a name="1019" href="Sized.SimpleCell.html#1019" class="Bound"
+      >s</a
+      ><a name="1020"
+      > </a
+      ><a name="1021" class="Symbol"
+      >:</a
+      ><a name="1022"
+      > </a
+      ><a name="1023" href="Agda.Builtin.String.html#137" class="Postulate"
+      >String</a
+      ><a name="1029" class="Symbol"
+      >)</a
+      ><a name="1030"
+      > </a
+      ><a name="1031" class="Symbol"
+      >&#8594;</a
+      ><a name="1032"
+      > </a
+      ><a name="1033" href="Sized.SimpleCell.html#687" class="Function"
+      >CellC</a
+      ><a name="1038"
+      > </a
+      ><a name="1039" href="Sized.SimpleCell.html#1015" class="Bound"
+      >i</a
+      ><a name="1040"
+      >
+</a
+      ><a name="1041" href="SizedIO.Base.html#598" class="Field"
+      >force</a
+      ><a name="1046"
+      > </a
+      ><a name="1047" class="Symbol"
+      >(</a
+      ><a name="1048" href="SizedIO.IOObject.html#600" class="Field"
+      >method</a
+      ><a name="1054"
+      > </a
+      ><a name="1055" class="Symbol"
+      >(</a
+      ><a name="1056" href="Sized.SimpleCell.html#1005" class="Function"
+      >cellP</a
+      ><a name="1061"
+      > </a
+      ><a name="1062" href="Sized.SimpleCell.html#1062" class="Bound"
+      >s</a
+      ><a name="1063" class="Symbol"
+      >)</a
+      ><a name="1064"
+      > </a
+      ><a name="1065" href="Sized.SimpleCell.html#320" class="InductiveConstructor"
+      >get</a
+      ><a name="1068" class="Symbol"
+      >)</a
+      ><a name="1069"
+      > </a
+      ><a name="1070" class="Symbol"
+      >=</a
+      ><a name="1071"
+      >
+  </a
+      ><a name="1074" href="SizedIO.Base.html#684" class="InductiveConstructor"
+      >do'</a
+      ><a name="1077"
+      > </a
+      ><a name="1078" class="Symbol"
+      >(</a
+      ><a name="1079" href="SizedIO.Console.html#182" class="InductiveConstructor"
+      >putStrLn</a
+      ><a name="1087"
+      > </a
+      ><a name="1088" class="Symbol"
+      >(</a
+      ><a name="1089" class="String"
+      >&quot;getting (&quot;</a
+      ><a name="1100"
+      > </a
+      ><a name="1101" href="Data.String.Base.html#873" class="Function Operator"
+      >++</a
+      ><a name="1103"
+      > </a
+      ><a name="1104" href="Sized.SimpleCell.html#1062" class="Bound"
+      >s</a
+      ><a name="1105"
+      > </a
+      ><a name="1106" href="Data.String.Base.html#873" class="Function Operator"
+      >++</a
+      ><a name="1108"
+      > </a
+      ><a name="1109" class="String"
+      >&quot;)&quot;</a
+      ><a name="1112" class="Symbol"
+      >))</a
+      ><a name="1114"
+      > </a
+      ><a name="1115" class="Symbol"
+      >&#955;</a
+      ><a name="1116"
+      > </a
+      ><a name="1117" href="Sized.SimpleCell.html#1117" class="Bound"
+      >_</a
+      ><a name="1118"
+      > </a
+      ><a name="1119" class="Symbol"
+      >&#8594;</a
+      ><a name="1120"
+      >
+  </a
+      ><a name="1123" href="SizedIO.Base.html#954" class="Function"
+      >return</a
+      ><a name="1129"
+      > </a
+      ><a name="1130" class="Symbol"
+      >(</a
+      ><a name="1131" href="Sized.SimpleCell.html#1062" class="Bound"
+      >s</a
+      ><a name="1132"
+      > </a
+      ><a name="1133" href="Data.Product.html#509" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1134"
+      > </a
+      ><a name="1135" href="Sized.SimpleCell.html#1005" class="Function"
+      >cellP</a
+      ><a name="1140"
+      > </a
+      ><a name="1141" href="Sized.SimpleCell.html#1062" class="Bound"
+      >s</a
+      ><a name="1142" class="Symbol"
+      >)</a
+      ><a name="1143"
+      >
+</a
+      ><a name="1144" href="SizedIO.Base.html#598" class="Field"
+      >force</a
+      ><a name="1149"
+      > </a
+      ><a name="1150" class="Symbol"
+      >(</a
+      ><a name="1151" href="SizedIO.IOObject.html#600" class="Field"
+      >method</a
+      ><a name="1157"
+      > </a
+      ><a name="1158" class="Symbol"
+      >(</a
+      ><a name="1159" href="Sized.SimpleCell.html#1005" class="Function"
+      >cellP</a
+      ><a name="1164"
+      > </a
+      ><a name="1165" href="Sized.SimpleCell.html#1165" class="Bound"
+      >s</a
+      ><a name="1166" class="Symbol"
+      >)</a
+      ><a name="1167"
+      > </a
+      ><a name="1168" class="Symbol"
+      >(</a
+      ><a name="1169" href="Sized.SimpleCell.html#343" class="InductiveConstructor"
+      >put</a
+      ><a name="1172"
+      > </a
+      ><a name="1173" href="Sized.SimpleCell.html#1173" class="Bound"
+      >x</a
+      ><a name="1174" class="Symbol"
+      >))</a
+      ><a name="1176"
+      > </a
+      ><a name="1177" class="Symbol"
+      >=</a
+      ><a name="1178"
+      >
+  </a
+      ><a name="1181" href="SizedIO.Base.html#684" class="InductiveConstructor"
+      >do'</a
+      ><a name="1184"
+      > </a
+      ><a name="1185" class="Symbol"
+      >(</a
+      ><a name="1186" href="SizedIO.Console.html#182" class="InductiveConstructor"
+      >putStrLn</a
+      ><a name="1194"
+      > </a
+      ><a name="1195" class="Symbol"
+      >(</a
+      ><a name="1196" class="String"
+      >&quot;putting (&quot;</a
+      ><a name="1207"
+      > </a
+      ><a name="1208" href="Data.String.Base.html#873" class="Function Operator"
+      >++</a
+      ><a name="1210"
+      > </a
+      ><a name="1211" href="Sized.SimpleCell.html#1173" class="Bound"
+      >x</a
+      ><a name="1212"
+      > </a
+      ><a name="1213" href="Data.String.Base.html#873" class="Function Operator"
+      >++</a
+      ><a name="1215"
+      > </a
+      ><a name="1216" class="String"
+      >&quot;)&quot;</a
+      ><a name="1219" class="Symbol"
+      >))</a
+      ><a name="1221"
+      > </a
+      ><a name="1222" class="Symbol"
+      >&#955;</a
+      ><a name="1223"
+      > </a
+      ><a name="1224" href="Sized.SimpleCell.html#1224" class="Bound"
+      >_</a
+      ><a name="1225"
+      > </a
+      ><a name="1226" class="Symbol"
+      >&#8594;</a
+      ><a name="1227"
+      >
+  </a
+      ><a name="1230" href="SizedIO.Base.html#954" class="Function"
+      >return</a
+      ><a name="1236"
+      > </a
+      ><a name="1237" class="Symbol"
+      >(_</a
+      ><a name="1239"
+      > </a
+      ><a name="1240" href="Data.Product.html#509" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1241"
+      > </a
+      ><a name="1242" class="Symbol"
+      >(</a
+      ><a name="1243" href="Sized.SimpleCell.html#1005" class="Function"
+      >cellP</a
+      ><a name="1248"
+      > </a
+      ><a name="1249" href="Sized.SimpleCell.html#1173" class="Bound"
+      >x</a
+      ><a name="1250" class="Symbol"
+      >))</a
+      ><a name="1252"
+      >
+
+</a
+      ><a name="1254" class="Comment"
+      >-- Program is another program</a
+      ><a name="1283"
+      >
+</a
+      ><a name="1284" href="Sized.SimpleCell.html#1284" class="Function"
+      >program</a
+      ><a name="1291"
+      > </a
+      ><a name="1292" class="Symbol"
+      >:</a
+      ><a name="1293"
+      > </a
+      ><a name="1294" href="Agda.Builtin.String.html#137" class="Postulate"
+      >String</a
+      ><a name="1300"
+      > </a
+      ><a name="1301" class="Symbol"
+      >&#8594;</a
+      ><a name="1302"
+      > </a
+      ><a name="1303" href="SizedIO.Console.html#457" class="Function"
+      >IOConsole</a
+      ><a name="1312"
+      > </a
+      ><a name="1313" href="Agda.Builtin.Size.html#182" class="Postulate"
+      >&#8734;</a
+      ><a name="1314"
+      > </a
+      ><a name="1315" href="Unit.html#28" class="Record"
+      >Unit</a
+      ><a name="1319"
+      >
+</a
+      ><a name="1320" href="Sized.SimpleCell.html#1284" class="Function"
+      >program</a
+      ><a name="1327"
+      > </a
+      ><a name="1328" href="Sized.SimpleCell.html#1328" class="Bound"
+      >arg</a
+      ><a name="1331"
+      > </a
+      ><a name="1332" class="Symbol"
+      >=</a
+      ><a name="1333"
+      >
+  </a
+      ><a name="1336" class="Keyword"
+      >let</a
+      ><a name="1339"
+      > </a
+      ><a name="1340" href="Sized.SimpleCell.html#1340" class="Bound"
+      >c&#8320;</a
+      ><a name="1342"
+      > </a
+      ><a name="1343" class="Symbol"
+      >=</a
+      ><a name="1344"
+      > </a
+      ><a name="1345" href="Sized.SimpleCell.html#1005" class="Function"
+      >cellP</a
+      ><a name="1350"
+      > </a
+      ><a name="1351" class="String"
+      >&quot;Start&quot;</a
+      ><a name="1358"
+      > </a
+      ><a name="1359" class="Keyword"
+      >in</a
+      ><a name="1361"
+      >
+  </a
+      ><a name="1364" href="SizedIO.IOObject.html#600" class="Field"
+      >method</a
+      ><a name="1370"
+      > </a
+      ><a name="1371" href="Sized.SimpleCell.html#1340" class="Bound"
+      >c&#8320;</a
+      ><a name="1373"
+      > </a
+      ><a name="1374" href="Sized.SimpleCell.html#320" class="InductiveConstructor"
+      >get</a
+      ><a name="1377"
+      >       </a
+      ><a name="1384" href="SizedIO.Base.html#1381" class="Function Operator"
+      >&gt;&gt;=</a
+      ><a name="1387"
+      > </a
+      ><a name="1388" class="Symbol"
+      >&#955;{</a
+      ><a name="1390"
+      > </a
+      ><a name="1391" class="Symbol"
+      >(</a
+      ><a name="1392" href="Sized.SimpleCell.html#1392" class="Bound"
+      >s</a
+      ><a name="1393"
+      > </a
+      ><a name="1394" href="Data.Product.html#509" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1395"
+      > </a
+      ><a name="1396" href="Sized.SimpleCell.html#1396" class="Bound"
+      >c&#8321;</a
+      ><a name="1398" class="Symbol"
+      >)</a
+      ><a name="1399"
+      > </a
+      ><a name="1400" class="Symbol"
+      >&#8594;</a
+      ><a name="1401"
+      >
+  </a
+      ><a name="1404" href="SizedIO.Base.html#1119" class="Function"
+      >do1</a
+      ><a name="1407"
+      > </a
+      ><a name="1408" class="Symbol"
+      >(</a
+      ><a name="1409" href="SizedIO.Console.html#182" class="InductiveConstructor"
+      >putStrLn</a
+      ><a name="1417"
+      > </a
+      ><a name="1418" href="Sized.SimpleCell.html#1392" class="Bound"
+      >s</a
+      ><a name="1419" class="Symbol"
+      >)</a
+      ><a name="1420"
+      >         </a
+      ><a name="1429" href="SizedIO.Base.html#1489" class="Function Operator"
+      >&gt;&gt;</a
+      ><a name="1431"
+      >
+  </a
+      ><a name="1434" href="SizedIO.IOObject.html#600" class="Field"
+      >method</a
+      ><a name="1440"
+      > </a
+      ><a name="1441" href="Sized.SimpleCell.html#1396" class="Bound"
+      >c&#8321;</a
+      ><a name="1443"
+      > </a
+      ><a name="1444" class="Symbol"
+      >(</a
+      ><a name="1445" href="Sized.SimpleCell.html#343" class="InductiveConstructor"
+      >put</a
+      ><a name="1448"
+      > </a
+      ><a name="1449" href="Sized.SimpleCell.html#1328" class="Bound"
+      >arg</a
+      ><a name="1452" class="Symbol"
+      >)</a
+      ><a name="1453"
+      > </a
+      ><a name="1454" href="SizedIO.Base.html#1381" class="Function Operator"
+      >&gt;&gt;=</a
+      ><a name="1457"
+      > </a
+      ><a name="1458" class="Symbol"
+      >&#955;{</a
+      ><a name="1460"
+      > </a
+      ><a name="1461" class="Symbol"
+      >(_</a
+      ><a name="1463"
+      > </a
+      ><a name="1464" href="Data.Product.html#509" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1465"
+      > </a
+      ><a name="1466" href="Sized.SimpleCell.html#1466" class="Bound"
+      >c&#8322;</a
+      ><a name="1468" class="Symbol"
+      >)</a
+      ><a name="1469"
+      > </a
+      ><a name="1470" class="Symbol"
+      >&#8594;</a
+      ><a name="1471"
+      >
+  </a
+      ><a name="1474" href="SizedIO.IOObject.html#600" class="Field"
+      >method</a
+      ><a name="1480"
+      > </a
+      ><a name="1481" href="Sized.SimpleCell.html#1466" class="Bound"
+      >c&#8322;</a
+      ><a name="1483"
+      > </a
+      ><a name="1484" href="Sized.SimpleCell.html#320" class="InductiveConstructor"
+      >get</a
+      ><a name="1487"
+      >       </a
+      ><a name="1494" href="SizedIO.Base.html#1381" class="Function Operator"
+      >&gt;&gt;=</a
+      ><a name="1497"
+      > </a
+      ><a name="1498" class="Symbol"
+      >&#955;{</a
+      ><a name="1500"
+      > </a
+      ><a name="1501" class="Symbol"
+      >(</a
+      ><a name="1502" href="Sized.SimpleCell.html#1502" class="Bound"
+      >s'</a
+      ><a name="1504"
+      > </a
+      ><a name="1505" href="Data.Product.html#509" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1506"
+      > </a
+      ><a name="1507" href="Sized.SimpleCell.html#1507" class="Bound"
+      >c&#8323;</a
+      ><a name="1509" class="Symbol"
+      >)</a
+      ><a name="1510"
+      > </a
+      ><a name="1511" class="Symbol"
+      >&#8594;</a
+      ><a name="1512"
+      >
+  </a
+      ><a name="1515" href="SizedIO.Base.html#1119" class="Function"
+      >do1</a
+      ><a name="1518"
+      > </a
+      ><a name="1519" class="Symbol"
+      >(</a
+      ><a name="1520" href="SizedIO.Console.html#182" class="InductiveConstructor"
+      >putStrLn</a
+      ><a name="1528"
+      > </a
+      ><a name="1529" href="Sized.SimpleCell.html#1502" class="Bound"
+      >s'</a
+      ><a name="1531" class="Symbol"
+      >)</a
+      ><a name="1532"
+      >
+  </a
+      ><a name="1535" class="Symbol"
+      >}}}</a
+      ><a name="1538"
+      >
+
+</a
+      ><a name="1540" href="Sized.SimpleCell.html#1540" class="Function"
+      >main</a
+      ><a name="1544"
+      > </a
+      ><a name="1545" class="Symbol"
+      >:</a
+      ><a name="1546"
+      > </a
+      ><a name="1547" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="1555"
+      > </a
+      ><a name="1556" href="Unit.html#28" class="Record"
+      >Unit</a
+      ><a name="1560"
+      >
+</a
+      ><a name="1561" href="Sized.SimpleCell.html#1540" class="Function"
+      >main</a
+      ><a name="1565"
+      > </a
+      ><a name="1566" class="Symbol"
+      >=</a
+      ><a name="1567"
+      > </a
+      ><a name="1568" href="SizedIO.Console.html#764" class="Function"
+      >translateIOConsole</a
+      ><a name="1586"
+      > </a
+      ><a name="1587" class="Symbol"
+      >(</a
+      ><a name="1588" href="Sized.SimpleCell.html#1284" class="Function"
+      >program</a
+      ><a name="1595"
+      > </a
+      ><a name="1596" class="String"
+      >&quot;hello&quot;</a
+      ><a name="1603" class="Symbol"
+      >)</a
+      ><a name="1604"
+      >
+</a
+      ></pre
+    ></body
+  ></html
+>

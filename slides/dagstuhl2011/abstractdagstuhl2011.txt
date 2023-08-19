@@ -1,0 +1,26 @@
+Extraction of programs from proofs using postulated axioms
+  (Anton Setzer, joint work with Chi Ming Chuang)
+
+In this talk we discuss how to extract programs from 
+proofs with postulated axioms in dependent type theory.
+Since type theory has constructive logic, it is easy
+to determine for every $\Pi_2$-statement a function
+$f$ which determines the witness from the input.
+However, in the presence of postulated axioms, this
+function applied to an argument
+doesn't reduce necessarily to constructor head normal
+form, which means it doesn't produce a value.
+
+In this talk we discuss conditions which guarantee
+that the extracted function provide values in the presence of
+postulated axioms, and give a proof.
+
+This methodology will be applied to the extraction 
+of alogrithms for exact real number computations. 
+For this purpose the signed digit reals are introduced
+as a coalgebraic data type, and it is shown that the signed digit
+reals are closed under average, multiplication
+and rational numbers. Proofs have been carried
+out in the theorem prover Agda and the resulting
+programs can be executed effectively in this 
+language.

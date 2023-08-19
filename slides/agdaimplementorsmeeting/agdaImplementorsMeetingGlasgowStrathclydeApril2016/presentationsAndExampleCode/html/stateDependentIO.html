@@ -1,0 +1,2163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >stateDependentIO</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Keyword"
+      >module</a
+      ><a name="7"
+      > </a
+      ><a name="8" href="stateDependentIO.html#1" class="Module"
+      >stateDependentIO</a
+      ><a name="24"
+      > </a
+      ><a name="25" class="Keyword"
+      >where</a
+      ><a name="30"
+      >
+
+</a
+      ><a name="32" class="Keyword"
+      >open</a
+      ><a name="36"
+      > </a
+      ><a name="37" class="Keyword"
+      >import</a
+      ><a name="43"
+      > </a
+      ><a name="44" href="Level.html#1" class="Module"
+      >Level</a
+      ><a name="49"
+      > </a
+      ><a name="50" class="Keyword"
+      >using</a
+      ><a name="55"
+      > </a
+      ><a name="56" class="Symbol"
+      >(</a
+      ><a name="57" href="Agda.Primitive.html#626" class="Primitive Operator"
+      >_&#8852;_</a
+      ><a name="60"
+      > </a
+      ><a name="61" class="Symbol"
+      >)</a
+      ><a name="62"
+      > </a
+      ><a name="63" class="Keyword"
+      >renaming</a
+      ><a name="71"
+      > </a
+      ><a name="72" class="Symbol"
+      >(</a
+      ><a name="73" href="Agda.Primitive.html#596" class="Primitive"
+      >suc</a
+      ><a name="76"
+      > </a
+      ><a name="77" class="Symbol"
+      >to</a
+      ><a name="79"
+      > </a
+      ><a name="80" href="Agda.Primitive.html#596" class="Primitive"
+      >lsuc</a
+      ><a name="84" class="Symbol"
+      >;</a
+      ><a name="85"
+      > </a
+      ><a name="86" href="Agda.Primitive.html#580" class="Primitive"
+      >zero</a
+      ><a name="90"
+      > </a
+      ><a name="91" class="Symbol"
+      >to</a
+      ><a name="93"
+      > </a
+      ><a name="94" href="Agda.Primitive.html#580" class="Primitive"
+      >lzero</a
+      ><a name="99" class="Symbol"
+      >)</a
+      ><a name="100"
+      >
+</a
+      ><a name="101" class="Keyword"
+      >open</a
+      ><a name="105"
+      > </a
+      ><a name="106" class="Keyword"
+      >import</a
+      ><a name="112"
+      > </a
+      ><a name="113" href="Size.html#1" class="Module"
+      >Size</a
+      ><a name="117"
+      > </a
+      ><a name="118" class="Keyword"
+      >renaming</a
+      ><a name="126"
+      > </a
+      ><a name="127" class="Symbol"
+      >(</a
+      ><a name="128" href="Agda.Builtin.Size.html#86" class="Postulate"
+      >Size</a
+      ><a name="132"
+      > </a
+      ><a name="133" class="Symbol"
+      >to</a
+      ><a name="135"
+      > </a
+      ><a name="136" href="Agda.Builtin.Size.html#86" class="Postulate"
+      >AgdaSize</a
+      ><a name="144" class="Symbol"
+      >)</a
+      ><a name="145"
+      >
+</a
+      ><a name="146" class="Keyword"
+      >open</a
+      ><a name="150"
+      > </a
+      ><a name="151" class="Keyword"
+      >import</a
+      ><a name="157"
+      > </a
+      ><a name="158" href="NativeIO.html#1" class="Module"
+      >NativeIO</a
+      ><a name="166"
+      >
+</a
+      ><a name="167" class="Keyword"
+      >open</a
+      ><a name="171"
+      > </a
+      ><a name="172" class="Keyword"
+      >import</a
+      ><a name="178"
+      > </a
+      ><a name="179" href="Function.html#1" class="Module"
+      >Function</a
+      ><a name="187"
+      >
+
+</a
+      ><a name="189" class="Keyword"
+      >module</a
+      ><a name="195"
+      > </a
+      ><a name="196" href="stateDependentIO.html#196" class="Module"
+      >_</a
+      ><a name="197"
+      >  </a
+      ><a name="199" class="Symbol"
+      >{</a
+      ><a name="200" href="stateDependentIO.html#200" class="Bound"
+      >&#947;</a
+      ><a name="201"
+      > </a
+      ><a name="202" href="stateDependentIO.html#202" class="Bound"
+      >&#961;</a
+      ><a name="203"
+      > </a
+      ><a name="204" href="stateDependentIO.html#204" class="Bound"
+      >&#956;</a
+      ><a name="205" class="Symbol"
+      >}</a
+      ><a name="206"
+      > </a
+      ><a name="207" class="Keyword"
+      >where</a
+      ><a name="212"
+      >
+  </a
+      ><a name="215" class="Keyword"
+      >record</a
+      ><a name="221"
+      > </a
+      ><a name="222" href="stateDependentIO.html#222" class="Record"
+      >IOInterface&#738;</a
+      ><a name="234"
+      > </a
+      ><a name="235" class="Symbol"
+      >:</a
+      ><a name="236"
+      > </a
+      ><a name="237" class="PrimitiveType"
+      >Set</a
+      ><a name="240"
+      > </a
+      ><a name="241" class="Symbol"
+      >(</a
+      ><a name="242" href="Agda.Primitive.html#596" class="Primitive"
+      >lsuc</a
+      ><a name="246"
+      > </a
+      ><a name="247" class="Symbol"
+      >(</a
+      ><a name="248" href="stateDependentIO.html#200" class="Bound"
+      >&#947;</a
+      ><a name="249"
+      > </a
+      ><a name="250" href="Agda.Primitive.html#626" class="Primitive Operator"
+      >&#8852;</a
+      ><a name="251"
+      > </a
+      ><a name="252" href="stateDependentIO.html#202" class="Bound"
+      >&#961;</a
+      ><a name="253"
+      > </a
+      ><a name="254" href="Agda.Primitive.html#626" class="Primitive Operator"
+      >&#8852;</a
+      ><a name="255"
+      > </a
+      ><a name="256" href="stateDependentIO.html#204" class="Bound"
+      >&#956;</a
+      ><a name="257"
+      > </a
+      ><a name="258" class="Symbol"
+      >))</a
+      ><a name="260"
+      > </a
+      ><a name="261" class="Keyword"
+      >where</a
+      ><a name="266"
+      >
+    </a
+      ><a name="271" class="Keyword"
+      >field</a
+      ><a name="276"
+      >
+      </a
+      ><a name="283" href="stateDependentIO.html#283" class="Field"
+      >StateIO&#738;</a
+      ><a name="291"
+      >     </a
+      ><a name="296" class="Symbol"
+      >:</a
+      ><a name="297"
+      >  </a
+      ><a name="299" class="PrimitiveType"
+      >Set</a
+      ><a name="302"
+      > </a
+      ><a name="303" href="stateDependentIO.html#200" class="Bound"
+      >&#947;</a
+      ><a name="304"
+      >
+      </a
+      ><a name="311" href="stateDependentIO.html#311" class="Field"
+      >Command&#738;</a
+      ><a name="319"
+      >     </a
+      ><a name="324" class="Symbol"
+      >:</a
+      ><a name="325"
+      >  </a
+      ><a name="327" href="stateDependentIO.html#283" class="Field"
+      >StateIO&#738;</a
+      ><a name="335"
+      > </a
+      ><a name="336" class="Symbol"
+      >&#8594;</a
+      ><a name="337"
+      > </a
+      ><a name="338" class="PrimitiveType"
+      >Set</a
+      ><a name="341"
+      > </a
+      ><a name="342" href="stateDependentIO.html#202" class="Bound"
+      >&#961;</a
+      ><a name="343"
+      >
+      </a
+      ><a name="350" href="stateDependentIO.html#350" class="Field"
+      >Response&#738;</a
+      ><a name="359"
+      >    </a
+      ><a name="363" class="Symbol"
+      >:</a
+      ><a name="364"
+      >  </a
+      ><a name="366" class="Symbol"
+      >(</a
+      ><a name="367" href="stateDependentIO.html#367" class="Bound"
+      >s</a
+      ><a name="368"
+      > </a
+      ><a name="369" class="Symbol"
+      >:</a
+      ><a name="370"
+      > </a
+      ><a name="371" href="stateDependentIO.html#283" class="Field"
+      >StateIO&#738;</a
+      ><a name="379" class="Symbol"
+      >)</a
+      ><a name="380"
+      > </a
+      ><a name="381" class="Symbol"
+      >&#8594;</a
+      ><a name="382"
+      > </a
+      ><a name="383" href="stateDependentIO.html#311" class="Field"
+      >Command&#738;</a
+      ><a name="391"
+      > </a
+      ><a name="392" href="stateDependentIO.html#367" class="Bound"
+      >s</a
+      ><a name="393"
+      > </a
+      ><a name="394" class="Symbol"
+      >&#8594;</a
+      ><a name="395"
+      > </a
+      ><a name="396" class="PrimitiveType"
+      >Set</a
+      ><a name="399"
+      > </a
+      ><a name="400" href="stateDependentIO.html#204" class="Bound"
+      >&#956;</a
+      ><a name="401"
+      >
+      </a
+      ><a name="408" href="stateDependentIO.html#408" class="Field"
+      >nextIO&#738;</a
+      ><a name="415"
+      >      </a
+      ><a name="421" class="Symbol"
+      >:</a
+      ><a name="422"
+      >  </a
+      ><a name="424" class="Symbol"
+      >(</a
+      ><a name="425" href="stateDependentIO.html#425" class="Bound"
+      >s</a
+      ><a name="426"
+      > </a
+      ><a name="427" class="Symbol"
+      >:</a
+      ><a name="428"
+      > </a
+      ><a name="429" href="stateDependentIO.html#283" class="Field"
+      >StateIO&#738;</a
+      ><a name="437" class="Symbol"
+      >)</a
+      ><a name="438"
+      > </a
+      ><a name="439" class="Symbol"
+      >&#8594;</a
+      ><a name="440"
+      > </a
+      ><a name="441" class="Symbol"
+      >(</a
+      ><a name="442" href="stateDependentIO.html#442" class="Bound"
+      >c</a
+      ><a name="443"
+      > </a
+      ><a name="444" class="Symbol"
+      >:</a
+      ><a name="445"
+      > </a
+      ><a name="446" href="stateDependentIO.html#311" class="Field"
+      >Command&#738;</a
+      ><a name="454"
+      > </a
+      ><a name="455" href="stateDependentIO.html#425" class="Bound"
+      >s</a
+      ><a name="456" class="Symbol"
+      >)</a
+      ><a name="457"
+      > </a
+      ><a name="458" class="Symbol"
+      >&#8594;</a
+      ><a name="459"
+      > </a
+      ><a name="460" href="stateDependentIO.html#350" class="Field"
+      >Response&#738;</a
+      ><a name="469"
+      > </a
+      ><a name="470" href="stateDependentIO.html#425" class="Bound"
+      >s</a
+      ><a name="471"
+      > </a
+      ><a name="472" href="stateDependentIO.html#442" class="Bound"
+      >c</a
+      ><a name="473"
+      > 
+                     </a
+      ><a name="496" class="Symbol"
+      >&#8594;</a
+      ><a name="497"
+      > </a
+      ><a name="498" href="stateDependentIO.html#283" class="Field"
+      >StateIO&#738;</a
+      ><a name="506"
+      >
+
+</a
+      ><a name="508" class="Keyword"
+      >open</a
+      ><a name="512"
+      > </a
+      ><a name="513" href="stateDependentIO.html#222" class="Module"
+      >IOInterface&#738;</a
+      ><a name="525"
+      > </a
+      ><a name="526" class="Keyword"
+      >public</a
+      ><a name="532"
+      >
+
+</a
+      ><a name="534" class="Keyword"
+      >module</a
+      ><a name="540"
+      > </a
+      ><a name="541" href="stateDependentIO.html#541" class="Module"
+      >_</a
+      ><a name="542"
+      >  </a
+      ><a name="544" class="Symbol"
+      >{</a
+      ><a name="545" href="stateDependentIO.html#545" class="Bound"
+      >&#945;</a
+      ><a name="546"
+      > </a
+      ><a name="547" href="stateDependentIO.html#547" class="Bound"
+      >&#947;</a
+      ><a name="548"
+      > </a
+      ><a name="549" href="stateDependentIO.html#549" class="Bound"
+      >&#961;</a
+      ><a name="550"
+      > </a
+      ><a name="551" href="stateDependentIO.html#551" class="Bound"
+      >&#956;</a
+      ><a name="552" class="Symbol"
+      >}(</a
+      ><a name="554" href="stateDependentIO.html#554" class="Bound"
+      >i</a
+      ><a name="555"
+      >   </a
+      ><a name="558" class="Symbol"
+      >:</a
+      ><a name="559"
+      > </a
+      ><a name="560" href="stateDependentIO.html#222" class="Record"
+      >IOInterface&#738;</a
+      ><a name="572"
+      > </a
+      ><a name="573" class="Symbol"
+      >{</a
+      ><a name="574" href="stateDependentIO.html#547" class="Bound"
+      >&#947;</a
+      ><a name="575" class="Symbol"
+      >}</a
+      ><a name="576"
+      > </a
+      ><a name="577" class="Symbol"
+      >{</a
+      ><a name="578" href="stateDependentIO.html#549" class="Bound"
+      >&#961;</a
+      ><a name="579" class="Symbol"
+      >}</a
+      ><a name="580"
+      > </a
+      ><a name="581" class="Symbol"
+      >{</a
+      ><a name="582" href="stateDependentIO.html#551" class="Bound"
+      >&#956;</a
+      ><a name="583" class="Symbol"
+      >}</a
+      ><a name="584"
+      > </a
+      ><a name="585" class="Symbol"
+      >)</a
+      ><a name="586"
+      >
+          </a
+      ><a name="597" class="Symbol"
+      >(</a
+      ><a name="598" class="Keyword"
+      >let</a
+      ><a name="601"
+      > </a
+      ><a name="602" href="stateDependentIO.html#602" class="Bound"
+      >S</a
+      ><a name="603"
+      > </a
+      ><a name="604" class="Symbol"
+      >=</a
+      ><a name="605"
+      > </a
+      ><a name="606" href="stateDependentIO.html#283" class="Field"
+      >StateIO&#738;</a
+      ><a name="614"
+      > </a
+      ><a name="615" href="stateDependentIO.html#554" class="Bound"
+      >i</a
+      ><a name="616" class="Symbol"
+      >)</a
+      ><a name="617"
+      >  </a
+      ><a name="619" class="Symbol"
+      >(</a
+      ><a name="620" class="Keyword"
+      >let</a
+      ><a name="623"
+      > </a
+      ><a name="624" href="stateDependentIO.html#624" class="Bound"
+      >C</a
+      ><a name="625"
+      >  </a
+      ><a name="627" class="Symbol"
+      >=</a
+      ><a name="628"
+      > </a
+      ><a name="629" href="stateDependentIO.html#311" class="Field"
+      >Command&#738;</a
+      ><a name="637"
+      > </a
+      ><a name="638" href="stateDependentIO.html#554" class="Bound"
+      >i</a
+      ><a name="639" class="Symbol"
+      >)</a
+      ><a name="640"
+      >
+          </a
+      ><a name="651" class="Symbol"
+      >(</a
+      ><a name="652" class="Keyword"
+      >let</a
+      ><a name="655"
+      > </a
+      ><a name="656" href="stateDependentIO.html#656" class="Bound"
+      >R</a
+      ><a name="657"
+      > </a
+      ><a name="658" class="Symbol"
+      >=</a
+      ><a name="659"
+      > </a
+      ><a name="660" href="stateDependentIO.html#350" class="Field"
+      >Response&#738;</a
+      ><a name="669"
+      > </a
+      ><a name="670" href="stateDependentIO.html#554" class="Bound"
+      >i</a
+      ><a name="671" class="Symbol"
+      >)</a
+      ><a name="672"
+      > </a
+      ><a name="673" class="Symbol"
+      >(</a
+      ><a name="674" class="Keyword"
+      >let</a
+      ><a name="677"
+      > </a
+      ><a name="678" href="stateDependentIO.html#678" class="Bound"
+      >next</a
+      ><a name="682"
+      > </a
+      ><a name="683" class="Symbol"
+      >=</a
+      ><a name="684"
+      > </a
+      ><a name="685" href="stateDependentIO.html#408" class="Field"
+      >nextIO&#738;</a
+      ><a name="692"
+      > </a
+      ><a name="693" href="stateDependentIO.html#554" class="Bound"
+      >i</a
+      ><a name="694" class="Symbol"
+      >)</a
+      ><a name="695"
+      >
+  </a
+      ><a name="698" class="Keyword"
+      >where</a
+      ><a name="703"
+      >
+    </a
+      ><a name="708" class="Keyword"
+      >mutual</a
+      ><a name="714"
+      >
+
+      </a
+      ><a name="722" class="Keyword"
+      >record</a
+      ><a name="728"
+      > </a
+      ><a name="729" href="stateDependentIO.html#729" class="Record"
+      >IO&#738;</a
+      ><a name="732"
+      > </a
+      ><a name="733" class="Symbol"
+      >(</a
+      ><a name="734" href="stateDependentIO.html#734" class="Bound"
+      >i</a
+      ><a name="735"
+      > </a
+      ><a name="736" class="Symbol"
+      >:</a
+      ><a name="737"
+      > </a
+      ><a name="738" href="Agda.Builtin.Size.html#86" class="Postulate"
+      >AgdaSize</a
+      ><a name="746" class="Symbol"
+      >)</a
+      ><a name="747"
+      >  </a
+      ><a name="749" class="Symbol"
+      >(</a
+      ><a name="750" href="stateDependentIO.html#750" class="Bound"
+      >A</a
+      ><a name="751"
+      > </a
+      ><a name="752" class="Symbol"
+      >:</a
+      ><a name="753"
+      > </a
+      ><a name="754" href="stateDependentIO.html#602" class="Bound"
+      >S</a
+      ><a name="755"
+      > </a
+      ><a name="756" class="Symbol"
+      >&#8594;</a
+      ><a name="757"
+      > </a
+      ><a name="758" class="PrimitiveType"
+      >Set</a
+      ><a name="761"
+      > </a
+      ><a name="762" href="stateDependentIO.html#545" class="Bound"
+      >&#945;</a
+      ><a name="763" class="Symbol"
+      >)</a
+      ><a name="764"
+      > </a
+      ><a name="765" class="Symbol"
+      >(</a
+      ><a name="766" href="stateDependentIO.html#766" class="Bound"
+      >s</a
+      ><a name="767"
+      > </a
+      ><a name="768" class="Symbol"
+      >:</a
+      ><a name="769"
+      > </a
+      ><a name="770" href="stateDependentIO.html#602" class="Bound"
+      >S</a
+      ><a name="771" class="Symbol"
+      >)</a
+      ><a name="772"
+      > 
+                 </a
+      ><a name="791" class="Symbol"
+      >:</a
+      ><a name="792"
+      > </a
+      ><a name="793" class="PrimitiveType"
+      >Set</a
+      ><a name="796"
+      > </a
+      ><a name="797" class="Symbol"
+      >(</a
+      ><a name="798" href="Agda.Primitive.html#596" class="Primitive"
+      >lsuc</a
+      ><a name="802"
+      > </a
+      ><a name="803" class="Symbol"
+      >(</a
+      ><a name="804" href="stateDependentIO.html#545" class="Bound"
+      >&#945;</a
+      ><a name="805"
+      > </a
+      ><a name="806" href="Agda.Primitive.html#626" class="Primitive Operator"
+      >&#8852;</a
+      ><a name="807"
+      > </a
+      ><a name="808" href="stateDependentIO.html#547" class="Bound"
+      >&#947;</a
+      ><a name="809"
+      > </a
+      ><a name="810" href="Agda.Primitive.html#626" class="Primitive Operator"
+      >&#8852;</a
+      ><a name="811"
+      > </a
+      ><a name="812" href="stateDependentIO.html#549" class="Bound"
+      >&#961;</a
+      ><a name="813"
+      > </a
+      ><a name="814" href="Agda.Primitive.html#626" class="Primitive Operator"
+      >&#8852;</a
+      ><a name="815"
+      > </a
+      ><a name="816" href="stateDependentIO.html#551" class="Bound"
+      >&#956;</a
+      ><a name="817"
+      > </a
+      ><a name="818" class="Symbol"
+      >))</a
+      ><a name="820"
+      > </a
+      ><a name="821" class="Keyword"
+      >where</a
+      ><a name="826"
+      >
+        </a
+      ><a name="835" class="Keyword"
+      >coinductive</a
+      ><a name="846"
+      >
+        </a
+      ><a name="855" class="Keyword"
+      >constructor</a
+      ><a name="866"
+      > </a
+      ><a name="867" href="stateDependentIO.html#867" class="CoinductiveConstructor"
+      >delay</a
+      ><a name="872"
+      >
+        </a
+      ><a name="881" class="Keyword"
+      >field</a
+      ><a name="886"
+      > </a
+      ><a name="887" href="stateDependentIO.html#887" class="Field"
+      >force&#738;</a
+      ><a name="893"
+      > </a
+      ><a name="894" class="Symbol"
+      >:</a
+      ><a name="895"
+      > </a
+      ><a name="896" class="Symbol"
+      >{</a
+      ><a name="897" href="stateDependentIO.html#897" class="Bound"
+      >j</a
+      ><a name="898"
+      > </a
+      ><a name="899" class="Symbol"
+      >:</a
+      ><a name="900"
+      > </a
+      ><a name="901" href="Agda.Builtin.Size.html#118" class="Postulate Operator"
+      >Size&lt;</a
+      ><a name="906"
+      > </a
+      ><a name="907" href="stateDependentIO.html#734" class="Bound"
+      >i</a
+      ><a name="908" class="Symbol"
+      >}</a
+      ><a name="909"
+      > </a
+      ><a name="910" class="Symbol"
+      >&#8594;</a
+      ><a name="911"
+      > </a
+      ><a name="912" href="stateDependentIO.html#935" class="Datatype"
+      >IO&#738;'</a
+      ><a name="916"
+      > </a
+      ><a name="917" href="stateDependentIO.html#897" class="Bound"
+      >j</a
+      ><a name="918"
+      > </a
+      ><a name="919" href="stateDependentIO.html#750" class="Bound"
+      >A</a
+      ><a name="920"
+      > </a
+      ><a name="921" href="stateDependentIO.html#766" class="Bound"
+      >s</a
+      ><a name="922"
+      >
+
+      </a
+      ><a name="930" class="Keyword"
+      >data</a
+      ><a name="934"
+      > </a
+      ><a name="935" href="stateDependentIO.html#935" class="Datatype"
+      >IO&#738;'</a
+      ><a name="939"
+      > </a
+      ><a name="940" class="Symbol"
+      >(</a
+      ><a name="941" href="stateDependentIO.html#941" class="Bound"
+      >i</a
+      ><a name="942"
+      > </a
+      ><a name="943" class="Symbol"
+      >:</a
+      ><a name="944"
+      > </a
+      ><a name="945" href="Agda.Builtin.Size.html#86" class="Postulate"
+      >AgdaSize</a
+      ><a name="953" class="Symbol"
+      >)</a
+      ><a name="954"
+      >  </a
+      ><a name="956" class="Symbol"
+      >(</a
+      ><a name="957" href="stateDependentIO.html#957" class="Bound"
+      >A</a
+      ><a name="958"
+      > </a
+      ><a name="959" class="Symbol"
+      >:</a
+      ><a name="960"
+      > </a
+      ><a name="961" href="stateDependentIO.html#602" class="Bound"
+      >S</a
+      ><a name="962"
+      > </a
+      ><a name="963" class="Symbol"
+      >&#8594;</a
+      ><a name="964"
+      > </a
+      ><a name="965" class="PrimitiveType"
+      >Set</a
+      ><a name="968"
+      > </a
+      ><a name="969" href="stateDependentIO.html#545" class="Bound"
+      >&#945;</a
+      ><a name="970" class="Symbol"
+      >)</a
+      ><a name="971"
+      > </a
+      ><a name="972" class="Symbol"
+      >:</a
+      ><a name="973"
+      > </a
+      ><a name="974" href="stateDependentIO.html#602" class="Bound"
+      >S</a
+      ><a name="975"
+      > 
+               </a
+      ><a name="992" class="Symbol"
+      >&#8594;</a
+      ><a name="993"
+      > </a
+      ><a name="994" class="PrimitiveType"
+      >Set</a
+      ><a name="997"
+      > </a
+      ><a name="998" class="Symbol"
+      >(</a
+      ><a name="999" href="Agda.Primitive.html#596" class="Primitive"
+      >lsuc</a
+      ><a name="1003"
+      > </a
+      ><a name="1004" class="Symbol"
+      >(</a
+      ><a name="1005" href="stateDependentIO.html#545" class="Bound"
+      >&#945;</a
+      ><a name="1006"
+      > </a
+      ><a name="1007" href="Agda.Primitive.html#626" class="Primitive Operator"
+      >&#8852;</a
+      ><a name="1008"
+      > </a
+      ><a name="1009" href="stateDependentIO.html#547" class="Bound"
+      >&#947;</a
+      ><a name="1010"
+      > </a
+      ><a name="1011" href="Agda.Primitive.html#626" class="Primitive Operator"
+      >&#8852;</a
+      ><a name="1012"
+      > </a
+      ><a name="1013" href="stateDependentIO.html#549" class="Bound"
+      >&#961;</a
+      ><a name="1014"
+      > </a
+      ><a name="1015" href="Agda.Primitive.html#626" class="Primitive Operator"
+      >&#8852;</a
+      ><a name="1016"
+      > </a
+      ><a name="1017" href="stateDependentIO.html#551" class="Bound"
+      >&#956;</a
+      ><a name="1018"
+      > </a
+      ><a name="1019" class="Symbol"
+      >))</a
+      ><a name="1021"
+      > </a
+      ><a name="1022" class="Keyword"
+      >where</a
+      ><a name="1027"
+      >
+        </a
+      ><a name="1036" href="stateDependentIO.html#1036" class="InductiveConstructor"
+      >do&#738;'</a
+      ><a name="1040"
+      >      </a
+      ><a name="1046" class="Symbol"
+      >:</a
+      ><a name="1047"
+      >  </a
+      ><a name="1049" class="Symbol"
+      >{</a
+      ><a name="1050" href="stateDependentIO.html#1050" class="Bound"
+      >s</a
+      ><a name="1051"
+      > </a
+      ><a name="1052" class="Symbol"
+      >:</a
+      ><a name="1053"
+      > </a
+      ><a name="1054" href="stateDependentIO.html#602" class="Bound"
+      >S</a
+      ><a name="1055" class="Symbol"
+      >}</a
+      ><a name="1056"
+      > </a
+      ><a name="1057" class="Symbol"
+      >&#8594;</a
+      ><a name="1058"
+      > </a
+      ><a name="1059" class="Symbol"
+      >(</a
+      ><a name="1060" href="stateDependentIO.html#1060" class="Bound"
+      >c</a
+      ><a name="1061"
+      > </a
+      ><a name="1062" class="Symbol"
+      >:</a
+      ><a name="1063"
+      > </a
+      ><a name="1064" href="stateDependentIO.html#624" class="Bound"
+      >C</a
+      ><a name="1065"
+      > </a
+      ><a name="1066" href="stateDependentIO.html#1050" class="Bound"
+      >s</a
+      ><a name="1067" class="Symbol"
+      >)</a
+      ><a name="1068"
+      > </a
+      ><a name="1069" class="Symbol"
+      >&#8594;</a
+      ><a name="1070"
+      > </a
+      ><a name="1071" class="Symbol"
+      >(</a
+      ><a name="1072" href="stateDependentIO.html#1072" class="Bound"
+      >f</a
+      ><a name="1073"
+      > </a
+      ><a name="1074" class="Symbol"
+      >:</a
+      ><a name="1075"
+      > </a
+      ><a name="1076" class="Symbol"
+      >(</a
+      ><a name="1077" href="stateDependentIO.html#1077" class="Bound"
+      >r</a
+      ><a name="1078"
+      > </a
+      ><a name="1079" class="Symbol"
+      >:</a
+      ><a name="1080"
+      > </a
+      ><a name="1081" href="stateDependentIO.html#656" class="Bound"
+      >R</a
+      ><a name="1082"
+      > </a
+      ><a name="1083" href="stateDependentIO.html#1050" class="Bound"
+      >s</a
+      ><a name="1084"
+      > </a
+      ><a name="1085" href="stateDependentIO.html#1060" class="Bound"
+      >c</a
+      ><a name="1086" class="Symbol"
+      >)</a
+      ><a name="1087"
+      > 
+                                                  </a
+      ><a name="1139" class="Symbol"
+      >&#8594;</a
+      ><a name="1140"
+      > </a
+      ><a name="1141" href="stateDependentIO.html#729" class="Record"
+      >IO&#738;</a
+      ><a name="1144"
+      > </a
+      ><a name="1145" href="stateDependentIO.html#941" class="Bound"
+      >i</a
+      ><a name="1146"
+      > </a
+      ><a name="1147" href="stateDependentIO.html#957" class="Bound"
+      >A</a
+      ><a name="1148"
+      > </a
+      ><a name="1149" class="Symbol"
+      >(</a
+      ><a name="1150" href="stateDependentIO.html#678" class="Bound"
+      >next</a
+      ><a name="1154"
+      > </a
+      ><a name="1155" href="stateDependentIO.html#1050" class="Bound"
+      >s</a
+      ><a name="1156"
+      > </a
+      ><a name="1157" href="stateDependentIO.html#1060" class="Bound"
+      >c</a
+      ><a name="1158"
+      > </a
+      ><a name="1159" href="stateDependentIO.html#1077" class="Bound"
+      >r</a
+      ><a name="1160" class="Symbol"
+      >)</a
+      ><a name="1161"
+      > </a
+      ><a name="1162" class="Symbol"
+      >)</a
+      ><a name="1163"
+      >
+                     </a
+      ><a name="1185" class="Symbol"
+      >&#8594;</a
+      ><a name="1186"
+      > </a
+      ><a name="1187" href="stateDependentIO.html#935" class="Datatype"
+      >IO&#738;'</a
+      ><a name="1191"
+      > </a
+      ><a name="1192" href="stateDependentIO.html#941" class="Bound"
+      >i</a
+      ><a name="1193"
+      > </a
+      ><a name="1194" href="stateDependentIO.html#957" class="Bound"
+      >A</a
+      ><a name="1195"
+      > </a
+      ><a name="1196" href="stateDependentIO.html#1050" class="Bound"
+      >s</a
+      ><a name="1197"
+      >
+        </a
+      ><a name="1206" href="stateDependentIO.html#1206" class="InductiveConstructor"
+      >return&#738;'</a
+      ><a name="1214"
+      >  </a
+      ><a name="1216" class="Symbol"
+      >:</a
+      ><a name="1217"
+      >  </a
+      ><a name="1219" class="Symbol"
+      >{</a
+      ><a name="1220" href="stateDependentIO.html#1220" class="Bound"
+      >s</a
+      ><a name="1221"
+      > </a
+      ><a name="1222" class="Symbol"
+      >:</a
+      ><a name="1223"
+      > </a
+      ><a name="1224" href="stateDependentIO.html#602" class="Bound"
+      >S</a
+      ><a name="1225" class="Symbol"
+      >}</a
+      ><a name="1226"
+      > </a
+      ><a name="1227" class="Symbol"
+      >&#8594;</a
+      ><a name="1228"
+      > </a
+      ><a name="1229" class="Symbol"
+      >(</a
+      ><a name="1230" href="stateDependentIO.html#1230" class="Bound"
+      >a</a
+      ><a name="1231"
+      > </a
+      ><a name="1232" class="Symbol"
+      >:</a
+      ><a name="1233"
+      > </a
+      ><a name="1234" href="stateDependentIO.html#957" class="Bound"
+      >A</a
+      ><a name="1235"
+      > </a
+      ><a name="1236" href="stateDependentIO.html#1220" class="Bound"
+      >s</a
+      ><a name="1237" class="Symbol"
+      >)</a
+      ><a name="1238"
+      > </a
+      ><a name="1239" class="Symbol"
+      >&#8594;</a
+      ><a name="1240"
+      > </a
+      ><a name="1241" href="stateDependentIO.html#935" class="Datatype"
+      >IO&#738;'</a
+      ><a name="1245"
+      > </a
+      ><a name="1246" href="stateDependentIO.html#941" class="Bound"
+      >i</a
+      ><a name="1247"
+      > </a
+      ><a name="1248" href="stateDependentIO.html#957" class="Bound"
+      >A</a
+      ><a name="1249"
+      > </a
+      ><a name="1250" href="stateDependentIO.html#1220" class="Bound"
+      >s</a
+      ><a name="1251"
+      >
+
+
+</a
+      ><a name="1254" class="Keyword"
+      >open</a
+      ><a name="1258"
+      > </a
+      ><a name="1259" href="stateDependentIO.html#729" class="Module"
+      >IO&#738;</a
+      ><a name="1262"
+      > </a
+      ><a name="1263" class="Keyword"
+      >public</a
+      ><a name="1269"
+      >
+
+</a
+      ><a name="1271" class="Keyword"
+      >module</a
+      ><a name="1277"
+      > </a
+      ><a name="1278" href="stateDependentIO.html#1278" class="Module"
+      >_</a
+      ><a name="1279"
+      >  </a
+      ><a name="1281" class="Symbol"
+      >{</a
+      ><a name="1282" href="stateDependentIO.html#1282" class="Bound"
+      >&#945;</a
+      ><a name="1283"
+      > </a
+      ><a name="1284" href="stateDependentIO.html#1284" class="Bound"
+      >&#947;</a
+      ><a name="1285"
+      > </a
+      ><a name="1286" href="stateDependentIO.html#1286" class="Bound"
+      >&#961;</a
+      ><a name="1287"
+      > </a
+      ><a name="1288" href="stateDependentIO.html#1288" class="Bound"
+      >&#956;</a
+      ><a name="1289" class="Symbol"
+      >}{</a
+      ><a name="1291" href="stateDependentIO.html#1291" class="Bound"
+      >I</a
+      ><a name="1292"
+      >   </a
+      ><a name="1295" class="Symbol"
+      >:</a
+      ><a name="1296"
+      > </a
+      ><a name="1297" href="stateDependentIO.html#222" class="Record"
+      >IOInterface&#738;</a
+      ><a name="1309"
+      > </a
+      ><a name="1310" class="Symbol"
+      >{</a
+      ><a name="1311" href="stateDependentIO.html#1284" class="Bound"
+      >&#947;</a
+      ><a name="1312" class="Symbol"
+      >}</a
+      ><a name="1313"
+      > </a
+      ><a name="1314" class="Symbol"
+      >{</a
+      ><a name="1315" href="stateDependentIO.html#1286" class="Bound"
+      >&#961;</a
+      ><a name="1316" class="Symbol"
+      >}</a
+      ><a name="1317"
+      > </a
+      ><a name="1318" class="Symbol"
+      >{</a
+      ><a name="1319" href="stateDependentIO.html#1288" class="Bound"
+      >&#956;</a
+      ><a name="1320" class="Symbol"
+      >}}</a
+      ><a name="1322"
+      >
+                   </a
+      ><a name="1342" class="Symbol"
+      >(</a
+      ><a name="1343" class="Keyword"
+      >let</a
+      ><a name="1346"
+      > </a
+      ><a name="1347" href="stateDependentIO.html#1347" class="Bound"
+      >S</a
+      ><a name="1348"
+      > </a
+      ><a name="1349" class="Symbol"
+      >=</a
+      ><a name="1350"
+      > </a
+      ><a name="1351" href="stateDependentIO.html#283" class="Field"
+      >StateIO&#738;</a
+      ><a name="1359"
+      > </a
+      ><a name="1360" href="stateDependentIO.html#1291" class="Bound"
+      >I</a
+      ><a name="1361" class="Symbol"
+      >)</a
+      ><a name="1362"
+      >     </a
+      ><a name="1367" class="Symbol"
+      >(</a
+      ><a name="1368" class="Keyword"
+      >let</a
+      ><a name="1371"
+      > </a
+      ><a name="1372" href="stateDependentIO.html#1372" class="Bound"
+      >C</a
+      ><a name="1373"
+      >  </a
+      ><a name="1375" class="Symbol"
+      >=</a
+      ><a name="1376"
+      > </a
+      ><a name="1377" href="stateDependentIO.html#311" class="Field"
+      >Command&#738;</a
+      ><a name="1385"
+      > </a
+      ><a name="1386" href="stateDependentIO.html#1291" class="Bound"
+      >I</a
+      ><a name="1387" class="Symbol"
+      >)</a
+      ><a name="1388"
+      >
+                   </a
+      ><a name="1408" class="Symbol"
+      >(</a
+      ><a name="1409" class="Keyword"
+      >let</a
+      ><a name="1412"
+      >  </a
+      ><a name="1414" href="stateDependentIO.html#1414" class="Bound"
+      >R</a
+      ><a name="1415"
+      >  </a
+      ><a name="1417" class="Symbol"
+      >=</a
+      ><a name="1418"
+      > </a
+      ><a name="1419" href="stateDependentIO.html#350" class="Field"
+      >Response&#738;</a
+      ><a name="1428"
+      > </a
+      ><a name="1429" href="stateDependentIO.html#1291" class="Bound"
+      >I</a
+      ><a name="1430" class="Symbol"
+      >)</a
+      ><a name="1431"
+      > </a
+      ><a name="1432" class="Symbol"
+      >(</a
+      ><a name="1433" class="Keyword"
+      >let</a
+      ><a name="1436"
+      > </a
+      ><a name="1437" href="stateDependentIO.html#1437" class="Bound"
+      >next</a
+      ><a name="1441"
+      > </a
+      ><a name="1442" class="Symbol"
+      >=</a
+      ><a name="1443"
+      > </a
+      ><a name="1444" href="stateDependentIO.html#408" class="Field"
+      >nextIO&#738;</a
+      ><a name="1451"
+      > </a
+      ><a name="1452" href="stateDependentIO.html#1291" class="Bound"
+      >I</a
+      ><a name="1453" class="Symbol"
+      >)</a
+      ><a name="1454"
+      > </a
+      ><a name="1455" class="Keyword"
+      >where</a
+      ><a name="1460"
+      >
+
+
+  </a
+      ><a name="1465" href="stateDependentIO.html#1465" class="Function"
+      >returnIO&#738;</a
+      ><a name="1474"
+      > </a
+      ><a name="1475" class="Symbol"
+      >:</a
+      ><a name="1476"
+      > </a
+      ><a name="1477" class="Symbol"
+      >&#8704;{</a
+      ><a name="1479" href="stateDependentIO.html#1479" class="Bound"
+      >i</a
+      ><a name="1480" class="Symbol"
+      >}{</a
+      ><a name="1482" href="stateDependentIO.html#1482" class="Bound"
+      >A</a
+      ><a name="1483"
+      > </a
+      ><a name="1484" class="Symbol"
+      >:</a
+      ><a name="1485"
+      > </a
+      ><a name="1486" href="stateDependentIO.html#1347" class="Bound"
+      >S</a
+      ><a name="1487"
+      > </a
+      ><a name="1488" class="Symbol"
+      >&#8594;</a
+      ><a name="1489"
+      > </a
+      ><a name="1490" class="PrimitiveType"
+      >Set</a
+      ><a name="1493"
+      > </a
+      ><a name="1494" href="stateDependentIO.html#1282" class="Bound"
+      >&#945;</a
+      ><a name="1495" class="Symbol"
+      >}</a
+      ><a name="1496"
+      > </a
+      ><a name="1497" class="Symbol"
+      >{</a
+      ><a name="1498" href="stateDependentIO.html#1498" class="Bound"
+      >s</a
+      ><a name="1499"
+      > </a
+      ><a name="1500" class="Symbol"
+      >:</a
+      ><a name="1501"
+      > </a
+      ><a name="1502" href="stateDependentIO.html#1347" class="Bound"
+      >S</a
+      ><a name="1503" class="Symbol"
+      >}</a
+      ><a name="1504"
+      > </a
+      ><a name="1505" class="Symbol"
+      >(</a
+      ><a name="1506" href="stateDependentIO.html#1506" class="Bound"
+      >a</a
+      ><a name="1507"
+      > </a
+      ><a name="1508" class="Symbol"
+      >:</a
+      ><a name="1509"
+      > </a
+      ><a name="1510" href="stateDependentIO.html#1482" class="Bound"
+      >A</a
+      ><a name="1511"
+      > </a
+      ><a name="1512" href="stateDependentIO.html#1498" class="Bound"
+      >s</a
+      ><a name="1513" class="Symbol"
+      >)</a
+      ><a name="1514"
+      > </a
+      ><a name="1515" class="Symbol"
+      >&#8594;</a
+      ><a name="1516"
+      > </a
+      ><a name="1517" href="stateDependentIO.html#729" class="Record"
+      >IO&#738;</a
+      ><a name="1520"
+      >  </a
+      ><a name="1522" href="stateDependentIO.html#1291" class="Bound"
+      >I</a
+      ><a name="1523"
+      > </a
+      ><a name="1524" href="stateDependentIO.html#1479" class="Bound"
+      >i</a
+      ><a name="1525"
+      > </a
+      ><a name="1526" href="stateDependentIO.html#1482" class="Bound"
+      >A</a
+      ><a name="1527"
+      > </a
+      ><a name="1528" href="stateDependentIO.html#1498" class="Bound"
+      >s</a
+      ><a name="1529"
+      >
+  </a
+      ><a name="1532" href="stateDependentIO.html#887" class="Field"
+      >force&#738;</a
+      ><a name="1538"
+      > </a
+      ><a name="1539" class="Symbol"
+      >(</a
+      ><a name="1540" href="stateDependentIO.html#1465" class="Function"
+      >returnIO&#738;</a
+      ><a name="1549"
+      > </a
+      ><a name="1550" href="stateDependentIO.html#1550" class="Bound"
+      >a</a
+      ><a name="1551" class="Symbol"
+      >)</a
+      ><a name="1552"
+      > </a
+      ><a name="1553" class="Symbol"
+      >=</a
+      ><a name="1554"
+      > </a
+      ><a name="1555" href="stateDependentIO.html#1206" class="InductiveConstructor"
+      >return&#738;'</a
+      ><a name="1563"
+      > </a
+      ><a name="1564" href="stateDependentIO.html#1550" class="Bound"
+      >a</a
+      ><a name="1565"
+      >
+
+  </a
+      ><a name="1569" href="stateDependentIO.html#1569" class="Function"
+      >do&#738;</a
+      ><a name="1572"
+      >  </a
+      ><a name="1574" class="Symbol"
+      >:</a
+      ><a name="1575"
+      >  </a
+      ><a name="1577" class="Symbol"
+      >&#8704;{</a
+      ><a name="1579" href="stateDependentIO.html#1579" class="Bound"
+      >i</a
+      ><a name="1580" class="Symbol"
+      >}{</a
+      ><a name="1582" href="stateDependentIO.html#1582" class="Bound"
+      >A</a
+      ><a name="1583"
+      > </a
+      ><a name="1584" class="Symbol"
+      >:</a
+      ><a name="1585"
+      > </a
+      ><a name="1586" href="stateDependentIO.html#1347" class="Bound"
+      >S</a
+      ><a name="1587"
+      > </a
+      ><a name="1588" class="Symbol"
+      >&#8594;</a
+      ><a name="1589"
+      > </a
+      ><a name="1590" class="PrimitiveType"
+      >Set</a
+      ><a name="1593"
+      > </a
+      ><a name="1594" href="stateDependentIO.html#1282" class="Bound"
+      >&#945;</a
+      ><a name="1595" class="Symbol"
+      >}</a
+      ><a name="1596"
+      > </a
+      ><a name="1597" class="Symbol"
+      >{</a
+      ><a name="1598" href="stateDependentIO.html#1598" class="Bound"
+      >s</a
+      ><a name="1599"
+      > </a
+      ><a name="1600" class="Symbol"
+      >:</a
+      ><a name="1601"
+      > </a
+      ><a name="1602" href="stateDependentIO.html#1347" class="Bound"
+      >S</a
+      ><a name="1603" class="Symbol"
+      >}</a
+      ><a name="1604"
+      >
+          </a
+      ><a name="1615" class="Symbol"
+      >(</a
+      ><a name="1616" href="stateDependentIO.html#1616" class="Bound"
+      >c</a
+      ><a name="1617"
+      > </a
+      ><a name="1618" class="Symbol"
+      >:</a
+      ><a name="1619"
+      > </a
+      ><a name="1620" href="stateDependentIO.html#1372" class="Bound"
+      >C</a
+      ><a name="1621"
+      > </a
+      ><a name="1622" href="stateDependentIO.html#1598" class="Bound"
+      >s</a
+      ><a name="1623" class="Symbol"
+      >)</a
+      ><a name="1624"
+      > </a
+      ><a name="1625" class="Symbol"
+      >(</a
+      ><a name="1626" href="stateDependentIO.html#1626" class="Bound"
+      >f</a
+      ><a name="1627"
+      > </a
+      ><a name="1628" class="Symbol"
+      >:</a
+      ><a name="1629"
+      > </a
+      ><a name="1630" class="Symbol"
+      >(</a
+      ><a name="1631" href="stateDependentIO.html#1631" class="Bound"
+      >r</a
+      ><a name="1632"
+      > </a
+      ><a name="1633" class="Symbol"
+      >:</a
+      ><a name="1634"
+      > </a
+      ><a name="1635" href="stateDependentIO.html#1414" class="Bound"
+      >R</a
+      ><a name="1636"
+      > </a
+      ><a name="1637" href="stateDependentIO.html#1598" class="Bound"
+      >s</a
+      ><a name="1638"
+      > </a
+      ><a name="1639" href="stateDependentIO.html#1616" class="Bound"
+      >c</a
+      ><a name="1640" class="Symbol"
+      >)</a
+      ><a name="1641"
+      > </a
+      ><a name="1642" class="Symbol"
+      >&#8594;</a
+      ><a name="1643"
+      > </a
+      ><a name="1644" href="stateDependentIO.html#729" class="Record"
+      >IO&#738;</a
+      ><a name="1647"
+      > </a
+      ><a name="1648" href="stateDependentIO.html#1291" class="Bound"
+      >I</a
+      ><a name="1649"
+      > </a
+      ><a name="1650" href="stateDependentIO.html#1579" class="Bound"
+      >i</a
+      ><a name="1651"
+      > </a
+      ><a name="1652" href="stateDependentIO.html#1582" class="Bound"
+      >A</a
+      ><a name="1653"
+      > </a
+      ><a name="1654" class="Symbol"
+      >(</a
+      ><a name="1655" href="stateDependentIO.html#1437" class="Bound"
+      >next</a
+      ><a name="1659"
+      > </a
+      ><a name="1660" href="stateDependentIO.html#1598" class="Bound"
+      >s</a
+      ><a name="1661"
+      > </a
+      ><a name="1662" href="stateDependentIO.html#1616" class="Bound"
+      >c</a
+      ><a name="1663"
+      > </a
+      ><a name="1664" href="stateDependentIO.html#1631" class="Bound"
+      >r</a
+      ><a name="1665" class="Symbol"
+      >))</a
+      ><a name="1667"
+      > </a
+      ><a name="1668" class="Symbol"
+      >&#8594;</a
+      ><a name="1669"
+      > </a
+      ><a name="1670" href="stateDependentIO.html#729" class="Record"
+      >IO&#738;</a
+      ><a name="1673"
+      > </a
+      ><a name="1674" href="stateDependentIO.html#1291" class="Bound"
+      >I</a
+      ><a name="1675"
+      > </a
+      ><a name="1676" href="stateDependentIO.html#1579" class="Bound"
+      >i</a
+      ><a name="1677"
+      > </a
+      ><a name="1678" href="stateDependentIO.html#1582" class="Bound"
+      >A</a
+      ><a name="1679"
+      > </a
+      ><a name="1680" href="stateDependentIO.html#1598" class="Bound"
+      >s</a
+      ><a name="1681"
+      >
+  </a
+      ><a name="1684" href="stateDependentIO.html#887" class="Field"
+      >force&#738;</a
+      ><a name="1690"
+      > </a
+      ><a name="1691" class="Symbol"
+      >(</a
+      ><a name="1692" href="stateDependentIO.html#1569" class="Function"
+      >do&#738;</a
+      ><a name="1695"
+      > </a
+      ><a name="1696" href="stateDependentIO.html#1696" class="Bound"
+      >c</a
+      ><a name="1697"
+      > </a
+      ><a name="1698" href="stateDependentIO.html#1698" class="Bound"
+      >f</a
+      ><a name="1699" class="Symbol"
+      >)</a
+      ><a name="1700"
+      > </a
+      ><a name="1701" class="Symbol"
+      >=</a
+      ><a name="1702"
+      > </a
+      ><a name="1703" href="stateDependentIO.html#1036" class="InductiveConstructor"
+      >do&#738;'</a
+      ><a name="1707"
+      > </a
+      ><a name="1708" href="stateDependentIO.html#1696" class="Bound"
+      >c</a
+      ><a name="1709"
+      > </a
+      ><a name="1710" href="stateDependentIO.html#1698" class="Bound"
+      >f</a
+      ><a name="1711"
+      >
+
+
+
+</a
+      ><a name="1715" class="Keyword"
+      >module</a
+      ><a name="1721"
+      > </a
+      ><a name="1722" href="stateDependentIO.html#1722" class="Module"
+      >_</a
+      ><a name="1723"
+      >  </a
+      ><a name="1725" class="Symbol"
+      >{</a
+      ><a name="1726" href="stateDependentIO.html#1726" class="Bound"
+      >&#947;</a
+      ><a name="1727"
+      > </a
+      ><a name="1728" href="stateDependentIO.html#1728" class="Bound"
+      >&#961;</a
+      ><a name="1729" class="Symbol"
+      >}{</a
+      ><a name="1731" href="stateDependentIO.html#1731" class="Bound"
+      >I</a
+      ><a name="1732"
+      >   </a
+      ><a name="1735" class="Symbol"
+      >:</a
+      ><a name="1736"
+      > </a
+      ><a name="1737" href="stateDependentIO.html#222" class="Record"
+      >IOInterface&#738;</a
+      ><a name="1749"
+      > </a
+      ><a name="1750" class="Symbol"
+      >{</a
+      ><a name="1751" href="stateDependentIO.html#1726" class="Bound"
+      >&#947;</a
+      ><a name="1752" class="Symbol"
+      >}</a
+      ><a name="1753"
+      > </a
+      ><a name="1754" class="Symbol"
+      >{</a
+      ><a name="1755" href="stateDependentIO.html#1728" class="Bound"
+      >&#961;</a
+      ><a name="1756" class="Symbol"
+      >}</a
+      ><a name="1757"
+      > </a
+      ><a name="1758" class="Symbol"
+      >{</a
+      ><a name="1759" href="Agda.Primitive.html#580" class="Primitive"
+      >lzero</a
+      ><a name="1764" class="Symbol"
+      >}}</a
+      ><a name="1766"
+      >
+                </a
+      ><a name="1783" class="Symbol"
+      >(</a
+      ><a name="1784" class="Keyword"
+      >let</a
+      ><a name="1787"
+      > </a
+      ><a name="1788" href="stateDependentIO.html#1788" class="Bound"
+      >S</a
+      ><a name="1789"
+      > </a
+      ><a name="1790" class="Symbol"
+      >=</a
+      ><a name="1791"
+      > </a
+      ><a name="1792" href="stateDependentIO.html#283" class="Field"
+      >StateIO&#738;</a
+      ><a name="1800"
+      > </a
+      ><a name="1801" href="stateDependentIO.html#1731" class="Bound"
+      >I</a
+      ><a name="1802" class="Symbol"
+      >)</a
+      ><a name="1803"
+      >     </a
+      ><a name="1808" class="Symbol"
+      >(</a
+      ><a name="1809" class="Keyword"
+      >let</a
+      ><a name="1812"
+      > </a
+      ><a name="1813" href="stateDependentIO.html#1813" class="Bound"
+      >C</a
+      ><a name="1814"
+      >  </a
+      ><a name="1816" class="Symbol"
+      >=</a
+      ><a name="1817"
+      > </a
+      ><a name="1818" href="stateDependentIO.html#311" class="Field"
+      >Command&#738;</a
+      ><a name="1826"
+      > </a
+      ><a name="1827" href="stateDependentIO.html#1731" class="Bound"
+      >I</a
+      ><a name="1828" class="Symbol"
+      >)</a
+      ><a name="1829"
+      >
+                </a
+      ><a name="1846" class="Symbol"
+      >(</a
+      ><a name="1847" class="Keyword"
+      >let</a
+      ><a name="1850"
+      >  </a
+      ><a name="1852" href="stateDependentIO.html#1852" class="Bound"
+      >R</a
+      ><a name="1853"
+      >  </a
+      ><a name="1855" class="Symbol"
+      >=</a
+      ><a name="1856"
+      > </a
+      ><a name="1857" href="stateDependentIO.html#350" class="Field"
+      >Response&#738;</a
+      ><a name="1866"
+      > </a
+      ><a name="1867" href="stateDependentIO.html#1731" class="Bound"
+      >I</a
+      ><a name="1868" class="Symbol"
+      >)</a
+      ><a name="1869"
+      > </a
+      ><a name="1870" class="Symbol"
+      >(</a
+      ><a name="1871" class="Keyword"
+      >let</a
+      ><a name="1874"
+      > </a
+      ><a name="1875" href="stateDependentIO.html#1875" class="Bound"
+      >next</a
+      ><a name="1879"
+      > </a
+      ><a name="1880" class="Symbol"
+      >=</a
+      ><a name="1881"
+      > </a
+      ><a name="1882" href="stateDependentIO.html#408" class="Field"
+      >nextIO&#738;</a
+      ><a name="1889"
+      > </a
+      ><a name="1890" href="stateDependentIO.html#1731" class="Bound"
+      >I</a
+      ><a name="1891" class="Symbol"
+      >)</a
+      ><a name="1892"
+      > </a
+      ><a name="1893" class="Keyword"
+      >where</a
+      ><a name="1898"
+      >
+
+  </a
+      ><a name="1902" class="Symbol"
+      >{-#</a
+      ><a name="1905"
+      > </a
+      ><a name="1906" class="Keyword"
+      >NON_TERMINATING</a
+      ><a name="1921"
+      > </a
+      ><a name="1922" class="Symbol"
+      >#-}</a
+      ><a name="1925"
+      >
+  </a
+      ><a name="1928" href="stateDependentIO.html#1928" class="Function"
+      >translateIO&#738;</a
+      ><a name="1940"
+      > </a
+      ><a name="1941" class="Symbol"
+      >:</a
+      ><a name="1942"
+      > </a
+      ><a name="1943" class="Symbol"
+      >&#8704;{</a
+      ><a name="1945" href="stateDependentIO.html#1945" class="Bound"
+      >A</a
+      ><a name="1946"
+      > </a
+      ><a name="1947" class="Symbol"
+      >:</a
+      ><a name="1948"
+      > </a
+      ><a name="1949" class="PrimitiveType"
+      >Set</a
+      ><a name="1952"
+      > </a
+      ><a name="1953" class="Symbol"
+      >}{</a
+      ><a name="1955" href="stateDependentIO.html#1955" class="Bound"
+      >s</a
+      ><a name="1956"
+      > </a
+      ><a name="1957" class="Symbol"
+      >:</a
+      ><a name="1958"
+      > </a
+      ><a name="1959" href="stateDependentIO.html#1788" class="Bound"
+      >S</a
+      ><a name="1960" class="Symbol"
+      >}</a
+      ><a name="1961"
+      >
+    </a
+      ><a name="1966" class="Symbol"
+      >&#8594;</a
+      ><a name="1967"
+      >  </a
+      ><a name="1969" class="Symbol"
+      >(</a
+      ><a name="1970" href="stateDependentIO.html#1970" class="Bound"
+      >translateLocal</a
+      ><a name="1984"
+      > </a
+      ><a name="1985" class="Symbol"
+      >:</a
+      ><a name="1986"
+      > </a
+      ><a name="1987" class="Symbol"
+      >(</a
+      ><a name="1988" href="stateDependentIO.html#1988" class="Bound"
+      >s</a
+      ><a name="1989"
+      > </a
+      ><a name="1990" class="Symbol"
+      >:</a
+      ><a name="1991"
+      > </a
+      ><a name="1992" href="stateDependentIO.html#1788" class="Bound"
+      >S</a
+      ><a name="1993" class="Symbol"
+      >)</a
+      ><a name="1994"
+      > </a
+      ><a name="1995" class="Symbol"
+      >&#8594;</a
+      ><a name="1996"
+      > </a
+      ><a name="1997" class="Symbol"
+      >(</a
+      ><a name="1998" href="stateDependentIO.html#1998" class="Bound"
+      >c</a
+      ><a name="1999"
+      > </a
+      ><a name="2000" class="Symbol"
+      >:</a
+      ><a name="2001"
+      > </a
+      ><a name="2002" href="stateDependentIO.html#1813" class="Bound"
+      >C</a
+      ><a name="2003"
+      > </a
+      ><a name="2004" href="stateDependentIO.html#1988" class="Bound"
+      >s</a
+      ><a name="2005" class="Symbol"
+      >)</a
+      ><a name="2006"
+      > </a
+      ><a name="2007" class="Symbol"
+      >&#8594;</a
+      ><a name="2008"
+      > </a
+      ><a name="2009" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="2017"
+      > </a
+      ><a name="2018" class="Symbol"
+      >(</a
+      ><a name="2019" href="stateDependentIO.html#1852" class="Bound"
+      >R</a
+      ><a name="2020"
+      > </a
+      ><a name="2021" href="stateDependentIO.html#1988" class="Bound"
+      >s</a
+      ><a name="2022"
+      > </a
+      ><a name="2023" href="stateDependentIO.html#1998" class="Bound"
+      >c</a
+      ><a name="2024" class="Symbol"
+      >))</a
+      ><a name="2026"
+      >
+    </a
+      ><a name="2031" class="Symbol"
+      >&#8594;</a
+      ><a name="2032"
+      >  </a
+      ><a name="2034" href="stateDependentIO.html#729" class="Record"
+      >IO&#738;</a
+      ><a name="2037"
+      > </a
+      ><a name="2038" href="stateDependentIO.html#1731" class="Bound"
+      >I</a
+      ><a name="2039"
+      > </a
+      ><a name="2040" href="Agda.Builtin.Size.html#182" class="Postulate"
+      >&#8734;</a
+      ><a name="2041"
+      > </a
+      ><a name="2042" class="Symbol"
+      >(&#955;</a
+      ><a name="2044"
+      > </a
+      ><a name="2045" href="stateDependentIO.html#2045" class="Bound"
+      >s</a
+      ><a name="2046"
+      > </a
+      ><a name="2047" class="Symbol"
+      >&#8594;</a
+      ><a name="2048"
+      > </a
+      ><a name="2049" href="stateDependentIO.html#1945" class="Bound"
+      >A</a
+      ><a name="2050" class="Symbol"
+      >)</a
+      ><a name="2051"
+      > </a
+      ><a name="2052" href="stateDependentIO.html#1955" class="Bound"
+      >s</a
+      ><a name="2053"
+      >
+    </a
+      ><a name="2058" class="Symbol"
+      >&#8594;</a
+      ><a name="2059"
+      >  </a
+      ><a name="2061" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="2069"
+      > </a
+      ><a name="2070" href="stateDependentIO.html#1945" class="Bound"
+      >A</a
+      ><a name="2071"
+      >
+  </a
+      ><a name="2074" href="stateDependentIO.html#1928" class="Function"
+      >translateIO&#738;</a
+      ><a name="2086"
+      > </a
+      ><a name="2087" class="Symbol"
+      >{</a
+      ><a name="2088" href="stateDependentIO.html#2088" class="Bound"
+      >A</a
+      ><a name="2089" class="Symbol"
+      >}</a
+      ><a name="2090"
+      > </a
+      ><a name="2091" class="Symbol"
+      >{</a
+      ><a name="2092" href="stateDependentIO.html#2092" class="Bound"
+      >s</a
+      ><a name="2093" class="Symbol"
+      >}</a
+      ><a name="2094"
+      > </a
+      ><a name="2095" href="stateDependentIO.html#2095" class="Bound"
+      >translateLocal</a
+      ><a name="2109"
+      > </a
+      ><a name="2110" href="stateDependentIO.html#2110" class="Bound"
+      >p</a
+      ><a name="2111"
+      > </a
+      ><a name="2112" class="Symbol"
+      >=</a
+      ><a name="2113"
+      > </a
+      ><a name="2114" href="Function.html#2761" class="Function Operator"
+      >case</a
+      ><a name="2118"
+      > </a
+      ><a name="2119" class="Symbol"
+      >(</a
+      ><a name="2120" href="stateDependentIO.html#887" class="Field"
+      >force&#738;</a
+      ><a name="2126"
+      > </a
+      ><a name="2127" href="stateDependentIO.html#2110" class="Bound"
+      >p</a
+      ><a name="2128"
+      > </a
+      ><a name="2129" class="Symbol"
+      >{_})</a
+      ><a name="2133"
+      > </a
+      ><a name="2134" href="Function.html#2761" class="Function Operator"
+      >of</a
+      ><a name="2136"
+      >
+    </a
+      ><a name="2141" class="Symbol"
+      >&#955;{</a
+      ><a name="2143"
+      > </a
+      ><a name="2144" class="Symbol"
+      >(</a
+      ><a name="2145" href="stateDependentIO.html#1036" class="InductiveConstructor"
+      >do&#738;'</a
+      ><a name="2149"
+      > </a
+      ><a name="2150" class="Symbol"
+      >{</a
+      ><a name="2151" class="DottedPattern Symbol"
+      >.</a
+      ><a name="2152" href="stateDependentIO.html#2092" class="DottedPattern Bound"
+      >s</a
+      ><a name="2153" class="Symbol"
+      >}</a
+      ><a name="2154"
+      > </a
+      ><a name="2155" href="stateDependentIO.html#2155" class="Bound"
+      >c</a
+      ><a name="2156"
+      > </a
+      ><a name="2157" href="stateDependentIO.html#2157" class="Bound"
+      >f</a
+      ><a name="2158" class="Symbol"
+      >)</a
+      ><a name="2159"
+      >    </a
+      ><a name="2163" class="Symbol"
+      >&#8594;</a
+      ><a name="2164"
+      > </a
+      ><a name="2165" class="Symbol"
+      >(</a
+      ><a name="2166" href="stateDependentIO.html#2095" class="Bound"
+      >translateLocal</a
+      ><a name="2180"
+      > </a
+      ><a name="2181" href="stateDependentIO.html#2092" class="Bound"
+      >s</a
+      ><a name="2182"
+      > </a
+      ><a name="2183" href="stateDependentIO.html#2155" class="Bound"
+      >c</a
+      ><a name="2184" class="Symbol"
+      >)</a
+      ><a name="2185"
+      >     </a
+      ><a name="2190" href="NativeIO.html#183" class="Postulate Operator"
+      >native&gt;&gt;=</a
+      ><a name="2199"
+      > </a
+      ><a name="2200" class="Symbol"
+      >&#955;</a
+      ><a name="2201"
+      > </a
+      ><a name="2202" href="stateDependentIO.html#2202" class="Bound"
+      >r</a
+      ><a name="2203"
+      > </a
+      ><a name="2204" class="Symbol"
+      >&#8594;</a
+      ><a name="2205"
+      >
+                             </a
+      ><a name="2235" href="stateDependentIO.html#1928" class="Function"
+      >translateIO&#738;</a
+      ><a name="2247"
+      > </a
+      ><a name="2248" href="stateDependentIO.html#2095" class="Bound"
+      >translateLocal</a
+      ><a name="2262"
+      > </a
+      ><a name="2263" class="Symbol"
+      >(</a
+      ><a name="2264" href="stateDependentIO.html#2157" class="Bound"
+      >f</a
+      ><a name="2265"
+      > </a
+      ><a name="2266" href="stateDependentIO.html#2202" class="Bound"
+      >r</a
+      ><a name="2267" class="Symbol"
+      >)</a
+      ><a name="2268"
+      >
+     </a
+      ><a name="2274" class="Symbol"
+      >;</a
+      ><a name="2275"
+      > </a
+      ><a name="2276" class="Symbol"
+      >(</a
+      ><a name="2277" href="stateDependentIO.html#1206" class="InductiveConstructor"
+      >return&#738;'</a
+      ><a name="2285"
+      > </a
+      ><a name="2286" href="stateDependentIO.html#2286" class="Bound"
+      >a</a
+      ><a name="2287" class="Symbol"
+      >)</a
+      ><a name="2288"
+      > </a
+      ><a name="2289" class="Symbol"
+      >&#8594;</a
+      ><a name="2290"
+      > </a
+      ><a name="2291" href="NativeIO.html#139" class="Postulate"
+      >nativeReturn</a
+      ><a name="2303"
+      > </a
+      ><a name="2304" href="stateDependentIO.html#2286" class="Bound"
+      >a</a
+      ><a name="2305"
+      >
+     </a
+      ><a name="2311" class="Symbol"
+      >}</a
+      ><a name="2312"
+      >
+</a
+      ></pre
+    ></body
+  ></html
+>

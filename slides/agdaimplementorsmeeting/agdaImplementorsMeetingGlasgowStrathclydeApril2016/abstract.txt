@@ -1,0 +1,1 @@
+We introduce a library for writing interactive programs in Agda which make allow to create GUIs. The interactive programs will be able to use some aspects of objects. When creating GUIs in the most advanced versions the creation of GUIs is similar to how it is done in Java by creating and object which has as methods action listeners. A small GUI example will be demonstrated. 

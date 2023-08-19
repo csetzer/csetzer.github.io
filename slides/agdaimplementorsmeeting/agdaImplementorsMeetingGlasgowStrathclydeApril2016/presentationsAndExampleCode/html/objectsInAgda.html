@@ -1,0 +1,1562 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >objectsInAgda</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Keyword"
+      >module</a
+      ><a name="7"
+      > </a
+      ><a name="8" href="objectsInAgda.html#1" class="Module"
+      >objectsInAgda</a
+      ><a name="21"
+      > </a
+      ><a name="22" class="Keyword"
+      >where</a
+      ><a name="27"
+      >
+
+</a
+      ><a name="29" class="Keyword"
+      >open</a
+      ><a name="33"
+      > </a
+      ><a name="34" class="Keyword"
+      >import</a
+      ><a name="40"
+      > </a
+      ><a name="41" href="Data.Product.html#1" class="Module"
+      >Data.Product</a
+      ><a name="53"
+      >
+</a
+      ><a name="54" class="Keyword"
+      >open</a
+      ><a name="58"
+      > </a
+      ><a name="59" class="Keyword"
+      >import</a
+      ><a name="65"
+      > </a
+      ><a name="66" href="interactiveProgramsAgda.html#1" class="Module"
+      >interactiveProgramsAgda</a
+      ><a name="89"
+      > </a
+      ><a name="90" class="Keyword"
+      >hiding</a
+      ><a name="96"
+      > </a
+      ><a name="97" class="Symbol"
+      >(</a
+      ><a name="98" href="interactiveProgramsAgda.html#2191" class="Function"
+      >main</a
+      ><a name="102" class="Symbol"
+      >)</a
+      ><a name="103"
+      >
+</a
+      ><a name="104" class="Keyword"
+      >open</a
+      ><a name="108"
+      > </a
+      ><a name="109" class="Keyword"
+      >import</a
+      ><a name="115"
+      > </a
+      ><a name="116" href="NativeIO.html#1" class="Module"
+      >NativeIO</a
+      ><a name="124"
+      >
+</a
+      ><a name="125" class="Keyword"
+      >open</a
+      ><a name="129"
+      > </a
+      ><a name="130" class="Keyword"
+      >import</a
+      ><a name="136"
+      > </a
+      ><a name="137" href="Data.String.Base.html#1" class="Module"
+      >Data.String.Base</a
+      ><a name="153"
+      >
+
+
+</a
+      ><a name="156" class="Keyword"
+      >record</a
+      ><a name="162"
+      > </a
+      ><a name="163" href="objectsInAgda.html#163" class="Record"
+      >Interface</a
+      ><a name="172"
+      >  </a
+      ><a name="174" class="Symbol"
+      >:</a
+      ><a name="175"
+      >  </a
+      ><a name="177" class="PrimitiveType"
+      >Set&#8321;</a
+      ><a name="181"
+      > </a
+      ><a name="182" class="Keyword"
+      >where</a
+      ><a name="187"
+      >
+  </a
+      ><a name="190" class="Keyword"
+      >field</a
+      ><a name="195"
+      >  </a
+      ><a name="197" href="objectsInAgda.html#197" class="Field"
+      >Method</a
+      ><a name="203"
+      >   </a
+      ><a name="206" class="Symbol"
+      >:</a
+      ><a name="207"
+      >  </a
+      ><a name="209" class="PrimitiveType"
+      >Set</a
+      ><a name="212"
+      >
+         </a
+      ><a name="222" href="objectsInAgda.html#222" class="Field"
+      >Result</a
+      ><a name="228"
+      >   </a
+      ><a name="231" class="Symbol"
+      >:</a
+      ><a name="232"
+      >  </a
+      ><a name="234" class="Symbol"
+      >(</a
+      ><a name="235" href="objectsInAgda.html#235" class="Bound"
+      >m</a
+      ><a name="236"
+      > </a
+      ><a name="237" class="Symbol"
+      >:</a
+      ><a name="238"
+      > </a
+      ><a name="239" href="objectsInAgda.html#197" class="Field"
+      >Method</a
+      ><a name="245" class="Symbol"
+      >)</a
+      ><a name="246"
+      > </a
+      ><a name="247" class="Symbol"
+      >&#8594;</a
+      ><a name="248"
+      > </a
+      ><a name="249" class="PrimitiveType"
+      >Set</a
+      ><a name="252"
+      >
+
+</a
+      ><a name="254" class="Keyword"
+      >open</a
+      ><a name="258"
+      > </a
+      ><a name="259" href="objectsInAgda.html#163" class="Module"
+      >Interface</a
+      ><a name="268"
+      > </a
+      ><a name="269" class="Keyword"
+      >public</a
+      ><a name="275"
+      >
+
+</a
+      ><a name="277" class="Keyword"
+      >record</a
+      ><a name="283"
+      > </a
+      ><a name="284" href="objectsInAgda.html#284" class="Record"
+      >Object</a
+      ><a name="290"
+      > </a
+      ><a name="291" class="Symbol"
+      >(</a
+      ><a name="292" href="objectsInAgda.html#292" class="Bound"
+      >I</a
+      ><a name="293"
+      > </a
+      ><a name="294" class="Symbol"
+      >:</a
+      ><a name="295"
+      > </a
+      ><a name="296" href="objectsInAgda.html#163" class="Record"
+      >Interface</a
+      ><a name="305" class="Symbol"
+      >)</a
+      ><a name="306"
+      > </a
+      ><a name="307" class="Symbol"
+      >:</a
+      ><a name="308"
+      > </a
+      ><a name="309" class="PrimitiveType"
+      >Set</a
+      ><a name="312"
+      > </a
+      ><a name="313" class="Keyword"
+      >where</a
+      ><a name="318"
+      >
+  </a
+      ><a name="321" class="Keyword"
+      >coinductive</a
+      ><a name="332"
+      >
+  </a
+      ><a name="335" class="Keyword"
+      >field</a
+      ><a name="340"
+      > </a
+      ><a name="341" href="objectsInAgda.html#341" class="Field"
+      >objectMethod</a
+      ><a name="353"
+      > </a
+      ><a name="354" class="Symbol"
+      >:</a
+      ><a name="355"
+      > </a
+      ><a name="356" class="Symbol"
+      >(</a
+      ><a name="357" href="objectsInAgda.html#357" class="Bound"
+      >m</a
+      ><a name="358"
+      > </a
+      ><a name="359" class="Symbol"
+      >:</a
+      ><a name="360"
+      > </a
+      ><a name="361" href="objectsInAgda.html#197" class="Field"
+      >Method</a
+      ><a name="367"
+      > </a
+      ><a name="368" href="objectsInAgda.html#292" class="Bound"
+      >I</a
+      ><a name="369" class="Symbol"
+      >)</a
+      ><a name="370"
+      > </a
+      ><a name="371" class="Symbol"
+      >&#8594;</a
+      ><a name="372"
+      > </a
+      ><a name="373" href="objectsInAgda.html#222" class="Field"
+      >Result</a
+      ><a name="379"
+      > </a
+      ><a name="380" href="objectsInAgda.html#292" class="Bound"
+      >I</a
+      ><a name="381"
+      > </a
+      ><a name="382" href="objectsInAgda.html#357" class="Bound"
+      >m</a
+      ><a name="383"
+      > </a
+      ><a name="384" href="Data.Product.html#1073" class="Function Operator"
+      >&#215;</a
+      ><a name="385"
+      > </a
+      ><a name="386" href="objectsInAgda.html#284" class="Record"
+      >Object</a
+      ><a name="392"
+      > </a
+      ><a name="393" href="objectsInAgda.html#292" class="Bound"
+      >I</a
+      ><a name="394"
+      >
+
+</a
+      ><a name="396" class="Keyword"
+      >open</a
+      ><a name="400"
+      > </a
+      ><a name="401" href="objectsInAgda.html#284" class="Module"
+      >Object</a
+      ><a name="407"
+      > </a
+      ><a name="408" class="Keyword"
+      >public</a
+      ><a name="414"
+      >
+</a
+      ><a name="415" class="Keyword"
+      >open</a
+      ><a name="419"
+      > </a
+      ><a name="420" class="Keyword"
+      >import</a
+      ><a name="426"
+      > </a
+      ><a name="427" href="Size.html#1" class="Module"
+      >Size</a
+      ><a name="431"
+      >
+
+
+</a
+      ><a name="434" class="Keyword"
+      >record</a
+      ><a name="440"
+      > </a
+      ><a name="441" href="objectsInAgda.html#441" class="Record"
+      >IOObject</a
+      ><a name="449"
+      > </a
+      ><a name="450" class="Symbol"
+      >(</a
+      ><a name="451" href="objectsInAgda.html#451" class="Bound"
+      >I&#7522;&#8338;</a
+      ><a name="454"
+      > </a
+      ><a name="455" class="Symbol"
+      >:</a
+      ><a name="456"
+      > </a
+      ><a name="457" href="interactiveProgramsAgda.html#134" class="Record"
+      >IOInterface</a
+      ><a name="468" class="Symbol"
+      >)</a
+      ><a name="469"
+      > </a
+      ><a name="470" class="Symbol"
+      >(</a
+      ><a name="471" href="objectsInAgda.html#471" class="Bound"
+      >I</a
+      ><a name="472"
+      > </a
+      ><a name="473" class="Symbol"
+      >:</a
+      ><a name="474"
+      > </a
+      ><a name="475" href="objectsInAgda.html#163" class="Record"
+      >Interface</a
+      ><a name="484" class="Symbol"
+      >)</a
+      ><a name="485"
+      > </a
+      ><a name="486" class="Symbol"
+      >(</a
+      ><a name="487" href="objectsInAgda.html#487" class="Bound"
+      >i</a
+      ><a name="488"
+      > </a
+      ><a name="489" class="Symbol"
+      >:</a
+      ><a name="490"
+      > </a
+      ><a name="491" href="Agda.Builtin.Size.html#86" class="Postulate"
+      >Size</a
+      ><a name="495" class="Symbol"
+      >)</a
+      ><a name="496"
+      > </a
+      ><a name="497" class="Symbol"
+      >:</a
+      ><a name="498"
+      > </a
+      ><a name="499" class="PrimitiveType"
+      >Set</a
+      ><a name="502"
+      > </a
+      ><a name="503" class="Keyword"
+      >where</a
+      ><a name="508"
+      >
+  </a
+      ><a name="511" class="Keyword"
+      >coinductive</a
+      ><a name="522"
+      >
+  </a
+      ><a name="525" class="Keyword"
+      >field</a
+      ><a name="530"
+      > </a
+      ><a name="531" href="objectsInAgda.html#531" class="Field"
+      >method</a
+      ><a name="537"
+      > </a
+      ><a name="538" class="Symbol"
+      >:</a
+      ><a name="539"
+      > </a
+      ><a name="540" class="Symbol"
+      >&#8704;{</a
+      ><a name="542" href="objectsInAgda.html#542" class="Bound"
+      >j</a
+      ><a name="543"
+      > </a
+      ><a name="544" class="Symbol"
+      >:</a
+      ><a name="545"
+      > </a
+      ><a name="546" href="Agda.Builtin.Size.html#118" class="Postulate Operator"
+      >Size&lt;</a
+      ><a name="551"
+      > </a
+      ><a name="552" href="objectsInAgda.html#487" class="Bound"
+      >i</a
+      ><a name="553" class="Symbol"
+      >}</a
+      ><a name="554"
+      > </a
+      ><a name="555" class="Symbol"
+      >(</a
+      ><a name="556" href="objectsInAgda.html#556" class="Bound"
+      >m</a
+      ><a name="557"
+      > </a
+      ><a name="558" class="Symbol"
+      >:</a
+      ><a name="559"
+      > </a
+      ><a name="560" href="objectsInAgda.html#197" class="Field"
+      >Method</a
+      ><a name="566"
+      > </a
+      ><a name="567" href="objectsInAgda.html#471" class="Bound"
+      >I</a
+      ><a name="568" class="Symbol"
+      >)</a
+      ><a name="569"
+      >
+                   </a
+      ><a name="589" class="Symbol"
+      >&#8594;</a
+      ><a name="590"
+      > </a
+      ><a name="591" href="interactiveProgramsAgda.html#265" class="Record"
+      >IO</a
+      ><a name="593"
+      > </a
+      ><a name="594" href="objectsInAgda.html#451" class="Bound"
+      >I&#7522;&#8338;</a
+      ><a name="597"
+      > </a
+      ><a name="598" href="Agda.Builtin.Size.html#182" class="Postulate"
+      >&#8734;</a
+      ><a name="599"
+      > </a
+      ><a name="600" class="Symbol"
+      >(</a
+      ><a name="601" href="objectsInAgda.html#222" class="Field"
+      >Result</a
+      ><a name="607"
+      > </a
+      ><a name="608" href="objectsInAgda.html#471" class="Bound"
+      >I</a
+      ><a name="609"
+      > </a
+      ><a name="610" href="objectsInAgda.html#556" class="Bound"
+      >m</a
+      ><a name="611"
+      > </a
+      ><a name="612" href="Data.Product.html#1073" class="Function Operator"
+      >&#215;</a
+      ><a name="613"
+      > </a
+      ><a name="614" href="objectsInAgda.html#441" class="Record"
+      >IOObject</a
+      ><a name="622"
+      > </a
+      ><a name="623" href="objectsInAgda.html#451" class="Bound"
+      >I&#7522;&#8338;</a
+      ><a name="626"
+      > </a
+      ><a name="627" href="objectsInAgda.html#471" class="Bound"
+      >I</a
+      ><a name="628"
+      > </a
+      ><a name="629" href="objectsInAgda.html#542" class="Bound"
+      >j</a
+      ><a name="630" class="Symbol"
+      >)</a
+      ><a name="631"
+      >
+
+</a
+      ><a name="633" class="Keyword"
+      >open</a
+      ><a name="637"
+      > </a
+      ><a name="638" href="objectsInAgda.html#441" class="Module"
+      >IOObject</a
+      ><a name="646"
+      > </a
+      ><a name="647" class="Keyword"
+      >public</a
+      ><a name="653"
+      >
+
+</a
+      ><a name="655" class="Comment"
+      >{- Example Cell -}</a
+      ><a name="673"
+      >
+
+</a
+      ><a name="675" class="Keyword"
+      >data</a
+      ><a name="679"
+      > </a
+      ><a name="680" href="objectsInAgda.html#680" class="Datatype"
+      >CellMethod</a
+      ><a name="690"
+      > </a
+      ><a name="691" href="objectsInAgda.html#691" class="Bound"
+      >A</a
+      ><a name="692"
+      > </a
+      ><a name="693" class="Symbol"
+      >:</a
+      ><a name="694"
+      > </a
+      ><a name="695" class="PrimitiveType"
+      >Set</a
+      ><a name="698"
+      > </a
+      ><a name="699" class="Keyword"
+      >where</a
+      ><a name="704"
+      >
+    </a
+      ><a name="709" href="objectsInAgda.html#709" class="InductiveConstructor"
+      >get</a
+      ><a name="712"
+      >  </a
+      ><a name="714" class="Symbol"
+      >:</a
+      ><a name="715"
+      >  </a
+      ><a name="717" href="objectsInAgda.html#680" class="Datatype"
+      >CellMethod</a
+      ><a name="727"
+      > </a
+      ><a name="728" href="objectsInAgda.html#691" class="Bound"
+      >A</a
+      ><a name="729"
+      >
+    </a
+      ><a name="734" href="objectsInAgda.html#734" class="InductiveConstructor"
+      >put</a
+      ><a name="737"
+      >  </a
+      ><a name="739" class="Symbol"
+      >:</a
+      ><a name="740"
+      >  </a
+      ><a name="742" href="objectsInAgda.html#691" class="Bound"
+      >A</a
+      ><a name="743"
+      > </a
+      ><a name="744" class="Symbol"
+      >&#8594;</a
+      ><a name="745"
+      > </a
+      ><a name="746" href="objectsInAgda.html#680" class="Datatype"
+      >CellMethod</a
+      ><a name="756"
+      > </a
+      ><a name="757" href="objectsInAgda.html#691" class="Bound"
+      >A</a
+      ><a name="758"
+      >
+
+</a
+      ><a name="760" href="objectsInAgda.html#760" class="Function"
+      >CellResult</a
+      ><a name="770"
+      >             </a
+      ><a name="783" class="Symbol"
+      >:</a
+      ><a name="784"
+      >  </a
+      ><a name="786" class="Symbol"
+      >&#8704;{</a
+      ><a name="788" href="objectsInAgda.html#788" class="Bound"
+      >A</a
+      ><a name="789" class="Symbol"
+      >}</a
+      ><a name="790"
+      > </a
+      ><a name="791" class="Symbol"
+      >&#8594;</a
+      ><a name="792"
+      > </a
+      ><a name="793" href="objectsInAgda.html#680" class="Datatype"
+      >CellMethod</a
+      ><a name="803"
+      > </a
+      ><a name="804" href="objectsInAgda.html#788" class="Bound"
+      >A</a
+      ><a name="805"
+      > </a
+      ><a name="806" class="Symbol"
+      >&#8594;</a
+      ><a name="807"
+      > </a
+      ><a name="808" class="PrimitiveType"
+      >Set</a
+      ><a name="811"
+      >
+</a
+      ><a name="812" href="objectsInAgda.html#760" class="Function"
+      >CellResult</a
+      ><a name="822"
+      >   </a
+      ><a name="825" class="Symbol"
+      >{</a
+      ><a name="826" href="objectsInAgda.html#826" class="Bound"
+      >A</a
+      ><a name="827" class="Symbol"
+      >}</a
+      ><a name="828"
+      > </a
+      ><a name="829" href="objectsInAgda.html#709" class="InductiveConstructor"
+      >get</a
+      ><a name="832"
+      >   </a
+      ><a name="835" class="Symbol"
+      >=</a
+      ><a name="836"
+      >  </a
+      ><a name="838" href="objectsInAgda.html#826" class="Bound"
+      >A</a
+      ><a name="839"
+      >
+</a
+      ><a name="840" href="objectsInAgda.html#760" class="Function"
+      >CellResult</a
+      ><a name="850"
+      >   </a
+      ><a name="853" class="Symbol"
+      >(</a
+      ><a name="854" href="objectsInAgda.html#734" class="InductiveConstructor"
+      >put</a
+      ><a name="857"
+      > </a
+      ><a name="858" class="Symbol"
+      >_)</a
+      ><a name="860"
+      >   </a
+      ><a name="863" class="Symbol"
+      >=</a
+      ><a name="864"
+      >  </a
+      ><a name="866" href="Unit.html#28" class="Record"
+      >Unit</a
+      ><a name="870"
+      >
+
+</a
+      ><a name="872" href="objectsInAgda.html#872" class="Function"
+      >cellI</a
+      ><a name="877"
+      >                  </a
+      ><a name="895" class="Symbol"
+      >:</a
+      ><a name="896"
+      >  </a
+      ><a name="898" class="Symbol"
+      >(</a
+      ><a name="899" href="objectsInAgda.html#899" class="Bound"
+      >A</a
+      ><a name="900"
+      > </a
+      ><a name="901" class="Symbol"
+      >:</a
+      ><a name="902"
+      > </a
+      ><a name="903" class="PrimitiveType"
+      >Set</a
+      ><a name="906" class="Symbol"
+      >)</a
+      ><a name="907"
+      > </a
+      ><a name="908" class="Symbol"
+      >&#8594;</a
+      ><a name="909"
+      > </a
+      ><a name="910" href="objectsInAgda.html#163" class="Record"
+      >Interface</a
+      ><a name="919"
+      >
+</a
+      ><a name="920" href="objectsInAgda.html#197" class="Field"
+      >Method</a
+      ><a name="926"
+      >    </a
+      ><a name="930" class="Symbol"
+      >(</a
+      ><a name="931" href="objectsInAgda.html#872" class="Function"
+      >cellI</a
+      ><a name="936"
+      > </a
+      ><a name="937" href="objectsInAgda.html#937" class="Bound"
+      >A</a
+      ><a name="938" class="Symbol"
+      >)</a
+      ><a name="939"
+      >    </a
+      ><a name="943" class="Symbol"
+      >=</a
+      ><a name="944"
+      >  </a
+      ><a name="946" href="objectsInAgda.html#680" class="Datatype"
+      >CellMethod</a
+      ><a name="956"
+      > </a
+      ><a name="957" href="objectsInAgda.html#937" class="Bound"
+      >A</a
+      ><a name="958"
+      >
+</a
+      ><a name="959" href="objectsInAgda.html#222" class="Field"
+      >Result</a
+      ><a name="965"
+      >    </a
+      ><a name="969" class="Symbol"
+      >(</a
+      ><a name="970" href="objectsInAgda.html#872" class="Function"
+      >cellI</a
+      ><a name="975"
+      > </a
+      ><a name="976" href="objectsInAgda.html#976" class="Bound"
+      >A</a
+      ><a name="977" class="Symbol"
+      >)</a
+      ><a name="978"
+      > </a
+      ><a name="979" href="objectsInAgda.html#979" class="Bound"
+      >m</a
+      ><a name="980"
+      >  </a
+      ><a name="982" class="Symbol"
+      >=</a
+      ><a name="983"
+      >  </a
+      ><a name="985" href="objectsInAgda.html#760" class="Function"
+      >CellResult</a
+      ><a name="995"
+      > </a
+      ><a name="996" href="objectsInAgda.html#979" class="Bound"
+      >m</a
+      ><a name="997"
+      >
+
+
+</a
+      ><a name="1000" class="Comment"
+      >{- A cell as an Object -}</a
+      ><a name="1025"
+      >
+
+</a
+      ><a name="1027" href="objectsInAgda.html#1027" class="Function"
+      >Cell</a
+      ><a name="1031"
+      > </a
+      ><a name="1032" class="Symbol"
+      >:</a
+      ><a name="1033"
+      > </a
+      ><a name="1034" class="PrimitiveType"
+      >Set</a
+      ><a name="1037"
+      > </a
+      ><a name="1038" class="Symbol"
+      >&#8594;</a
+      ><a name="1039"
+      > </a
+      ><a name="1040" class="PrimitiveType"
+      >Set</a
+      ><a name="1043"
+      >
+</a
+      ><a name="1044" href="objectsInAgda.html#1027" class="Function"
+      >Cell</a
+      ><a name="1048"
+      > </a
+      ><a name="1049" href="objectsInAgda.html#1049" class="Bound"
+      >A</a
+      ><a name="1050"
+      > </a
+      ><a name="1051" class="Symbol"
+      >=</a
+      ><a name="1052"
+      > </a
+      ><a name="1053" href="objectsInAgda.html#284" class="Record"
+      >Object</a
+      ><a name="1059"
+      > </a
+      ><a name="1060" class="Symbol"
+      >(</a
+      ><a name="1061" href="objectsInAgda.html#872" class="Function"
+      >cellI</a
+      ><a name="1066"
+      > </a
+      ><a name="1067" href="objectsInAgda.html#1049" class="Bound"
+      >A</a
+      ><a name="1068" class="Symbol"
+      >)</a
+      ><a name="1069"
+      >
+
+</a
+      ><a name="1071" href="objectsInAgda.html#1071" class="Function"
+      >cell</a
+      ><a name="1075"
+      > </a
+      ><a name="1076" class="Symbol"
+      >:</a
+      ><a name="1077"
+      > </a
+      ><a name="1078" class="Symbol"
+      >{</a
+      ><a name="1079" href="objectsInAgda.html#1079" class="Bound"
+      >A</a
+      ><a name="1080"
+      > </a
+      ><a name="1081" class="Symbol"
+      >:</a
+      ><a name="1082"
+      > </a
+      ><a name="1083" class="PrimitiveType"
+      >Set</a
+      ><a name="1086" class="Symbol"
+      >}</a
+      ><a name="1087"
+      > </a
+      ><a name="1088" class="Symbol"
+      >&#8594;</a
+      ><a name="1089"
+      > </a
+      ><a name="1090" href="objectsInAgda.html#1079" class="Bound"
+      >A</a
+      ><a name="1091"
+      > </a
+      ><a name="1092" class="Symbol"
+      >&#8594;</a
+      ><a name="1093"
+      > </a
+      ><a name="1094" href="objectsInAgda.html#1027" class="Function"
+      >Cell</a
+      ><a name="1098"
+      > </a
+      ><a name="1099" href="objectsInAgda.html#1079" class="Bound"
+      >A</a
+      ><a name="1100"
+      >
+</a
+      ><a name="1101" href="objectsInAgda.html#341" class="Field"
+      >objectMethod</a
+      ><a name="1113"
+      > </a
+      ><a name="1114" class="Symbol"
+      >(</a
+      ><a name="1115" href="objectsInAgda.html#1071" class="Function"
+      >cell</a
+      ><a name="1119"
+      > </a
+      ><a name="1120" href="objectsInAgda.html#1120" class="Bound"
+      >a</a
+      ><a name="1121" class="Symbol"
+      >)</a
+      ><a name="1122"
+      > </a
+      ><a name="1123" href="objectsInAgda.html#709" class="InductiveConstructor"
+      >get</a
+      ><a name="1126"
+      >       </a
+      ><a name="1133" class="Symbol"
+      >=</a
+      ><a name="1134"
+      > </a
+      ><a name="1135" href="objectsInAgda.html#1120" class="Bound"
+      >a</a
+      ><a name="1136"
+      >    </a
+      ><a name="1140" href="Data.Product.html#509" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1141"
+      > </a
+      ><a name="1142" href="objectsInAgda.html#1071" class="Function"
+      >cell</a
+      ><a name="1146"
+      > </a
+      ><a name="1147" href="objectsInAgda.html#1120" class="Bound"
+      >a</a
+      ><a name="1148"
+      >
+</a
+      ><a name="1149" href="objectsInAgda.html#341" class="Field"
+      >objectMethod</a
+      ><a name="1161"
+      > </a
+      ><a name="1162" class="Symbol"
+      >(</a
+      ><a name="1163" href="objectsInAgda.html#1071" class="Function"
+      >cell</a
+      ><a name="1167"
+      > </a
+      ><a name="1168" href="objectsInAgda.html#1168" class="Bound"
+      >a</a
+      ><a name="1169" class="Symbol"
+      >)</a
+      ><a name="1170"
+      > </a
+      ><a name="1171" class="Symbol"
+      >(</a
+      ><a name="1172" href="objectsInAgda.html#734" class="InductiveConstructor"
+      >put</a
+      ><a name="1175"
+      > </a
+      ><a name="1176" href="objectsInAgda.html#1176" class="Bound"
+      >a'</a
+      ><a name="1178" class="Symbol"
+      >)</a
+      ><a name="1179"
+      >  </a
+      ><a name="1181" class="Symbol"
+      >=</a
+      ><a name="1182"
+      > </a
+      ><a name="1183" href="Unit.html#59" class="InductiveConstructor"
+      >unit</a
+      ><a name="1187"
+      > </a
+      ><a name="1188" href="Data.Product.html#509" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1189"
+      > </a
+      ><a name="1190" href="objectsInAgda.html#1071" class="Function"
+      >cell</a
+      ><a name="1194"
+      > </a
+      ><a name="1195" href="objectsInAgda.html#1176" class="Bound"
+      >a'</a
+      ><a name="1197"
+      >
+
+
+
+
+</a
+      ><a name="1202" class="Comment"
+      >{- A cell as an IOObject -}</a
+      ><a name="1229"
+      >
+
+</a
+      ><a name="1231" href="objectsInAgda.html#1231" class="Function"
+      >CellC</a
+      ><a name="1236"
+      > </a
+      ><a name="1237" class="Symbol"
+      >:</a
+      ><a name="1238"
+      > </a
+      ><a name="1239" class="Symbol"
+      >(</a
+      ><a name="1240" href="objectsInAgda.html#1240" class="Bound"
+      >i</a
+      ><a name="1241"
+      > </a
+      ><a name="1242" class="Symbol"
+      >:</a
+      ><a name="1243"
+      > </a
+      ><a name="1244" href="Agda.Builtin.Size.html#86" class="Postulate"
+      >Size</a
+      ><a name="1248" class="Symbol"
+      >)</a
+      ><a name="1249"
+      > </a
+      ><a name="1250" class="Symbol"
+      >&#8594;</a
+      ><a name="1251"
+      > </a
+      ><a name="1252" class="PrimitiveType"
+      >Set</a
+      ><a name="1255"
+      >
+</a
+      ><a name="1256" href="objectsInAgda.html#1231" class="Function"
+      >CellC</a
+      ><a name="1261"
+      > </a
+      ><a name="1262" class="Symbol"
+      >=</a
+      ><a name="1263"
+      > </a
+      ><a name="1264" href="objectsInAgda.html#441" class="Record"
+      >IOObject</a
+      ><a name="1272"
+      > </a
+      ><a name="1273" href="interactiveProgramsAgda.html#1562" class="Function"
+      >ConsoleInterface</a
+      ><a name="1289"
+      > </a
+      ><a name="1290" class="Symbol"
+      >(</a
+      ><a name="1291" href="objectsInAgda.html#872" class="Function"
+      >cellI</a
+      ><a name="1296"
+      > </a
+      ><a name="1297" href="Agda.Builtin.String.html#137" class="Postulate"
+      >String</a
+      ><a name="1303" class="Symbol"
+      >)</a
+      ><a name="1304"
+      >
+
+
+</a
+      ><a name="1307" href="objectsInAgda.html#1307" class="Function"
+      >simpleCell</a
+      ><a name="1317"
+      > </a
+      ><a name="1318" class="Symbol"
+      >:</a
+      ><a name="1319"
+      > </a
+      ><a name="1320" class="Symbol"
+      >&#8704;{</a
+      ><a name="1322" href="objectsInAgda.html#1322" class="Bound"
+      >i</a
+      ><a name="1323" class="Symbol"
+      >}</a
+      ><a name="1324"
+      > </a
+      ><a name="1325" class="Symbol"
+      >(</a
+      ><a name="1326" href="objectsInAgda.html#1326" class="Bound"
+      >s</a
+      ><a name="1327"
+      > </a
+      ><a name="1328" class="Symbol"
+      >:</a
+      ><a name="1329"
+      > </a
+      ><a name="1330" href="Agda.Builtin.String.html#137" class="Postulate"
+      >String</a
+      ><a name="1336" class="Symbol"
+      >)</a
+      ><a name="1337"
+      > </a
+      ><a name="1338" class="Symbol"
+      >&#8594;</a
+      ><a name="1339"
+      > </a
+      ><a name="1340" href="objectsInAgda.html#1231" class="Function"
+      >CellC</a
+      ><a name="1345"
+      > </a
+      ><a name="1346" href="objectsInAgda.html#1322" class="Bound"
+      >i</a
+      ><a name="1347"
+      >
+</a
+      ><a name="1348" href="interactiveProgramsAgda.html#370" class="Field"
+      >force</a
+      ><a name="1353"
+      > </a
+      ><a name="1354" class="Symbol"
+      >(</a
+      ><a name="1355" href="objectsInAgda.html#531" class="Field"
+      >method</a
+      ><a name="1361"
+      > </a
+      ><a name="1362" class="Symbol"
+      >(</a
+      ><a name="1363" href="objectsInAgda.html#1307" class="Function"
+      >simpleCell</a
+      ><a name="1373"
+      > </a
+      ><a name="1374" href="objectsInAgda.html#1374" class="Bound"
+      >s</a
+      ><a name="1375" class="Symbol"
+      >)</a
+      ><a name="1376"
+      >  </a
+      ><a name="1378" href="objectsInAgda.html#709" class="InductiveConstructor"
+      >get</a
+      ><a name="1381" class="Symbol"
+      >)</a
+      ><a name="1382"
+      > </a
+      ><a name="1383" class="Symbol"
+      >=</a
+      ><a name="1384"
+      >
+  </a
+      ><a name="1387" href="interactiveProgramsAgda.html#471" class="InductiveConstructor"
+      >do'</a
+      ><a name="1390"
+      > </a
+      ><a name="1391" class="Symbol"
+      >(</a
+      ><a name="1392" href="interactiveProgramsAgda.html#1406" class="InductiveConstructor"
+      >putStrLn</a
+      ><a name="1400"
+      > </a
+      ><a name="1401" class="Symbol"
+      >(</a
+      ><a name="1402" class="String"
+      >&quot;getting (&quot;</a
+      ><a name="1413"
+      > </a
+      ><a name="1414" href="Data.String.Base.html#873" class="Function Operator"
+      >++</a
+      ><a name="1416"
+      > </a
+      ><a name="1417" href="objectsInAgda.html#1374" class="Bound"
+      >s</a
+      ><a name="1418"
+      > </a
+      ><a name="1419" href="Data.String.Base.html#873" class="Function Operator"
+      >++</a
+      ><a name="1421"
+      > </a
+      ><a name="1422" class="String"
+      >&quot;)&quot;</a
+      ><a name="1425" class="Symbol"
+      >))</a
+      ><a name="1427"
+      > </a
+      ><a name="1428" class="Symbol"
+      >&#955;</a
+      ><a name="1429"
+      > </a
+      ><a name="1430" href="objectsInAgda.html#1430" class="Bound"
+      >_</a
+      ><a name="1431"
+      > </a
+      ><a name="1432" class="Symbol"
+      >&#8594;</a
+      ><a name="1433"
+      >
+  </a
+      ><a name="1436" href="interactiveProgramsAgda.html#789" class="Function"
+      >return</a
+      ><a name="1442"
+      > </a
+      ><a name="1443" class="Symbol"
+      >(</a
+      ><a name="1444" href="objectsInAgda.html#1374" class="Bound"
+      >s</a
+      ><a name="1445"
+      > </a
+      ><a name="1446" href="Data.Product.html#509" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1447"
+      > </a
+      ><a name="1448" href="objectsInAgda.html#1307" class="Function"
+      >simpleCell</a
+      ><a name="1458"
+      > </a
+      ><a name="1459" href="objectsInAgda.html#1374" class="Bound"
+      >s</a
+      ><a name="1460" class="Symbol"
+      >)</a
+      ><a name="1461"
+      >
+</a
+      ><a name="1462" href="interactiveProgramsAgda.html#370" class="Field"
+      >force</a
+      ><a name="1467"
+      > </a
+      ><a name="1468" class="Symbol"
+      >(</a
+      ><a name="1469" href="objectsInAgda.html#531" class="Field"
+      >method</a
+      ><a name="1475"
+      > </a
+      ><a name="1476" class="Symbol"
+      >(</a
+      ><a name="1477" href="objectsInAgda.html#1307" class="Function"
+      >simpleCell</a
+      ><a name="1487"
+      > </a
+      ><a name="1488" class="Symbol"
+      >_)</a
+      ><a name="1490"
+      > </a
+      ><a name="1491" class="Symbol"
+      >(</a
+      ><a name="1492" href="objectsInAgda.html#734" class="InductiveConstructor"
+      >put</a
+      ><a name="1495"
+      > </a
+      ><a name="1496" href="objectsInAgda.html#1496" class="Bound"
+      >s</a
+      ><a name="1497" class="Symbol"
+      >))</a
+      ><a name="1499"
+      > </a
+      ><a name="1500" class="Symbol"
+      >=</a
+      ><a name="1501"
+      >
+  </a
+      ><a name="1504" href="interactiveProgramsAgda.html#471" class="InductiveConstructor"
+      >do'</a
+      ><a name="1507"
+      > </a
+      ><a name="1508" class="Symbol"
+      >(</a
+      ><a name="1509" href="interactiveProgramsAgda.html#1406" class="InductiveConstructor"
+      >putStrLn</a
+      ><a name="1517"
+      > </a
+      ><a name="1518" class="Symbol"
+      >(</a
+      ><a name="1519" class="String"
+      >&quot;putting (&quot;</a
+      ><a name="1530"
+      > </a
+      ><a name="1531" href="Data.String.Base.html#873" class="Function Operator"
+      >++</a
+      ><a name="1533"
+      > </a
+      ><a name="1534" href="objectsInAgda.html#1496" class="Bound"
+      >s</a
+      ><a name="1535"
+      > </a
+      ><a name="1536" href="Data.String.Base.html#873" class="Function Operator"
+      >++</a
+      ><a name="1538"
+      > </a
+      ><a name="1539" class="String"
+      >&quot;)&quot;</a
+      ><a name="1542" class="Symbol"
+      >))</a
+      ><a name="1544"
+      > </a
+      ><a name="1545" class="Symbol"
+      >&#955;</a
+      ><a name="1546"
+      > </a
+      ><a name="1547" href="objectsInAgda.html#1547" class="Bound"
+      >_</a
+      ><a name="1548"
+      > </a
+      ><a name="1549" class="Symbol"
+      >&#8594;</a
+      ><a name="1550"
+      >
+  </a
+      ><a name="1553" href="interactiveProgramsAgda.html#789" class="Function"
+      >return</a
+      ><a name="1559"
+      > </a
+      ><a name="1560" class="Symbol"
+      >(_</a
+      ><a name="1562"
+      > </a
+      ><a name="1563" href="Data.Product.html#509" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1564"
+      > </a
+      ><a name="1565" href="objectsInAgda.html#1307" class="Function"
+      >simpleCell</a
+      ><a name="1575"
+      > </a
+      ><a name="1576" href="objectsInAgda.html#1496" class="Bound"
+      >s</a
+      ><a name="1577" class="Symbol"
+      >)</a
+      ><a name="1578"
+      >
+
+
+</a
+      ><a name="1581" href="objectsInAgda.html#1581" class="Function"
+      >program</a
+      ><a name="1588"
+      > </a
+      ><a name="1589" class="Symbol"
+      >:</a
+      ><a name="1590"
+      > </a
+      ><a name="1591" class="Symbol"
+      >&#8704;{</a
+      ><a name="1593" href="objectsInAgda.html#1593" class="Bound"
+      >i</a
+      ><a name="1594" class="Symbol"
+      >}</a
+      ><a name="1595"
+      > </a
+      ><a name="1596" class="Symbol"
+      >&#8594;</a
+      ><a name="1597"
+      > </a
+      ><a name="1598" href="objectsInAgda.html#1231" class="Function"
+      >CellC</a
+      ><a name="1603"
+      > </a
+      ><a name="1604" href="Agda.Builtin.Size.html#182" class="Postulate"
+      >&#8734;</a
+      ><a name="1605"
+      >  </a
+      ><a name="1607" class="Symbol"
+      >&#8594;</a
+      ><a name="1608"
+      > </a
+      ><a name="1609" href="interactiveProgramsAgda.html#265" class="Record"
+      >IO</a
+      ><a name="1611"
+      > </a
+      ><a name="1612" href="interactiveProgramsAgda.html#1562" class="Function"
+      >ConsoleInterface</a
+      ><a name="1628"
+      > </a
+      ><a name="1629" href="objectsInAgda.html#1593" class="Bound"
+      >i</a
+      ><a name="1630"
+      > </a
+      ><a name="1631" href="Unit.html#28" class="Record"
+      >Unit</a
+      ><a name="1635"
+      >
+</a
+      ><a name="1636" href="interactiveProgramsAgda.html#370" class="Field"
+      >force</a
+      ><a name="1641"
+      > </a
+      ><a name="1642" class="Symbol"
+      >(</a
+      ><a name="1643" href="objectsInAgda.html#1581" class="Function"
+      >program</a
+      ><a name="1650"
+      > </a
+      ><a name="1651" href="objectsInAgda.html#1651" class="Bound"
+      >c</a
+      ><a name="1652" class="Symbol"
+      >)</a
+      ><a name="1653"
+      > </a
+      ><a name="1654" class="Symbol"
+      >=</a
+      ><a name="1655"
+      >
+  </a
+      ><a name="1658" href="interactiveProgramsAgda.html#471" class="InductiveConstructor"
+      >do'</a
+      ><a name="1661"
+      > </a
+      ><a name="1662" href="interactiveProgramsAgda.html#1376" class="InductiveConstructor"
+      >getLine</a
+      ><a name="1669"
+      >          </a
+      ><a name="1679" class="Symbol"
+      >&#955;</a
+      ><a name="1680"
+      > </a
+      ><a name="1681" href="objectsInAgda.html#1681" class="Bound"
+      >s</a
+      ><a name="1682"
+      > </a
+      ><a name="1683" class="Symbol"
+      >&#8594;</a
+      ><a name="1684"
+      >
+  </a
+      ><a name="1687" href="objectsInAgda.html#531" class="Field"
+      >method</a
+      ><a name="1693"
+      > </a
+      ><a name="1694" href="objectsInAgda.html#1651" class="Bound"
+      >c</a
+      ><a name="1695"
+      > </a
+      ><a name="1696" class="Symbol"
+      >(</a
+      ><a name="1697" href="objectsInAgda.html#734" class="InductiveConstructor"
+      >put</a
+      ><a name="1700"
+      > </a
+      ><a name="1701" href="objectsInAgda.html#1681" class="Bound"
+      >s</a
+      ><a name="1702" class="Symbol"
+      >)</a
+      ><a name="1703"
+      >    </a
+      ><a name="1707" href="interactiveProgramsAgda.html#876" class="Function Operator"
+      >&gt;&gt;=</a
+      ><a name="1710"
+      > </a
+      ><a name="1711" class="Symbol"
+      >&#955;{</a
+      ><a name="1713"
+      > </a
+      ><a name="1714" class="Symbol"
+      >(_</a
+      ><a name="1716"
+      > </a
+      ><a name="1717" href="Data.Product.html#509" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1718"
+      > </a
+      ><a name="1719" href="objectsInAgda.html#1719" class="Bound"
+      >c</a
+      ><a name="1720" class="Symbol"
+      >)</a
+      ><a name="1721"
+      > </a
+      ><a name="1722" class="Symbol"
+      >&#8594;</a
+      ><a name="1723"
+      >
+  </a
+      ><a name="1726" href="objectsInAgda.html#531" class="Field"
+      >method</a
+      ><a name="1732"
+      > </a
+      ><a name="1733" href="objectsInAgda.html#1719" class="Bound"
+      >c</a
+      ><a name="1734"
+      > </a
+      ><a name="1735" href="objectsInAgda.html#709" class="InductiveConstructor"
+      >get</a
+      ><a name="1738"
+      >        </a
+      ><a name="1746" href="interactiveProgramsAgda.html#876" class="Function Operator"
+      >&gt;&gt;=</a
+      ><a name="1749"
+      > </a
+      ><a name="1750" class="Symbol"
+      >&#955;{</a
+      ><a name="1752"
+      > </a
+      ><a name="1753" class="Symbol"
+      >(</a
+      ><a name="1754" href="objectsInAgda.html#1754" class="Bound"
+      >s'</a
+      ><a name="1756"
+      > </a
+      ><a name="1757" href="Data.Product.html#509" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1758"
+      > </a
+      ><a name="1759" href="objectsInAgda.html#1759" class="Bound"
+      >c</a
+      ><a name="1760" class="Symbol"
+      >)</a
+      ><a name="1761"
+      > </a
+      ><a name="1762" class="Symbol"
+      >&#8594;</a
+      ><a name="1763"
+      >
+  </a
+      ><a name="1766" href="interactiveProgramsAgda.html#706" class="Function"
+      >do</a
+      ><a name="1768"
+      > </a
+      ><a name="1769" class="Symbol"
+      >(</a
+      ><a name="1770" href="interactiveProgramsAgda.html#1406" class="InductiveConstructor"
+      >putStrLn</a
+      ><a name="1778"
+      > </a
+      ><a name="1779" href="objectsInAgda.html#1754" class="Bound"
+      >s'</a
+      ><a name="1781" class="Symbol"
+      >)</a
+      ><a name="1782"
+      >     </a
+      ><a name="1787" class="Symbol"
+      >&#955;</a
+      ><a name="1788"
+      > </a
+      ><a name="1789" href="objectsInAgda.html#1789" class="Bound"
+      >_</a
+      ><a name="1790"
+      > </a
+      ><a name="1791" class="Symbol"
+      >&#8594;</a
+      ><a name="1792"
+      >
+  </a
+      ><a name="1795" href="objectsInAgda.html#1581" class="Function"
+      >program</a
+      ><a name="1802"
+      > </a
+      ><a name="1803" href="objectsInAgda.html#1759" class="Bound"
+      >c</a
+      ><a name="1804"
+      > </a
+      ><a name="1805" class="Symbol"
+      >}}</a
+      ><a name="1807"
+      >
+
+
+</a
+      ><a name="1810" href="objectsInAgda.html#1810" class="Function"
+      >main</a
+      ><a name="1814"
+      > </a
+      ><a name="1815" class="Symbol"
+      >:</a
+      ><a name="1816"
+      > </a
+      ><a name="1817" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="1825"
+      > </a
+      ><a name="1826" href="Unit.html#28" class="Record"
+      >Unit</a
+      ><a name="1830"
+      >
+</a
+      ><a name="1831" href="objectsInAgda.html#1810" class="Function"
+      >main</a
+      ><a name="1835"
+      > </a
+      ><a name="1836" class="Symbol"
+      >=</a
+      ><a name="1837"
+      > </a
+      ><a name="1838" href="interactiveProgramsAgda.html#1945" class="Function"
+      >translateIOConsole</a
+      ><a name="1856"
+      > </a
+      ><a name="1857" class="Symbol"
+      >(</a
+      ><a name="1858" href="objectsInAgda.html#1581" class="Function"
+      >program</a
+      ><a name="1865"
+      > </a
+      ><a name="1866" class="Symbol"
+      >(</a
+      ><a name="1867" href="objectsInAgda.html#1307" class="Function"
+      >simpleCell</a
+      ><a name="1877"
+      > </a
+      ><a name="1878" class="String"
+      >&quot;Start&quot;</a
+      ><a name="1885" class="Symbol"
+      >))</a
+      ><a name="1887"
+      >
+
+</a
+      ></pre
+    ></body
+  ></html
+>

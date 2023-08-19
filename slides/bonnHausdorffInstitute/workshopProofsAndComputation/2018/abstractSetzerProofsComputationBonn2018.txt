@@ -1,0 +1,24 @@
+Author: Anton Setzer
+Title: The extended predicative Mahlo Universe and the need for partial proofs and 
+       partial objects in type theory.
+Joint work with Reinhard Kahle, Lisbon
+ 
+The Mahlo Universe in Martin-Löf Type Theory has an introduction rule which refers
+to all total functions from families of sets of the Mahlo universe into itself.
+This makes it an impredicative definition. Although it can be justified by the fact
+that no elimination rules are added, a more predicative justification is desirable.
+
+We have defined the extended predicative Mahlo universe in the area of Explicit
+Mathematics in which we weaken the requirement for adding a subuniverse: instead
+of demanding closure of the Mahlo universe, all we need is that the subuniverse
+is closed under a given function. For this to work we need
+access to the collection of all partial functions, which is not available in type theory.
+
+As a consequence, in this system partial functions are necessary, which will then as well
+be part of proof objects, so we obtain partial proofs. 
+We will discuss steps towards developing a new type theory in which one has access to
+the collection of all partial functions.
+
+
+
+ 

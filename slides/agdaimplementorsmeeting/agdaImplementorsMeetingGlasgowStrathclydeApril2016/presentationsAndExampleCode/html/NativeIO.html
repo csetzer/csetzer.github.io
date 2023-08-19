@@ -1,0 +1,393 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >NativeIO</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Keyword"
+      >module</a
+      ><a name="7"
+      > </a
+      ><a name="8" href="NativeIO.html#1" class="Module"
+      >NativeIO</a
+      ><a name="16"
+      > </a
+      ><a name="17" class="Keyword"
+      >where</a
+      ><a name="22"
+      >
+
+</a
+      ><a name="24" class="Keyword"
+      >open</a
+      ><a name="28"
+      > </a
+      ><a name="29" class="Keyword"
+      >import</a
+      ><a name="35"
+      > </a
+      ><a name="36" href="Unit.html#1" class="Module"
+      >Unit</a
+      ><a name="40"
+      > </a
+      ><a name="41" class="Keyword"
+      >public</a
+      ><a name="47"
+      >
+</a
+      ><a name="48" class="Keyword"
+      >open</a
+      ><a name="52"
+      > </a
+      ><a name="53" class="Keyword"
+      >import</a
+      ><a name="59"
+      > </a
+      ><a name="60" href="Data.String.Base.html#1" class="Module"
+      >Data.String.Base</a
+      ><a name="76"
+      > </a
+      ><a name="77" class="Keyword"
+      >using</a
+      ><a name="82"
+      > </a
+      ><a name="83" class="Symbol"
+      >(</a
+      ><a name="84" href="Agda.Builtin.String.html#137" class="Postulate"
+      >String</a
+      ><a name="90" class="Symbol"
+      >)</a
+      ><a name="91"
+      > </a
+      ><a name="92" class="Keyword"
+      >public</a
+      ><a name="98"
+      >
+
+</a
+      ><a name="100" class="Keyword"
+      >postulate</a
+      ><a name="109"
+      >
+  </a
+      ><a name="112" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="120"
+      >     </a
+      ><a name="125" class="Symbol"
+      >:</a
+      ><a name="126"
+      > </a
+      ><a name="127" class="PrimitiveType"
+      >Set</a
+      ><a name="130"
+      > </a
+      ><a name="131" class="Symbol"
+      >&#8594;</a
+      ><a name="132"
+      > </a
+      ><a name="133" class="PrimitiveType"
+      >Set</a
+      ><a name="136"
+      >
+  </a
+      ><a name="139" href="NativeIO.html#139" class="Postulate"
+      >nativeReturn</a
+      ><a name="151"
+      > </a
+      ><a name="152" class="Symbol"
+      >:</a
+      ><a name="153"
+      > </a
+      ><a name="154" class="Symbol"
+      >{</a
+      ><a name="155" href="NativeIO.html#155" class="Bound"
+      >A</a
+      ><a name="156"
+      > </a
+      ><a name="157" class="Symbol"
+      >:</a
+      ><a name="158"
+      > </a
+      ><a name="159" class="PrimitiveType"
+      >Set</a
+      ><a name="162" class="Symbol"
+      >}</a
+      ><a name="163"
+      > </a
+      ><a name="164" class="Symbol"
+      >&#8594;</a
+      ><a name="165"
+      > </a
+      ><a name="166" href="NativeIO.html#155" class="Bound"
+      >A</a
+      ><a name="167"
+      > </a
+      ><a name="168" class="Symbol"
+      >&#8594;</a
+      ><a name="169"
+      > </a
+      ><a name="170" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="178"
+      > </a
+      ><a name="179" href="NativeIO.html#155" class="Bound"
+      >A</a
+      ><a name="180"
+      >
+  </a
+      ><a name="183" href="NativeIO.html#183" class="Postulate Operator"
+      >_native&gt;&gt;=_</a
+      ><a name="194"
+      >  </a
+      ><a name="196" class="Symbol"
+      >:</a
+      ><a name="197"
+      > </a
+      ><a name="198" class="Symbol"
+      >{</a
+      ><a name="199" href="NativeIO.html#199" class="Bound"
+      >A</a
+      ><a name="200"
+      > </a
+      ><a name="201" href="NativeIO.html#201" class="Bound"
+      >B</a
+      ><a name="202"
+      > </a
+      ><a name="203" class="Symbol"
+      >:</a
+      ><a name="204"
+      > </a
+      ><a name="205" class="PrimitiveType"
+      >Set</a
+      ><a name="208" class="Symbol"
+      >}</a
+      ><a name="209"
+      > </a
+      ><a name="210" class="Symbol"
+      >&#8594;</a
+      ><a name="211"
+      > </a
+      ><a name="212" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="220"
+      > </a
+      ><a name="221" href="NativeIO.html#199" class="Bound"
+      >A</a
+      ><a name="222"
+      > </a
+      ><a name="223" class="Symbol"
+      >&#8594;</a
+      ><a name="224"
+      > </a
+      ><a name="225" class="Symbol"
+      >(</a
+      ><a name="226" href="NativeIO.html#199" class="Bound"
+      >A</a
+      ><a name="227"
+      > </a
+      ><a name="228" class="Symbol"
+      >&#8594;</a
+      ><a name="229"
+      > </a
+      ><a name="230" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="238"
+      > </a
+      ><a name="239" href="NativeIO.html#201" class="Bound"
+      >B</a
+      ><a name="240" class="Symbol"
+      >)</a
+      ><a name="241"
+      > </a
+      ><a name="242" class="Symbol"
+      >&#8594;</a
+      ><a name="243"
+      > </a
+      ><a name="244" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="252"
+      > </a
+      ><a name="253" href="NativeIO.html#201" class="Bound"
+      >B</a
+      ><a name="254"
+      >
+
+</a
+      ><a name="256" class="Symbol"
+      >{-#</a
+      ><a name="259"
+      > </a
+      ><a name="260" class="Keyword"
+      >IMPORT</a
+      ><a name="266"
+      > IO.FFI </a
+      ><a name="274" class="Symbol"
+      >#-}</a
+      ><a name="277"
+      >
+</a
+      ><a name="278" class="Symbol"
+      >{-#</a
+      ><a name="281"
+      > </a
+      ><a name="282" class="Keyword"
+      >BUILTIN</a
+      ><a name="289"
+      > IO </a
+      ><a name="293" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="301"
+      > </a
+      ><a name="302" class="Symbol"
+      >#-}</a
+      ><a name="305"
+      >
+</a
+      ><a name="306" class="Symbol"
+      >{-#</a
+      ><a name="309"
+      > </a
+      ><a name="310" class="Keyword"
+      >COMPILED_TYPE</a
+      ><a name="323"
+      > </a
+      ><a name="324" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="332"
+      > IO </a
+      ><a name="336" class="Symbol"
+      >#-}</a
+      ><a name="339"
+      >   </a
+      ><a name="342" class="Comment"
+      >-- IO.FFI.AgdaIO</a
+      ><a name="358"
+      >
+</a
+      ><a name="359" class="Symbol"
+      >{-#</a
+      ><a name="362"
+      > </a
+      ><a name="363" class="Keyword"
+      >COMPILED</a
+      ><a name="371"
+      > </a
+      ><a name="372" href="NativeIO.html#183" class="Postulate Operator"
+      >_native&gt;&gt;=_</a
+      ><a name="383"
+      > (\_ _ -&gt; (&gt;&gt;=) :: IO a -&gt; (a -&gt; IO b) -&gt; IO b) </a
+      ><a name="431" class="Symbol"
+      >#-}</a
+      ><a name="434"
+      >
+</a
+      ><a name="435" class="Symbol"
+      >{-#</a
+      ><a name="438"
+      > </a
+      ><a name="439" class="Keyword"
+      >COMPILED</a
+      ><a name="447"
+      > </a
+      ><a name="448" href="NativeIO.html#139" class="Postulate"
+      >nativeReturn</a
+      ><a name="460"
+      > (\_ -&gt; return :: a -&gt; IO a) </a
+      ><a name="489" class="Symbol"
+      >#-}</a
+      ><a name="492"
+      >
+
+</a
+      ><a name="494" class="Keyword"
+      >postulate</a
+      ><a name="503"
+      >
+  </a
+      ><a name="506" href="NativeIO.html#506" class="Postulate"
+      >nativeGetLine</a
+      ><a name="519"
+      >   </a
+      ><a name="522" class="Symbol"
+      >:</a
+      ><a name="523"
+      > </a
+      ><a name="524" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="532"
+      > </a
+      ><a name="533" href="Agda.Builtin.String.html#137" class="Postulate"
+      >String</a
+      ><a name="539"
+      >
+  </a
+      ><a name="542" href="NativeIO.html#542" class="Postulate"
+      >nativePutStrLn</a
+      ><a name="556"
+      >  </a
+      ><a name="558" class="Symbol"
+      >:</a
+      ><a name="559"
+      > </a
+      ><a name="560" href="Agda.Builtin.String.html#137" class="Postulate"
+      >String</a
+      ><a name="566"
+      > </a
+      ><a name="567" class="Symbol"
+      >&#8594;</a
+      ><a name="568"
+      > </a
+      ><a name="569" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="577"
+      > </a
+      ><a name="578" href="Unit.html#28" class="Record"
+      >Unit</a
+      ><a name="582"
+      >
+
+</a
+      ><a name="584" class="Symbol"
+      >{-#</a
+      ><a name="587"
+      > </a
+      ><a name="588" class="Keyword"
+      >COMPILED</a
+      ><a name="596"
+      > </a
+      ><a name="597" href="NativeIO.html#542" class="Postulate"
+      >nativePutStrLn</a
+      ><a name="611"
+      > (\ s -&gt; putStrLn (Data.Text.unpack s)) </a
+      ><a name="651" class="Symbol"
+      >#-}</a
+      ><a name="654"
+      >
+</a
+      ><a name="655" class="Symbol"
+      >{-#</a
+      ><a name="658"
+      > </a
+      ><a name="659" class="Keyword"
+      >COMPILED</a
+      ><a name="667"
+      > </a
+      ><a name="668" href="NativeIO.html#506" class="Postulate"
+      >nativeGetLine</a
+      ><a name="681"
+      > (fmap Data.Text.pack getLine) </a
+      ><a name="712" class="Symbol"
+      >#-}</a
+      ><a name="715"
+      >
+</a
+      ></pre
+    ></body
+  ></html
+>

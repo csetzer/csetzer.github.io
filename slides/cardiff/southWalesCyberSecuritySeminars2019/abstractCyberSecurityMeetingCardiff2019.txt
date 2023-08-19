@@ -1,0 +1,5 @@
+A model of Bitcoin in the Theorem Prover Agda
+
+Speaker: Dr Anton Setzer
+
+Abstract: The goal of this talk to carry a first step towards verifying properties of Bitcoin and other cryptocurrencies including smart contracts. We develop a model of Bitcoin. In this model the transactions of Bitcoins are defined as a directed acyclic graph (dags). We use the principle of induction-recursion, which is a distinguishing feature of the theorem prover Agda: we define inductively the dag, while simultaneously recursively computing the set of unspent transaction outputs (UTXO). In order to prove that replay attacks are not possible, one needs to show that transaction IDs are unique. This property didn't hold in the original version of Bitcoin, and there are indeed at least two cases, where two Bitcoin transactions have the same transaction ID. We are working on extending this model to include smart contracts, and to verify their properties, obtaining smart contracts with certified correctness.

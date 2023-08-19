@@ -1,0 +1,1026 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >spaceShipSimpleVar</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Keyword"
+      >module</a
+      ><a name="7"
+      > </a
+      ><a name="8" href="spaceShipSimpleVar.html#1" class="Module"
+      >spaceShipSimpleVar</a
+      ><a name="26"
+      > </a
+      ><a name="27" class="Keyword"
+      >where</a
+      ><a name="32"
+      >
+
+</a
+      ><a name="34" class="Keyword"
+      >open</a
+      ><a name="38"
+      > </a
+      ><a name="39" class="Keyword"
+      >import</a
+      ><a name="45"
+      > </a
+      ><a name="46" href="Unit.html#1" class="Module"
+      >Unit</a
+      ><a name="50"
+      >
+</a
+      ><a name="51" class="Keyword"
+      >open</a
+      ><a name="55"
+      > </a
+      ><a name="56" class="Keyword"
+      >import</a
+      ><a name="62"
+      > </a
+      ><a name="63" href="Data.List.Base.html#1" class="Module"
+      >Data.List.Base</a
+      ><a name="77"
+      > </a
+      ><a name="78" class="Keyword"
+      >hiding</a
+      ><a name="84"
+      > </a
+      ><a name="85" class="Symbol"
+      >(</a
+      ><a name="86" href="Data.List.Base.html#5519" class="InductiveConstructor"
+      >[]</a
+      ><a name="88" class="Symbol"
+      >)</a
+      ><a name="89"
+      >
+</a
+      ><a name="90" class="Keyword"
+      >open</a
+      ><a name="94"
+      > </a
+      ><a name="95" class="Keyword"
+      >import</a
+      ><a name="101"
+      > </a
+      ><a name="102" href="Data.Bool.Base.html#1" class="Module"
+      >Data.Bool.Base</a
+      ><a name="116"
+      >
+</a
+      ><a name="117" class="Keyword"
+      >open</a
+      ><a name="121"
+      > </a
+      ><a name="122" class="Keyword"
+      >import</a
+      ><a name="128"
+      > </a
+      ><a name="129" href="Data.Integer.html#1" class="Module"
+      >Data.Integer</a
+      ><a name="141"
+      >
+</a
+      ><a name="142" class="Keyword"
+      >open</a
+      ><a name="146"
+      > </a
+      ><a name="147" class="Keyword"
+      >import</a
+      ><a name="153"
+      > </a
+      ><a name="154" href="Data.Product.html#1" class="Module"
+      >Data.Product</a
+      ><a name="166"
+      > </a
+      ><a name="167" class="Keyword"
+      >hiding</a
+      ><a name="173"
+      > </a
+      ><a name="174" class="Symbol"
+      >(</a
+      ><a name="175" href="Data.Product.html#1872" class="Function"
+      >map</a
+      ><a name="178" class="Symbol"
+      >)</a
+      ><a name="179"
+      >
+</a
+      ><a name="180" class="Keyword"
+      >open</a
+      ><a name="184"
+      > </a
+      ><a name="185" class="Keyword"
+      >import</a
+      ><a name="191"
+      > </a
+      ><a name="192" href="NativeIO.html#1" class="Module"
+      >NativeIO</a
+      ><a name="200"
+      >
+
+</a
+      ><a name="202" class="Keyword"
+      >open</a
+      ><a name="206"
+      > </a
+      ><a name="207" class="Keyword"
+      >import</a
+      ><a name="213"
+      > </a
+      ><a name="214" href="StateSizedIO.GUI.WxBindingsFFI.html#1" class="Module"
+      >StateSizedIO.GUI.WxBindingsFFI</a
+      ><a name="244"
+      >
+</a
+      ><a name="245" class="Keyword"
+      >open</a
+      ><a name="249"
+      > </a
+      ><a name="250" class="Keyword"
+      >import</a
+      ><a name="256"
+      > </a
+      ><a name="257" href="StateSizedIO.GUI.WxGraphicsLib.html#1" class="Module"
+      >StateSizedIO.GUI.WxGraphicsLib</a
+      ><a name="287"
+      >
+</a
+      ><a name="288" class="Keyword"
+      >open</a
+      ><a name="292"
+      > </a
+      ><a name="293" class="Keyword"
+      >import</a
+      ><a name="299"
+      > </a
+      ><a name="300" href="StateSized.GUI.ShipBitMap.html#1" class="Module"
+      >StateSized.GUI.ShipBitMap</a
+      ><a name="325"
+      >
+</a
+      ><a name="326" class="Keyword"
+      >open</a
+      ><a name="330"
+      > </a
+      ><a name="331" class="Keyword"
+      >import</a
+      ><a name="337"
+      > </a
+      ><a name="338" href="SizedIO.Base.html#1" class="Module"
+      >SizedIO.Base</a
+      ><a name="350"
+      >
+</a
+      ><a name="351" class="Keyword"
+      >open</a
+      ><a name="355"
+      > </a
+      ><a name="356" class="Keyword"
+      >import</a
+      ><a name="362"
+      > </a
+      ><a name="363" href="StateSizedIO.GUI.BaseStateDependent.html#1" class="Module"
+      >StateSizedIO.GUI.BaseStateDependent</a
+      ><a name="398"
+      >
+</a
+      ><a name="399" class="Keyword"
+      >open</a
+      ><a name="403"
+      > </a
+      ><a name="404" class="Keyword"
+      >import</a
+      ><a name="410"
+      > </a
+      ><a name="411" href="StateSizedIO.GUI.VariableList.html#1" class="Module"
+      >StateSizedIO.GUI.VariableList</a
+      ><a name="440"
+      >
+
+</a
+      ><a name="442" href="spaceShipSimpleVar.html#442" class="Function"
+      >VarType</a
+      ><a name="449"
+      > </a
+      ><a name="450" class="Symbol"
+      >=</a
+      ><a name="451"
+      > </a
+      ><a name="452" href="Agda.Builtin.Int.html#150" class="Datatype"
+      >&#8484;</a
+      ><a name="453"
+      >
+
+</a
+      ><a name="455" href="spaceShipSimpleVar.html#455" class="Function"
+      >varInit</a
+      ><a name="462"
+      > </a
+      ><a name="463" class="Symbol"
+      >:</a
+      ><a name="464"
+      > </a
+      ><a name="465" href="spaceShipSimpleVar.html#442" class="Function"
+      >VarType</a
+      ><a name="472"
+      >
+</a
+      ><a name="473" href="spaceShipSimpleVar.html#455" class="Function"
+      >varInit</a
+      ><a name="480"
+      > </a
+      ><a name="481" class="Symbol"
+      >=</a
+      ><a name="482"
+      > </a
+      ><a name="483" class="Symbol"
+      >(</a
+      ><a name="484" href="Agda.Builtin.Int.html#168" class="InductiveConstructor Operator"
+      >+</a
+      ><a name="485"
+      > </a
+      ><a name="486" class="Number"
+      >150</a
+      ><a name="489" class="Symbol"
+      >)</a
+      ><a name="490"
+      >
+
+</a
+      ><a name="492" href="spaceShipSimpleVar.html#492" class="Function"
+      >onPaint</a
+      ><a name="499"
+      > </a
+      ><a name="500" class="Symbol"
+      >:</a
+      ><a name="501"
+      > </a
+      ><a name="502" class="Symbol"
+      >&#8704;{</a
+      ><a name="504" href="spaceShipSimpleVar.html#504" class="Bound"
+      >i</a
+      ><a name="505" class="Symbol"
+      >}</a
+      ><a name="506"
+      > </a
+      ><a name="507" class="Symbol"
+      >&#8594;</a
+      ><a name="508"
+      > </a
+      ><a name="509" href="spaceShipSimpleVar.html#442" class="Function"
+      >VarType</a
+      ><a name="516"
+      > </a
+      ><a name="517" class="Symbol"
+      >&#8594;</a
+      ><a name="518"
+      > </a
+      ><a name="519" href="StateSizedIO.GUI.WxBindingsFFI.html#2911" class="Postulate"
+      >DC</a
+      ><a name="521"
+      > </a
+      ><a name="522" class="Symbol"
+      >&#8594;</a
+      ><a name="523"
+      > </a
+      ><a name="524" href="StateSizedIO.GUI.WxBindingsFFI.html#2983" class="Postulate"
+      >Rect</a
+      ><a name="528"
+      > </a
+      ><a name="529" class="Symbol"
+      >&#8594;</a
+      ><a name="530"
+      > </a
+      ><a name="531" href="SizedIO.Base.html#499" class="Record"
+      >IO</a
+      ><a name="533"
+      > </a
+      ><a name="534" href="StateSizedIO.GUI.WxGraphicsLib.html#819" class="Function"
+      >GuiLev1Interface</a
+      ><a name="550"
+      > </a
+      ><a name="551" href="spaceShipSimpleVar.html#504" class="Bound"
+      >i</a
+      ><a name="552"
+      > </a
+      ><a name="553" href="spaceShipSimpleVar.html#442" class="Function"
+      >VarType</a
+      ><a name="560"
+      >
+</a
+      ><a name="561" href="spaceShipSimpleVar.html#492" class="Function"
+      >onPaint</a
+      ><a name="568"
+      > </a
+      ><a name="569" href="spaceShipSimpleVar.html#569" class="Bound"
+      >z</a
+      ><a name="570"
+      > </a
+      ><a name="571" href="spaceShipSimpleVar.html#571" class="Bound"
+      >dc</a
+      ><a name="573"
+      > </a
+      ><a name="574" href="spaceShipSimpleVar.html#574" class="Bound"
+      >rect</a
+      ><a name="578"
+      >      </a
+      ><a name="584" class="Symbol"
+      >=</a
+      ><a name="585"
+      >  </a
+      ><a name="587" href="SizedIO.Base.html#1030" class="Function"
+      >do</a
+      ><a name="589"
+      > </a
+      ><a name="590" class="Symbol"
+      >(</a
+      ><a name="591" href="StateSizedIO.GUI.WxGraphicsLib.html#530" class="InductiveConstructor"
+      >drawBitmap</a
+      ><a name="601"
+      > </a
+      ><a name="602" href="spaceShipSimpleVar.html#571" class="Bound"
+      >dc</a
+      ><a name="604"
+      > </a
+      ><a name="605" href="StateSized.GUI.ShipBitMap.html#85" class="Function"
+      >ship</a
+      ><a name="609"
+      > </a
+      ><a name="610" class="Symbol"
+      >(</a
+      ><a name="611" href="spaceShipSimpleVar.html#569" class="Bound"
+      >z</a
+      ><a name="612"
+      > </a
+      ><a name="613" href="Data.Product.html#509" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="614"
+      > </a
+      ><a name="615" class="Symbol"
+      >(</a
+      ><a name="616" href="Agda.Builtin.Int.html#168" class="InductiveConstructor Operator"
+      >+</a
+      ><a name="617"
+      > </a
+      ><a name="618" class="Number"
+      >150</a
+      ><a name="621" class="Symbol"
+      >))</a
+      ><a name="623"
+      > </a
+      ><a name="624" href="Agda.Builtin.Bool.html#64" class="InductiveConstructor"
+      >true</a
+      ><a name="628" class="Symbol"
+      >)</a
+      ><a name="629"
+      > </a
+      ><a name="630" class="Symbol"
+      >&#955;</a
+      ><a name="631"
+      > </a
+      ><a name="632" href="spaceShipSimpleVar.html#632" class="Bound"
+      >_</a
+      ><a name="633"
+      > </a
+      ><a name="634" class="Symbol"
+      >&#8594;</a
+      ><a name="635"
+      >
+                          </a
+      ><a name="662" href="SizedIO.Base.html#954" class="Function"
+      >return</a
+      ><a name="668"
+      > </a
+      ><a name="669" href="spaceShipSimpleVar.html#569" class="Bound"
+      >z</a
+      ><a name="670"
+      >
+
+</a
+      ><a name="672" href="spaceShipSimpleVar.html#672" class="Function"
+      >moveSpaceShip</a
+      ><a name="685"
+      >  </a
+      ><a name="687" class="Symbol"
+      >:</a
+      ><a name="688"
+      > </a
+      ><a name="689" class="Symbol"
+      >&#8704;{</a
+      ><a name="691" href="spaceShipSimpleVar.html#691" class="Bound"
+      >i</a
+      ><a name="692" class="Symbol"
+      >}</a
+      ><a name="693"
+      > </a
+      ><a name="694" class="Symbol"
+      >&#8594;</a
+      ><a name="695"
+      > </a
+      ><a name="696" href="StateSizedIO.GUI.WxBindingsFFI.html#383" class="Postulate"
+      >Frame</a
+      ><a name="701"
+      > </a
+      ><a name="702" class="Symbol"
+      >&#8594;</a
+      ><a name="703"
+      > </a
+      ><a name="704" href="spaceShipSimpleVar.html#442" class="Function"
+      >VarType</a
+      ><a name="711"
+      > </a
+      ><a name="712" class="Symbol"
+      >&#8594;</a
+      ><a name="713"
+      > </a
+      ><a name="714" href="SizedIO.Base.html#499" class="Record"
+      >IO</a
+      ><a name="716"
+      > </a
+      ><a name="717" href="StateSizedIO.GUI.WxGraphicsLib.html#819" class="Function"
+      >GuiLev1Interface</a
+      ><a name="733"
+      > </a
+      ><a name="734" href="spaceShipSimpleVar.html#691" class="Bound"
+      >i</a
+      ><a name="735"
+      > </a
+      ><a name="736" href="spaceShipSimpleVar.html#442" class="Function"
+      >VarType</a
+      ><a name="743"
+      >
+</a
+      ><a name="744" href="spaceShipSimpleVar.html#672" class="Function"
+      >moveSpaceShip</a
+      ><a name="757"
+      >  </a
+      ><a name="759" href="spaceShipSimpleVar.html#759" class="Bound"
+      >fra</a
+      ><a name="762"
+      > </a
+      ><a name="763" href="spaceShipSimpleVar.html#763" class="Bound"
+      >z</a
+      ><a name="764"
+      >   </a
+      ><a name="767" class="Symbol"
+      >=</a
+      ><a name="768"
+      >  </a
+      ><a name="770" href="SizedIO.Base.html#954" class="Function"
+      >return</a
+      ><a name="776"
+      > </a
+      ><a name="777" class="Symbol"
+      >(</a
+      ><a name="778" href="spaceShipSimpleVar.html#763" class="Bound"
+      >z</a
+      ><a name="779"
+      > </a
+      ><a name="780" href="Data.Integer.Base.html#2025" class="Function Operator"
+      >+</a
+      ><a name="781"
+      > </a
+      ><a name="782" href="Agda.Builtin.Int.html#168" class="InductiveConstructor Operator"
+      >+</a
+      ><a name="783"
+      > </a
+      ><a name="784" class="Number"
+      >20</a
+      ><a name="786" class="Symbol"
+      >)</a
+      ><a name="787"
+      >
+
+</a
+      ><a name="789" href="spaceShipSimpleVar.html#789" class="Function"
+      >callRepaint</a
+      ><a name="800"
+      >    </a
+      ><a name="804" class="Symbol"
+      >:</a
+      ><a name="805"
+      > </a
+      ><a name="806" class="Symbol"
+      >&#8704;{</a
+      ><a name="808" href="spaceShipSimpleVar.html#808" class="Bound"
+      >i</a
+      ><a name="809" class="Symbol"
+      >}</a
+      ><a name="810"
+      > </a
+      ><a name="811" class="Symbol"
+      >&#8594;</a
+      ><a name="812"
+      > </a
+      ><a name="813" href="StateSizedIO.GUI.WxBindingsFFI.html#383" class="Postulate"
+      >Frame</a
+      ><a name="818"
+      > </a
+      ><a name="819" class="Symbol"
+      >&#8594;</a
+      ><a name="820"
+      > </a
+      ><a name="821" href="spaceShipSimpleVar.html#442" class="Function"
+      >VarType</a
+      ><a name="828"
+      > </a
+      ><a name="829" class="Symbol"
+      >&#8594;</a
+      ><a name="830"
+      > </a
+      ><a name="831" href="SizedIO.Base.html#499" class="Record"
+      >IO</a
+      ><a name="833"
+      > </a
+      ><a name="834" href="StateSizedIO.GUI.WxGraphicsLib.html#819" class="Function"
+      >GuiLev1Interface</a
+      ><a name="850"
+      > </a
+      ><a name="851" href="spaceShipSimpleVar.html#808" class="Bound"
+      >i</a
+      ><a name="852"
+      > </a
+      ><a name="853" href="spaceShipSimpleVar.html#442" class="Function"
+      >VarType</a
+      ><a name="860"
+      >
+</a
+      ><a name="861" href="spaceShipSimpleVar.html#789" class="Function"
+      >callRepaint</a
+      ><a name="872"
+      >    </a
+      ><a name="876" href="spaceShipSimpleVar.html#876" class="Bound"
+      >fra</a
+      ><a name="879"
+      > </a
+      ><a name="880" href="spaceShipSimpleVar.html#880" class="Bound"
+      >z</a
+      ><a name="881"
+      >   </a
+      ><a name="884" class="Symbol"
+      >=</a
+      ><a name="885"
+      >  </a
+      ><a name="887" href="SizedIO.Base.html#1030" class="Function"
+      >do</a
+      ><a name="889"
+      > </a
+      ><a name="890" class="Symbol"
+      >(</a
+      ><a name="891" href="StateSizedIO.GUI.WxGraphicsLib.html#601" class="InductiveConstructor"
+      >repaint</a
+      ><a name="898"
+      > </a
+      ><a name="899" href="spaceShipSimpleVar.html#876" class="Bound"
+      >fra</a
+      ><a name="902" class="Symbol"
+      >)</a
+      ><a name="903"
+      > </a
+      ><a name="904" class="Symbol"
+      >&#955;</a
+      ><a name="905"
+      > </a
+      ><a name="906" href="spaceShipSimpleVar.html#906" class="Bound"
+      >_</a
+      ><a name="907"
+      > </a
+      ><a name="908" class="Symbol"
+      >&#8594;</a
+      ><a name="909"
+      > </a
+      ><a name="910" href="SizedIO.Base.html#954" class="Function"
+      >return</a
+      ><a name="916"
+      > </a
+      ><a name="917" href="spaceShipSimpleVar.html#880" class="Bound"
+      >z</a
+      ><a name="918"
+      >
+
+</a
+      ><a name="920" href="spaceShipSimpleVar.html#920" class="Function"
+      >buttonHandler</a
+      ><a name="933"
+      > </a
+      ><a name="934" class="Symbol"
+      >:</a
+      ><a name="935"
+      > </a
+      ><a name="936" class="Symbol"
+      >&#8704;{</a
+      ><a name="938" href="spaceShipSimpleVar.html#938" class="Bound"
+      >i</a
+      ><a name="939" class="Symbol"
+      >}</a
+      ><a name="940"
+      > </a
+      ><a name="941" class="Symbol"
+      >&#8594;</a
+      ><a name="942"
+      > </a
+      ><a name="943" href="StateSizedIO.GUI.WxBindingsFFI.html#383" class="Postulate"
+      >Frame</a
+      ><a name="948"
+      > </a
+      ><a name="949" class="Symbol"
+      >&#8594;</a
+      ><a name="950"
+      > </a
+      ><a name="951" href="Agda.Builtin.List.html#52" class="Datatype"
+      >List</a
+      ><a name="955"
+      > </a
+      ><a name="956" class="Symbol"
+      >(</a
+      ><a name="957" href="spaceShipSimpleVar.html#442" class="Function"
+      >VarType</a
+      ><a name="964"
+      >  </a
+      ><a name="966" class="Symbol"
+      >&#8594;</a
+      ><a name="967"
+      > </a
+      ><a name="968" href="SizedIO.Base.html#499" class="Record"
+      >IO</a
+      ><a name="970"
+      > </a
+      ><a name="971" href="StateSizedIO.GUI.WxGraphicsLib.html#819" class="Function"
+      >GuiLev1Interface</a
+      ><a name="987"
+      > </a
+      ><a name="988" href="spaceShipSimpleVar.html#938" class="Bound"
+      >i</a
+      ><a name="989"
+      > </a
+      ><a name="990" href="spaceShipSimpleVar.html#442" class="Function"
+      >VarType</a
+      ><a name="997" class="Symbol"
+      >)</a
+      ><a name="998"
+      >
+</a
+      ><a name="999" href="spaceShipSimpleVar.html#920" class="Function"
+      >buttonHandler</a
+      ><a name="1012"
+      > </a
+      ><a name="1013" href="spaceShipSimpleVar.html#1013" class="Bound"
+      >fra</a
+      ><a name="1016"
+      > </a
+      ><a name="1017" class="Symbol"
+      >=</a
+      ><a name="1018"
+      > </a
+      ><a name="1019" href="spaceShipSimpleVar.html#672" class="Function"
+      >moveSpaceShip</a
+      ><a name="1032"
+      > </a
+      ><a name="1033" href="spaceShipSimpleVar.html#1013" class="Bound"
+      >fra</a
+      ><a name="1036"
+      > </a
+      ><a name="1037" href="Agda.Builtin.List.html#104" class="InductiveConstructor Operator"
+      >&#8759;</a
+      ><a name="1038"
+      > </a
+      ><a name="1039" href="Data.List.Base.html#842" class="Function Operator"
+      >[</a
+      ><a name="1040"
+      > </a
+      ><a name="1041" href="spaceShipSimpleVar.html#789" class="Function"
+      >callRepaint</a
+      ><a name="1052"
+      > </a
+      ><a name="1053" href="spaceShipSimpleVar.html#1013" class="Bound"
+      >fra</a
+      ><a name="1056"
+      > </a
+      ><a name="1057" href="Data.List.Base.html#842" class="Function Operator"
+      >]</a
+      ><a name="1058"
+      >
+
+</a
+      ><a name="1060" href="spaceShipSimpleVar.html#1060" class="Function"
+      >program</a
+      ><a name="1067"
+      > </a
+      ><a name="1068" class="Symbol"
+      >:</a
+      ><a name="1069"
+      > </a
+      ><a name="1070" class="Symbol"
+      >&#8704;{</a
+      ><a name="1072" href="spaceShipSimpleVar.html#1072" class="Bound"
+      >i</a
+      ><a name="1073" class="Symbol"
+      >}</a
+      ><a name="1074"
+      > </a
+      ><a name="1075" class="Symbol"
+      >&#8594;</a
+      ><a name="1076"
+      > </a
+      ><a name="1077" href="StateSizedIO.GUI.BaseStateDependent.html#734" class="Record"
+      >IO&#738;</a
+      ><a name="1080"
+      > </a
+      ><a name="1081" href="StateSizedIO.GUI.WxGraphicsLib.html#2229" class="Function"
+      >GuiLev2Interface</a
+      ><a name="1097"
+      > </a
+      ><a name="1098" href="spaceShipSimpleVar.html#1072" class="Bound"
+      >i</a
+      ><a name="1099"
+      > </a
+      ><a name="1100" class="Symbol"
+      >(&#955;</a
+      ><a name="1102"
+      > </a
+      ><a name="1103" href="spaceShipSimpleVar.html#1103" class="Bound"
+      >_</a
+      ><a name="1104"
+      > </a
+      ><a name="1105" class="Symbol"
+      >&#8594;</a
+      ><a name="1106"
+      > </a
+      ><a name="1107" href="Unit.html#28" class="Record"
+      >Unit</a
+      ><a name="1111" class="Symbol"
+      >)</a
+      ><a name="1112"
+      > </a
+      ><a name="1113" href="StateSizedIO.GUI.VariableList.html#202" class="InductiveConstructor"
+      >[]</a
+      ><a name="1115"
+      >
+</a
+      ><a name="1116" href="spaceShipSimpleVar.html#1060" class="Function"
+      >program</a
+      ><a name="1123"
+      > </a
+      ><a name="1124" class="Symbol"
+      >=</a
+      ><a name="1125"
+      >  </a
+      ><a name="1127" href="StateSizedIO.GUI.BaseStateDependent.html#1681" class="Function"
+      >do&#738;</a
+      ><a name="1130"
+      > </a
+      ><a name="1131" class="Symbol"
+      >(</a
+      ><a name="1132" href="StateSizedIO.GUI.WxGraphicsLib.html#1043" class="InductiveConstructor"
+      >level1C</a
+      ><a name="1139"
+      > </a
+      ><a name="1140" href="StateSizedIO.GUI.WxGraphicsLib.html#390" class="InductiveConstructor"
+      >makeFrame</a
+      ><a name="1149" class="Symbol"
+      >)</a
+      ><a name="1150"
+      >           </a
+      ><a name="1161" class="Symbol"
+      >&#955;</a
+      ><a name="1162"
+      > </a
+      ><a name="1163" href="spaceShipSimpleVar.html#1163" class="Bound"
+      >fra</a
+      ><a name="1166"
+      > </a
+      ><a name="1167" class="Symbol"
+      >&#8594;</a
+      ><a name="1168"
+      >
+           </a
+      ><a name="1180" href="StateSizedIO.GUI.BaseStateDependent.html#1681" class="Function"
+      >do&#738;</a
+      ><a name="1183"
+      > </a
+      ><a name="1184" class="Symbol"
+      >(</a
+      ><a name="1185" href="StateSizedIO.GUI.WxGraphicsLib.html#1043" class="InductiveConstructor"
+      >level1C</a
+      ><a name="1192"
+      > </a
+      ><a name="1193" class="Symbol"
+      >(</a
+      ><a name="1194" href="StateSizedIO.GUI.WxGraphicsLib.html#427" class="InductiveConstructor"
+      >makeButton</a
+      ><a name="1204"
+      > </a
+      ><a name="1205" href="spaceShipSimpleVar.html#1163" class="Bound"
+      >fra</a
+      ><a name="1208" class="Symbol"
+      >))</a
+      ><a name="1210"
+      >    </a
+      ><a name="1214" class="Symbol"
+      >&#955;</a
+      ><a name="1215"
+      > </a
+      ><a name="1216" href="spaceShipSimpleVar.html#1216" class="Bound"
+      >bt</a
+      ><a name="1218"
+      > </a
+      ><a name="1219" class="Symbol"
+      >&#8594;</a
+      ><a name="1220"
+      >
+           </a
+      ><a name="1232" href="StateSizedIO.GUI.BaseStateDependent.html#1681" class="Function"
+      >do&#738;</a
+      ><a name="1235"
+      > </a
+      ><a name="1236" class="Symbol"
+      >(</a
+      ><a name="1237" href="StateSizedIO.GUI.WxGraphicsLib.html#1043" class="InductiveConstructor"
+      >level1C</a
+      ><a name="1244"
+      > </a
+      ><a name="1245" class="Symbol"
+      >(</a
+      ><a name="1246" href="StateSizedIO.GUI.WxGraphicsLib.html#474" class="InductiveConstructor"
+      >addButton</a
+      ><a name="1255"
+      > </a
+      ><a name="1256" href="spaceShipSimpleVar.html#1163" class="Bound"
+      >fra</a
+      ><a name="1259"
+      > </a
+      ><a name="1260" href="spaceShipSimpleVar.html#1216" class="Bound"
+      >bt</a
+      ><a name="1262" class="Symbol"
+      >))</a
+      ><a name="1264"
+      >  </a
+      ><a name="1266" class="Symbol"
+      >&#955;</a
+      ><a name="1267"
+      > </a
+      ><a name="1268" href="spaceShipSimpleVar.html#1268" class="Bound"
+      >_</a
+      ><a name="1269"
+      > </a
+      ><a name="1270" class="Symbol"
+      >&#8594;</a
+      ><a name="1271"
+      >
+           </a
+      ><a name="1283" href="StateSizedIO.GUI.BaseStateDependent.html#1681" class="Function"
+      >do&#738;</a
+      ><a name="1286"
+      > </a
+      ><a name="1287" class="Symbol"
+      >(</a
+      ><a name="1288" href="StateSizedIO.GUI.WxGraphicsLib.html#1099" class="InductiveConstructor"
+      >createVar</a
+      ><a name="1297"
+      > </a
+      ><a name="1298" href="spaceShipSimpleVar.html#455" class="Function"
+      >varInit</a
+      ><a name="1305" class="Symbol"
+      >)</a
+      ><a name="1306"
+      >           </a
+      ><a name="1317" class="Symbol"
+      >&#955;</a
+      ><a name="1318"
+      > </a
+      ><a name="1319" href="spaceShipSimpleVar.html#1319" class="Bound"
+      >_</a
+      ><a name="1320"
+      > </a
+      ><a name="1321" class="Symbol"
+      >&#8594;</a
+      ><a name="1322"
+      >
+           </a
+      ><a name="1334" href="StateSizedIO.GUI.BaseStateDependent.html#1681" class="Function"
+      >do&#738;</a
+      ><a name="1337"
+      > </a
+      ><a name="1338" class="Symbol"
+      >(</a
+      ><a name="1339" href="StateSizedIO.GUI.WxGraphicsLib.html#1154" class="InductiveConstructor"
+      >setButtonHandler</a
+      ><a name="1355"
+      > </a
+      ><a name="1356" href="spaceShipSimpleVar.html#1216" class="Bound"
+      >bt</a
+      ><a name="1358"
+      > </a
+      ><a name="1359" class="Symbol"
+      >(</a
+      ><a name="1360" href="spaceShipSimpleVar.html#920" class="Function"
+      >buttonHandler</a
+      ><a name="1373"
+      > </a
+      ><a name="1374" href="spaceShipSimpleVar.html#1163" class="Bound"
+      >fra</a
+      ><a name="1377" class="Symbol"
+      >))</a
+      ><a name="1379"
+      > </a
+      ><a name="1380" class="Symbol"
+      >&#955;</a
+      ><a name="1381"
+      > </a
+      ><a name="1382" href="spaceShipSimpleVar.html#1382" class="Bound"
+      >_</a
+      ><a name="1383"
+      > </a
+      ><a name="1384" class="Symbol"
+      >&#8594;</a
+      ><a name="1385"
+      >
+           </a
+      ><a name="1397" href="StateSizedIO.GUI.BaseStateDependent.html#1681" class="Function"
+      >do&#738;</a
+      ><a name="1400"
+      > </a
+      ><a name="1401" class="Symbol"
+      >(</a
+      ><a name="1402" href="StateSizedIO.GUI.WxGraphicsLib.html#1649" class="InductiveConstructor"
+      >setOnPaint</a
+      ><a name="1412"
+      >       </a
+      ><a name="1419" href="spaceShipSimpleVar.html#1163" class="Bound"
+      >fra</a
+      ><a name="1422"
+      > </a
+      ><a name="1423" href="Data.List.Base.html#842" class="Function Operator"
+      >[</a
+      ><a name="1424"
+      > </a
+      ><a name="1425" href="spaceShipSimpleVar.html#492" class="Function"
+      >onPaint</a
+      ><a name="1432"
+      >  </a
+      ><a name="1434" href="Data.List.Base.html#842" class="Function Operator"
+      >]</a
+      ><a name="1435" class="Symbol"
+      >)</a
+      ><a name="1436"
+      >
+           </a
+      ><a name="1448" href="StateSizedIO.GUI.BaseStateDependent.html#1581" class="Function"
+      >return&#738;</a
+      ><a name="1455"
+      >
+
+</a
+      ><a name="1457" href="spaceShipSimpleVar.html#1457" class="Function"
+      >main</a
+      ><a name="1461"
+      > </a
+      ><a name="1462" class="Symbol"
+      >:</a
+      ><a name="1463"
+      > </a
+      ><a name="1464" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="1472"
+      > </a
+      ><a name="1473" href="Unit.html#28" class="Record"
+      >Unit</a
+      ><a name="1477"
+      >
+</a
+      ><a name="1478" href="spaceShipSimpleVar.html#1457" class="Function"
+      >main</a
+      ><a name="1482"
+      > </a
+      ><a name="1483" class="Symbol"
+      >=</a
+      ><a name="1484"
+      > </a
+      ><a name="1485" href="StateSizedIO.GUI.WxBindingsFFI.html#3985" class="Postulate"
+      >start</a
+      ><a name="1490"
+      > </a
+      ><a name="1491" class="Symbol"
+      >(</a
+      ><a name="1492" href="StateSizedIO.GUI.WxGraphicsLib.html#4343" class="Function"
+      >translateLev2</a
+      ><a name="1505"
+      > </a
+      ><a name="1506" href="spaceShipSimpleVar.html#1060" class="Function"
+      >program</a
+      ><a name="1513" class="Symbol"
+      >)</a
+      ><a name="1514"
+      >
+</a
+      ></pre
+    ></body
+  ></html
+>

@@ -1,0 +1,395 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >SizedIO.IOObject</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Keyword"
+      >module</a
+      ><a name="7"
+      > </a
+      ><a name="8" href="SizedIO.IOObject.html#1" class="Module"
+      >SizedIO.IOObject</a
+      ><a name="24"
+      > </a
+      ><a name="25" class="Keyword"
+      >where</a
+      ><a name="30"
+      >
+
+</a
+      ><a name="32" class="Keyword"
+      >open</a
+      ><a name="36"
+      > </a
+      ><a name="37" class="Keyword"
+      >import</a
+      ><a name="43"
+      > </a
+      ><a name="44" href="Data.Product.html#1" class="Module"
+      >Data.Product</a
+      ><a name="56"
+      >
+
+</a
+      ><a name="58" class="Keyword"
+      >open</a
+      ><a name="62"
+      > </a
+      ><a name="63" class="Keyword"
+      >import</a
+      ><a name="69"
+      > </a
+      ><a name="70" href="Size.html#1" class="Module"
+      >Size</a
+      ><a name="74"
+      >
+
+</a
+      ><a name="76" class="Keyword"
+      >open</a
+      ><a name="80"
+      > </a
+      ><a name="81" class="Keyword"
+      >import</a
+      ><a name="87"
+      > </a
+      ><a name="88" href="SizedIO.Base.html#1" class="Module"
+      >SizedIO.Base</a
+      ><a name="100"
+      >
+</a
+      ><a name="101" class="Keyword"
+      >open</a
+      ><a name="105"
+      > </a
+      ><a name="106" class="Keyword"
+      >import</a
+      ><a name="112"
+      > </a
+      ><a name="113" href="SizedIO.Object.html#1" class="Module"
+      >SizedIO.Object</a
+      ><a name="127"
+      >
+
+</a
+      ><a name="129" class="Comment"
+      >-- An IO object is like a simple object,</a
+      ><a name="169"
+      >
+</a
+      ><a name="170" class="Comment"
+      >-- but the method returns IO applied to the result type of a simple object</a
+      ><a name="244"
+      >
+</a
+      ><a name="245" class="Comment"
+      >-- which means the method returns an IO program which when terminating</a
+      ><a name="315"
+      >
+</a
+      ><a name="316" class="Comment"
+      >-- returns the result of the simple object</a
+      ><a name="358"
+      >
+
+</a
+      ><a name="360" class="Keyword"
+      >module</a
+      ><a name="366"
+      > </a
+      ><a name="367" href="SizedIO.IOObject.html#367" class="Module"
+      >_</a
+      ><a name="368"
+      >  </a
+      ><a name="370" class="Symbol"
+      >(</a
+      ><a name="371" href="SizedIO.IOObject.html#371" class="Bound"
+      >ioi</a
+      ><a name="374"
+      >  </a
+      ><a name="376" class="Symbol"
+      >:</a
+      ><a name="377"
+      > </a
+      ><a name="378" href="SizedIO.Base.html#288" class="Record"
+      >IOInterface</a
+      ><a name="389" class="Symbol"
+      >)</a
+      ><a name="390"
+      >  </a
+      ><a name="392" class="Symbol"
+      >(</a
+      ><a name="393" class="Keyword"
+      >let</a
+      ><a name="396"
+      > </a
+      ><a name="397" href="SizedIO.IOObject.html#397" class="Bound"
+      >C</a
+      ><a name="398"
+      >  </a
+      ><a name="400" class="Symbol"
+      >=</a
+      ><a name="401"
+      > </a
+      ><a name="402" href="SizedIO.Base.html#326" class="Field"
+      >Command</a
+      ><a name="409"
+      > </a
+      ><a name="410" href="SizedIO.IOObject.html#371" class="Bound"
+      >ioi</a
+      ><a name="413" class="Symbol"
+      >)</a
+      ><a name="414"
+      >  </a
+      ><a name="416" class="Symbol"
+      >(</a
+      ><a name="417" class="Keyword"
+      >let</a
+      ><a name="420"
+      > </a
+      ><a name="421" href="SizedIO.IOObject.html#421" class="Bound"
+      >R</a
+      ><a name="422"
+      >   </a
+      ><a name="425" class="Symbol"
+      >=</a
+      ><a name="426"
+      > </a
+      ><a name="427" href="SizedIO.Base.html#346" class="Field"
+      >Response</a
+      ><a name="435"
+      > </a
+      ><a name="436" href="SizedIO.IOObject.html#371" class="Bound"
+      >ioi</a
+      ><a name="439" class="Symbol"
+      >)</a
+      ><a name="440"
+      >
+          </a
+      ><a name="451" class="Symbol"
+      >(</a
+      ><a name="452" href="SizedIO.IOObject.html#452" class="Bound"
+      >oi</a
+      ><a name="454"
+      >   </a
+      ><a name="457" class="Symbol"
+      >:</a
+      ><a name="458"
+      > </a
+      ><a name="459" href="SizedIO.Object.html#63" class="Record"
+      >Interface</a
+      ><a name="468" class="Symbol"
+      >)</a
+      ><a name="469"
+      >   </a
+      ><a name="472" class="Symbol"
+      >(</a
+      ><a name="473" class="Keyword"
+      >let</a
+      ><a name="476"
+      > </a
+      ><a name="477" href="SizedIO.IOObject.html#477" class="Bound"
+      >M</a
+      ><a name="478"
+      >  </a
+      ><a name="480" class="Symbol"
+      >=</a
+      ><a name="481"
+      > </a
+      ><a name="482" href="SizedIO.Object.html#98" class="Field"
+      >Method</a
+      ><a name="488"
+      > </a
+      ><a name="489" href="SizedIO.IOObject.html#452" class="Bound"
+      >oi</a
+      ><a name="491" class="Symbol"
+      >)</a
+      ><a name="492"
+      >    </a
+      ><a name="496" class="Symbol"
+      >(</a
+      ><a name="497" class="Keyword"
+      >let</a
+      ><a name="500"
+      > </a
+      ><a name="501" href="SizedIO.IOObject.html#501" class="Bound"
+      >Rt</a
+      ><a name="503"
+      >  </a
+      ><a name="505" class="Symbol"
+      >=</a
+      ><a name="506"
+      > </a
+      ><a name="507" href="SizedIO.Object.html#116" class="Field"
+      >Result</a
+      ><a name="513"
+      > </a
+      ><a name="514" href="SizedIO.IOObject.html#452" class="Bound"
+      >oi</a
+      ><a name="516" class="Symbol"
+      >)</a
+      ><a name="517"
+      >
+  </a
+      ><a name="520" class="Keyword"
+      >where</a
+      ><a name="525"
+      >
+
+  </a
+      ><a name="529" class="Keyword"
+      >record</a
+      ><a name="535"
+      > </a
+      ><a name="536" href="SizedIO.IOObject.html#536" class="Record"
+      >IOObject</a
+      ><a name="544"
+      > </a
+      ><a name="545" class="Symbol"
+      >(</a
+      ><a name="546" href="SizedIO.IOObject.html#546" class="Bound"
+      >i</a
+      ><a name="547"
+      > </a
+      ><a name="548" class="Symbol"
+      >:</a
+      ><a name="549"
+      > </a
+      ><a name="550" href="Agda.Builtin.Size.html#86" class="Postulate"
+      >Size</a
+      ><a name="554" class="Symbol"
+      >)</a
+      ><a name="555"
+      > </a
+      ><a name="556" class="Symbol"
+      >:</a
+      ><a name="557"
+      > </a
+      ><a name="558" class="PrimitiveType"
+      >Set</a
+      ><a name="561"
+      > </a
+      ><a name="562" class="Keyword"
+      >where</a
+      ><a name="567"
+      >
+    </a
+      ><a name="572" class="Keyword"
+      >coinductive</a
+      ><a name="583"
+      >
+    </a
+      ><a name="588" class="Keyword"
+      >field</a
+      ><a name="593"
+      >
+      </a
+      ><a name="600" href="SizedIO.IOObject.html#600" class="Field"
+      >method</a
+      ><a name="606"
+      > </a
+      ><a name="607" class="Symbol"
+      >:</a
+      ><a name="608"
+      > </a
+      ><a name="609" class="Symbol"
+      >&#8704;{</a
+      ><a name="611" href="SizedIO.IOObject.html#611" class="Bound"
+      >j</a
+      ><a name="612"
+      > </a
+      ><a name="613" class="Symbol"
+      >:</a
+      ><a name="614"
+      > </a
+      ><a name="615" href="Agda.Builtin.Size.html#118" class="Postulate Operator"
+      >Size&lt;</a
+      ><a name="620"
+      > </a
+      ><a name="621" href="SizedIO.IOObject.html#546" class="Bound"
+      >i</a
+      ><a name="622" class="Symbol"
+      >}</a
+      ><a name="623"
+      > </a
+      ><a name="624" class="Symbol"
+      >(</a
+      ><a name="625" href="SizedIO.IOObject.html#625" class="Bound"
+      >m</a
+      ><a name="626"
+      > </a
+      ><a name="627" class="Symbol"
+      >:</a
+      ><a name="628"
+      > </a
+      ><a name="629" href="SizedIO.IOObject.html#477" class="Bound"
+      >M</a
+      ><a name="630" class="Symbol"
+      >)</a
+      ><a name="631"
+      > </a
+      ><a name="632" class="Symbol"
+      >&#8594;</a
+      ><a name="633"
+      > </a
+      ><a name="634" href="SizedIO.Base.html#499" class="Record"
+      >IO</a
+      ><a name="636"
+      > </a
+      ><a name="637" href="SizedIO.IOObject.html#371" class="Bound"
+      >ioi</a
+      ><a name="640"
+      > </a
+      ><a name="641" href="Agda.Builtin.Size.html#182" class="Postulate"
+      >&#8734;</a
+      ><a name="642"
+      > </a
+      ><a name="643" class="Symbol"
+      >(</a
+      ><a name="644" href="SizedIO.IOObject.html#501" class="Bound"
+      >Rt</a
+      ><a name="646"
+      > </a
+      ><a name="647" href="SizedIO.IOObject.html#625" class="Bound"
+      >m</a
+      ><a name="648"
+      > </a
+      ><a name="649" href="Data.Product.html#1073" class="Function Operator"
+      >&#215;</a
+      ><a name="650"
+      > </a
+      ><a name="651" href="SizedIO.IOObject.html#536" class="Record"
+      >IOObject</a
+      ><a name="659"
+      > </a
+      ><a name="660" href="SizedIO.IOObject.html#611" class="Bound"
+      >j</a
+      ><a name="661" class="Symbol"
+      >)</a
+      ><a name="662"
+      >
+
+</a
+      ><a name="664" class="Keyword"
+      >open</a
+      ><a name="668"
+      > </a
+      ><a name="669" href="SizedIO.IOObject.html#536" class="Module"
+      >IOObject</a
+      ><a name="677"
+      > </a
+      ><a name="678" class="Keyword"
+      >public</a
+      ><a name="684"
+      >
+</a
+      ></pre
+    ></body
+  ></html
+>

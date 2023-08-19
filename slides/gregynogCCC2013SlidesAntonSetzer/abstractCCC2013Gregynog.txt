@@ -1,0 +1,107 @@
+Coalgebraic Programming Using Copattern Matching
+
+In  many  approaches   for  representing  computational  real
+numbers  in  theorem provers  one  arrives  at a  coalgebraic
+formulation.  Essentially a computational number is a program
+which  provides in  response to  user input  arbitrarily good
+approximations of  the real number in question.   In order to
+prove properties and programming  about these real numbers in
+a theorem prover based  on Martin-Löf Type Theory (MLTT) such
+as  Agda,   we  need   therefore  a  theory   of  coalgebraic
+types. Originally MLTT had  only dependent function types and
+inductive data  types, and therefore  there is a need  to add
+coinductive types  to MLTT,  and a representation  in theorem
+provers which is  easy to use - ideally as easy  as it is the
+case for inductive data types such as the natural numbers.
+
+One  approach   to  coalgebraic  data   types  in  functional
+programming.  is  using codata  types, and that  approach has
+been taken  in both Agda  and Coq.  Elements of  codata types
+are infinite objects which are evaluated lazily.  Implicit in
+formulations  of codata  types  is that  codata types  fulfil
+bisimulation  equality, which  is undecidable.   In  order to
+maintain decidable type checking,  in the theorem provers Coq
+and Agda restrictions on  the reduction of elements of codata
+types  were imposed.   The solutions  resulted in  a  lack of
+subject reduction in the theorem prover Coq and a formulation
+of coalgebraic types in Agda, which is severely restricted.
+
+In his  PhD thesis [Ch11], Chi-Ming  Chuang developed despite
+these short comings the  signed digit and Cauchy real numbers
+based on the codata approach in Agda. He proved closure under
+rationals,  addition, and  multiplication,  and executed  the
+underlying provably correct programs.  He showed as well that
+the   resulting  programs   always  produce,   despite  using
+postulated axioms, results in head normal form.
+
+In order to avoid the problem of subject reduction we go back
+to the  category theoretical approach  where final coalgebras
+are the  dual of initial  algebras.  Whereas the  elements of
+inductive  data types  are determined  by  their introduction
+rules, and  the elimination rules are the  natural inverse of
+these  introduction rules, the  elements of  coinductive data
+types  are determined  by  their elimination  rules, and  the
+introduction rules are the natural inverse.
+
+In  theorem provers such  as Agda  the elimination  rules for
+algebras   are  represented   by  defining   functions  using
+termination checked  pattern matching.  In  our joint POPL'13
+article [APTS13] we introduce  its dual, defining elements of
+coalgebras  by  copattern  matching,  which,  if  termination
+checked, represents the introduction rules for coalgebras. We
+presented  a simply typed  recursive calculus  which includes
+both nested pattern  and copattern matching, including mixing
+of the two.  The resulting theory fulfils subject reduction.
+
+In  this talk  we will  show  how to  replace, following  the
+approach in [Ch11], nested  pattern and copattern matching to
+simultaneous non-nested (co)pattern matching and then to full
+(co)recursion  operators. Some cases,  which should  be those
+which  pass a  termination checker,  can then  be  reduced to
+primitive   (co)recursion  operators.    If   only  primitive
+(co)recursion operators are used  we obtain by [Me87, Ge92] a
+calculus which is strongly normalising.
+
+Finally we  investigate how to define types  such as colists,
+which are  quite conveniently represented as  codata types in
+the coalgebraic approach in such  a way that they are easy to
+use.
+
+References:
+
+[APTS13] Andreas Abel, Brigitte Pientka, David Thibodeau, and
+         Anton   Setzer:  Copatterns:   programming  infinite
+         structures by observations.   In: Proceedings of the
+         40th   annual   ACM   SIGPLAN-SIGACT  symposium   on
+         Principles of programming languages, POPL '13, pages
+         27-38, 2013.
+
+[Ch11] Chi~Ming Chuang. Extraction of Programs for Exact Real
+         Number Computation using Agda.  PhD thesis, Dept. of
+         Computer  Science, Swansea  University,  Swansea SA2
+         8PP,     UK,    March    2011.     Available    from
+         http://www.swan.ac.uk/~csetzer/articlesFromOthers/index.html.
+
+[Ge92] Herman  Geuvers: Inductive and  coinductive types with
+         iteration   and    recursion.   In   B.   Nordström,
+         K.  Petersson,  and   G.  Plotkin  (Eds.):  Informal
+         proceedings of the 1992 workshop on Types for Proofs
+         and Programs, Bastad 1992,  Sweden, pages 183 - 207,
+         1992.
+
+[Me87] N. P. Mendler: Inductive types and type constraints in
+         second-order lambda calculus. In: Proceedings of the
+         Second    Symposium    of    Logic    in    Computer
+         Science. Ithaca, N.Y., pages 30 - 36. IEEE, 1987.
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,29 @@
+Title:
+Undecidability of Equality for Codata Types
+
+Abstract:
+Decidability of type checking for dependently typed  languages usually requires a decidable equality on types. Since bisimulation equality on coalgebras such as streams is undecidable, one cannot use it as the equality in type checking (which is definitional or judgemental equality). Instead languages based on dependent types with decidable type checking such as Coq or Agda use intensional equality for type checking. Two streams are definitionally equal if the underlying terms reduce to the same normal form, i.e.~if the underlying programs are equivalent. For reasoning about equality of streams one introduces bisimilarity as a propositional rather than  judgemental equality.
+
+In this paper we show that it is not possible to strengthen intensional equality in a decidable way while having the property that the equality respects one step expansion, which means that a stream with  head n and tail s is equal to cons(n,s). This property, which would be very useful in type checking, would not necessarily imply that bisimilar streams are equal, and we prove that there exist equalities with this properties which are not bisimilarity. Whereas a proof that bisimilarity on streams is undecidable is straightforward, proving that respecting one step expansion makes equality undecidable is much more involved and relies on an inseparability result  for sets of codes for Turing machines. We prove this theorem both for streams with corecursion and with coiteration as introduction rule.
+
+Therefore, pattern matching on streams is, understood literally, not a valid principle, since it assumes that every stream is equal to a stream of the form cons(n,s). We relate this problem to the subject reduction problem found when adding pattern matching on coalgebras to Coq and Agda. We discuss how this was solved in Agda by defining coalgebras by their elimination rule and replacing pattern matching on coalgebras by copattern matching, and how this relates to the approach in Agda which uses the type of delayed computations.
+
+
+
+
+
+
+Keywords:
+Coalgebra 
+codata
+decidable type checking
+Martin-Löf type theory
+intensional equality
+intensional type theory
+dependent type theory
+undecidability results
+inseparability
+pattern matching
+copattern matching
+
+

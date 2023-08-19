@@ -1,0 +1,25 @@
+Induction, induction, induction!
+
+Set theory is a universal language which allows to encode many
+data structures directly. When working with theorem provers, 
+it is often better to replace encodings of data structures by constructions
+which allow to represent these data types directly. This allows the
+user to benefit from reduction rules associated with these constructions,
+and to make use of automated theorem proving facilities associated with them.
+The goal would be to introduce generic principles which allow
+to introduce lots of data structures based on view language constructs,
+so that the user doesn't have to learn new constructs all the time.
+
+Many definitions in mathematics are inductive in nature. In this
+talk we present a zoo of extensions of inductive definitions.
+Although they originiate in the context of Martin-Loef Type theory,
+it seems to be interesting to consider them as well in more classical
+settings in order to facilitate the understanding of various constructions.
+In this talk we will consider the following extensions of
+inductive definitions: standar
+d inductive definitions,
+universese (inductive definitions of families of sets), induction-recursion
+(combining induction and recursion), induction-induction (Conway's 
+surreal numbers can be seen as an example of induction-induction), 
+the Mahlo universe,  the extended predicative
+Mahlo work (joint work with Reinhard Kahle), and coinductive definitions.

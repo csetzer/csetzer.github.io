@@ -1,0 +1,42 @@
+Coinduction, corecursion, copatterns
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+(joint work with Andreas Abel (Munich), Brigitte Pientka and David
+Thibodeau (Montreal);
+based on the POPL 2013 article 
+Copatterns: programming infinite structures by observations)
+ 
+
+In computer science, most computations are in fact interactive
+programs, which correspond to computations which can potentially
+run forever. They can be represented as trees which
+have potentially infinite branches. Mathematically, these
+data types are coalgebraic data types.
+
+Coalgebraic data types are often represented in functional
+programming as codata types.
+Implicit in formulations of codata types is that codata
+types fulfil bisimulation equality, which is undecidable.
+This resulted in lack of subject reduction in the
+theorem prover Coq and a formulation of coalgebraic types
+in Agda, which is severely restricted.
+
+In this talk we demonstrate how, when using the fact that
+coalgebras are the dual of algebras we obtain a formulation
+of coalgebras which is completely symmetrical to that
+of algebras. Introduction rules for algebras are
+given by the constructors, whereas elimination rules
+correspond to recursive termination checked pattern matching.
+Elimination rules for coalgebras are given by destructors,
+whereas introduction rules are given by recursive
+termination checked copattern matching. 
+
+The resulting theory fulfils subject reduction. 
+It is conjectured that a termination checked version 
+based on higher type primitive corecursion as dual to 
+higher type primitive recursion is normalising.
+
+The talk will be similar to the talk
+Coinduction, corecursion, copatterns given at Lisbon 2013,
+available from 
+http://www.cs.swan.ac.uk/~csetzer/slides/index.html
+

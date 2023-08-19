@@ -1,0 +1,22 @@
+Pattern and Copattern matching 
+
+
+The induction principle for algebraic data types is in automated theorem
+proving tools often represented by termination checked pattern matching,
+i.e. possibly iterated case distinctions on the choice of constructors for
+an element of this data type. The dual of induction is coinduction, which
+is an introduction rule. It can be represented by its dual copattern 
+matching, which means by determing the result of applying the destructors
+to this element. 
+
+We will introduce the theory of nested pattern and copattern matching
+(joint work with Andreas Abel, Brigitte Pientka and David Thibodeau).
+We will discuss how nested pattern and copattern matching can be reduced, 
+at least in case it should pass a strict termination checker, to primitive 
+induction and coinduction.
+
+We will present as well a little theorem, which restricts what can be achieved 
+in intensional type theory regarding decidable type checking. Even assuming 
+that streams are equal if their heads and tails are equal forces an equality 
+on streams to be undecidable.
+

@@ -1,0 +1,12 @@
+Anton Setzer (Swansea)
+Closing the Validation Gap 
+
+Verification is the process of guaranteeing that a program fulfils its specification. Validation is the processes of checking that a program fulfils the requirements or that the specification is sufficient to guarantee the requirements. Specification can be fully formal, and we can in many frameworks prove that a programs fulfils the specification. Requirements are informal, and express what the program is supposed to do. Therefore validation cannot be carried out fully formally, and we cannot guarantee that a specification is sufficient to guarantee the requirements. Therefore there is a validation gap between the specification and the requirements. There are examples where the specification is much more complicated than the program to be verified, and it might be easier to see that the program fulfils the requirements rather than the specification guaranteeing it. 
+
+ One way around this problem is to introduce a specification which is as close as possible to the requirements. One obtains then two specifications: A program specification which is used to verify the correctness of programs, and a requirements specification, which is close to the requirements. Now it should be possible to prove that the program specification implies the requirements specification. 
+
+The verification of a program against the requirements specification is therefore carried out in two steps: One step is to verify that the program fulfils the program specification. This step might be carried out using automated theorem proving. The second step is to verify that the program specification implies the requirement specification. This step might be carried out using interactive theorem proving. 
+
+We will demonstrate this distribution by referring to a PhD project with Karim Kanso, in which railway interlocking systems were verified in this way in the interactive theorem prover Agda. This verification used an integration of automated theorem proving into Agda. 
+
+ References: Karim Kanso, Anton Setzer: A light-weight integration of automated and interactive theorem proving. Math. Struct. in Comp. Science, Online First, pp. 1 - 25, 2014. Doi 10.1017/S0960129514000140. 

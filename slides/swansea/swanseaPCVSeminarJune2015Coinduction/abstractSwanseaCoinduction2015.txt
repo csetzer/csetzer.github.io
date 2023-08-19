@@ -1,0 +1,67 @@
+How to reason informally coinductively
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In our article [1] we introduced the representation of final
+coalgebras, which correspond to non-well-founded data
+structures, as defined by their elimination rules rather
+than by their introduction rules.
+
+When determined by their introduction rules, elements of
+final coalgebras are given by possibly non-well-founded many
+applications of the constructors. For instance a stream is
+given by an infinite application of the cons operation, cons
+n 1 (cons n 2 (cons n 3 · · · )). Then increasing stream
+starting with n is given as inc n = cons n (inc (n + 1))
+which reduces to inc n = cons n (cons (n + 1) (cons (n + 2)
+(· · · ))). The problem is that this results in
+non-normalisation and proper infinite terms. 
+
+When defined by their introduction rules, a coalgebra is
+given by the result of applying destructors (eliminators to
+it). For instance a stream is given by applying the
+operations head : Stream → N and tail : Stream → Stream to
+it. As an example we have head (inc n) = n and tail (inc n)
+= inc (n + 1). The problem of non-normalisation disappears
+under certain restrictions, for instance inc n is in normal
+form, unfolding its infinite nature requires repeated
+applications of tail to it. 
+
+Coalgebras are given as weakly final or as final coalgebras
+for a functor F. For instance the set of streams is given as
+a final coalgebra for the functor F : Set → Set, where Set
+is the category of sets, with object part F(X) = N × X. This
+means that there exists a function Stream → F(Stream) (which
+is just head, tail , and for any other coalgebra f : X →
+F(X) there exists a unique g : X → Stream such that 
+F(g) o f = <head,tail> o g
+
+For weakly final coalgebras the condition on the uniqueness
+of g is omitted. 
+
+The principle of final coalgebras is equivalent to the
+principle of guarded recursion together with the fact that
+bisimilarity implies equality. Bisimilarity is in itself an
+example of an indexed coalgebra, in case of Stream we have
+Bisim : Stream × Stream → Set. Therefore iteration over
+Bisim allows to show equality over Stream and other final
+coalgebras. This principle amounts to a coinduction
+principle over these coalgebras.
+
+In this talk we will discuss how to reason using this
+coalgebra principle informally, rather than referring to
+formal schemes or the existence of a bisimulation
+relation. This is similar to the way we reason about
+inductive data types informally rather than referring to
+them being defined as largest fixed points or to formal
+induction schemes. We will apply this to proving
+bisimilarity of elements of process algebras.
+
+References
+[1] Andreas Abel, Brigitte Pientka, David Thibodeau, and
+    Anton Setzer. Copatterns: Programming infinite
+    structures by observations. In Roberto Giacobazzi and
+    Radhia Cousot, editors, Proceedings  of the 40th annual
+    ACM SIGPLAN-SIGACT Symposium on Principles of
+    Programming Languages, POPL ’13, pages 27–38, New York,
+    NY, USA, 2013. ACM.
+

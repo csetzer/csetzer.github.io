@@ -1,0 +1,38 @@
+Ideal and Concrete Objects in Type Theory
+(Anton Setzer, joint work with Chi Ming Chuang)
+
+Usually in type theory we work only with computationally
+meaningful objects, i.e. concrete objects. In this
+talk we explore the use of ideal objects in type theory,
+which will be represented as postulated axioms.
+
+In the presence of postulated axioms, we loose in general
+the property that every element of an algebraic data
+type starts with a constructor. The reason is that
+there is no reduction, if we introduce an element
+by a postulated axiom and then eliminate it using an
+elimination rule.
+
+However, if we add the restriction that all postulated
+axioms have as result type only postulated types,
+this problems doesn't occur any more. We prove
+this property assuming that the type theory is normalising.
+
+We will apply this to exact real number computations.
+Natural numbers, integers and rationals are introduced
+as concrete data types. The real numbers are axiomatized
+as postulated types. Since we can embed the concrete
+numbers into the postulated real numbers we get
+a link between the ideal and concrete world. 
+Then we can define the concrete real numbers
+as the ideal reals which are Cauchy reals or have
+a signed digit representation. This approach has been
+used for efficient exact real number computations
+for signed digit representable reals.
+
+Finally we explore that in the ideal world we can add
+classical logic using postulated connectives. Negated
+axioms (using the concrete falsity) can be allowed provided
+the type theory is consistent. Here we obtain an instance
+of Hilbert's statement: consistency implies existence.
+

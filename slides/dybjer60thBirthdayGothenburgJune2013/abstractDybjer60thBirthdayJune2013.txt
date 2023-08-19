@@ -1,0 +1,24 @@
+Induction-Recursion - 20 years later
+
+
+In  this talk  we first  start  to review  the prehistory  of
+induction-recursion,   starting  with   the   Backhouse  1988
+"Do-it-yourself-type-theory", Peter Dybjer's 1989/90 schemata
+for inductive definitions,  and Thierry Coquand and Christine
+Paulin's  inductively defined  types.  These development  led
+then to the May 1992 Munich talk and the June 1992 TYPES talk
+in which a general schema for inductive-recursive definitions
+was introduced.  We consider the TLCA paper by Dybjer and the
+author,    in    which    a    closed    axiomatisation    of
+induction-recursion was  presented, and its  reformulation in
+the   APAL  paper  on   initial  algebras.    We  investigate
+applications to generic programming.   Then we look at recent
+developments,  the   formulation  of  induction-induction  by
+Fredrik   Forsberg  and   the  author,   and   a  categorical
+reformulation  of induction-recursion by  Neil Ghani  et al.,
+which  generalises  induction-recursion   to  a  much  larger
+variety of situations.  Finally we discuss open problems such
+as  how to extend  induction recursion  to include  the Mahlo
+principle and what  a notion of coinduction-corecursion could
+be.
+

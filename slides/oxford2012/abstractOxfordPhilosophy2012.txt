@@ -1,0 +1,43 @@
+Proof Theory of Martin-L{\"o}f Type Theory
+
+The goal of Hilbert's was to show the consistency of strong axiomatizations of
+mathematics by finitary methods. By G{\"o}del's incompleteness theorem we know
+that this is not possible. One solution is taken in ordinal theoretic
+proof theory, where the consistency of theories is shown by 
+transfinite induction over a suitable ordinal notation system.
+While this provides some evidence of the consistency for medium sized theories,
+for strong theories a direct insight into the well-foundedness of the
+ordinal notation system seems at the moment
+to be very difficult. 
+
+
+One solution is to replace finitary methods by a theory
+for which we have some evidence into its consistency. The theory which
+has been developed most in order to serve for such a purpose is Martin-L{\"o}f 
+Type Theory. 
+
+A revised Hilbertian program then can be carried out in two steps: First
+the ordinal analysis of a theory as described before is carried out.
+Then the well-foundedness of the ordinal notation system used is shown
+in a suitable extension of Martin-L{\"o}f Type Theory.
+
+This requires the development of strong extensions of Martin-L{\"o}f type theory
+such that we have some evidence of their consistency.
+The application of this approach is the development of proof theoretically
+strong data structures, which can then be used in general programming.
+
+In this talk we describe some steps in this program: 
+Martin-L{\"o}f Type Theory with W-type and one universe which 
+proves consistency of Kripke Platek set theory with one recursively inaccessible;
+the Mahlo universe, which proves consistency of Kripke Platek set theory
+with one recursively Mahlo ordinal; and an extension of
+type theory by the principle of $\Pi_3$-reflection.
+
+We will discuss the controversy about the Mahlo universe, and
+how one can overcome this problem when switching to a framework
+of explicit mathematics. This shows that a framework involving
+partial functions might be more suitable for proving the 
+consistency of proof theoretically strong theories.
+
+
+

@@ -1,0 +1,49 @@
+Programming with dependent types 
+- interactive programs and coalgebras
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Functional programming is based on  the principle of reducing
+terms  applied to  arguments to normal  form.  This allows to
+define batch programs,  which  take a  fixed  given number of
+inputs and compute  a    fixed number of  outputs.   Defining
+interactive  programs,   which are   given by   a potentially
+infinite  interchange  of  inputs   and outputs  doesn't  fit
+directly into this paradigm, and several approaches have been
+made to   integrate   interactive programs   into  functional
+programming.
+
+In this talk  we give  a  different approach to the  standard
+approaches of representing interactive programs in functional
+programming, which  works    very well  in   the  presence of
+dependent types. It   is based  on representing   interactive
+programs as non well-founded trees (trees which have infinite
+branches)  labelled  by commands  and with  branching  degree
+given  by responses for  that command. Using this approach we
+can define easily the IO monad, as it  is used in Haskell for
+defining interactive programs.
+
+In order to have the data type of non well-founded trees as a
+first class citizen,  we introduce coalgebras  in the context
+of  dependent  type theory.   Our   approach will  not define
+coalgebras as a set of infinitary objects, but instead define
+them    dually to the use     of algebraic data types  (types
+introduced by   the keyword "data").   Whereas algebraic data
+types   are   determined    by   their  introduction    rules
+(constructors), coalgebraic types will be determined by their
+elimination rules (eliminators).
+
+Literature:
+
+Peter Hancock  and  Anton  Setzer: Interactive  Programs   in
+Dependent  Type   Theory.   In    Peter Clote     and  Helmut
+Schwichtenberg  (Eds):  Computer  Science  Logic,  LNCS 1862,
+2000, pp. 317 - 331
+
+Anton   Setzer:   Coalgebras as  Types   determined  by their
+Elimination Rules. In Peter Dybjer et al: Epistemology versus
+ontology: Essays on  the foundations of mathematics in honour
+of Per Martin-L{\"o}f. Springer, 2012, pp. 351 - 369
+
+
+
+

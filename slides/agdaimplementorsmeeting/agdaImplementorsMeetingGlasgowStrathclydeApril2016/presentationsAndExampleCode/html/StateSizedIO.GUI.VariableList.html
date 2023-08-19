@@ -1,0 +1,1166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >StateSizedIO.GUI.VariableList</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Keyword"
+      >module</a
+      ><a name="7"
+      > </a
+      ><a name="8" href="StateSizedIO.GUI.VariableList.html#1" class="Module"
+      >StateSizedIO.GUI.VariableList</a
+      ><a name="37"
+      > </a
+      ><a name="38" class="Keyword"
+      >where</a
+      ><a name="43"
+      >
+
+</a
+      ><a name="45" class="Keyword"
+      >open</a
+      ><a name="49"
+      > </a
+      ><a name="50" class="Keyword"
+      >import</a
+      ><a name="56"
+      > </a
+      ><a name="57" href="Data.Product.html#1" class="Module"
+      >Data.Product</a
+      ><a name="69"
+      > </a
+      ><a name="70" class="Keyword"
+      >hiding</a
+      ><a name="76"
+      > </a
+      ><a name="77" class="Symbol"
+      >(</a
+      ><a name="78" href="Data.Product.html#1872" class="Function"
+      >map</a
+      ><a name="81" class="Symbol"
+      >)</a
+      ><a name="82"
+      >
+</a
+      ><a name="83" class="Keyword"
+      >open</a
+      ><a name="87"
+      > </a
+      ><a name="88" class="Keyword"
+      >import</a
+      ><a name="94"
+      > </a
+      ><a name="95" href="Data.List.html#1" class="Module"
+      >Data.List</a
+      ><a name="104"
+      >
+
+</a
+      ><a name="106" class="Keyword"
+      >open</a
+      ><a name="110"
+      > </a
+      ><a name="111" class="Keyword"
+      >import</a
+      ><a name="117"
+      > </a
+      ><a name="118" href="NativeIO.html#1" class="Module"
+      >NativeIO</a
+      ><a name="126"
+      >
+</a
+      ><a name="127" class="Keyword"
+      >open</a
+      ><a name="131"
+      > </a
+      ><a name="132" class="Keyword"
+      >import</a
+      ><a name="138"
+      > </a
+      ><a name="139" href="StateSizedIO.GUI.WxBindingsFFI.html#1" class="Module"
+      >StateSizedIO.GUI.WxBindingsFFI</a
+      ><a name="169"
+      > 
+
+
+
+</a
+      ><a name="174" class="Keyword"
+      >data</a
+      ><a name="178"
+      > </a
+      ><a name="179" href="StateSizedIO.GUI.VariableList.html#179" class="Datatype"
+      >VarList</a
+      ><a name="186"
+      > </a
+      ><a name="187" class="Symbol"
+      >:</a
+      ><a name="188"
+      > </a
+      ><a name="189" class="PrimitiveType"
+      >Set&#8321;</a
+      ><a name="193"
+      > </a
+      ><a name="194" class="Keyword"
+      >where</a
+      ><a name="199"
+      >
+  </a
+      ><a name="202" href="StateSizedIO.GUI.VariableList.html#202" class="InductiveConstructor"
+      >[]</a
+      ><a name="204"
+      >     </a
+      ><a name="209" class="Symbol"
+      >:</a
+      ><a name="210"
+      > </a
+      ><a name="211" href="StateSizedIO.GUI.VariableList.html#179" class="Datatype"
+      >VarList</a
+      ><a name="218"
+      >
+  </a
+      ><a name="221" href="StateSizedIO.GUI.VariableList.html#221" class="InductiveConstructor"
+      >addVar</a
+      ><a name="227"
+      > </a
+      ><a name="228" class="Symbol"
+      >:</a
+      ><a name="229"
+      > </a
+      ><a name="230" class="Symbol"
+      >(</a
+      ><a name="231" href="StateSizedIO.GUI.VariableList.html#231" class="Bound"
+      >A</a
+      ><a name="232"
+      > </a
+      ><a name="233" class="Symbol"
+      >:</a
+      ><a name="234"
+      > </a
+      ><a name="235" class="PrimitiveType"
+      >Set</a
+      ><a name="238" class="Symbol"
+      >)</a
+      ><a name="239"
+      > </a
+      ><a name="240" class="Symbol"
+      >&#8594;</a
+      ><a name="241"
+      > </a
+      ><a name="242" href="StateSizedIO.GUI.WxBindingsFFI.html#1905" class="Function"
+      >Var</a
+      ><a name="245"
+      > </a
+      ><a name="246" href="StateSizedIO.GUI.VariableList.html#231" class="Bound"
+      >A</a
+      ><a name="247"
+      > </a
+      ><a name="248" class="Symbol"
+      >&#8594;</a
+      ><a name="249"
+      > </a
+      ><a name="250" href="StateSizedIO.GUI.VariableList.html#179" class="Datatype"
+      >VarList</a
+      ><a name="257"
+      > </a
+      ><a name="258" class="Symbol"
+      >&#8594;</a
+      ><a name="259"
+      > </a
+      ><a name="260" href="StateSizedIO.GUI.VariableList.html#179" class="Datatype"
+      >VarList</a
+      ><a name="267"
+      >
+
+
+</a
+      ><a name="270" href="StateSizedIO.GUI.VariableList.html#270" class="Function"
+      >prod</a
+      ><a name="274"
+      > </a
+      ><a name="275" class="Symbol"
+      >:</a
+      ><a name="276"
+      > </a
+      ><a name="277" href="StateSizedIO.GUI.VariableList.html#179" class="Datatype"
+      >VarList</a
+      ><a name="284"
+      > </a
+      ><a name="285" class="Symbol"
+      >&#8594;</a
+      ><a name="286"
+      > </a
+      ><a name="287" class="PrimitiveType"
+      >Set</a
+      ><a name="290"
+      >
+</a
+      ><a name="291" href="StateSizedIO.GUI.VariableList.html#270" class="Function"
+      >prod</a
+      ><a name="295"
+      > </a
+      ><a name="296" href="StateSizedIO.GUI.VariableList.html#202" class="InductiveConstructor"
+      >[]</a
+      ><a name="298"
+      > </a
+      ><a name="299" class="Symbol"
+      >=</a
+      ><a name="300"
+      > </a
+      ><a name="301" href="Unit.html#28" class="Record"
+      >Unit</a
+      ><a name="305"
+      >
+</a
+      ><a name="306" href="StateSizedIO.GUI.VariableList.html#270" class="Function"
+      >prod</a
+      ><a name="310"
+      > </a
+      ><a name="311" class="Symbol"
+      >(</a
+      ><a name="312" href="StateSizedIO.GUI.VariableList.html#221" class="InductiveConstructor"
+      >addVar</a
+      ><a name="318"
+      > </a
+      ><a name="319" href="StateSizedIO.GUI.VariableList.html#319" class="Bound"
+      >A</a
+      ><a name="320"
+      > </a
+      ><a name="321" href="StateSizedIO.GUI.VariableList.html#321" class="Bound"
+      >v</a
+      ><a name="322"
+      > </a
+      ><a name="323" href="StateSizedIO.GUI.VariableList.html#202" class="InductiveConstructor"
+      >[]</a
+      ><a name="325" class="Symbol"
+      >)</a
+      ><a name="326"
+      > </a
+      ><a name="327" class="Symbol"
+      >=</a
+      ><a name="328"
+      > </a
+      ><a name="329" href="StateSizedIO.GUI.VariableList.html#319" class="Bound"
+      >A</a
+      ><a name="330"
+      >
+</a
+      ><a name="331" href="StateSizedIO.GUI.VariableList.html#270" class="Function"
+      >prod</a
+      ><a name="335"
+      > </a
+      ><a name="336" class="Symbol"
+      >(</a
+      ><a name="337" href="StateSizedIO.GUI.VariableList.html#221" class="InductiveConstructor"
+      >addVar</a
+      ><a name="343"
+      > </a
+      ><a name="344" href="StateSizedIO.GUI.VariableList.html#344" class="Bound"
+      >A</a
+      ><a name="345"
+      > </a
+      ><a name="346" href="StateSizedIO.GUI.VariableList.html#346" class="Bound"
+      >v</a
+      ><a name="347"
+      > </a
+      ><a name="348" href="StateSizedIO.GUI.VariableList.html#348" class="Bound"
+      >l</a
+      ><a name="349" class="Symbol"
+      >)</a
+      ><a name="350"
+      >  </a
+      ><a name="352" class="Symbol"
+      >=</a
+      ><a name="353"
+      > </a
+      ><a name="354" href="StateSizedIO.GUI.VariableList.html#344" class="Bound"
+      >A</a
+      ><a name="355"
+      > </a
+      ><a name="356" href="Data.Product.html#1073" class="Function Operator"
+      >&#215;</a
+      ><a name="357"
+      > </a
+      ><a name="358" href="StateSizedIO.GUI.VariableList.html#270" class="Function"
+      >prod</a
+      ><a name="362"
+      > </a
+      ><a name="363" href="StateSizedIO.GUI.VariableList.html#348" class="Bound"
+      >l</a
+      ><a name="364"
+      >
+
+</a
+      ><a name="366" href="StateSizedIO.GUI.VariableList.html#366" class="Function"
+      >takeVar</a
+      ><a name="373"
+      > </a
+      ><a name="374" class="Symbol"
+      >:</a
+      ><a name="375"
+      > </a
+      ><a name="376" class="Symbol"
+      >(</a
+      ><a name="377" href="StateSizedIO.GUI.VariableList.html#377" class="Bound"
+      >l</a
+      ><a name="378"
+      > </a
+      ><a name="379" class="Symbol"
+      >:</a
+      ><a name="380"
+      > </a
+      ><a name="381" href="StateSizedIO.GUI.VariableList.html#179" class="Datatype"
+      >VarList</a
+      ><a name="388" class="Symbol"
+      >)</a
+      ><a name="389"
+      > </a
+      ><a name="390" class="Symbol"
+      >&#8594;</a
+      ><a name="391"
+      > </a
+      ><a name="392" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="400"
+      > </a
+      ><a name="401" class="Symbol"
+      >(</a
+      ><a name="402" href="StateSizedIO.GUI.VariableList.html#270" class="Function"
+      >prod</a
+      ><a name="406"
+      > </a
+      ><a name="407" href="StateSizedIO.GUI.VariableList.html#377" class="Bound"
+      >l</a
+      ><a name="408" class="Symbol"
+      >)</a
+      ><a name="409"
+      >
+</a
+      ><a name="410" href="StateSizedIO.GUI.VariableList.html#366" class="Function"
+      >takeVar</a
+      ><a name="417"
+      > </a
+      ><a name="418" href="StateSizedIO.GUI.VariableList.html#202" class="InductiveConstructor"
+      >[]</a
+      ><a name="420"
+      > </a
+      ><a name="421" class="Symbol"
+      >=</a
+      ><a name="422"
+      > </a
+      ><a name="423" href="NativeIO.html#139" class="Postulate"
+      >nativeReturn</a
+      ><a name="435"
+      > </a
+      ><a name="436" class="Symbol"
+      >_</a
+      ><a name="437"
+      >
+</a
+      ><a name="438" href="StateSizedIO.GUI.VariableList.html#366" class="Function"
+      >takeVar</a
+      ><a name="445"
+      > </a
+      ><a name="446" class="Symbol"
+      >(</a
+      ><a name="447" href="StateSizedIO.GUI.VariableList.html#221" class="InductiveConstructor"
+      >addVar</a
+      ><a name="453"
+      > </a
+      ><a name="454" href="StateSizedIO.GUI.VariableList.html#454" class="Bound"
+      >A</a
+      ><a name="455"
+      > </a
+      ><a name="456" href="StateSizedIO.GUI.VariableList.html#456" class="Bound"
+      >v</a
+      ><a name="457"
+      > </a
+      ><a name="458" href="StateSizedIO.GUI.VariableList.html#202" class="InductiveConstructor"
+      >[]</a
+      ><a name="460" class="Symbol"
+      >)</a
+      ><a name="461"
+      > </a
+      ><a name="462" class="Symbol"
+      >=</a
+      ><a name="463"
+      > </a
+      ><a name="464" href="StateSizedIO.GUI.WxBindingsFFI.html#1996" class="Postulate"
+      >nativeTakeVar</a
+      ><a name="477"
+      > </a
+      ><a name="478" class="Symbol"
+      >{</a
+      ><a name="479" href="StateSizedIO.GUI.VariableList.html#454" class="Bound"
+      >A</a
+      ><a name="480" class="Symbol"
+      >}</a
+      ><a name="481"
+      > </a
+      ><a name="482" href="StateSizedIO.GUI.VariableList.html#456" class="Bound"
+      >v</a
+      ><a name="483"
+      >  </a
+      ><a name="485" href="NativeIO.html#183" class="Postulate Operator"
+      >native&gt;&gt;=</a
+      ><a name="494"
+      > </a
+      ><a name="495" class="Symbol"
+      >&#955;</a
+      ><a name="496"
+      > </a
+      ><a name="497" href="StateSizedIO.GUI.VariableList.html#497" class="Bound"
+      >a</a
+      ><a name="498"
+      > </a
+      ><a name="499" class="Symbol"
+      >&#8594;</a
+      ><a name="500"
+      > 
+                         </a
+      ><a name="527" href="NativeIO.html#139" class="Postulate"
+      >nativeReturn</a
+      ><a name="539"
+      > </a
+      ><a name="540" href="StateSizedIO.GUI.VariableList.html#497" class="Bound"
+      >a</a
+      ><a name="541"
+      > 
+</a
+      ><a name="543" href="StateSizedIO.GUI.VariableList.html#366" class="Function"
+      >takeVar</a
+      ><a name="550"
+      > </a
+      ><a name="551" class="Symbol"
+      >(</a
+      ><a name="552" href="StateSizedIO.GUI.VariableList.html#221" class="InductiveConstructor"
+      >addVar</a
+      ><a name="558"
+      > </a
+      ><a name="559" href="StateSizedIO.GUI.VariableList.html#559" class="Bound"
+      >A</a
+      ><a name="560"
+      > </a
+      ><a name="561" href="StateSizedIO.GUI.VariableList.html#561" class="Bound"
+      >v</a
+      ><a name="562"
+      > </a
+      ><a name="563" class="Symbol"
+      >(</a
+      ><a name="564" href="StateSizedIO.GUI.VariableList.html#221" class="InductiveConstructor"
+      >addVar</a
+      ><a name="570"
+      > </a
+      ><a name="571" href="StateSizedIO.GUI.VariableList.html#571" class="Bound"
+      >B</a
+      ><a name="572"
+      > </a
+      ><a name="573" href="StateSizedIO.GUI.VariableList.html#573" class="Bound"
+      >v'</a
+      ><a name="575"
+      > </a
+      ><a name="576" href="StateSizedIO.GUI.VariableList.html#576" class="Bound"
+      >l</a
+      ><a name="577" class="Symbol"
+      >))</a
+      ><a name="579"
+      >  </a
+      ><a name="581" class="Symbol"
+      >=</a
+      ><a name="582"
+      > </a
+      ><a name="583" href="StateSizedIO.GUI.WxBindingsFFI.html#1996" class="Postulate"
+      >nativeTakeVar</a
+      ><a name="596"
+      > </a
+      ><a name="597" class="Symbol"
+      >{</a
+      ><a name="598" href="StateSizedIO.GUI.VariableList.html#559" class="Bound"
+      >A</a
+      ><a name="599" class="Symbol"
+      >}</a
+      ><a name="600"
+      > </a
+      ><a name="601" href="StateSizedIO.GUI.VariableList.html#561" class="Bound"
+      >v</a
+      ><a name="602"
+      >        </a
+      ><a name="610" href="NativeIO.html#183" class="Postulate Operator"
+      >native&gt;&gt;=</a
+      ><a name="619"
+      > </a
+      ><a name="620" class="Symbol"
+      >&#955;</a
+      ><a name="621"
+      > </a
+      ><a name="622" href="StateSizedIO.GUI.VariableList.html#622" class="Bound"
+      >a</a
+      ><a name="623"
+      > </a
+      ><a name="624" class="Symbol"
+      >&#8594;</a
+      ><a name="625"
+      > 
+                                       </a
+      ><a name="666" href="StateSizedIO.GUI.VariableList.html#366" class="Function"
+      >takeVar</a
+      ><a name="673"
+      > </a
+      ><a name="674" class="Symbol"
+      >(</a
+      ><a name="675" href="StateSizedIO.GUI.VariableList.html#221" class="InductiveConstructor"
+      >addVar</a
+      ><a name="681"
+      > </a
+      ><a name="682" href="StateSizedIO.GUI.VariableList.html#571" class="Bound"
+      >B</a
+      ><a name="683"
+      > </a
+      ><a name="684" href="StateSizedIO.GUI.VariableList.html#573" class="Bound"
+      >v'</a
+      ><a name="686"
+      > </a
+      ><a name="687" href="StateSizedIO.GUI.VariableList.html#576" class="Bound"
+      >l</a
+      ><a name="688" class="Symbol"
+      >)</a
+      ><a name="689"
+      >    </a
+      ><a name="693" href="NativeIO.html#183" class="Postulate Operator"
+      >native&gt;&gt;=</a
+      ><a name="702"
+      > </a
+      ><a name="703" class="Symbol"
+      >&#955;</a
+      ><a name="704"
+      > </a
+      ><a name="705" href="StateSizedIO.GUI.VariableList.html#705" class="Bound"
+      >rest</a
+      ><a name="709"
+      > </a
+      ><a name="710" class="Symbol"
+      >&#8594;</a
+      ><a name="711"
+      > 
+                                       </a
+      ><a name="752" href="NativeIO.html#139" class="Postulate"
+      >nativeReturn</a
+      ><a name="764"
+      > </a
+      ><a name="765" class="Symbol"
+      >(</a
+      ><a name="766"
+      > </a
+      ><a name="767" href="StateSizedIO.GUI.VariableList.html#622" class="Bound"
+      >a</a
+      ><a name="768"
+      > </a
+      ><a name="769" href="Data.Product.html#509" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="770"
+      > </a
+      ><a name="771" href="StateSizedIO.GUI.VariableList.html#705" class="Bound"
+      >rest</a
+      ><a name="775"
+      > </a
+      ><a name="776" class="Symbol"
+      >)</a
+      ><a name="777"
+      >
+
+
+
+</a
+      ><a name="781" href="StateSizedIO.GUI.VariableList.html#781" class="Function"
+      >putVar</a
+      ><a name="787"
+      > </a
+      ><a name="788" class="Symbol"
+      >:</a
+      ><a name="789"
+      > </a
+      ><a name="790" class="Symbol"
+      >(</a
+      ><a name="791" href="StateSizedIO.GUI.VariableList.html#791" class="Bound"
+      >l</a
+      ><a name="792"
+      > </a
+      ><a name="793" class="Symbol"
+      >:</a
+      ><a name="794"
+      > </a
+      ><a name="795" href="StateSizedIO.GUI.VariableList.html#179" class="Datatype"
+      >VarList</a
+      ><a name="802" class="Symbol"
+      >)</a
+      ><a name="803"
+      > </a
+      ><a name="804" class="Symbol"
+      >&#8594;</a
+      ><a name="805"
+      > </a
+      ><a name="806" href="StateSizedIO.GUI.VariableList.html#270" class="Function"
+      >prod</a
+      ><a name="810"
+      > </a
+      ><a name="811" href="StateSizedIO.GUI.VariableList.html#791" class="Bound"
+      >l</a
+      ><a name="812"
+      > </a
+      ><a name="813" class="Symbol"
+      >&#8594;</a
+      ><a name="814"
+      > </a
+      ><a name="815" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="823"
+      > </a
+      ><a name="824" href="Unit.html#28" class="Record"
+      >Unit</a
+      ><a name="828"
+      >
+</a
+      ><a name="829" href="StateSizedIO.GUI.VariableList.html#781" class="Function"
+      >putVar</a
+      ><a name="835"
+      >  </a
+      ><a name="837" href="StateSizedIO.GUI.VariableList.html#202" class="InductiveConstructor"
+      >[]</a
+      ><a name="839"
+      > </a
+      ><a name="840" class="Symbol"
+      >_</a
+      ><a name="841"
+      > </a
+      ><a name="842" class="Symbol"
+      >=</a
+      ><a name="843"
+      > </a
+      ><a name="844" href="NativeIO.html#139" class="Postulate"
+      >nativeReturn</a
+      ><a name="856"
+      > </a
+      ><a name="857" class="Symbol"
+      >_</a
+      ><a name="858"
+      >
+</a
+      ><a name="859" href="StateSizedIO.GUI.VariableList.html#781" class="Function"
+      >putVar</a
+      ><a name="865"
+      >  </a
+      ><a name="867" class="Symbol"
+      >(</a
+      ><a name="868" href="StateSizedIO.GUI.VariableList.html#221" class="InductiveConstructor"
+      >addVar</a
+      ><a name="874"
+      > </a
+      ><a name="875" href="StateSizedIO.GUI.VariableList.html#875" class="Bound"
+      >A</a
+      ><a name="876"
+      > </a
+      ><a name="877" href="StateSizedIO.GUI.VariableList.html#877" class="Bound"
+      >v</a
+      ><a name="878"
+      > </a
+      ><a name="879" href="StateSizedIO.GUI.VariableList.html#202" class="InductiveConstructor"
+      >[]</a
+      ><a name="881" class="Symbol"
+      >)</a
+      ><a name="882"
+      > </a
+      ><a name="883" href="StateSizedIO.GUI.VariableList.html#883" class="Bound"
+      >a</a
+      ><a name="884"
+      >         </a
+      ><a name="893" class="Symbol"
+      >=</a
+      ><a name="894"
+      > </a
+      ><a name="895" href="StateSizedIO.GUI.WxBindingsFFI.html#2045" class="Postulate"
+      >nativePutVar</a
+      ><a name="907"
+      > </a
+      ><a name="908" class="Symbol"
+      >{</a
+      ><a name="909" href="StateSizedIO.GUI.VariableList.html#875" class="Bound"
+      >A</a
+      ><a name="910" class="Symbol"
+      >}</a
+      ><a name="911"
+      > </a
+      ><a name="912" href="StateSizedIO.GUI.VariableList.html#877" class="Bound"
+      >v</a
+      ><a name="913"
+      > </a
+      ><a name="914" href="StateSizedIO.GUI.VariableList.html#883" class="Bound"
+      >a</a
+      ><a name="915"
+      > 
+</a
+      ><a name="917" href="StateSizedIO.GUI.VariableList.html#781" class="Function"
+      >putVar</a
+      ><a name="923"
+      >  </a
+      ><a name="925" class="Symbol"
+      >(</a
+      ><a name="926" href="StateSizedIO.GUI.VariableList.html#221" class="InductiveConstructor"
+      >addVar</a
+      ><a name="932"
+      > </a
+      ><a name="933" href="StateSizedIO.GUI.VariableList.html#933" class="Bound"
+      >A</a
+      ><a name="934"
+      > </a
+      ><a name="935" href="StateSizedIO.GUI.VariableList.html#935" class="Bound"
+      >v</a
+      ><a name="936"
+      > </a
+      ><a name="937" class="Symbol"
+      >(</a
+      ><a name="938" href="StateSizedIO.GUI.VariableList.html#221" class="InductiveConstructor"
+      >addVar</a
+      ><a name="944"
+      > </a
+      ><a name="945" href="StateSizedIO.GUI.VariableList.html#945" class="Bound"
+      >B</a
+      ><a name="946"
+      > </a
+      ><a name="947" href="StateSizedIO.GUI.VariableList.html#947" class="Bound"
+      >v'</a
+      ><a name="949"
+      > </a
+      ><a name="950" href="StateSizedIO.GUI.VariableList.html#950" class="Bound"
+      >l</a
+      ><a name="951" class="Symbol"
+      >))</a
+      ><a name="953"
+      > </a
+      ><a name="954" class="Symbol"
+      >(</a
+      ><a name="955" href="StateSizedIO.GUI.VariableList.html#955" class="Bound"
+      >a</a
+      ><a name="956"
+      > </a
+      ><a name="957" href="Data.Product.html#509" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="958"
+      > </a
+      ><a name="959" href="StateSizedIO.GUI.VariableList.html#959" class="Bound"
+      >rest</a
+      ><a name="963" class="Symbol"
+      >)</a
+      ><a name="964"
+      > 
+                                  </a
+      ><a name="1000" class="Symbol"
+      >=</a
+      ><a name="1001"
+      > </a
+      ><a name="1002" href="StateSizedIO.GUI.WxBindingsFFI.html#2045" class="Postulate"
+      >nativePutVar</a
+      ><a name="1014"
+      > </a
+      ><a name="1015" class="Symbol"
+      >{</a
+      ><a name="1016" href="StateSizedIO.GUI.VariableList.html#933" class="Bound"
+      >A</a
+      ><a name="1017" class="Symbol"
+      >}</a
+      ><a name="1018"
+      > </a
+      ><a name="1019" href="StateSizedIO.GUI.VariableList.html#935" class="Bound"
+      >v</a
+      ><a name="1020"
+      > </a
+      ><a name="1021" href="StateSizedIO.GUI.VariableList.html#955" class="Bound"
+      >a</a
+      ><a name="1022"
+      >         </a
+      ><a name="1031" href="NativeIO.html#183" class="Postulate Operator"
+      >native&gt;&gt;=</a
+      ><a name="1040"
+      > </a
+      ><a name="1041" class="Symbol"
+      >&#955;</a
+      ><a name="1042"
+      > </a
+      ><a name="1043" href="StateSizedIO.GUI.VariableList.html#1043" class="Bound"
+      >_</a
+      ><a name="1044"
+      > </a
+      ><a name="1045" class="Symbol"
+      >&#8594;</a
+      ><a name="1046"
+      > 
+                                    </a
+      ><a name="1084" href="StateSizedIO.GUI.VariableList.html#781" class="Function"
+      >putVar</a
+      ><a name="1090"
+      > </a
+      ><a name="1091" class="Symbol"
+      >(</a
+      ><a name="1092" href="StateSizedIO.GUI.VariableList.html#221" class="InductiveConstructor"
+      >addVar</a
+      ><a name="1098"
+      > </a
+      ><a name="1099" href="StateSizedIO.GUI.VariableList.html#945" class="Bound"
+      >B</a
+      ><a name="1100"
+      > </a
+      ><a name="1101" href="StateSizedIO.GUI.VariableList.html#947" class="Bound"
+      >v'</a
+      ><a name="1103"
+      > </a
+      ><a name="1104" href="StateSizedIO.GUI.VariableList.html#950" class="Bound"
+      >l</a
+      ><a name="1105" class="Symbol"
+      >)</a
+      ><a name="1106"
+      >  </a
+      ><a name="1108" href="StateSizedIO.GUI.VariableList.html#959" class="Bound"
+      >rest</a
+      ><a name="1112"
+      > </a
+      ><a name="1113" href="NativeIO.html#183" class="Postulate Operator"
+      >native&gt;&gt;=</a
+      ><a name="1122"
+      > 
+                                    </a
+      ><a name="1160" href="NativeIO.html#139" class="Postulate"
+      >nativeReturn</a
+      ><a name="1172"
+      > 
+
+</a
+      ><a name="1175" href="StateSizedIO.GUI.VariableList.html#1175" class="Function"
+      >dispatch</a
+      ><a name="1183"
+      > </a
+      ><a name="1184" class="Symbol"
+      >:</a
+      ><a name="1185"
+      > </a
+      ><a name="1186" class="Symbol"
+      >(</a
+      ><a name="1187" href="StateSizedIO.GUI.VariableList.html#1187" class="Bound"
+      >l</a
+      ><a name="1188"
+      > </a
+      ><a name="1189" class="Symbol"
+      >:</a
+      ><a name="1190"
+      > </a
+      ><a name="1191" href="StateSizedIO.GUI.VariableList.html#179" class="Datatype"
+      >VarList</a
+      ><a name="1198" class="Symbol"
+      >)</a
+      ><a name="1199"
+      > </a
+      ><a name="1200" class="Symbol"
+      >&#8594;</a
+      ><a name="1201"
+      > </a
+      ><a name="1202" class="Symbol"
+      >(</a
+      ><a name="1203" href="StateSizedIO.GUI.VariableList.html#270" class="Function"
+      >prod</a
+      ><a name="1207"
+      > </a
+      ><a name="1208" href="StateSizedIO.GUI.VariableList.html#1187" class="Bound"
+      >l</a
+      ><a name="1209"
+      > </a
+      ><a name="1210" class="Symbol"
+      >&#8594;</a
+      ><a name="1211"
+      > </a
+      ><a name="1212" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="1220"
+      > </a
+      ><a name="1221" class="Symbol"
+      >(</a
+      ><a name="1222" href="StateSizedIO.GUI.VariableList.html#270" class="Function"
+      >prod</a
+      ><a name="1226"
+      > </a
+      ><a name="1227" href="StateSizedIO.GUI.VariableList.html#1187" class="Bound"
+      >l</a
+      ><a name="1228" class="Symbol"
+      >))</a
+      ><a name="1230"
+      > </a
+      ><a name="1231" class="Symbol"
+      >&#8594;</a
+      ><a name="1232"
+      > </a
+      ><a name="1233" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="1241"
+      > </a
+      ><a name="1242" href="Unit.html#28" class="Record"
+      >Unit</a
+      ><a name="1246"
+      >
+</a
+      ><a name="1247" href="StateSizedIO.GUI.VariableList.html#1175" class="Function"
+      >dispatch</a
+      ><a name="1255"
+      > </a
+      ><a name="1256" href="StateSizedIO.GUI.VariableList.html#1256" class="Bound"
+      >l</a
+      ><a name="1257"
+      > </a
+      ><a name="1258" href="StateSizedIO.GUI.VariableList.html#1258" class="Bound"
+      >f</a
+      ><a name="1259"
+      > </a
+      ><a name="1260" class="Symbol"
+      >=</a
+      ><a name="1261"
+      > </a
+      ><a name="1262" href="StateSizedIO.GUI.VariableList.html#366" class="Function"
+      >takeVar</a
+      ><a name="1269"
+      > </a
+      ><a name="1270" href="StateSizedIO.GUI.VariableList.html#1256" class="Bound"
+      >l</a
+      ><a name="1271"
+      >     </a
+      ><a name="1276" href="NativeIO.html#183" class="Postulate Operator"
+      >native&gt;&gt;=</a
+      ><a name="1285"
+      > </a
+      ><a name="1286" class="Symbol"
+      >&#955;</a
+      ><a name="1287"
+      > </a
+      ><a name="1288" href="StateSizedIO.GUI.VariableList.html#1288" class="Bound"
+      >a</a
+      ><a name="1289"
+      > </a
+      ><a name="1290" class="Symbol"
+      >&#8594;</a
+      ><a name="1291"
+      > 
+               </a
+      ><a name="1308" href="StateSizedIO.GUI.VariableList.html#1258" class="Bound"
+      >f</a
+      ><a name="1309"
+      > </a
+      ><a name="1310" href="StateSizedIO.GUI.VariableList.html#1288" class="Bound"
+      >a</a
+      ><a name="1311"
+      >          </a
+      ><a name="1321" href="NativeIO.html#183" class="Postulate Operator"
+      >native&gt;&gt;=</a
+      ><a name="1330"
+      > </a
+      ><a name="1331" class="Symbol"
+      >&#955;</a
+      ><a name="1332"
+      > </a
+      ><a name="1333" href="StateSizedIO.GUI.VariableList.html#1333" class="Bound"
+      >a&#8321;</a
+      ><a name="1335"
+      > </a
+      ><a name="1336" class="Symbol"
+      >&#8594;</a
+      ><a name="1337"
+      > 
+               </a
+      ><a name="1354" href="StateSizedIO.GUI.VariableList.html#781" class="Function"
+      >putVar</a
+      ><a name="1360"
+      > </a
+      ><a name="1361" href="StateSizedIO.GUI.VariableList.html#1256" class="Bound"
+      >l</a
+      ><a name="1362"
+      > </a
+      ><a name="1363" href="StateSizedIO.GUI.VariableList.html#1333" class="Bound"
+      >a&#8321;</a
+      ><a name="1365"
+      >
+
+</a
+      ><a name="1367" href="StateSizedIO.GUI.VariableList.html#1367" class="Function"
+      >dispatchList</a
+      ><a name="1379"
+      > </a
+      ><a name="1380" class="Symbol"
+      >:</a
+      ><a name="1381"
+      > </a
+      ><a name="1382" class="Symbol"
+      >(</a
+      ><a name="1383" href="StateSizedIO.GUI.VariableList.html#1383" class="Bound"
+      >l</a
+      ><a name="1384"
+      > </a
+      ><a name="1385" class="Symbol"
+      >:</a
+      ><a name="1386"
+      > </a
+      ><a name="1387" href="StateSizedIO.GUI.VariableList.html#179" class="Datatype"
+      >VarList</a
+      ><a name="1394" class="Symbol"
+      >)</a
+      ><a name="1395"
+      > </a
+      ><a name="1396" class="Symbol"
+      >&#8594;</a
+      ><a name="1397"
+      > </a
+      ><a name="1398" href="Agda.Builtin.List.html#52" class="Datatype"
+      >List</a
+      ><a name="1402"
+      > </a
+      ><a name="1403" class="Symbol"
+      >(</a
+      ><a name="1404" href="StateSizedIO.GUI.VariableList.html#270" class="Function"
+      >prod</a
+      ><a name="1408"
+      > </a
+      ><a name="1409" href="StateSizedIO.GUI.VariableList.html#1383" class="Bound"
+      >l</a
+      ><a name="1410"
+      > </a
+      ><a name="1411" class="Symbol"
+      >&#8594;</a
+      ><a name="1412"
+      > </a
+      ><a name="1413" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="1421"
+      > </a
+      ><a name="1422" class="Symbol"
+      >(</a
+      ><a name="1423" href="StateSizedIO.GUI.VariableList.html#270" class="Function"
+      >prod</a
+      ><a name="1427"
+      > </a
+      ><a name="1428" href="StateSizedIO.GUI.VariableList.html#1383" class="Bound"
+      >l</a
+      ><a name="1429" class="Symbol"
+      >))</a
+      ><a name="1431"
+      > </a
+      ><a name="1432" class="Symbol"
+      >&#8594;</a
+      ><a name="1433"
+      > </a
+      ><a name="1434" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="1442"
+      > </a
+      ><a name="1443" href="Unit.html#28" class="Record"
+      >Unit</a
+      ><a name="1447"
+      >
+</a
+      ><a name="1448" href="StateSizedIO.GUI.VariableList.html#1367" class="Function"
+      >dispatchList</a
+      ><a name="1460"
+      > </a
+      ><a name="1461" href="StateSizedIO.GUI.VariableList.html#1461" class="Bound"
+      >l</a
+      ><a name="1462"
+      > </a
+      ><a name="1463" href="Agda.Builtin.List.html#89" class="InductiveConstructor"
+      >[]</a
+      ><a name="1465"
+      >         </a
+      ><a name="1474" class="Symbol"
+      >=</a
+      ><a name="1475"
+      > </a
+      ><a name="1476" href="NativeIO.html#139" class="Postulate"
+      >nativeReturn</a
+      ><a name="1488"
+      > </a
+      ><a name="1489" class="Symbol"
+      >_</a
+      ><a name="1490"
+      >
+</a
+      ><a name="1491" href="StateSizedIO.GUI.VariableList.html#1367" class="Function"
+      >dispatchList</a
+      ><a name="1503"
+      > </a
+      ><a name="1504" href="StateSizedIO.GUI.VariableList.html#1504" class="Bound"
+      >l</a
+      ><a name="1505"
+      > </a
+      ><a name="1506" class="Symbol"
+      >(</a
+      ><a name="1507" href="StateSizedIO.GUI.VariableList.html#1507" class="Bound"
+      >p</a
+      ><a name="1508"
+      > </a
+      ><a name="1509" href="Agda.Builtin.List.html#104" class="InductiveConstructor Operator"
+      >&#8759;</a
+      ><a name="1510"
+      > </a
+      ><a name="1511" href="StateSizedIO.GUI.VariableList.html#1511" class="Bound"
+      >rest</a
+      ><a name="1515" class="Symbol"
+      >)</a
+      ><a name="1516"
+      > </a
+      ><a name="1517" class="Symbol"
+      >=</a
+      ><a name="1518"
+      > </a
+      ><a name="1519" href="StateSizedIO.GUI.VariableList.html#1175" class="Function"
+      >dispatch</a
+      ><a name="1527"
+      > </a
+      ><a name="1528" href="StateSizedIO.GUI.VariableList.html#1504" class="Bound"
+      >l</a
+      ><a name="1529"
+      > </a
+      ><a name="1530" href="StateSizedIO.GUI.VariableList.html#1507" class="Bound"
+      >p</a
+      ><a name="1531"
+      > </a
+      ><a name="1532" href="NativeIO.html#183" class="Postulate Operator"
+      >native&gt;&gt;=</a
+      ><a name="1541"
+      > </a
+      ><a name="1542" class="Symbol"
+      >&#955;</a
+      ><a name="1543"
+      > </a
+      ><a name="1544" href="StateSizedIO.GUI.VariableList.html#1544" class="Bound"
+      >_</a
+      ><a name="1545"
+      > </a
+      ><a name="1546" class="Symbol"
+      >&#8594;</a
+      ><a name="1547"
+      > 
+                            </a
+      ><a name="1577" href="StateSizedIO.GUI.VariableList.html#1367" class="Function"
+      >dispatchList</a
+      ><a name="1589"
+      > </a
+      ><a name="1590" href="StateSizedIO.GUI.VariableList.html#1504" class="Bound"
+      >l</a
+      ><a name="1591"
+      > </a
+      ><a name="1592" href="StateSizedIO.GUI.VariableList.html#1511" class="Bound"
+      >rest</a
+      ><a name="1596"
+      >
+</a
+      ></pre
+    ></body
+  ></html
+>

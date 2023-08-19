@@ -1,0 +1,38 @@
+Coinductive Reasoning in Dependent Type Theory - Copatterns, Objects, Processes
+   (part on Processes joint work with Bashar Igried)
+
+When working in logic in computer science, one is very often confronted
+with bisimulation. The reason for its importance is that in computer
+science, one often reasons about interactive or concurrent programs.
+Such programs can have infinite execution paths, and therefore
+correspond to coinductive data types. The natural equality on coinductive
+data types is bisimulation. Proofs of bisimulation form one of the main
+principles for reasoning about coinductive data types.
+
+However, bisimulation is often very difficult to understand and to teach. 
+This is in contrast to the principle of induction, where 
+there exists a well established tradition of carrying out proofs by induction. 
+One goal of this talk is to demonstrate that one can reason about
+coinductive data types in a similar way as one can reason inductively about inductive
+data types. 
+
+Reasoning about inductive data types can be done by pattern matching. For instance
+for reasoning about natural numbers one makes a case distinction on whether the
+argument is 0 or a successor. For coinductive data types the dual is copattern
+matching, which is essentially a case distinction on the observations 
+one can make for a coinductively defined set. For instance, streams have
+observations head and tail, and one can introduce a stream by determining
+its head and its tail.
+
+We then look at examples of the use of coinductive data types. One is
+the notion of an object, as it occurs in object-oriented program. 
+Objects are defined by their method calls, which are observations, so they
+are defined coinductively. The final example will be the representation 
+of processes in dependent type theory, where we will refer
+to the process algebra CSP. 
+
+
+
+
+
+

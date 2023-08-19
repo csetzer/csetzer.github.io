@@ -1,0 +1,2589 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >StateSizedIO.GUI.WxGraphicsLib</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Keyword"
+      >module</a
+      ><a name="7"
+      > </a
+      ><a name="8" href="StateSizedIO.GUI.WxGraphicsLib.html#1" class="Module"
+      >StateSizedIO.GUI.WxGraphicsLib</a
+      ><a name="38"
+      > </a
+      ><a name="39" class="Keyword"
+      >where</a
+      ><a name="44"
+      >
+
+</a
+      ><a name="46" class="Keyword"
+      >open</a
+      ><a name="50"
+      > </a
+      ><a name="51" class="Keyword"
+      >import</a
+      ><a name="57"
+      > </a
+      ><a name="58" href="SizedIO.Base.html#1" class="Module"
+      >SizedIO.Base</a
+      ><a name="70"
+      >
+</a
+      ><a name="71" class="Keyword"
+      >open</a
+      ><a name="75"
+      > </a
+      ><a name="76" class="Keyword"
+      >import</a
+      ><a name="82"
+      > </a
+      ><a name="83" href="StateSizedIO.GUI.BaseStateDependent.html#1" class="Module"
+      >StateSizedIO.GUI.BaseStateDependent</a
+      ><a name="118"
+      > 
+
+</a
+      ><a name="121" class="Keyword"
+      >open</a
+      ><a name="125"
+      > </a
+      ><a name="126" class="Keyword"
+      >import</a
+      ><a name="132"
+      > </a
+      ><a name="133" href="Size.html#1" class="Module"
+      >Size</a
+      ><a name="137"
+      > </a
+      ><a name="138" class="Keyword"
+      >renaming</a
+      ><a name="146"
+      > </a
+      ><a name="147" class="Symbol"
+      >(</a
+      ><a name="148" href="Agda.Builtin.Size.html#86" class="Postulate"
+      >Size</a
+      ><a name="152"
+      > </a
+      ><a name="153" class="Symbol"
+      >to</a
+      ><a name="155"
+      > </a
+      ><a name="156" href="Agda.Builtin.Size.html#86" class="Postulate"
+      >AgdaSize</a
+      ><a name="164" class="Symbol"
+      >)</a
+      ><a name="165"
+      >
+
+</a
+      ><a name="167" class="Keyword"
+      >open</a
+      ><a name="171"
+      > </a
+      ><a name="172" class="Keyword"
+      >import</a
+      ><a name="178"
+      > </a
+      ><a name="179" href="Data.Bool.Base.html#1" class="Module"
+      >Data.Bool.Base</a
+      ><a name="193"
+      >
+</a
+      ><a name="194" class="Keyword"
+      >open</a
+      ><a name="198"
+      > </a
+      ><a name="199" class="Keyword"
+      >import</a
+      ><a name="205"
+      > </a
+      ><a name="206" href="Data.List.Base.html#1" class="Module"
+      >Data.List.Base</a
+      ><a name="220"
+      >
+
+</a
+      ><a name="222" class="Keyword"
+      >open</a
+      ><a name="226"
+      > </a
+      ><a name="227" class="Keyword"
+      >import</a
+      ><a name="233"
+      > </a
+      ><a name="234" href="Function.html#1" class="Module"
+      >Function</a
+      ><a name="242"
+      >
+
+</a
+      ><a name="244" class="Keyword"
+      >open</a
+      ><a name="248"
+      > </a
+      ><a name="249" class="Keyword"
+      >import</a
+      ><a name="255"
+      > </a
+      ><a name="256" href="NativeIO.html#1" class="Module"
+      >NativeIO</a
+      ><a name="264"
+      >
+
+</a
+      ><a name="266" class="Keyword"
+      >open</a
+      ><a name="270"
+      > </a
+      ><a name="271" class="Keyword"
+      >import</a
+      ><a name="277"
+      > </a
+      ><a name="278" href="StateSizedIO.GUI.WxBindingsFFI.html#1" class="Module"
+      >StateSizedIO.GUI.WxBindingsFFI</a
+      ><a name="308"
+      >  
+</a
+      ><a name="311" class="Keyword"
+      >open</a
+      ><a name="315"
+      > </a
+      ><a name="316" class="Keyword"
+      >import</a
+      ><a name="322"
+      > </a
+      ><a name="323" href="StateSizedIO.GUI.VariableList.html#1" class="Module"
+      >StateSizedIO.GUI.VariableList</a
+      ><a name="352"
+      >
+
+
+
+</a
+      ><a name="356" class="Keyword"
+      >data</a
+      ><a name="360"
+      > </a
+      ><a name="361" href="StateSizedIO.GUI.WxGraphicsLib.html#361" class="Datatype"
+      >GuiLev1Command</a
+      ><a name="375"
+      > </a
+      ><a name="376" class="Symbol"
+      >:</a
+      ><a name="377"
+      > </a
+      ><a name="378" class="PrimitiveType"
+      >Set</a
+      ><a name="381"
+      > </a
+      ><a name="382" class="Keyword"
+      >where</a
+      ><a name="387"
+      >
+  </a
+      ><a name="390" href="StateSizedIO.GUI.WxGraphicsLib.html#390" class="InductiveConstructor"
+      >makeFrame</a
+      ><a name="399"
+      >         </a
+      ><a name="408" class="Symbol"
+      >:</a
+      ><a name="409"
+      > </a
+      ><a name="410" href="StateSizedIO.GUI.WxGraphicsLib.html#361" class="Datatype"
+      >GuiLev1Command</a
+      ><a name="424"
+      >
+  </a
+      ><a name="427" href="StateSizedIO.GUI.WxGraphicsLib.html#427" class="InductiveConstructor"
+      >makeButton</a
+      ><a name="437"
+      >        </a
+      ><a name="445" class="Symbol"
+      >:</a
+      ><a name="446"
+      > </a
+      ><a name="447" href="StateSizedIO.GUI.WxBindingsFFI.html#383" class="Postulate"
+      >Frame</a
+      ><a name="452"
+      >   </a
+      ><a name="455" class="Symbol"
+      >&#8594;</a
+      ><a name="456"
+      > </a
+      ><a name="457" href="StateSizedIO.GUI.WxGraphicsLib.html#361" class="Datatype"
+      >GuiLev1Command</a
+      ><a name="471"
+      >
+  </a
+      ><a name="474" href="StateSizedIO.GUI.WxGraphicsLib.html#474" class="InductiveConstructor"
+      >addButton</a
+      ><a name="483"
+      >         </a
+      ><a name="492" class="Symbol"
+      >:</a
+      ><a name="493"
+      > </a
+      ><a name="494" href="StateSizedIO.GUI.WxBindingsFFI.html#383" class="Postulate"
+      >Frame</a
+      ><a name="499"
+      >   </a
+      ><a name="502" class="Symbol"
+      >&#8594;</a
+      ><a name="503"
+      > </a
+      ><a name="504" href="StateSizedIO.GUI.WxBindingsFFI.html#460" class="Postulate"
+      >Button</a
+      ><a name="510"
+      > </a
+      ><a name="511" class="Symbol"
+      >&#8594;</a
+      ><a name="512"
+      > </a
+      ><a name="513" href="StateSizedIO.GUI.WxGraphicsLib.html#361" class="Datatype"
+      >GuiLev1Command</a
+      ><a name="527"
+      >
+  </a
+      ><a name="530" href="StateSizedIO.GUI.WxGraphicsLib.html#530" class="InductiveConstructor"
+      >drawBitmap</a
+      ><a name="540"
+      >        </a
+      ><a name="548" class="Symbol"
+      >:</a
+      ><a name="549"
+      > </a
+      ><a name="550" href="StateSizedIO.GUI.WxBindingsFFI.html#2911" class="Postulate"
+      >DC</a
+      ><a name="552"
+      >      </a
+      ><a name="558" class="Symbol"
+      >&#8594;</a
+      ><a name="559"
+      > </a
+      ><a name="560" href="StateSizedIO.GUI.WxBindingsFFI.html#2715" class="Postulate"
+      >Bitmap</a
+      ><a name="566"
+      > </a
+      ><a name="567" class="Symbol"
+      >&#8594;</a
+      ><a name="568"
+      > </a
+      ><a name="569" href="StateSizedIO.GUI.WxBindingsFFI.html#3370" class="Function"
+      >Point</a
+      ><a name="574"
+      > </a
+      ><a name="575" class="Symbol"
+      >&#8594;</a
+      ><a name="576"
+      > </a
+      ><a name="577" href="Agda.Builtin.Bool.html#39" class="Datatype"
+      >Bool</a
+      ><a name="581"
+      > </a
+      ><a name="582" class="Symbol"
+      >&#8594;</a
+      ><a name="583"
+      > </a
+      ><a name="584" href="StateSizedIO.GUI.WxGraphicsLib.html#361" class="Datatype"
+      >GuiLev1Command</a
+      ><a name="598"
+      >
+  </a
+      ><a name="601" href="StateSizedIO.GUI.WxGraphicsLib.html#601" class="InductiveConstructor"
+      >repaint</a
+      ><a name="608"
+      >           </a
+      ><a name="619" class="Symbol"
+      >:</a
+      ><a name="620"
+      > </a
+      ><a name="621" href="StateSizedIO.GUI.WxBindingsFFI.html#383" class="Postulate"
+      >Frame</a
+      ><a name="626"
+      >   </a
+      ><a name="629" class="Symbol"
+      >&#8594;</a
+      ><a name="630"
+      > </a
+      ><a name="631" href="StateSizedIO.GUI.WxGraphicsLib.html#361" class="Datatype"
+      >GuiLev1Command</a
+      ><a name="645"
+      >
+
+</a
+      ><a name="647" href="StateSizedIO.GUI.WxGraphicsLib.html#647" class="Function"
+      >GuiLev1Response</a
+      ><a name="662"
+      > </a
+      ><a name="663" class="Symbol"
+      >:</a
+      ><a name="664"
+      > </a
+      ><a name="665" href="StateSizedIO.GUI.WxGraphicsLib.html#361" class="Datatype"
+      >GuiLev1Command</a
+      ><a name="679"
+      > </a
+      ><a name="680" class="Symbol"
+      >&#8594;</a
+      ><a name="681"
+      > </a
+      ><a name="682" class="PrimitiveType"
+      >Set</a
+      ><a name="685"
+      >
+</a
+      ><a name="686" href="StateSizedIO.GUI.WxGraphicsLib.html#647" class="Function"
+      >GuiLev1Response</a
+      ><a name="701"
+      > </a
+      ><a name="702" href="StateSizedIO.GUI.WxGraphicsLib.html#390" class="InductiveConstructor"
+      >makeFrame</a
+      ><a name="711"
+      >           </a
+      ><a name="722" class="Symbol"
+      >=</a
+      ><a name="723"
+      > </a
+      ><a name="724" href="StateSizedIO.GUI.WxBindingsFFI.html#383" class="Postulate"
+      >Frame</a
+      ><a name="729"
+      >
+</a
+      ><a name="730" href="StateSizedIO.GUI.WxGraphicsLib.html#647" class="Function"
+      >GuiLev1Response</a
+      ><a name="745"
+      > </a
+      ><a name="746" class="Symbol"
+      >(</a
+      ><a name="747" href="StateSizedIO.GUI.WxGraphicsLib.html#427" class="InductiveConstructor"
+      >makeButton</a
+      ><a name="757"
+      > </a
+      ><a name="758" class="Symbol"
+      >_)</a
+      ><a name="760"
+      >      </a
+      ><a name="766" class="Symbol"
+      >=</a
+      ><a name="767"
+      > </a
+      ><a name="768" href="StateSizedIO.GUI.WxBindingsFFI.html#460" class="Postulate"
+      >Button</a
+      ><a name="774"
+      >
+</a
+      ><a name="775" href="StateSizedIO.GUI.WxGraphicsLib.html#647" class="Function"
+      >GuiLev1Response</a
+      ><a name="790"
+      > </a
+      ><a name="791" class="Symbol"
+      >_</a
+      ><a name="792"
+      >                   </a
+      ><a name="811" class="Symbol"
+      >=</a
+      ><a name="812"
+      > </a
+      ><a name="813" href="Unit.html#28" class="Record"
+      >Unit</a
+      ><a name="817"
+      >
+
+</a
+      ><a name="819" href="StateSizedIO.GUI.WxGraphicsLib.html#819" class="Function"
+      >GuiLev1Interface</a
+      ><a name="835"
+      > </a
+      ><a name="836" class="Symbol"
+      >:</a
+      ><a name="837"
+      > </a
+      ><a name="838" href="SizedIO.Base.html#288" class="Record"
+      >IOInterface</a
+      ><a name="849"
+      > 
+</a
+      ><a name="851" href="SizedIO.Base.html#326" class="Field"
+      >Command</a
+      ><a name="858"
+      >   </a
+      ><a name="861" href="StateSizedIO.GUI.WxGraphicsLib.html#819" class="Function"
+      >GuiLev1Interface</a
+      ><a name="877"
+      > </a
+      ><a name="878" class="Symbol"
+      >=</a
+      ><a name="879"
+      > </a
+      ><a name="880" href="StateSizedIO.GUI.WxGraphicsLib.html#361" class="Datatype"
+      >GuiLev1Command</a
+      ><a name="894"
+      >
+</a
+      ><a name="895" href="SizedIO.Base.html#346" class="Field"
+      >Response</a
+      ><a name="903"
+      >  </a
+      ><a name="905" href="StateSizedIO.GUI.WxGraphicsLib.html#819" class="Function"
+      >GuiLev1Interface</a
+      ><a name="921"
+      > </a
+      ><a name="922" class="Symbol"
+      >=</a
+      ><a name="923"
+      > </a
+      ><a name="924" href="StateSizedIO.GUI.WxGraphicsLib.html#647" class="Function"
+      >GuiLev1Response</a
+      ><a name="939"
+      >
+
+
+
+</a
+      ><a name="943" href="StateSizedIO.GUI.WxGraphicsLib.html#943" class="Function"
+      >GuiLev2State</a
+      ><a name="955"
+      > </a
+      ><a name="956" class="Symbol"
+      >:</a
+      ><a name="957"
+      > </a
+      ><a name="958" class="PrimitiveType"
+      >Set&#8321;</a
+      ><a name="962"
+      >
+</a
+      ><a name="963" href="StateSizedIO.GUI.WxGraphicsLib.html#943" class="Function"
+      >GuiLev2State</a
+      ><a name="975"
+      > </a
+      ><a name="976" class="Symbol"
+      >=</a
+      ><a name="977"
+      > </a
+      ><a name="978" href="StateSizedIO.GUI.VariableList.html#179" class="Datatype"
+      >VarList</a
+      ><a name="985"
+      >
+
+</a
+      ><a name="987" class="Keyword"
+      >data</a
+      ><a name="991"
+      > </a
+      ><a name="992" href="StateSizedIO.GUI.WxGraphicsLib.html#992" class="Datatype"
+      >GuiLev2Command</a
+      ><a name="1006"
+      > </a
+      ><a name="1007" class="Symbol"
+      >(</a
+      ><a name="1008" href="StateSizedIO.GUI.WxGraphicsLib.html#1008" class="Bound"
+      >s</a
+      ><a name="1009"
+      > </a
+      ><a name="1010" class="Symbol"
+      >:</a
+      ><a name="1011"
+      >  </a
+      ><a name="1013" href="StateSizedIO.GUI.WxGraphicsLib.html#943" class="Function"
+      >GuiLev2State</a
+      ><a name="1025" class="Symbol"
+      >)</a
+      ><a name="1026"
+      > </a
+      ><a name="1027" class="Symbol"
+      >:</a
+      ><a name="1028"
+      > </a
+      ><a name="1029" class="PrimitiveType"
+      >Set&#8321;</a
+      ><a name="1033"
+      > </a
+      ><a name="1034" class="Keyword"
+      >where</a
+      ><a name="1039"
+      > 
+  </a
+      ><a name="1043" href="StateSizedIO.GUI.WxGraphicsLib.html#1043" class="InductiveConstructor"
+      >level1C</a
+      ><a name="1050"
+      >           </a
+      ><a name="1061" class="Symbol"
+      >:</a
+      ><a name="1062"
+      > </a
+      ><a name="1063" href="StateSizedIO.GUI.WxGraphicsLib.html#361" class="Datatype"
+      >GuiLev1Command</a
+      ><a name="1077"
+      > </a
+      ><a name="1078" class="Symbol"
+      >&#8594;</a
+      ><a name="1079"
+      > </a
+      ><a name="1080" href="StateSizedIO.GUI.WxGraphicsLib.html#992" class="Datatype"
+      >GuiLev2Command</a
+      ><a name="1094"
+      > </a
+      ><a name="1095" href="StateSizedIO.GUI.WxGraphicsLib.html#1008" class="Bound"
+      >s</a
+      ><a name="1096"
+      >
+  </a
+      ><a name="1099" href="StateSizedIO.GUI.WxGraphicsLib.html#1099" class="InductiveConstructor"
+      >createVar</a
+      ><a name="1108"
+      >         </a
+      ><a name="1117" class="Symbol"
+      >:</a
+      ><a name="1118"
+      > </a
+      ><a name="1119" class="Symbol"
+      >{</a
+      ><a name="1120" href="StateSizedIO.GUI.WxGraphicsLib.html#1120" class="Bound"
+      >A</a
+      ><a name="1121"
+      > </a
+      ><a name="1122" class="Symbol"
+      >:</a
+      ><a name="1123"
+      > </a
+      ><a name="1124" class="PrimitiveType"
+      >Set</a
+      ><a name="1127" class="Symbol"
+      >}</a
+      ><a name="1128"
+      > </a
+      ><a name="1129" class="Symbol"
+      >&#8594;</a
+      ><a name="1130"
+      > </a
+      ><a name="1131" href="StateSizedIO.GUI.WxGraphicsLib.html#1120" class="Bound"
+      >A</a
+      ><a name="1132"
+      > </a
+      ><a name="1133" class="Symbol"
+      >&#8594;</a
+      ><a name="1134"
+      > </a
+      ><a name="1135" href="StateSizedIO.GUI.WxGraphicsLib.html#992" class="Datatype"
+      >GuiLev2Command</a
+      ><a name="1149"
+      > </a
+      ><a name="1150" href="StateSizedIO.GUI.WxGraphicsLib.html#1008" class="Bound"
+      >s</a
+      ><a name="1151"
+      >
+  </a
+      ><a name="1154" href="StateSizedIO.GUI.WxGraphicsLib.html#1154" class="InductiveConstructor"
+      >setButtonHandler</a
+      ><a name="1170"
+      >  </a
+      ><a name="1172" class="Symbol"
+      >:</a
+      ><a name="1173"
+      > </a
+      ><a name="1174" href="StateSizedIO.GUI.WxBindingsFFI.html#460" class="Postulate"
+      >Button</a
+      ><a name="1180"
+      > </a
+      ><a name="1181" class="Symbol"
+      >&#8594;</a
+      ><a name="1182"
+      > </a
+      ><a name="1183" href="Agda.Builtin.List.html#52" class="Datatype"
+      >List</a
+      ><a name="1187"
+      > </a
+      ><a name="1188" class="Symbol"
+      >(</a
+      ><a name="1189" href="StateSizedIO.GUI.VariableList.html#270" class="Function"
+      >prod</a
+      ><a name="1193"
+      > </a
+      ><a name="1194" href="StateSizedIO.GUI.WxGraphicsLib.html#1008" class="Bound"
+      >s</a
+      ><a name="1195"
+      > </a
+      ><a name="1196" class="Symbol"
+      >&#8594;</a
+      ><a name="1197"
+      > </a
+      ><a name="1198" href="SizedIO.Base.html#499" class="Record"
+      >IO</a
+      ><a name="1200"
+      > </a
+      ><a name="1201" href="StateSizedIO.GUI.WxGraphicsLib.html#819" class="Function"
+      >GuiLev1Interface</a
+      ><a name="1217"
+      > </a
+      ><a name="1218" href="Agda.Builtin.Size.html#182" class="Postulate"
+      >&#8734;</a
+      ><a name="1219"
+      > </a
+      ><a name="1220" class="Symbol"
+      >(</a
+      ><a name="1221" href="StateSizedIO.GUI.VariableList.html#270" class="Function"
+      >prod</a
+      ><a name="1225"
+      > </a
+      ><a name="1226" href="StateSizedIO.GUI.WxGraphicsLib.html#1008" class="Bound"
+      >s</a
+      ><a name="1227" class="Symbol"
+      >))</a
+      ><a name="1229"
+      >
+                      </a
+      ><a name="1252" class="Symbol"
+      >&#8594;</a
+      ><a name="1253"
+      > </a
+      ><a name="1254" href="StateSizedIO.GUI.WxGraphicsLib.html#992" class="Datatype"
+      >GuiLev2Command</a
+      ><a name="1268"
+      > </a
+      ><a name="1269" href="StateSizedIO.GUI.WxGraphicsLib.html#1008" class="Bound"
+      >s</a
+      ><a name="1270"
+      >
+  </a
+      ><a name="1273" href="StateSizedIO.GUI.WxGraphicsLib.html#1273" class="InductiveConstructor"
+      >setKeyHandler</a
+      ><a name="1286"
+      >     </a
+      ><a name="1291" class="Symbol"
+      >:</a
+      ><a name="1292"
+      > </a
+      ><a name="1293" href="StateSizedIO.GUI.WxBindingsFFI.html#460" class="Postulate"
+      >Button</a
+      ><a name="1299"
+      >
+                      </a
+      ><a name="1322" class="Symbol"
+      >&#8594;</a
+      ><a name="1323"
+      > </a
+      ><a name="1324" href="Agda.Builtin.List.html#52" class="Datatype"
+      >List</a
+      ><a name="1328"
+      > </a
+      ><a name="1329" class="Symbol"
+      >(</a
+      ><a name="1330" href="StateSizedIO.GUI.VariableList.html#270" class="Function"
+      >prod</a
+      ><a name="1334"
+      > </a
+      ><a name="1335" href="StateSizedIO.GUI.WxGraphicsLib.html#1008" class="Bound"
+      >s</a
+      ><a name="1336"
+      > </a
+      ><a name="1337" class="Symbol"
+      >&#8594;</a
+      ><a name="1338"
+      > </a
+      ><a name="1339" href="SizedIO.Base.html#499" class="Record"
+      >IO</a
+      ><a name="1341"
+      > </a
+      ><a name="1342" href="StateSizedIO.GUI.WxGraphicsLib.html#819" class="Function"
+      >GuiLev1Interface</a
+      ><a name="1358"
+      > </a
+      ><a name="1359" href="Agda.Builtin.Size.html#182" class="Postulate"
+      >&#8734;</a
+      ><a name="1360"
+      > </a
+      ><a name="1361" class="Symbol"
+      >(</a
+      ><a name="1362" href="StateSizedIO.GUI.VariableList.html#270" class="Function"
+      >prod</a
+      ><a name="1366"
+      > </a
+      ><a name="1367" href="StateSizedIO.GUI.WxGraphicsLib.html#1008" class="Bound"
+      >s</a
+      ><a name="1368" class="Symbol"
+      >))</a
+      ><a name="1370"
+      >
+                      </a
+      ><a name="1393" class="Symbol"
+      >&#8594;</a
+      ><a name="1394"
+      > </a
+      ><a name="1395" href="Agda.Builtin.List.html#52" class="Datatype"
+      >List</a
+      ><a name="1399"
+      > </a
+      ><a name="1400" class="Symbol"
+      >(</a
+      ><a name="1401" href="StateSizedIO.GUI.VariableList.html#270" class="Function"
+      >prod</a
+      ><a name="1405"
+      > </a
+      ><a name="1406" href="StateSizedIO.GUI.WxGraphicsLib.html#1008" class="Bound"
+      >s</a
+      ><a name="1407"
+      > </a
+      ><a name="1408" class="Symbol"
+      >&#8594;</a
+      ><a name="1409"
+      > </a
+      ><a name="1410" href="SizedIO.Base.html#499" class="Record"
+      >IO</a
+      ><a name="1412"
+      > </a
+      ><a name="1413" href="StateSizedIO.GUI.WxGraphicsLib.html#819" class="Function"
+      >GuiLev1Interface</a
+      ><a name="1429"
+      > </a
+      ><a name="1430" href="Agda.Builtin.Size.html#182" class="Postulate"
+      >&#8734;</a
+      ><a name="1431"
+      > </a
+      ><a name="1432" class="Symbol"
+      >(</a
+      ><a name="1433" href="StateSizedIO.GUI.VariableList.html#270" class="Function"
+      >prod</a
+      ><a name="1437"
+      > </a
+      ><a name="1438" href="StateSizedIO.GUI.WxGraphicsLib.html#1008" class="Bound"
+      >s</a
+      ><a name="1439" class="Symbol"
+      >))</a
+      ><a name="1441"
+      >
+                      </a
+      ><a name="1464" class="Symbol"
+      >&#8594;</a
+      ><a name="1465"
+      > </a
+      ><a name="1466" href="Agda.Builtin.List.html#52" class="Datatype"
+      >List</a
+      ><a name="1470"
+      > </a
+      ><a name="1471" class="Symbol"
+      >(</a
+      ><a name="1472" href="StateSizedIO.GUI.VariableList.html#270" class="Function"
+      >prod</a
+      ><a name="1476"
+      > </a
+      ><a name="1477" href="StateSizedIO.GUI.WxGraphicsLib.html#1008" class="Bound"
+      >s</a
+      ><a name="1478"
+      > </a
+      ><a name="1479" class="Symbol"
+      >&#8594;</a
+      ><a name="1480"
+      > </a
+      ><a name="1481" href="SizedIO.Base.html#499" class="Record"
+      >IO</a
+      ><a name="1483"
+      > </a
+      ><a name="1484" href="StateSizedIO.GUI.WxGraphicsLib.html#819" class="Function"
+      >GuiLev1Interface</a
+      ><a name="1500"
+      > </a
+      ><a name="1501" href="Agda.Builtin.Size.html#182" class="Postulate"
+      >&#8734;</a
+      ><a name="1502"
+      > </a
+      ><a name="1503" class="Symbol"
+      >(</a
+      ><a name="1504" href="StateSizedIO.GUI.VariableList.html#270" class="Function"
+      >prod</a
+      ><a name="1508"
+      > </a
+      ><a name="1509" href="StateSizedIO.GUI.WxGraphicsLib.html#1008" class="Bound"
+      >s</a
+      ><a name="1510" class="Symbol"
+      >))</a
+      ><a name="1512"
+      >
+                      </a
+      ><a name="1535" class="Symbol"
+      >&#8594;</a
+      ><a name="1536"
+      > </a
+      ><a name="1537" href="Agda.Builtin.List.html#52" class="Datatype"
+      >List</a
+      ><a name="1541"
+      > </a
+      ><a name="1542" class="Symbol"
+      >(</a
+      ><a name="1543" href="StateSizedIO.GUI.VariableList.html#270" class="Function"
+      >prod</a
+      ><a name="1547"
+      > </a
+      ><a name="1548" href="StateSizedIO.GUI.WxGraphicsLib.html#1008" class="Bound"
+      >s</a
+      ><a name="1549"
+      > </a
+      ><a name="1550" class="Symbol"
+      >&#8594;</a
+      ><a name="1551"
+      > </a
+      ><a name="1552" href="SizedIO.Base.html#499" class="Record"
+      >IO</a
+      ><a name="1554"
+      > </a
+      ><a name="1555" href="StateSizedIO.GUI.WxGraphicsLib.html#819" class="Function"
+      >GuiLev1Interface</a
+      ><a name="1571"
+      > </a
+      ><a name="1572" href="Agda.Builtin.Size.html#182" class="Postulate"
+      >&#8734;</a
+      ><a name="1573"
+      > </a
+      ><a name="1574" class="Symbol"
+      >(</a
+      ><a name="1575" href="StateSizedIO.GUI.VariableList.html#270" class="Function"
+      >prod</a
+      ><a name="1579"
+      > </a
+      ><a name="1580" href="StateSizedIO.GUI.WxGraphicsLib.html#1008" class="Bound"
+      >s</a
+      ><a name="1581" class="Symbol"
+      >))</a
+      ><a name="1583"
+      >
+                      </a
+      ><a name="1606" class="Symbol"
+      >&#8594;</a
+      ><a name="1607"
+      > </a
+      ><a name="1608" href="StateSizedIO.GUI.WxGraphicsLib.html#992" class="Datatype"
+      >GuiLev2Command</a
+      ><a name="1622"
+      > </a
+      ><a name="1623" href="StateSizedIO.GUI.WxGraphicsLib.html#1008" class="Bound"
+      >s</a
+      ><a name="1624"
+      >                      
+  </a
+      ><a name="1649" href="StateSizedIO.GUI.WxGraphicsLib.html#1649" class="InductiveConstructor"
+      >setOnPaint</a
+      ><a name="1659"
+      >        </a
+      ><a name="1667" class="Symbol"
+      >:</a
+      ><a name="1668"
+      > </a
+      ><a name="1669" href="StateSizedIO.GUI.WxBindingsFFI.html#383" class="Postulate"
+      >Frame</a
+      ><a name="1674"
+      >
+                     </a
+      ><a name="1696" class="Symbol"
+      >&#8594;</a
+      ><a name="1697"
+      > </a
+      ><a name="1698" href="Agda.Builtin.List.html#52" class="Datatype"
+      >List</a
+      ><a name="1702"
+      > </a
+      ><a name="1703" class="Symbol"
+      >(</a
+      ><a name="1704" href="StateSizedIO.GUI.VariableList.html#270" class="Function"
+      >prod</a
+      ><a name="1708"
+      > </a
+      ><a name="1709" href="StateSizedIO.GUI.WxGraphicsLib.html#1008" class="Bound"
+      >s</a
+      ><a name="1710"
+      > </a
+      ><a name="1711" class="Symbol"
+      >&#8594;</a
+      ><a name="1712"
+      > </a
+      ><a name="1713" href="StateSizedIO.GUI.WxBindingsFFI.html#2911" class="Postulate"
+      >DC</a
+      ><a name="1715"
+      > </a
+      ><a name="1716" class="Symbol"
+      >&#8594;</a
+      ><a name="1717"
+      > </a
+      ><a name="1718" href="StateSizedIO.GUI.WxBindingsFFI.html#2983" class="Postulate"
+      >Rect</a
+      ><a name="1722"
+      > </a
+      ><a name="1723" class="Symbol"
+      >&#8594;</a
+      ><a name="1724"
+      > </a
+      ><a name="1725" href="SizedIO.Base.html#499" class="Record"
+      >IO</a
+      ><a name="1727"
+      > </a
+      ><a name="1728" href="StateSizedIO.GUI.WxGraphicsLib.html#819" class="Function"
+      >GuiLev1Interface</a
+      ><a name="1744"
+      > </a
+      ><a name="1745" href="Agda.Builtin.Size.html#182" class="Postulate"
+      >&#8734;</a
+      ><a name="1746"
+      > </a
+      ><a name="1747" class="Symbol"
+      >(</a
+      ><a name="1748" href="StateSizedIO.GUI.VariableList.html#270" class="Function"
+      >prod</a
+      ><a name="1752"
+      > </a
+      ><a name="1753" href="StateSizedIO.GUI.WxGraphicsLib.html#1008" class="Bound"
+      >s</a
+      ><a name="1754" class="Symbol"
+      >))</a
+      ><a name="1756"
+      > 
+                     </a
+      ><a name="1779" class="Symbol"
+      >&#8594;</a
+      ><a name="1780"
+      > </a
+      ><a name="1781" href="StateSizedIO.GUI.WxGraphicsLib.html#992" class="Datatype"
+      >GuiLev2Command</a
+      ><a name="1795"
+      > </a
+      ><a name="1796" href="StateSizedIO.GUI.WxGraphicsLib.html#1008" class="Bound"
+      >s</a
+      ><a name="1797"
+      >
+
+</a
+      ><a name="1799" href="StateSizedIO.GUI.WxGraphicsLib.html#1799" class="Function"
+      >GuiLev2Response</a
+      ><a name="1814"
+      > </a
+      ><a name="1815" class="Symbol"
+      >:</a
+      ><a name="1816"
+      > </a
+      ><a name="1817" class="Symbol"
+      >(</a
+      ><a name="1818" href="StateSizedIO.GUI.WxGraphicsLib.html#1818" class="Bound"
+      >s</a
+      ><a name="1819"
+      > </a
+      ><a name="1820" class="Symbol"
+      >:</a
+      ><a name="1821"
+      > </a
+      ><a name="1822" href="StateSizedIO.GUI.WxGraphicsLib.html#943" class="Function"
+      >GuiLev2State</a
+      ><a name="1834" class="Symbol"
+      >)</a
+      ><a name="1835"
+      > </a
+      ><a name="1836" class="Symbol"
+      >&#8594;</a
+      ><a name="1837"
+      > </a
+      ><a name="1838" href="StateSizedIO.GUI.WxGraphicsLib.html#992" class="Datatype"
+      >GuiLev2Command</a
+      ><a name="1852"
+      > </a
+      ><a name="1853" href="StateSizedIO.GUI.WxGraphicsLib.html#1818" class="Bound"
+      >s</a
+      ><a name="1854"
+      > </a
+      ><a name="1855" class="Symbol"
+      >&#8594;</a
+      ><a name="1856"
+      > </a
+      ><a name="1857" class="PrimitiveType"
+      >Set</a
+      ><a name="1860"
+      >
+</a
+      ><a name="1861" href="StateSizedIO.GUI.WxGraphicsLib.html#1799" class="Function"
+      >GuiLev2Response</a
+      ><a name="1876"
+      > </a
+      ><a name="1877" class="Symbol"
+      >_</a
+      ><a name="1878"
+      > </a
+      ><a name="1879" class="Symbol"
+      >(</a
+      ><a name="1880" href="StateSizedIO.GUI.WxGraphicsLib.html#1043" class="InductiveConstructor"
+      >level1C</a
+      ><a name="1887"
+      > </a
+      ><a name="1888" href="StateSizedIO.GUI.WxGraphicsLib.html#1888" class="Bound"
+      >c</a
+      ><a name="1889" class="Symbol"
+      >)</a
+      ><a name="1890"
+      >         </a
+      ><a name="1899" class="Symbol"
+      >=</a
+      ><a name="1900"
+      > </a
+      ><a name="1901" href="StateSizedIO.GUI.WxGraphicsLib.html#647" class="Function"
+      >GuiLev1Response</a
+      ><a name="1916"
+      > </a
+      ><a name="1917" href="StateSizedIO.GUI.WxGraphicsLib.html#1888" class="Bound"
+      >c</a
+      ><a name="1918"
+      >
+</a
+      ><a name="1919" href="StateSizedIO.GUI.WxGraphicsLib.html#1799" class="Function"
+      >GuiLev2Response</a
+      ><a name="1934"
+      > </a
+      ><a name="1935" class="Symbol"
+      >_</a
+      ><a name="1936"
+      > </a
+      ><a name="1937" class="Symbol"
+      >(</a
+      ><a name="1938" href="StateSizedIO.GUI.WxGraphicsLib.html#1099" class="InductiveConstructor"
+      >createVar</a
+      ><a name="1947"
+      > </a
+      ><a name="1948" class="Symbol"
+      >{</a
+      ><a name="1949" href="StateSizedIO.GUI.WxGraphicsLib.html#1949" class="Bound"
+      >A</a
+      ><a name="1950" class="Symbol"
+      >}</a
+      ><a name="1951"
+      > </a
+      ><a name="1952" href="StateSizedIO.GUI.WxGraphicsLib.html#1952" class="Bound"
+      >a</a
+      ><a name="1953" class="Symbol"
+      >)</a
+      ><a name="1954"
+      >   </a
+      ><a name="1957" class="Symbol"
+      >=</a
+      ><a name="1958"
+      > </a
+      ><a name="1959" href="StateSizedIO.GUI.WxBindingsFFI.html#1905" class="Function"
+      >Var</a
+      ><a name="1962"
+      > </a
+      ><a name="1963" href="StateSizedIO.GUI.WxGraphicsLib.html#1949" class="Bound"
+      >A</a
+      ><a name="1964"
+      >
+</a
+      ><a name="1965" href="StateSizedIO.GUI.WxGraphicsLib.html#1799" class="Function"
+      >GuiLev2Response</a
+      ><a name="1980"
+      > </a
+      ><a name="1981" class="Symbol"
+      >_</a
+      ><a name="1982"
+      > </a
+      ><a name="1983" class="Symbol"
+      >_</a
+      ><a name="1984"
+      >                   </a
+      ><a name="2003" class="Symbol"
+      >=</a
+      ><a name="2004"
+      > </a
+      ><a name="2005" href="Unit.html#28" class="Record"
+      >Unit</a
+      ><a name="2009"
+      >
+
+</a
+      ><a name="2011" href="StateSizedIO.GUI.WxGraphicsLib.html#2011" class="Function"
+      >GuiLev2Next</a
+      ><a name="2022"
+      > </a
+      ><a name="2023" class="Symbol"
+      >:</a
+      ><a name="2024"
+      > </a
+      ><a name="2025" class="Symbol"
+      >(</a
+      ><a name="2026" href="StateSizedIO.GUI.WxGraphicsLib.html#2026" class="Bound"
+      >s</a
+      ><a name="2027"
+      > </a
+      ><a name="2028" class="Symbol"
+      >:</a
+      ><a name="2029"
+      > </a
+      ><a name="2030" href="StateSizedIO.GUI.WxGraphicsLib.html#943" class="Function"
+      >GuiLev2State</a
+      ><a name="2042" class="Symbol"
+      >)</a
+      ><a name="2043"
+      > </a
+      ><a name="2044" class="Symbol"
+      >&#8594;</a
+      ><a name="2045"
+      > </a
+      ><a name="2046" class="Symbol"
+      >(</a
+      ><a name="2047" href="StateSizedIO.GUI.WxGraphicsLib.html#2047" class="Bound"
+      >c</a
+      ><a name="2048"
+      > </a
+      ><a name="2049" class="Symbol"
+      >:</a
+      ><a name="2050"
+      > </a
+      ><a name="2051" href="StateSizedIO.GUI.WxGraphicsLib.html#992" class="Datatype"
+      >GuiLev2Command</a
+      ><a name="2065"
+      > </a
+      ><a name="2066" href="StateSizedIO.GUI.WxGraphicsLib.html#2026" class="Bound"
+      >s</a
+      ><a name="2067" class="Symbol"
+      >)</a
+      ><a name="2068"
+      > 
+              </a
+      ><a name="2084" class="Symbol"
+      >&#8594;</a
+      ><a name="2085"
+      > </a
+      ><a name="2086" href="StateSizedIO.GUI.WxGraphicsLib.html#1799" class="Function"
+      >GuiLev2Response</a
+      ><a name="2101"
+      > </a
+      ><a name="2102" href="StateSizedIO.GUI.WxGraphicsLib.html#2026" class="Bound"
+      >s</a
+      ><a name="2103"
+      > </a
+      ><a name="2104" href="StateSizedIO.GUI.WxGraphicsLib.html#2047" class="Bound"
+      >c</a
+      ><a name="2105"
+      >
+              </a
+      ><a name="2120" class="Symbol"
+      >&#8594;</a
+      ><a name="2121"
+      > </a
+      ><a name="2122" href="StateSizedIO.GUI.WxGraphicsLib.html#943" class="Function"
+      >GuiLev2State</a
+      ><a name="2134"
+      >
+</a
+      ><a name="2135" href="StateSizedIO.GUI.WxGraphicsLib.html#2011" class="Function"
+      >GuiLev2Next</a
+      ><a name="2146"
+      > </a
+      ><a name="2147" href="StateSizedIO.GUI.WxGraphicsLib.html#2147" class="Bound"
+      >s</a
+      ><a name="2148"
+      > </a
+      ><a name="2149" class="Symbol"
+      >(</a
+      ><a name="2150" href="StateSizedIO.GUI.WxGraphicsLib.html#1099" class="InductiveConstructor"
+      >createVar</a
+      ><a name="2159"
+      > </a
+      ><a name="2160" class="Symbol"
+      >{</a
+      ><a name="2161" href="StateSizedIO.GUI.WxGraphicsLib.html#2161" class="Bound"
+      >A</a
+      ><a name="2162" class="Symbol"
+      >}</a
+      ><a name="2163"
+      > </a
+      ><a name="2164" href="StateSizedIO.GUI.WxGraphicsLib.html#2164" class="Bound"
+      >a</a
+      ><a name="2165" class="Symbol"
+      >)</a
+      ><a name="2166"
+      > </a
+      ><a name="2167" href="StateSizedIO.GUI.WxGraphicsLib.html#2167" class="Bound"
+      >var</a
+      ><a name="2170"
+      > </a
+      ><a name="2171" class="Symbol"
+      >=</a
+      ><a name="2172"
+      > </a
+      ><a name="2173" href="StateSizedIO.GUI.VariableList.html#221" class="InductiveConstructor"
+      >addVar</a
+      ><a name="2179"
+      > </a
+      ><a name="2180" href="StateSizedIO.GUI.WxGraphicsLib.html#2161" class="Bound"
+      >A</a
+      ><a name="2181"
+      > </a
+      ><a name="2182" href="StateSizedIO.GUI.WxGraphicsLib.html#2167" class="Bound"
+      >var</a
+      ><a name="2185"
+      > </a
+      ><a name="2186" href="StateSizedIO.GUI.WxGraphicsLib.html#2147" class="Bound"
+      >s</a
+      ><a name="2187"
+      >
+</a
+      ><a name="2188" href="StateSizedIO.GUI.WxGraphicsLib.html#2011" class="Function"
+      >GuiLev2Next</a
+      ><a name="2199"
+      > </a
+      ><a name="2200" href="StateSizedIO.GUI.WxGraphicsLib.html#2200" class="Bound"
+      >s</a
+      ><a name="2201"
+      > </a
+      ><a name="2202" class="Symbol"
+      >_</a
+      ><a name="2203"
+      >  </a
+      ><a name="2205" class="Symbol"
+      >_</a
+      ><a name="2206"
+      >                  </a
+      ><a name="2224" class="Symbol"
+      >=</a
+      ><a name="2225"
+      > </a
+      ><a name="2226" href="StateSizedIO.GUI.WxGraphicsLib.html#2200" class="Bound"
+      >s</a
+      ><a name="2227"
+      >
+
+</a
+      ><a name="2229" href="StateSizedIO.GUI.WxGraphicsLib.html#2229" class="Function"
+      >GuiLev2Interface</a
+      ><a name="2245"
+      > </a
+      ><a name="2246" class="Symbol"
+      >:</a
+      ><a name="2247"
+      > </a
+      ><a name="2248" href="StateSizedIO.GUI.BaseStateDependent.html#227" class="Record"
+      >IOInterface&#738;</a
+      ><a name="2260"
+      >
+</a
+      ><a name="2261" href="StateSizedIO.GUI.BaseStateDependent.html#292" class="Field"
+      >State&#738;</a
+      ><a name="2267"
+      >     </a
+      ><a name="2272" href="StateSizedIO.GUI.WxGraphicsLib.html#2229" class="Function"
+      >GuiLev2Interface</a
+      ><a name="2288"
+      > </a
+      ><a name="2289" class="Symbol"
+      >=</a
+      ><a name="2290"
+      > </a
+      ><a name="2291" href="StateSizedIO.GUI.WxGraphicsLib.html#943" class="Function"
+      >GuiLev2State</a
+      ><a name="2303"
+      >
+</a
+      ><a name="2304" href="StateSizedIO.GUI.BaseStateDependent.html#315" class="Field"
+      >Command&#738;</a
+      ><a name="2312"
+      >   </a
+      ><a name="2315" href="StateSizedIO.GUI.WxGraphicsLib.html#2229" class="Function"
+      >GuiLev2Interface</a
+      ><a name="2331"
+      > </a
+      ><a name="2332" class="Symbol"
+      >=</a
+      ><a name="2333"
+      > </a
+      ><a name="2334" href="StateSizedIO.GUI.WxGraphicsLib.html#992" class="Datatype"
+      >GuiLev2Command</a
+      ><a name="2348"
+      >
+</a
+      ><a name="2349" href="StateSizedIO.GUI.BaseStateDependent.html#346" class="Field"
+      >Response&#738;</a
+      ><a name="2358"
+      >  </a
+      ><a name="2360" href="StateSizedIO.GUI.WxGraphicsLib.html#2229" class="Function"
+      >GuiLev2Interface</a
+      ><a name="2376"
+      > </a
+      ><a name="2377" class="Symbol"
+      >=</a
+      ><a name="2378"
+      > </a
+      ><a name="2379" href="StateSizedIO.GUI.WxGraphicsLib.html#1799" class="Function"
+      >GuiLev2Response</a
+      ><a name="2394"
+      >
+</a
+      ><a name="2395" href="StateSizedIO.GUI.BaseStateDependent.html#397" class="Field"
+      >next&#738;</a
+      ><a name="2400"
+      >      </a
+      ><a name="2406" href="StateSizedIO.GUI.WxGraphicsLib.html#2229" class="Function"
+      >GuiLev2Interface</a
+      ><a name="2422"
+      > </a
+      ><a name="2423" class="Symbol"
+      >=</a
+      ><a name="2424"
+      > </a
+      ><a name="2425" href="StateSizedIO.GUI.WxGraphicsLib.html#2011" class="Function"
+      >GuiLev2Next</a
+      ><a name="2436"
+      >
+
+</a
+      ><a name="2438" href="StateSizedIO.GUI.WxGraphicsLib.html#2438" class="Function"
+      >translateLev1Local</a
+      ><a name="2456"
+      > </a
+      ><a name="2457" class="Symbol"
+      >:</a
+      ><a name="2458"
+      > </a
+      ><a name="2459" class="Symbol"
+      >(</a
+      ><a name="2460" href="StateSizedIO.GUI.WxGraphicsLib.html#2460" class="Bound"
+      >c</a
+      ><a name="2461"
+      > </a
+      ><a name="2462" class="Symbol"
+      >:</a
+      ><a name="2463"
+      > </a
+      ><a name="2464" href="StateSizedIO.GUI.WxGraphicsLib.html#361" class="Datatype"
+      >GuiLev1Command</a
+      ><a name="2478" class="Symbol"
+      >)</a
+      ><a name="2479"
+      > </a
+      ><a name="2480" class="Symbol"
+      >&#8594;</a
+      ><a name="2481"
+      > </a
+      ><a name="2482" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="2490"
+      > </a
+      ><a name="2491" class="Symbol"
+      >(</a
+      ><a name="2492" href="StateSizedIO.GUI.WxGraphicsLib.html#647" class="Function"
+      >GuiLev1Response</a
+      ><a name="2507"
+      > </a
+      ><a name="2508" href="StateSizedIO.GUI.WxGraphicsLib.html#2460" class="Bound"
+      >c</a
+      ><a name="2509" class="Symbol"
+      >)</a
+      ><a name="2510"
+      >
+</a
+      ><a name="2511" href="StateSizedIO.GUI.WxGraphicsLib.html#2438" class="Function"
+      >translateLev1Local</a
+      ><a name="2529"
+      > </a
+      ><a name="2530" href="StateSizedIO.GUI.WxGraphicsLib.html#390" class="InductiveConstructor"
+      >makeFrame</a
+      ><a name="2539"
+      >              </a
+      ><a name="2553" class="Symbol"
+      >=</a
+      ><a name="2554"
+      > </a
+      ><a name="2555" href="StateSizedIO.GUI.WxBindingsFFI.html#1056" class="Function"
+      >nativeMakeFrame</a
+      ><a name="2570"
+      >
+</a
+      ><a name="2571" href="StateSizedIO.GUI.WxGraphicsLib.html#2438" class="Function"
+      >translateLev1Local</a
+      ><a name="2589"
+      > </a
+      ><a name="2590" class="Symbol"
+      >(</a
+      ><a name="2591" href="StateSizedIO.GUI.WxGraphicsLib.html#427" class="InductiveConstructor"
+      >makeButton</a
+      ><a name="2601"
+      > </a
+      ><a name="2602" href="StateSizedIO.GUI.WxGraphicsLib.html#2602" class="Bound"
+      >fra</a
+      ><a name="2605" class="Symbol"
+      >)</a
+      ><a name="2606"
+      >       </a
+      ><a name="2613" class="Symbol"
+      >=</a
+      ><a name="2614"
+      > </a
+      ><a name="2615" href="StateSizedIO.GUI.WxBindingsFFI.html#1243" class="Postulate"
+      >nativeMakeButton</a
+      ><a name="2631"
+      > </a
+      ><a name="2632" href="StateSizedIO.GUI.WxGraphicsLib.html#2602" class="Bound"
+      >fra</a
+      ><a name="2635"
+      >
+</a
+      ><a name="2636" href="StateSizedIO.GUI.WxGraphicsLib.html#2438" class="Function"
+      >translateLev1Local</a
+      ><a name="2654"
+      > </a
+      ><a name="2655" class="Symbol"
+      >(</a
+      ><a name="2656" href="StateSizedIO.GUI.WxGraphicsLib.html#474" class="InductiveConstructor"
+      >addButton</a
+      ><a name="2665"
+      > </a
+      ><a name="2666" href="StateSizedIO.GUI.WxGraphicsLib.html#2666" class="Bound"
+      >fra</a
+      ><a name="2669"
+      > </a
+      ><a name="2670" href="StateSizedIO.GUI.WxGraphicsLib.html#2670" class="Bound"
+      >bt</a
+      ><a name="2672" class="Symbol"
+      >)</a
+      ><a name="2673"
+      >     </a
+      ><a name="2678" class="Symbol"
+      >=</a
+      ><a name="2679"
+      > </a
+      ><a name="2680" href="StateSizedIO.GUI.WxBindingsFFI.html#1425" class="Postulate"
+      >nativeAddButton</a
+      ><a name="2695"
+      > </a
+      ><a name="2696" href="StateSizedIO.GUI.WxGraphicsLib.html#2666" class="Bound"
+      >fra</a
+      ><a name="2699"
+      > </a
+      ><a name="2700" href="StateSizedIO.GUI.WxGraphicsLib.html#2670" class="Bound"
+      >bt</a
+      ><a name="2702"
+      >
+</a
+      ><a name="2703" href="StateSizedIO.GUI.WxGraphicsLib.html#2438" class="Function"
+      >translateLev1Local</a
+      ><a name="2721"
+      > </a
+      ><a name="2722" class="Symbol"
+      >(</a
+      ><a name="2723" href="StateSizedIO.GUI.WxGraphicsLib.html#530" class="InductiveConstructor"
+      >drawBitmap</a
+      ><a name="2733"
+      > </a
+      ><a name="2734" href="StateSizedIO.GUI.WxGraphicsLib.html#2734" class="Bound"
+      >dc</a
+      ><a name="2736"
+      > </a
+      ><a name="2737" href="StateSizedIO.GUI.WxGraphicsLib.html#2737" class="Bound"
+      >bm</a
+      ><a name="2739"
+      > </a
+      ><a name="2740" href="StateSizedIO.GUI.WxGraphicsLib.html#2740" class="Bound"
+      >p</a
+      ><a name="2741"
+      > </a
+      ><a name="2742" href="StateSizedIO.GUI.WxGraphicsLib.html#2742" class="Bound"
+      >b</a
+      ><a name="2743" class="Symbol"
+      >)</a
+      ><a name="2744"
+      > </a
+      ><a name="2745" class="Symbol"
+      >=</a
+      ><a name="2746"
+      > </a
+      ><a name="2747" href="StateSizedIO.GUI.WxBindingsFFI.html#3822" class="Function"
+      >nativeDrawBitmap</a
+      ><a name="2763"
+      > </a
+      ><a name="2764" href="StateSizedIO.GUI.WxGraphicsLib.html#2734" class="Bound"
+      >dc</a
+      ><a name="2766"
+      > </a
+      ><a name="2767" href="StateSizedIO.GUI.WxGraphicsLib.html#2737" class="Bound"
+      >bm</a
+      ><a name="2769"
+      > </a
+      ><a name="2770" href="StateSizedIO.GUI.WxGraphicsLib.html#2740" class="Bound"
+      >p</a
+      ><a name="2771"
+      > </a
+      ><a name="2772" href="StateSizedIO.GUI.WxGraphicsLib.html#2742" class="Bound"
+      >b</a
+      ><a name="2773"
+      >
+</a
+      ><a name="2774" href="StateSizedIO.GUI.WxGraphicsLib.html#2438" class="Function"
+      >translateLev1Local</a
+      ><a name="2792"
+      > </a
+      ><a name="2793" class="Symbol"
+      >(</a
+      ><a name="2794" href="StateSizedIO.GUI.WxGraphicsLib.html#601" class="InductiveConstructor"
+      >repaint</a
+      ><a name="2801"
+      > </a
+      ><a name="2802" href="StateSizedIO.GUI.WxGraphicsLib.html#2802" class="Bound"
+      >fra</a
+      ><a name="2805" class="Symbol"
+      >)</a
+      ><a name="2806"
+      >          </a
+      ><a name="2816" class="Symbol"
+      >=</a
+      ><a name="2817"
+      > </a
+      ><a name="2818" href="StateSizedIO.GUI.WxBindingsFFI.html#3276" class="Postulate"
+      >nativeRepaint</a
+      ><a name="2831"
+      > </a
+      ><a name="2832" href="StateSizedIO.GUI.WxGraphicsLib.html#2802" class="Bound"
+      >fra</a
+      ><a name="2835"
+      >
+
+</a
+      ><a name="2837" href="StateSizedIO.GUI.WxGraphicsLib.html#2837" class="Function"
+      >translateLev1</a
+      ><a name="2850"
+      > </a
+      ><a name="2851" class="Symbol"
+      >:</a
+      ><a name="2852"
+      > </a
+      ><a name="2853" class="Symbol"
+      >{</a
+      ><a name="2854" href="StateSizedIO.GUI.WxGraphicsLib.html#2854" class="Bound"
+      >A</a
+      ><a name="2855"
+      > </a
+      ><a name="2856" class="Symbol"
+      >:</a
+      ><a name="2857"
+      > </a
+      ><a name="2858" class="PrimitiveType"
+      >Set</a
+      ><a name="2861" class="Symbol"
+      >}</a
+      ><a name="2862"
+      > </a
+      ><a name="2863" class="Symbol"
+      >&#8594;</a
+      ><a name="2864"
+      > </a
+      ><a name="2865" href="SizedIO.Base.html#499" class="Record"
+      >IO</a
+      ><a name="2867"
+      > </a
+      ><a name="2868" href="StateSizedIO.GUI.WxGraphicsLib.html#819" class="Function"
+      >GuiLev1Interface</a
+      ><a name="2884"
+      > </a
+      ><a name="2885" href="Agda.Builtin.Size.html#182" class="Postulate"
+      >&#8734;</a
+      ><a name="2886"
+      > </a
+      ><a name="2887" href="StateSizedIO.GUI.WxGraphicsLib.html#2854" class="Bound"
+      >A</a
+      ><a name="2888"
+      > </a
+      ><a name="2889" class="Symbol"
+      >&#8594;</a
+      ><a name="2890"
+      > </a
+      ><a name="2891" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="2899"
+      > </a
+      ><a name="2900" href="StateSizedIO.GUI.WxGraphicsLib.html#2854" class="Bound"
+      >A</a
+      ><a name="2901"
+      >
+</a
+      ><a name="2902" href="StateSizedIO.GUI.WxGraphicsLib.html#2837" class="Function"
+      >translateLev1</a
+      ><a name="2915"
+      > </a
+      ><a name="2916" class="Symbol"
+      >=</a
+      ><a name="2917"
+      > </a
+      ><a name="2918" href="SizedIO.Base.html#1608" class="Function"
+      >translateIO</a
+      ><a name="2929"
+      > </a
+      ><a name="2930" href="StateSizedIO.GUI.WxGraphicsLib.html#2438" class="Function"
+      >translateLev1Local</a
+      ><a name="2948"
+      >
+
+</a
+      ><a name="2950" href="StateSizedIO.GUI.WxGraphicsLib.html#2950" class="Function"
+      >translateLev1List</a
+      ><a name="2967"
+      > </a
+      ><a name="2968" class="Symbol"
+      >:</a
+      ><a name="2969"
+      > </a
+      ><a name="2970" class="Symbol"
+      >{</a
+      ><a name="2971" href="StateSizedIO.GUI.WxGraphicsLib.html#2971" class="Bound"
+      >A</a
+      ><a name="2972"
+      > </a
+      ><a name="2973" class="Symbol"
+      >:</a
+      ><a name="2974"
+      > </a
+      ><a name="2975" class="PrimitiveType"
+      >Set</a
+      ><a name="2978" class="Symbol"
+      >}</a
+      ><a name="2979"
+      > </a
+      ><a name="2980" class="Symbol"
+      >&#8594;</a
+      ><a name="2981"
+      > </a
+      ><a name="2982" href="Agda.Builtin.List.html#52" class="Datatype"
+      >List</a
+      ><a name="2986"
+      > </a
+      ><a name="2987" class="Symbol"
+      >(</a
+      ><a name="2988" href="SizedIO.Base.html#499" class="Record"
+      >IO</a
+      ><a name="2990"
+      > </a
+      ><a name="2991" href="StateSizedIO.GUI.WxGraphicsLib.html#819" class="Function"
+      >GuiLev1Interface</a
+      ><a name="3007"
+      > </a
+      ><a name="3008" href="Agda.Builtin.Size.html#182" class="Postulate"
+      >&#8734;</a
+      ><a name="3009"
+      > </a
+      ><a name="3010" href="StateSizedIO.GUI.WxGraphicsLib.html#2971" class="Bound"
+      >A</a
+      ><a name="3011" class="Symbol"
+      >)</a
+      ><a name="3012"
+      > </a
+      ><a name="3013" class="Symbol"
+      >&#8594;</a
+      ><a name="3014"
+      > </a
+      ><a name="3015" href="Agda.Builtin.List.html#52" class="Datatype"
+      >List</a
+      ><a name="3019"
+      > </a
+      ><a name="3020" class="Symbol"
+      >(</a
+      ><a name="3021" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="3029"
+      > </a
+      ><a name="3030" href="StateSizedIO.GUI.WxGraphicsLib.html#2971" class="Bound"
+      >A</a
+      ><a name="3031" class="Symbol"
+      >)</a
+      ><a name="3032"
+      >
+</a
+      ><a name="3033" href="StateSizedIO.GUI.WxGraphicsLib.html#2950" class="Function"
+      >translateLev1List</a
+      ><a name="3050"
+      > </a
+      ><a name="3051" href="StateSizedIO.GUI.WxGraphicsLib.html#3051" class="Bound"
+      >l</a
+      ><a name="3052"
+      > </a
+      ><a name="3053" class="Symbol"
+      >=</a
+      ><a name="3054"
+      > </a
+      ><a name="3055" href="Data.List.Base.html#1207" class="Function"
+      >map</a
+      ><a name="3058"
+      > </a
+      ><a name="3059" href="StateSizedIO.GUI.WxGraphicsLib.html#2837" class="Function"
+      >translateLev1</a
+      ><a name="3072"
+      > </a
+      ><a name="3073" href="StateSizedIO.GUI.WxGraphicsLib.html#3051" class="Bound"
+      >l</a
+      ><a name="3074"
+      >
+
+
+
+
+</a
+      ><a name="3079" href="StateSizedIO.GUI.WxGraphicsLib.html#3079" class="Function"
+      >translateLev2Local</a
+      ><a name="3097"
+      > </a
+      ><a name="3098" class="Symbol"
+      >:</a
+      ><a name="3099"
+      > </a
+      ><a name="3100" class="Symbol"
+      >(</a
+      ><a name="3101" href="StateSizedIO.GUI.WxGraphicsLib.html#3101" class="Bound"
+      >s</a
+      ><a name="3102"
+      > </a
+      ><a name="3103" class="Symbol"
+      >:</a
+      ><a name="3104"
+      > </a
+      ><a name="3105" href="StateSizedIO.GUI.WxGraphicsLib.html#943" class="Function"
+      >GuiLev2State</a
+      ><a name="3117" class="Symbol"
+      >)</a
+      ><a name="3118"
+      >
+                          </a
+      ><a name="3145" class="Symbol"
+      >&#8594;</a
+      ><a name="3146"
+      > </a
+      ><a name="3147" class="Symbol"
+      >(</a
+      ><a name="3148" href="StateSizedIO.GUI.WxGraphicsLib.html#3148" class="Bound"
+      >c</a
+      ><a name="3149"
+      > </a
+      ><a name="3150" class="Symbol"
+      >:</a
+      ><a name="3151"
+      > </a
+      ><a name="3152" href="StateSizedIO.GUI.WxGraphicsLib.html#992" class="Datatype"
+      >GuiLev2Command</a
+      ><a name="3166"
+      > </a
+      ><a name="3167" href="StateSizedIO.GUI.WxGraphicsLib.html#3101" class="Bound"
+      >s</a
+      ><a name="3168" class="Symbol"
+      >)</a
+      ><a name="3169"
+      > 
+                          </a
+      ><a name="3197" class="Symbol"
+      >&#8594;</a
+      ><a name="3198"
+      > </a
+      ><a name="3199" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="3207"
+      > </a
+      ><a name="3208" class="Symbol"
+      >(</a
+      ><a name="3209" href="StateSizedIO.GUI.WxGraphicsLib.html#1799" class="Function"
+      >GuiLev2Response</a
+      ><a name="3224"
+      > </a
+      ><a name="3225" href="StateSizedIO.GUI.WxGraphicsLib.html#3101" class="Bound"
+      >s</a
+      ><a name="3226"
+      > </a
+      ><a name="3227" href="StateSizedIO.GUI.WxGraphicsLib.html#3148" class="Bound"
+      >c</a
+      ><a name="3228" class="Symbol"
+      >)</a
+      ><a name="3229"
+      >
+</a
+      ><a name="3230" href="StateSizedIO.GUI.WxGraphicsLib.html#3079" class="Function"
+      >translateLev2Local</a
+      ><a name="3248"
+      > </a
+      ><a name="3249" href="StateSizedIO.GUI.WxGraphicsLib.html#3249" class="Bound"
+      >s</a
+      ><a name="3250"
+      > </a
+      ><a name="3251" class="Symbol"
+      >(</a
+      ><a name="3252" href="StateSizedIO.GUI.WxGraphicsLib.html#1043" class="InductiveConstructor"
+      >level1C</a
+      ><a name="3259"
+      > </a
+      ><a name="3260" href="StateSizedIO.GUI.WxGraphicsLib.html#3260" class="Bound"
+      >c</a
+      ><a name="3261" class="Symbol"
+      >)</a
+      ><a name="3262"
+      > </a
+      ><a name="3263" class="Symbol"
+      >=</a
+      ><a name="3264"
+      > </a
+      ><a name="3265" href="StateSizedIO.GUI.WxGraphicsLib.html#2438" class="Function"
+      >translateLev1Local</a
+      ><a name="3283"
+      > </a
+      ><a name="3284" href="StateSizedIO.GUI.WxGraphicsLib.html#3260" class="Bound"
+      >c</a
+      ><a name="3285"
+      >
+                           
+</a
+      ><a name="3314" href="StateSizedIO.GUI.WxGraphicsLib.html#3079" class="Function"
+      >translateLev2Local</a
+      ><a name="3332"
+      > </a
+      ><a name="3333" href="StateSizedIO.GUI.WxGraphicsLib.html#3333" class="Bound"
+      >s</a
+      ><a name="3334"
+      > </a
+      ><a name="3335" class="Symbol"
+      >(</a
+      ><a name="3336" href="StateSizedIO.GUI.WxGraphicsLib.html#1099" class="InductiveConstructor"
+      >createVar</a
+      ><a name="3345"
+      > </a
+      ><a name="3346" class="Symbol"
+      >{</a
+      ><a name="3347" href="StateSizedIO.GUI.WxGraphicsLib.html#3347" class="Bound"
+      >A</a
+      ><a name="3348" class="Symbol"
+      >}</a
+      ><a name="3349"
+      > </a
+      ><a name="3350" href="StateSizedIO.GUI.WxGraphicsLib.html#3350" class="Bound"
+      >a</a
+      ><a name="3351" class="Symbol"
+      >)</a
+      ><a name="3352"
+      >   </a
+      ><a name="3355" class="Symbol"
+      >=</a
+      ><a name="3356"
+      > </a
+      ><a name="3357" href="StateSizedIO.GUI.WxBindingsFFI.html#1946" class="Postulate"
+      >nativeNewVar</a
+      ><a name="3369"
+      > </a
+      ><a name="3370" class="Symbol"
+      >{</a
+      ><a name="3371" href="StateSizedIO.GUI.WxGraphicsLib.html#3347" class="Bound"
+      >A</a
+      ><a name="3372" class="Symbol"
+      >}</a
+      ><a name="3373"
+      > </a
+      ><a name="3374" href="StateSizedIO.GUI.WxGraphicsLib.html#3350" class="Bound"
+      >a</a
+      ><a name="3375"
+      >
+</a
+      ><a name="3376" href="StateSizedIO.GUI.WxGraphicsLib.html#3079" class="Function"
+      >translateLev2Local</a
+      ><a name="3394"
+      > </a
+      ><a name="3395" href="StateSizedIO.GUI.WxGraphicsLib.html#3395" class="Bound"
+      >s</a
+      ><a name="3396"
+      > </a
+      ><a name="3397" class="Symbol"
+      >(</a
+      ><a name="3398" href="StateSizedIO.GUI.WxGraphicsLib.html#1154" class="InductiveConstructor"
+      >setButtonHandler</a
+      ><a name="3414"
+      > </a
+      ><a name="3415" href="StateSizedIO.GUI.WxGraphicsLib.html#3415" class="Bound"
+      >bt</a
+      ><a name="3417"
+      > </a
+      ><a name="3418" href="StateSizedIO.GUI.WxGraphicsLib.html#3418" class="Bound"
+      >proglist</a
+      ><a name="3426" class="Symbol"
+      >)</a
+      ><a name="3427"
+      >  
+    </a
+      ><a name="3434" class="Symbol"
+      >=</a
+      ><a name="3435"
+      > </a
+      ><a name="3436" href="StateSizedIO.GUI.WxBindingsFFI.html#2314" class="Postulate"
+      >nativeSetButtonHandler</a
+      ><a name="3458"
+      > </a
+      ><a name="3459" href="StateSizedIO.GUI.WxGraphicsLib.html#3415" class="Bound"
+      >bt</a
+      ><a name="3461"
+      > 
+            </a
+      ><a name="3475" class="Symbol"
+      >(</a
+      ><a name="3476" href="StateSizedIO.GUI.VariableList.html#1367" class="Function"
+      >dispatchList</a
+      ><a name="3488"
+      > </a
+      ><a name="3489" href="StateSizedIO.GUI.WxGraphicsLib.html#3395" class="Bound"
+      >s</a
+      ><a name="3490"
+      > </a
+      ><a name="3491" class="Symbol"
+      >(</a
+      ><a name="3492" href="Data.List.Base.html#1207" class="Function"
+      >map</a
+      ><a name="3495"
+      > </a
+      ><a name="3496" class="Symbol"
+      >(&#955;</a
+      ><a name="3498"
+      > </a
+      ><a name="3499" href="StateSizedIO.GUI.WxGraphicsLib.html#3499" class="Bound"
+      >prog</a
+      ><a name="3503"
+      > </a
+      ><a name="3504" class="Symbol"
+      >&#8594;</a
+      ><a name="3505"
+      > </a
+      ><a name="3506" href="StateSizedIO.GUI.WxGraphicsLib.html#2837" class="Function"
+      >translateLev1</a
+      ><a name="3519"
+      > </a
+      ><a name="3520" href="Function.html#713" class="Function Operator"
+      >&#8728;</a
+      ><a name="3521"
+      > </a
+      ><a name="3522" href="StateSizedIO.GUI.WxGraphicsLib.html#3499" class="Bound"
+      >prog</a
+      ><a name="3526" class="Symbol"
+      >)</a
+      ><a name="3527"
+      >  </a
+      ><a name="3529" href="StateSizedIO.GUI.WxGraphicsLib.html#3418" class="Bound"
+      >proglist</a
+      ><a name="3537" class="Symbol"
+      >))</a
+      ><a name="3539"
+      >
+
+</a
+      ><a name="3541" href="StateSizedIO.GUI.WxGraphicsLib.html#3079" class="Function"
+      >translateLev2Local</a
+      ><a name="3559"
+      > </a
+      ><a name="3560" href="StateSizedIO.GUI.WxGraphicsLib.html#3560" class="Bound"
+      >s</a
+      ><a name="3561"
+      > </a
+      ><a name="3562" class="Symbol"
+      >(</a
+      ><a name="3563" href="StateSizedIO.GUI.WxGraphicsLib.html#1273" class="InductiveConstructor"
+      >setKeyHandler</a
+      ><a name="3576"
+      > </a
+      ><a name="3577" href="StateSizedIO.GUI.WxGraphicsLib.html#3577" class="Bound"
+      >bt</a
+      ><a name="3579"
+      > </a
+      ><a name="3580" href="StateSizedIO.GUI.WxGraphicsLib.html#3580" class="Bound"
+      >proglistRight</a
+      ><a name="3593"
+      > </a
+      ><a name="3594" href="StateSizedIO.GUI.WxGraphicsLib.html#3594" class="Bound"
+      >proglistLeft</a
+      ><a name="3606"
+      > </a
+      ><a name="3607" href="StateSizedIO.GUI.WxGraphicsLib.html#3607" class="Bound"
+      >proglistUp</a
+      ><a name="3617"
+      > </a
+      ><a name="3618" href="StateSizedIO.GUI.WxGraphicsLib.html#3618" class="Bound"
+      >proglistDown</a
+      ><a name="3630" class="Symbol"
+      >)</a
+      ><a name="3631"
+      >  
+    </a
+      ><a name="3638" class="Symbol"
+      >=</a
+      ><a name="3639"
+      >  </a
+      ><a name="3641" href="StateSizedIO.GUI.WxBindingsFFI.html#4322" class="Postulate"
+      >nativeSetKeyHandler</a
+      ><a name="3660"
+      > </a
+      ><a name="3661" href="StateSizedIO.GUI.WxGraphicsLib.html#3577" class="Bound"
+      >bt</a
+      ><a name="3663"
+      >
+           </a
+      ><a name="3675" class="Symbol"
+      >(&#955;</a
+      ><a name="3677"
+      > </a
+      ><a name="3678" href="StateSizedIO.GUI.WxGraphicsLib.html#3678" class="Bound"
+      >key</a
+      ><a name="3681"
+      > </a
+      ><a name="3682" class="Symbol"
+      >-&gt;</a
+      ><a name="3684"
+      > </a
+      ><a name="3685" href="Function.html#2761" class="Function Operator"
+      >case</a
+      ><a name="3689"
+      > </a
+      ><a name="3690" class="Symbol"
+      >(</a
+      ><a name="3691" href="StateSizedIO.GUI.WxBindingsFFI.html#4296" class="Postulate"
+      >showKey</a
+      ><a name="3698"
+      > </a
+      ><a name="3699" href="StateSizedIO.GUI.WxGraphicsLib.html#3678" class="Bound"
+      >key</a
+      ><a name="3702" class="Symbol"
+      >)</a
+      ><a name="3703"
+      > </a
+      ><a name="3704" href="Function.html#2761" class="Function Operator"
+      >of</a
+      ><a name="3706"
+      > </a
+      ><a name="3707" class="Symbol"
+      >&#955;</a
+      ><a name="3708"
+      >
+                 </a
+      ><a name="3726" class="Symbol"
+      >{</a
+      ><a name="3727"
+      > </a
+      ><a name="3728" class="String"
+      >&quot;Right&quot;</a
+      ><a name="3735"
+      > </a
+      ><a name="3736" class="Symbol"
+      >&#8594;</a
+      ><a name="3737"
+      > </a
+      ><a name="3738" class="Symbol"
+      >(</a
+      ><a name="3739" href="StateSizedIO.GUI.VariableList.html#1367" class="Function"
+      >dispatchList</a
+      ><a name="3751"
+      > </a
+      ><a name="3752" href="StateSizedIO.GUI.WxGraphicsLib.html#3560" class="Bound"
+      >s</a
+      ><a name="3753"
+      > </a
+      ><a name="3754" class="Symbol"
+      >(</a
+      ><a name="3755" href="Data.List.Base.html#1207" class="Function"
+      >map</a
+      ><a name="3758"
+      > </a
+      ><a name="3759" class="Symbol"
+      >(&#955;</a
+      ><a name="3761"
+      > </a
+      ><a name="3762" href="StateSizedIO.GUI.WxGraphicsLib.html#3762" class="Bound"
+      >prog</a
+      ><a name="3766"
+      > </a
+      ><a name="3767" class="Symbol"
+      >&#8594;</a
+      ><a name="3768"
+      > </a
+      ><a name="3769" href="StateSizedIO.GUI.WxGraphicsLib.html#2837" class="Function"
+      >translateLev1</a
+      ><a name="3782"
+      > </a
+      ><a name="3783" href="Function.html#713" class="Function Operator"
+      >&#8728;</a
+      ><a name="3784"
+      > </a
+      ><a name="3785" href="StateSizedIO.GUI.WxGraphicsLib.html#3762" class="Bound"
+      >prog</a
+      ><a name="3789" class="Symbol"
+      >)</a
+      ><a name="3790"
+      >  </a
+      ><a name="3792" href="StateSizedIO.GUI.WxGraphicsLib.html#3580" class="Bound"
+      >proglistRight</a
+      ><a name="3805" class="Symbol"
+      >))</a
+      ><a name="3807"
+      >
+                 </a
+      ><a name="3825" class="Symbol"
+      >;</a
+      ><a name="3826"
+      > </a
+      ><a name="3827" class="String"
+      >&quot;Left&quot;</a
+      ><a name="3833"
+      > </a
+      ><a name="3834" class="Symbol"
+      >&#8594;</a
+      ><a name="3835"
+      > </a
+      ><a name="3836" class="Symbol"
+      >(</a
+      ><a name="3837" href="StateSizedIO.GUI.VariableList.html#1367" class="Function"
+      >dispatchList</a
+      ><a name="3849"
+      > </a
+      ><a name="3850" href="StateSizedIO.GUI.WxGraphicsLib.html#3560" class="Bound"
+      >s</a
+      ><a name="3851"
+      > </a
+      ><a name="3852" class="Symbol"
+      >(</a
+      ><a name="3853" href="Data.List.Base.html#1207" class="Function"
+      >map</a
+      ><a name="3856"
+      > </a
+      ><a name="3857" class="Symbol"
+      >(&#955;</a
+      ><a name="3859"
+      > </a
+      ><a name="3860" href="StateSizedIO.GUI.WxGraphicsLib.html#3860" class="Bound"
+      >prog</a
+      ><a name="3864"
+      > </a
+      ><a name="3865" class="Symbol"
+      >&#8594;</a
+      ><a name="3866"
+      > </a
+      ><a name="3867" href="StateSizedIO.GUI.WxGraphicsLib.html#2837" class="Function"
+      >translateLev1</a
+      ><a name="3880"
+      > </a
+      ><a name="3881" href="Function.html#713" class="Function Operator"
+      >&#8728;</a
+      ><a name="3882"
+      > </a
+      ><a name="3883" href="StateSizedIO.GUI.WxGraphicsLib.html#3860" class="Bound"
+      >prog</a
+      ><a name="3887" class="Symbol"
+      >)</a
+      ><a name="3888"
+      >  </a
+      ><a name="3890" href="StateSizedIO.GUI.WxGraphicsLib.html#3594" class="Bound"
+      >proglistLeft</a
+      ><a name="3902" class="Symbol"
+      >))</a
+      ><a name="3904"
+      >
+                 </a
+      ><a name="3922" class="Symbol"
+      >;</a
+      ><a name="3923"
+      > </a
+      ><a name="3924" class="String"
+      >&quot;Up&quot;</a
+      ><a name="3928"
+      > </a
+      ><a name="3929" class="Symbol"
+      >&#8594;</a
+      ><a name="3930"
+      > </a
+      ><a name="3931" class="Symbol"
+      >(</a
+      ><a name="3932" href="StateSizedIO.GUI.VariableList.html#1367" class="Function"
+      >dispatchList</a
+      ><a name="3944"
+      > </a
+      ><a name="3945" href="StateSizedIO.GUI.WxGraphicsLib.html#3560" class="Bound"
+      >s</a
+      ><a name="3946"
+      > </a
+      ><a name="3947" class="Symbol"
+      >(</a
+      ><a name="3948" href="Data.List.Base.html#1207" class="Function"
+      >map</a
+      ><a name="3951"
+      > </a
+      ><a name="3952" class="Symbol"
+      >(&#955;</a
+      ><a name="3954"
+      > </a
+      ><a name="3955" href="StateSizedIO.GUI.WxGraphicsLib.html#3955" class="Bound"
+      >prog</a
+      ><a name="3959"
+      > </a
+      ><a name="3960" class="Symbol"
+      >&#8594;</a
+      ><a name="3961"
+      > </a
+      ><a name="3962" href="StateSizedIO.GUI.WxGraphicsLib.html#2837" class="Function"
+      >translateLev1</a
+      ><a name="3975"
+      > </a
+      ><a name="3976" href="Function.html#713" class="Function Operator"
+      >&#8728;</a
+      ><a name="3977"
+      > </a
+      ><a name="3978" href="StateSizedIO.GUI.WxGraphicsLib.html#3955" class="Bound"
+      >prog</a
+      ><a name="3982" class="Symbol"
+      >)</a
+      ><a name="3983"
+      >  </a
+      ><a name="3985" href="StateSizedIO.GUI.WxGraphicsLib.html#3607" class="Bound"
+      >proglistUp</a
+      ><a name="3995" class="Symbol"
+      >))</a
+      ><a name="3997"
+      > 
+                 </a
+      ><a name="4016" class="Symbol"
+      >;</a
+      ><a name="4017"
+      > </a
+      ><a name="4018" class="String"
+      >&quot;Down&quot;</a
+      ><a name="4024"
+      > </a
+      ><a name="4025" class="Symbol"
+      >&#8594;</a
+      ><a name="4026"
+      > </a
+      ><a name="4027" class="Symbol"
+      >(</a
+      ><a name="4028" href="StateSizedIO.GUI.VariableList.html#1367" class="Function"
+      >dispatchList</a
+      ><a name="4040"
+      > </a
+      ><a name="4041" href="StateSizedIO.GUI.WxGraphicsLib.html#3560" class="Bound"
+      >s</a
+      ><a name="4042"
+      > </a
+      ><a name="4043" class="Symbol"
+      >(</a
+      ><a name="4044" href="Data.List.Base.html#1207" class="Function"
+      >map</a
+      ><a name="4047"
+      > </a
+      ><a name="4048" class="Symbol"
+      >(&#955;</a
+      ><a name="4050"
+      > </a
+      ><a name="4051" href="StateSizedIO.GUI.WxGraphicsLib.html#4051" class="Bound"
+      >prog</a
+      ><a name="4055"
+      > </a
+      ><a name="4056" class="Symbol"
+      >&#8594;</a
+      ><a name="4057"
+      > </a
+      ><a name="4058" href="StateSizedIO.GUI.WxGraphicsLib.html#2837" class="Function"
+      >translateLev1</a
+      ><a name="4071"
+      > </a
+      ><a name="4072" href="Function.html#713" class="Function Operator"
+      >&#8728;</a
+      ><a name="4073"
+      > </a
+      ><a name="4074" href="StateSizedIO.GUI.WxGraphicsLib.html#4051" class="Bound"
+      >prog</a
+      ><a name="4078" class="Symbol"
+      >)</a
+      ><a name="4079"
+      >  </a
+      ><a name="4081" href="StateSizedIO.GUI.WxGraphicsLib.html#3618" class="Bound"
+      >proglistDown</a
+      ><a name="4093" class="Symbol"
+      >))</a
+      ><a name="4095"
+      > 
+                 </a
+      ><a name="4114" class="Symbol"
+      >;</a
+      ><a name="4115"
+      > </a
+      ><a name="4116" class="Symbol"
+      >_</a
+      ><a name="4117"
+      >  </a
+      ><a name="4119" class="Symbol"
+      >&#8594;</a
+      ><a name="4120"
+      > </a
+      ><a name="4121" href="NativeIO.html#139" class="Postulate"
+      >nativeReturn</a
+      ><a name="4133"
+      > </a
+      ><a name="4134" href="Unit.html#59" class="InductiveConstructor"
+      >unit</a
+      ><a name="4138"
+      >
+                 </a
+      ><a name="4156" class="Symbol"
+      >}</a
+      ><a name="4157"
+      > </a
+      ><a name="4158" class="Symbol"
+      >)</a
+      ><a name="4159"
+      >
+
+
+
+</a
+      ><a name="4163" href="StateSizedIO.GUI.WxGraphicsLib.html#3079" class="Function"
+      >translateLev2Local</a
+      ><a name="4181"
+      > </a
+      ><a name="4182" href="StateSizedIO.GUI.WxGraphicsLib.html#4182" class="Bound"
+      >s</a
+      ><a name="4183"
+      > </a
+      ><a name="4184" class="Symbol"
+      >(</a
+      ><a name="4185" href="StateSizedIO.GUI.WxGraphicsLib.html#1649" class="InductiveConstructor"
+      >setOnPaint</a
+      ><a name="4195"
+      > </a
+      ><a name="4196" href="StateSizedIO.GUI.WxGraphicsLib.html#4196" class="Bound"
+      >fra</a
+      ><a name="4199"
+      > </a
+      ><a name="4200" href="StateSizedIO.GUI.WxGraphicsLib.html#4200" class="Bound"
+      >proglist</a
+      ><a name="4208" class="Symbol"
+      >)</a
+      ><a name="4209"
+      >  
+    </a
+      ><a name="4216" class="Symbol"
+      >=</a
+      ><a name="4217"
+      > </a
+      ><a name="4218" href="StateSizedIO.GUI.WxBindingsFFI.html#3057" class="Postulate"
+      >nativeSetOnPaint</a
+      ><a name="4234"
+      > </a
+      ><a name="4235" href="StateSizedIO.GUI.WxGraphicsLib.html#4196" class="Bound"
+      >fra</a
+      ><a name="4238"
+      > </a
+      ><a name="4239" class="Symbol"
+      >(&#955;</a
+      ><a name="4241"
+      > </a
+      ><a name="4242" href="StateSizedIO.GUI.WxGraphicsLib.html#4242" class="Bound"
+      >dc</a
+      ><a name="4244"
+      > </a
+      ><a name="4245" href="StateSizedIO.GUI.WxGraphicsLib.html#4245" class="Bound"
+      >rect</a
+      ><a name="4249"
+      > </a
+      ><a name="4250" class="Symbol"
+      >&#8594;</a
+      ><a name="4251"
+      > </a
+      ><a name="4252" class="Symbol"
+      >(</a
+      ><a name="4253" href="StateSizedIO.GUI.VariableList.html#1367" class="Function"
+      >dispatchList</a
+      ><a name="4265"
+      > </a
+      ><a name="4266" href="StateSizedIO.GUI.WxGraphicsLib.html#4182" class="Bound"
+      >s</a
+      ><a name="4267"
+      > 
+         </a
+      ><a name="4278" class="Symbol"
+      >(</a
+      ><a name="4279" href="Data.List.Base.html#1207" class="Function"
+      >map</a
+      ><a name="4282"
+      > </a
+      ><a name="4283" class="Symbol"
+      >(&#955;</a
+      ><a name="4285"
+      > </a
+      ><a name="4286" href="StateSizedIO.GUI.WxGraphicsLib.html#4286" class="Bound"
+      >prog</a
+      ><a name="4290"
+      > </a
+      ><a name="4291" href="StateSizedIO.GUI.WxGraphicsLib.html#4291" class="Bound"
+      >aa</a
+      ><a name="4293"
+      > </a
+      ><a name="4294" class="Symbol"
+      >&#8594;</a
+      ><a name="4295"
+      > </a
+      ><a name="4296" href="StateSizedIO.GUI.WxGraphicsLib.html#2837" class="Function"
+      >translateLev1</a
+      ><a name="4309"
+      > </a
+      ><a name="4310" class="Symbol"
+      >(</a
+      ><a name="4311" href="StateSizedIO.GUI.WxGraphicsLib.html#4286" class="Bound"
+      >prog</a
+      ><a name="4315"
+      > </a
+      ><a name="4316" href="StateSizedIO.GUI.WxGraphicsLib.html#4291" class="Bound"
+      >aa</a
+      ><a name="4318"
+      > </a
+      ><a name="4319" href="StateSizedIO.GUI.WxGraphicsLib.html#4242" class="Bound"
+      >dc</a
+      ><a name="4321"
+      > </a
+      ><a name="4322" href="StateSizedIO.GUI.WxGraphicsLib.html#4245" class="Bound"
+      >rect</a
+      ><a name="4326" class="Symbol"
+      >))</a
+      ><a name="4328"
+      > </a
+      ><a name="4329" href="StateSizedIO.GUI.WxGraphicsLib.html#4200" class="Bound"
+      >proglist</a
+      ><a name="4337" class="Symbol"
+      >)))</a
+      ><a name="4340"
+      >
+
+
+</a
+      ><a name="4343" href="StateSizedIO.GUI.WxGraphicsLib.html#4343" class="Function"
+      >translateLev2</a
+      ><a name="4356"
+      > </a
+      ><a name="4357" class="Symbol"
+      >:</a
+      ><a name="4358"
+      > </a
+      ><a name="4359" class="Symbol"
+      >{</a
+      ><a name="4360" href="StateSizedIO.GUI.WxGraphicsLib.html#4360" class="Bound"
+      >s</a
+      ><a name="4361"
+      > </a
+      ><a name="4362" class="Symbol"
+      >:</a
+      ><a name="4363"
+      > </a
+      ><a name="4364" href="StateSizedIO.GUI.WxGraphicsLib.html#943" class="Function"
+      >GuiLev2State</a
+      ><a name="4376" class="Symbol"
+      >}</a
+      ><a name="4377"
+      > </a
+      ><a name="4378" class="Symbol"
+      >&#8594;</a
+      ><a name="4379"
+      > </a
+      ><a name="4380" class="Symbol"
+      >{</a
+      ><a name="4381" href="StateSizedIO.GUI.WxGraphicsLib.html#4381" class="Bound"
+      >A</a
+      ><a name="4382"
+      > </a
+      ><a name="4383" class="Symbol"
+      >:</a
+      ><a name="4384"
+      > </a
+      ><a name="4385" class="PrimitiveType"
+      >Set</a
+      ><a name="4388" class="Symbol"
+      >}</a
+      ><a name="4389"
+      > 
+                     </a
+      ><a name="4412" class="Symbol"
+      >&#8594;</a
+      ><a name="4413"
+      > </a
+      ><a name="4414" href="StateSizedIO.GUI.BaseStateDependent.html#734" class="Record"
+      >IO&#738;</a
+      ><a name="4417"
+      > </a
+      ><a name="4418" href="StateSizedIO.GUI.WxGraphicsLib.html#2229" class="Function"
+      >GuiLev2Interface</a
+      ><a name="4434"
+      > </a
+      ><a name="4435" href="Agda.Builtin.Size.html#182" class="Postulate"
+      >&#8734;</a
+      ><a name="4436"
+      > </a
+      ><a name="4437" class="Symbol"
+      >(&#955;</a
+      ><a name="4439"
+      > </a
+      ><a name="4440" href="StateSizedIO.GUI.WxGraphicsLib.html#4440" class="Bound"
+      >_</a
+      ><a name="4441"
+      > </a
+      ><a name="4442" class="Symbol"
+      >&#8594;</a
+      ><a name="4443"
+      > </a
+      ><a name="4444" href="StateSizedIO.GUI.WxGraphicsLib.html#4381" class="Bound"
+      >A</a
+      ><a name="4445" class="Symbol"
+      >)</a
+      ><a name="4446"
+      > </a
+      ><a name="4447" href="StateSizedIO.GUI.WxGraphicsLib.html#4360" class="Bound"
+      >s</a
+      ><a name="4448"
+      > </a
+      ><a name="4449" class="Symbol"
+      >&#8594;</a
+      ><a name="4450"
+      > </a
+      ><a name="4451" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="4459"
+      > </a
+      ><a name="4460" href="StateSizedIO.GUI.WxGraphicsLib.html#4381" class="Bound"
+      >A</a
+      ><a name="4461"
+      >
+</a
+      ><a name="4462" href="StateSizedIO.GUI.WxGraphicsLib.html#4343" class="Function"
+      >translateLev2</a
+      ><a name="4475"
+      > </a
+      ><a name="4476" class="Symbol"
+      >=</a
+      ><a name="4477"
+      > </a
+      ><a name="4478" href="StateSizedIO.GUI.BaseStateDependent.html#2049" class="Function"
+      >translateIO&#738;</a
+      ><a name="4490"
+      > </a
+      ><a name="4491" class="Symbol"
+      >{</a
+      ><a name="4492" class="Argument"
+      >I</a
+      ><a name="4493"
+      > </a
+      ><a name="4494" class="Symbol"
+      >=</a
+      ><a name="4495"
+      > </a
+      ><a name="4496" href="StateSizedIO.GUI.WxGraphicsLib.html#2229" class="Function"
+      >GuiLev2Interface</a
+      ><a name="4512" class="Symbol"
+      >}</a
+      ><a name="4513"
+      > </a
+      ><a name="4514" href="StateSizedIO.GUI.WxGraphicsLib.html#3079" class="Function"
+      >translateLev2Local</a
+      ><a name="4532"
+      >
+  
+
+</a
+      ></pre
+    ></body
+  ></html
+>

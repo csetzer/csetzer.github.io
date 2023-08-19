@@ -1,0 +1,9 @@
+Title: Object-oriented programming in dependent type theory
+   Abstract:
+       In previous work we have introduced the notion of objects in dependent type theory
+       and carried out a case study. In this talk we will introduce some more advanced 
+       features such as server side programming, and how this is used to develop 
+       graphical user interfaces. We will discuss as well first steps towards obtaining
+       full object-orientation programming, especially first steps towards adding a heap.
+       
+

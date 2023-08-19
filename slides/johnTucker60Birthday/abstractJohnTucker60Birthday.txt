@@ -1,0 +1,6 @@
+Algebras and Coalgebras in dependent type theory.
+
+Abstract: We give an overview over the use of  initial algebras
+and final coalgebras in dependent type theory. This includes
+inductive data types, inductive-recursive data types and
+inductive-inducive data types.

@@ -1,0 +1,50 @@
+The dual of pattern matching - copattern matching
+
+
+Because of the importance of interactive programs, which 
+result in potentially infinite computation traces,
+coalgebraic data types play an 
+important role in computer science.
+Coalgebraic data types are often represented in functional
+programming as codata types.
+Implicit in the formulation of codata types is that 
+every element of the coalgebra is introduced by a constructor.
+
+The first result demonstrated in this talk will be to show
+that assuming that every element of the coalgebra is introduced
+by a constructor results in an undecidable equality.
+
+In order to have a decidable equality modifications were 
+added to the rules in Agda and Coq. 
+This results in lack of subject reduction in the
+theorem prover Coq and a formulation of coalgebraic types
+in Agda, which is severely restricted. 
+
+In our joint article with A. Abel, Brigitte Pientka and David Thibodeau we 
+demonstrated how, when following the well known fact in category theory  that
+final coalgebras are the dual of initial algebras, we obtain 
+a formulation of final and weakly final coalgebras which is 
+completely symmetrical to that
+of initial or weakly initial algebras. Introduction rules for algebras are
+given by the constructors, whereas elimination rules
+correspond to recursive pattern matching.
+Elimination rules for coalgebras are given by destructors,
+whereas introduction rules are given by recursive
+copattern matching. The resulting theory was shown to fulfil subject reduction,
+while allowing nested pattern and copattern matching and even mixing of the 
+two. In our approach full recursion was allowed.
+
+In our talk we will introduce this approach in detail and how to program
+using this approach. Then we will show how to to 
+unfold nested (co)pattern matching, reduce it to (co)recursion operators, and, 
+in the case which should be accepted by a termination checker, to primitive 
+(co)recursion operators. 
+
+
+
+
+
+ 
+
+
+

@@ -1,0 +1,38 @@
+The extended predicative Mahlo Universe in Explicit Mathematics - model construction
+
+This is joint work with Reinhard Kahle, Lisbon. In [3] Setzer introduced the 
+Mahlo universe V in type theory and determined its proof theoretic strength. 
+This universe has a constructor, which depends on the totality of functions
+from families of sets in the universe into itself. 
+Essentially for every such function f a subuniverse U_f of V was introduced,
+which is closed under f and represented in V.
+
+Because of the dependency on the totality of functions, not all type 
+theorists agree that this is a valid principle, if one takes Martin-Löf Type 
+Theory as a foundation of mathematics.
+ 
+Feferman's theory of Explicit Mathematics is an alternative framework for 
+dealing with constructive aspects of mathematics, in  which we have direct 
+access to the set of partial functions. In such a setting, we can avoid the 
+reference to the totality of functions on V.  Instead, we can take arbitrary
+partial functions f, and try to form a subuniverse U_f closed under f. 
+If f is total on U_f, then we add a code for it to V. We have developed a
+ universe based on this idea (using mahlo as a name for V and sub as a name for
+U), and showed that we can embed the axiomatic Mahlo universe, a version of 
+the Mahlo universe similar to that of type theory  in Explicit Mathematics, 
+into this universe.  We added as well an induction principle, expressing that
+the Mahlo universe  is the least one.
+
+Since the addition of U_f to V depends only on elements of V present 
+before U_f was added to V, it can be regarded as being predicative, and we 
+called it therefore the extended predicative Mahlo universe. 
+ 
+In this talk we construct a model of the extended predicative
+Mahlo universe in a suitable extension of Kripke-Platek set theory,
+in order to determine an upper bound for its proof theoretic
+strength. The model construction adds only  elements to the Mahlo universe
+which are justified by its introduction rules. The model makes use of a new 
+monotonicity condition on family sets, the notion
+of a monotone operator for defining universes, and a special
+condition for closure operators. This is an alternative to Richter's 
+[Gamma,Gamma'] operator for defining closure operators.

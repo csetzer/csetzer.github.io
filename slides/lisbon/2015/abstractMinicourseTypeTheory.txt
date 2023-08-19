@@ -1,0 +1,31 @@
+A Minicourse in Martin-L{\"o}f Type Theory  -- 
+Algebras, Coalebras, and Interactive Theorem Proving
+
+Type theories have since the beginning of theorem proving been
+very popular in the area of interactive theorem proving. 
+The reason for this is that type theories support the 
+machine assisted search for proofs and allow in some cases to 
+solve proof goals automatically. Wheras for programming,
+simple types (such as the type of integers, strings, or
+floating point numbers) are in many cases sufficient, 
+dependent types occur naturally when formalising mathematical
+proofs.
+For instances, if we have a  formula $\all x. \varphi(x)$,
+the subformula $\varphi(x)$ can be formalised in type theory
+as a type of proofs
+of this property, which depends on $x$.
+
+Martin-L{\"o}f Type Theory  is one version of dependent type theory,
+which has been the basis for the interactive theorem prover
+and programming language Agda. It's main characteristic is
+that it is predicative, so the elements of a type can be determined
+by only referring to types defined before the current one. 
+Types can be classified into algebraic, coalgebraic  and function
+types. Therefore the basic language of Agda is very simple since
+it uses only these three constructs, while being very generic.\par
+
+In this short course we will start with a basic introduction to 
+Martin L{\"o}f Type theory, looking as well at its foundations. 
+We  will then give a basic introduction
+into Agda and show how proofs can be formalised in Agda.
+

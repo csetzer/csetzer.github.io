@@ -1,0 +1,55 @@
+A framework for extraction of programs from proofs using postulated axioms
+  (Anton Setzer, joint work with Chi Ming Chuang)
+
+Working with real numbers in dependent type theory is difficult
+since one usually has to work with computational
+real numbers, which behave differently from real numbers
+occurring in set theory. One way to avoid this difficulty
+is to formulate the reals by 
+by postulating axioms stating the existence of real numbers,
+operations on them and axioms. These real
+numbers remain abstract. One can define the concrete real numbers, 
+which  can be approximated by Cauchy sequences,
+by signed digit representations, or other methods.
+These concrete real numbers have computational content. If one
+shows that the concrete real numbers are closed under certain
+operations, one obtains  functions
+which operate on the approximations.
+These allow to compute from Cauchy sequences for the
+inputs Cauchy sequences for the output,
+or from signed digit representations of inputs 
+signed digit representations of the output.
+
+This approach generalises as well to other settings.
+One can for instance abstractly formulate properties
+of a software system, relate those abstract entities
+to measurable entities, and therefore obtain
+computations on those measurable entities.
+
+The question is whether, if one defines functions
+this way, the operations on the computational values
+still have computational content. This is not
+necessarily the case since axioms might prevent
+elements of algebraic data types from normalising
+to constructor head normal form. 
+We show that under certain conditions this
+is not a problem: if the conditions are fulfilled
+the elements of algebraic data types extracted
+will always evaluated to constructor head normal form.
+
+In order to formulate this theorem fully mathematical
+we will introduce a framework of an abstract type theory 
+based on algebraic and coalgebraic data types, recursively defined
+functions by pattern matching and postulates. This is
+given by just defining a sequence of judgements
+(which introduce constants and reductions) and categorising them. 
+We introduce conditions and show that if these conditions
+are fulfilled normalisation to constructor head normal 
+form is guaranteed.
+
+This theory has been applied to a proof in Agda 
+that signed digit representable real numbers are
+closed under average, multiplication and the rationals.
+We were able to feasible compute signed digit representations
+using this approach using a compiled version of Agda.
+

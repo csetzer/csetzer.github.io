@@ -1,0 +1,19 @@
+GUIs, Object Based Programming, and Processes in Agda
+(joint work with Andreas Abel, Stephan Adelsberger, and Bashar Igried)
+
+We introduce the notion of an object (as in object-based programming)
+in dependent type theory and show how to implement it in Agda. This 
+includes two kinds of objects: objects which directly return the result
+and objects which have carry out some interaction with the real world
+before returning a result. We will introduce as well state dependent 
+objects, a notion which naturally occurs when programming
+with objects in dependent type theory. We show how this can be used to develop
+GUIs. As it is usually done in object-oriented languages, event handlers
+will be given as methods of an object which will be executed when the
+event occurs. 
+Finally we will present some work on how to represent processes in dependent
+type theory. We will consider the process algebra CSP, although most of the 
+ideas should translate to similar process algebras as well. We will represent
+processes in monadic form and as a coalgebra based on an atomic one step 
+rule.
+

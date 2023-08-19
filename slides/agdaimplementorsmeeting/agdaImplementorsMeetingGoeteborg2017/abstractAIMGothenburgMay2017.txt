@@ -1,0 +1,10 @@
+      Talk title: Programming with GUIs in Agda
+      Talk abstract:
+      This is joint work with Andreas Abel and Stephan Adelsberger. We
+      will show how to program with GUIs in Agda using action listeners
+      and a combination of client-side and server side programming.
+      This research has been written up in our article
+      Andreas Abel, Stephan Adelsberger, Anton Setzer: Interactive
+      Programming in Agda - Objects and Graphical User Interfaces,
+      http://www.cs.swan.ac.uk/~csetzer/articles/ooAgda.pdf   with agda
+      code available at https://github.com/agda/ooAgda

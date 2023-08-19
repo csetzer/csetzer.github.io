@@ -1,0 +1,1903 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >StateSizedIO.GUI.WxBindingsFFI</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Keyword"
+      >module</a
+      ><a name="7"
+      > </a
+      ><a name="8" href="StateSizedIO.GUI.WxBindingsFFI.html#1" class="Module"
+      >StateSizedIO.GUI.WxBindingsFFI</a
+      ><a name="38"
+      > </a
+      ><a name="39" class="Keyword"
+      >where</a
+      ><a name="44"
+      >
+
+</a
+      ><a name="46" class="Keyword"
+      >open</a
+      ><a name="50"
+      > </a
+      ><a name="51" class="Keyword"
+      >import</a
+      ><a name="57"
+      > </a
+      ><a name="58" href="Data.Bool.Base.html#1" class="Module"
+      >Data.Bool.Base</a
+      ><a name="72"
+      >
+</a
+      ><a name="73" class="Keyword"
+      >open</a
+      ><a name="77"
+      > </a
+      ><a name="78" class="Keyword"
+      >import</a
+      ><a name="84"
+      > </a
+      ><a name="85" href="Data.Integer.html#1" class="Module"
+      >Data.Integer</a
+      ><a name="97"
+      >
+
+</a
+      ><a name="99" class="Keyword"
+      >open</a
+      ><a name="103"
+      > </a
+      ><a name="104" class="Keyword"
+      >import</a
+      ><a name="110"
+      > </a
+      ><a name="111" href="Data.Product.html#1" class="Module"
+      >Data.Product</a
+      ><a name="123"
+      > </a
+      ><a name="124" class="Keyword"
+      >hiding</a
+      ><a name="130"
+      > </a
+      ><a name="131" class="Symbol"
+      >(</a
+      ><a name="132" href="Data.Product.html#1872" class="Function"
+      >map</a
+      ><a name="135" class="Symbol"
+      >)</a
+      ><a name="136"
+      >
+
+</a
+      ><a name="138" class="Keyword"
+      >open</a
+      ><a name="142"
+      > </a
+      ><a name="143" class="Keyword"
+      >import</a
+      ><a name="149"
+      > </a
+      ><a name="150" href="NativeIO.html#1" class="Module"
+      >NativeIO</a
+      ><a name="158"
+      >
+</a
+      ><a name="159" class="Keyword"
+      >open</a
+      ><a name="163"
+      > </a
+      ><a name="164" class="Keyword"
+      >import</a
+      ><a name="170"
+      > </a
+      ><a name="171" href="NativeInt.html#1" class="Module"
+      >NativeInt</a
+      ><a name="180"
+      >
+
+</a
+      ><a name="182" class="Keyword"
+      >open</a
+      ><a name="186"
+      > </a
+      ><a name="187" class="Keyword"
+      >import</a
+      ><a name="193"
+      > </a
+      ><a name="194" href="Function.html#1" class="Module"
+      >Function</a
+      ><a name="202"
+      >
+
+</a
+      ><a name="204" class="Symbol"
+      >{-#</a
+      ><a name="207"
+      > </a
+      ><a name="208" class="Keyword"
+      >IMPORT</a
+      ><a name="214"
+      > GHC.Conc.Sync </a
+      ><a name="229" class="Symbol"
+      >#-}</a
+      ><a name="232"
+      >
+</a
+      ><a name="233" class="Symbol"
+      >{-#</a
+      ><a name="236"
+      > </a
+      ><a name="237" class="Keyword"
+      >IMPORT</a
+      ><a name="243"
+      > Control.Concurrent </a
+      ><a name="263" class="Symbol"
+      >#-}</a
+      ><a name="266"
+      >
+</a
+      ><a name="267" class="Symbol"
+      >{-#</a
+      ><a name="270"
+      > </a
+      ><a name="271" class="Keyword"
+      >IMPORT</a
+      ><a name="277"
+      > Graphics.UI.WX </a
+      ><a name="293" class="Symbol"
+      >#-}</a
+      ><a name="296"
+      >
+</a
+      ><a name="297" class="Symbol"
+      >{-#</a
+      ><a name="300"
+      > </a
+      ><a name="301" class="Keyword"
+      >IMPORT</a
+      ><a name="307"
+      > Graphics.UI.WXCore </a
+      ><a name="327" class="Symbol"
+      >#-}</a
+      ><a name="330"
+      >
+</a
+      ><a name="331" class="Symbol"
+      >{-#</a
+      ><a name="334"
+      > </a
+      ><a name="335" class="Keyword"
+      >IMPORT</a
+      ><a name="341"
+      > Graphics.UI.WXCore.Events </a
+      ><a name="368" class="Symbol"
+      >#-}</a
+      ><a name="371"
+      >
+
+</a
+      ><a name="373" class="Keyword"
+      >postulate</a
+      ><a name="382"
+      > </a
+      ><a name="383" href="StateSizedIO.GUI.WxBindingsFFI.html#383" class="Postulate"
+      >Frame</a
+      ><a name="388"
+      > </a
+      ><a name="389" class="Symbol"
+      >:</a
+      ><a name="390"
+      > </a
+      ><a name="391" class="PrimitiveType"
+      >Set</a
+      ><a name="394"
+      >
+</a
+      ><a name="395" class="Symbol"
+      >{-#</a
+      ><a name="398"
+      > </a
+      ><a name="399" class="Keyword"
+      >COMPILED_TYPE</a
+      ><a name="412"
+      > </a
+      ><a name="413" href="StateSizedIO.GUI.WxBindingsFFI.html#383" class="Postulate"
+      >Frame</a
+      ><a name="418"
+      > (Graphics.UI.WX.Frame ()) </a
+      ><a name="445" class="Symbol"
+      >#-}</a
+      ><a name="448"
+      >
+
+</a
+      ><a name="450" class="Keyword"
+      >postulate</a
+      ><a name="459"
+      > </a
+      ><a name="460" href="StateSizedIO.GUI.WxBindingsFFI.html#460" class="Postulate"
+      >Button</a
+      ><a name="466"
+      > </a
+      ><a name="467" class="Symbol"
+      >:</a
+      ><a name="468"
+      > </a
+      ><a name="469" class="PrimitiveType"
+      >Set</a
+      ><a name="472"
+      >
+</a
+      ><a name="473" class="Symbol"
+      >{-#</a
+      ><a name="476"
+      > </a
+      ><a name="477" class="Keyword"
+      >COMPILED_TYPE</a
+      ><a name="490"
+      > </a
+      ><a name="491" href="StateSizedIO.GUI.WxBindingsFFI.html#460" class="Postulate"
+      >Button</a
+      ><a name="497"
+      > (Graphics.UI.WX.Button ()) </a
+      ><a name="525" class="Symbol"
+      >#-}</a
+      ><a name="528"
+      >
+
+
+</a
+      ><a name="531" class="Keyword"
+      >postulate</a
+      ><a name="540"
+      > </a
+      ><a name="541" href="StateSizedIO.GUI.WxBindingsFFI.html#541" class="Postulate"
+      >nativeNewFrame</a
+      ><a name="555"
+      > </a
+      ><a name="556" class="Symbol"
+      >:</a
+      ><a name="557"
+      > </a
+      ><a name="558" href="Agda.Builtin.String.html#137" class="Postulate"
+      >String</a
+      ><a name="564"
+      > </a
+      ><a name="565" class="Symbol"
+      >-&gt;</a
+      ><a name="567"
+      > </a
+      ><a name="568" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="576"
+      > </a
+      ><a name="577" href="StateSizedIO.GUI.WxBindingsFFI.html#383" class="Postulate"
+      >Frame</a
+      ><a name="582"
+      >
+</a
+      ><a name="583" class="Symbol"
+      >{-#</a
+      ><a name="586"
+      > </a
+      ><a name="587" class="Keyword"
+      >COMPILED</a
+      ><a name="595"
+      > </a
+      ><a name="596" href="StateSizedIO.GUI.WxBindingsFFI.html#541" class="Postulate"
+      >nativeNewFrame</a
+      ><a name="610"
+      > (\s -&gt; Graphics.UI.WX.frame
+  [Graphics.UI.WX.text Graphics.UI.WX.:= (Data.Text.unpack s)]) </a
+      ><a name="703" class="Symbol"
+      >#-}</a
+      ><a name="706"
+      >
+
+</a
+      ><a name="708" class="Keyword"
+      >postulate</a
+      ><a name="717"
+      > </a
+      ><a name="718" href="StateSizedIO.GUI.WxBindingsFFI.html#718" class="Postulate"
+      >nativeDoThreadDelay</a
+      ><a name="737"
+      > </a
+      ><a name="738" class="Symbol"
+      >:</a
+      ><a name="739"
+      > </a
+      ><a name="740" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="748"
+      > </a
+      ><a name="749" href="Agda.Builtin.Bool.html#39" class="Datatype"
+      >Bool</a
+      ><a name="753"
+      >
+</a
+      ><a name="754" class="Symbol"
+      >{-#</a
+      ><a name="757"
+      > </a
+      ><a name="758" class="Keyword"
+      >COMPILED</a
+      ><a name="766"
+      > </a
+      ><a name="767" href="StateSizedIO.GUI.WxBindingsFFI.html#718" class="Postulate"
+      >nativeDoThreadDelay</a
+      ><a name="786"
+      > ((Control.Concurrent.threadDelay 100) &gt;&gt;= (\x -&gt; return True)) </a
+      ><a name="850" class="Symbol"
+      >#-}</a
+      ><a name="853"
+      >
+
+</a
+      ><a name="855" class="Keyword"
+      >postulate</a
+      ><a name="864"
+      > </a
+      ><a name="865" href="StateSizedIO.GUI.WxBindingsFFI.html#865" class="Postulate"
+      >nativeSetIdle</a
+      ><a name="878"
+      > </a
+      ><a name="879" class="Symbol"
+      >:</a
+      ><a name="880"
+      > </a
+      ><a name="881" href="StateSizedIO.GUI.WxBindingsFFI.html#383" class="Postulate"
+      >Frame</a
+      ><a name="886"
+      > </a
+      ><a name="887" class="Symbol"
+      >-&gt;</a
+      ><a name="889"
+      > </a
+      ><a name="890" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="898"
+      > </a
+      ><a name="899" href="Agda.Builtin.Bool.html#39" class="Datatype"
+      >Bool</a
+      ><a name="903"
+      > </a
+      ><a name="904" class="Symbol"
+      >-&gt;</a
+      ><a name="906"
+      > </a
+      ><a name="907" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="915"
+      > </a
+      ><a name="916" href="Unit.html#28" class="Record"
+      >Unit</a
+      ><a name="920"
+      >
+</a
+      ><a name="921" class="Symbol"
+      >{-#</a
+      ><a name="924"
+      > </a
+      ><a name="925" class="Keyword"
+      >COMPILED</a
+      ><a name="933"
+      > </a
+      ><a name="934" href="StateSizedIO.GUI.WxBindingsFFI.html#865" class="Postulate"
+      >nativeSetIdle</a
+      ><a name="947"
+      > (\fra prog -&gt; Graphics.UI.WX.set fra
+  [Graphics.UI.WX.on Graphics.UI.WX.idle Graphics.UI.WX.:= prog]) </a
+      ><a name="1051" class="Symbol"
+      >#-}</a
+      ><a name="1054"
+      >
+
+</a
+      ><a name="1056" href="StateSizedIO.GUI.WxBindingsFFI.html#1056" class="Function"
+      >nativeMakeFrame</a
+      ><a name="1071"
+      > </a
+      ><a name="1072" class="Symbol"
+      >:</a
+      ><a name="1073"
+      > </a
+      ><a name="1074" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="1082"
+      > </a
+      ><a name="1083" href="StateSizedIO.GUI.WxBindingsFFI.html#383" class="Postulate"
+      >Frame</a
+      ><a name="1088"
+      >
+</a
+      ><a name="1089" href="StateSizedIO.GUI.WxBindingsFFI.html#1056" class="Function"
+      >nativeMakeFrame</a
+      ><a name="1104"
+      > </a
+      ><a name="1105" class="Symbol"
+      >=</a
+      ><a name="1106"
+      >
+  </a
+      ><a name="1109" href="StateSizedIO.GUI.WxBindingsFFI.html#541" class="Postulate"
+      >nativeNewFrame</a
+      ><a name="1123"
+      > </a
+      ><a name="1124" class="String"
+      >&quot;Start Text&quot;</a
+      ><a name="1136"
+      > </a
+      ><a name="1137" href="NativeIO.html#183" class="Postulate Operator"
+      >native&gt;&gt;=</a
+      ><a name="1146"
+      > </a
+      ><a name="1147" class="Symbol"
+      >(\</a
+      ><a name="1149" href="StateSizedIO.GUI.WxBindingsFFI.html#1149" class="Bound"
+      >f</a
+      ><a name="1150"
+      > </a
+      ><a name="1151" class="Symbol"
+      >-&gt;</a
+      ><a name="1153"
+      > 
+  </a
+      ><a name="1157" href="StateSizedIO.GUI.WxBindingsFFI.html#865" class="Postulate"
+      >nativeSetIdle</a
+      ><a name="1170"
+      > </a
+      ><a name="1171" href="StateSizedIO.GUI.WxBindingsFFI.html#1149" class="Bound"
+      >f</a
+      ><a name="1172"
+      > </a
+      ><a name="1173" href="StateSizedIO.GUI.WxBindingsFFI.html#718" class="Postulate"
+      >nativeDoThreadDelay</a
+      ><a name="1192"
+      > </a
+      ><a name="1193" href="NativeIO.html#183" class="Postulate Operator"
+      >native&gt;&gt;=</a
+      ><a name="1202"
+      > </a
+      ><a name="1203" class="Symbol"
+      >(\</a
+      ><a name="1205" href="StateSizedIO.GUI.WxBindingsFFI.html#1205" class="Bound"
+      >x</a
+      ><a name="1206"
+      > </a
+      ><a name="1207" class="Symbol"
+      >-&gt;</a
+      ><a name="1209"
+      >
+  </a
+      ><a name="1212" href="NativeIO.html#139" class="Postulate"
+      >nativeReturn</a
+      ><a name="1224"
+      > </a
+      ><a name="1225" href="StateSizedIO.GUI.WxBindingsFFI.html#1149" class="Bound"
+      >f</a
+      ><a name="1226" class="Symbol"
+      >))</a
+      ><a name="1228"
+      >   
+
+</a
+      ><a name="1233" class="Keyword"
+      >postulate</a
+      ><a name="1242"
+      > </a
+      ><a name="1243" href="StateSizedIO.GUI.WxBindingsFFI.html#1243" class="Postulate"
+      >nativeMakeButton</a
+      ><a name="1259"
+      > </a
+      ><a name="1260" class="Symbol"
+      >:</a
+      ><a name="1261"
+      > </a
+      ><a name="1262" href="StateSizedIO.GUI.WxBindingsFFI.html#383" class="Postulate"
+      >Frame</a
+      ><a name="1267"
+      > </a
+      ><a name="1268" class="Symbol"
+      >&#8594;</a
+      ><a name="1269"
+      > </a
+      ><a name="1270" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="1278"
+      > </a
+      ><a name="1279" href="StateSizedIO.GUI.WxBindingsFFI.html#460" class="Postulate"
+      >Button</a
+      ><a name="1285"
+      >
+</a
+      ><a name="1286" class="Symbol"
+      >{-#</a
+      ><a name="1289"
+      > </a
+      ><a name="1290" class="Keyword"
+      >COMPILED</a
+      ><a name="1298"
+      > </a
+      ><a name="1299" href="StateSizedIO.GUI.WxBindingsFFI.html#1243" class="Postulate"
+      >nativeMakeButton</a
+      ><a name="1315"
+      > (\myFrame -&gt; Graphics.UI.WX.button myFrame
+  [Graphics.UI.WX.text Graphics.UI.WX.:= &quot;click&quot;]) </a
+      ><a name="1410" class="Symbol"
+      >#-}</a
+      ><a name="1413"
+      >
+
+</a
+      ><a name="1415" class="Keyword"
+      >postulate</a
+      ><a name="1424"
+      > </a
+      ><a name="1425" href="StateSizedIO.GUI.WxBindingsFFI.html#1425" class="Postulate"
+      >nativeAddButton</a
+      ><a name="1440"
+      > </a
+      ><a name="1441" class="Symbol"
+      >:</a
+      ><a name="1442"
+      > </a
+      ><a name="1443" href="StateSizedIO.GUI.WxBindingsFFI.html#383" class="Postulate"
+      >Frame</a
+      ><a name="1448"
+      > </a
+      ><a name="1449" class="Symbol"
+      >&#8594;</a
+      ><a name="1450"
+      > </a
+      ><a name="1451" href="StateSizedIO.GUI.WxBindingsFFI.html#460" class="Postulate"
+      >Button</a
+      ><a name="1457"
+      > </a
+      ><a name="1458" class="Symbol"
+      >&#8594;</a
+      ><a name="1459"
+      > </a
+      ><a name="1460" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="1468"
+      > </a
+      ><a name="1469" href="Unit.html#28" class="Record"
+      >Unit</a
+      ><a name="1473"
+      >
+</a
+      ><a name="1474" class="Symbol"
+      >{-#</a
+      ><a name="1477"
+      > </a
+      ><a name="1478" class="Keyword"
+      >COMPILED</a
+      ><a name="1486"
+      > </a
+      ><a name="1487" href="StateSizedIO.GUI.WxBindingsFFI.html#1425" class="Postulate"
+      >nativeAddButton</a
+      ><a name="1502"
+      > (\myFrame bt -&gt; Graphics.UI.WX.set myFrame
+  [Graphics.UI.WX.layout Graphics.UI.WX.:=
+    Graphics.UI.WX.minsize (Graphics.UI.WX.sz 500 400) $
+      Graphics.UI.WX.column 1 [Graphics.UI.WX.hfill (Graphics.UI.WX.widget bt)]]) </a
+      ><a name="1728" class="Symbol"
+      >#-}</a
+      ><a name="1731"
+      >
+
+
+</a
+      ><a name="1734" class="Keyword"
+      >postulate</a
+      ><a name="1743"
+      >  </a
+      ><a name="1745" href="StateSizedIO.GUI.WxBindingsFFI.html#1745" class="Postulate"
+      >TVar</a
+      ><a name="1749"
+      > </a
+      ><a name="1750" class="Symbol"
+      >:</a
+      ><a name="1751"
+      > </a
+      ><a name="1752" class="PrimitiveType"
+      >Set</a
+      ><a name="1755"
+      > </a
+      ><a name="1756" class="Symbol"
+      >&#8594;</a
+      ><a name="1757"
+      > </a
+      ><a name="1758" class="PrimitiveType"
+      >Set</a
+      ><a name="1761"
+      >
+</a
+      ><a name="1762" class="Symbol"
+      >{-#</a
+      ><a name="1765"
+      > </a
+      ><a name="1766" class="Keyword"
+      >COMPILED_TYPE</a
+      ><a name="1779"
+      > </a
+      ><a name="1780" href="StateSizedIO.GUI.WxBindingsFFI.html#1745" class="Postulate"
+      >TVar</a
+      ><a name="1784"
+      > Control.Concurrent.STM.TVar.TVar  </a
+      ><a name="1819" class="Symbol"
+      >#-}</a
+      ><a name="1822"
+      >
+
+</a
+      ><a name="1824" class="Keyword"
+      >postulate</a
+      ><a name="1833"
+      >  </a
+      ><a name="1835" href="StateSizedIO.GUI.WxBindingsFFI.html#1835" class="Postulate"
+      >MVar</a
+      ><a name="1839"
+      > </a
+      ><a name="1840" class="Symbol"
+      >:</a
+      ><a name="1841"
+      > </a
+      ><a name="1842" class="PrimitiveType"
+      >Set</a
+      ><a name="1845"
+      > </a
+      ><a name="1846" class="Symbol"
+      >&#8594;</a
+      ><a name="1847"
+      > </a
+      ><a name="1848" class="PrimitiveType"
+      >Set</a
+      ><a name="1851"
+      >
+</a
+      ><a name="1852" class="Symbol"
+      >{-#</a
+      ><a name="1855"
+      > </a
+      ><a name="1856" class="Keyword"
+      >COMPILED_TYPE</a
+      ><a name="1869"
+      > </a
+      ><a name="1870" href="StateSizedIO.GUI.WxBindingsFFI.html#1835" class="Postulate"
+      >MVar</a
+      ><a name="1874"
+      > Control.Concurrent.MVar  </a
+      ><a name="1900" class="Symbol"
+      >#-}</a
+      ><a name="1903"
+      >
+
+</a
+      ><a name="1905" href="StateSizedIO.GUI.WxBindingsFFI.html#1905" class="Function"
+      >Var</a
+      ><a name="1908"
+      > </a
+      ><a name="1909" class="Symbol"
+      >:</a
+      ><a name="1910"
+      > </a
+      ><a name="1911" class="PrimitiveType"
+      >Set</a
+      ><a name="1914"
+      > </a
+      ><a name="1915" class="Symbol"
+      >&#8594;</a
+      ><a name="1916"
+      > </a
+      ><a name="1917" class="PrimitiveType"
+      >Set</a
+      ><a name="1920"
+      >
+</a
+      ><a name="1921" href="StateSizedIO.GUI.WxBindingsFFI.html#1905" class="Function"
+      >Var</a
+      ><a name="1924"
+      > </a
+      ><a name="1925" class="Symbol"
+      >=</a
+      ><a name="1926"
+      > </a
+      ><a name="1927" href="StateSizedIO.GUI.WxBindingsFFI.html#1835" class="Postulate"
+      >MVar</a
+      ><a name="1931"
+      >
+
+
+</a
+      ><a name="1934" class="Keyword"
+      >postulate</a
+      ><a name="1943"
+      >
+  </a
+      ><a name="1946" href="StateSizedIO.GUI.WxBindingsFFI.html#1946" class="Postulate"
+      >nativeNewVar</a
+      ><a name="1958"
+      > </a
+      ><a name="1959" class="Symbol"
+      >:</a
+      ><a name="1960"
+      > </a
+      ><a name="1961" class="Symbol"
+      >{</a
+      ><a name="1962" href="StateSizedIO.GUI.WxBindingsFFI.html#1962" class="Bound"
+      >A</a
+      ><a name="1963"
+      > </a
+      ><a name="1964" class="Symbol"
+      >:</a
+      ><a name="1965"
+      > </a
+      ><a name="1966" class="PrimitiveType"
+      >Set</a
+      ><a name="1969" class="Symbol"
+      >}</a
+      ><a name="1970"
+      > </a
+      ><a name="1971" class="Symbol"
+      >&#8594;</a
+      ><a name="1972"
+      > </a
+      ><a name="1973" href="StateSizedIO.GUI.WxBindingsFFI.html#1962" class="Bound"
+      >A</a
+      ><a name="1974"
+      > </a
+      ><a name="1975" class="Symbol"
+      >&#8594;</a
+      ><a name="1976"
+      > </a
+      ><a name="1977" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="1985"
+      > </a
+      ><a name="1986" class="Symbol"
+      >(</a
+      ><a name="1987" href="StateSizedIO.GUI.WxBindingsFFI.html#1905" class="Function"
+      >Var</a
+      ><a name="1990"
+      > </a
+      ><a name="1991" href="StateSizedIO.GUI.WxBindingsFFI.html#1962" class="Bound"
+      >A</a
+      ><a name="1992" class="Symbol"
+      >)</a
+      ><a name="1993"
+      >
+  </a
+      ><a name="1996" href="StateSizedIO.GUI.WxBindingsFFI.html#1996" class="Postulate"
+      >nativeTakeVar</a
+      ><a name="2009"
+      > </a
+      ><a name="2010" class="Symbol"
+      >:</a
+      ><a name="2011"
+      > </a
+      ><a name="2012" class="Symbol"
+      >{</a
+      ><a name="2013" href="StateSizedIO.GUI.WxBindingsFFI.html#2013" class="Bound"
+      >A</a
+      ><a name="2014"
+      > </a
+      ><a name="2015" class="Symbol"
+      >:</a
+      ><a name="2016"
+      > </a
+      ><a name="2017" class="PrimitiveType"
+      >Set</a
+      ><a name="2020" class="Symbol"
+      >}</a
+      ><a name="2021"
+      > </a
+      ><a name="2022" class="Symbol"
+      >&#8594;</a
+      ><a name="2023"
+      > </a
+      ><a name="2024" href="StateSizedIO.GUI.WxBindingsFFI.html#1905" class="Function"
+      >Var</a
+      ><a name="2027"
+      > </a
+      ><a name="2028" href="StateSizedIO.GUI.WxBindingsFFI.html#2013" class="Bound"
+      >A</a
+      ><a name="2029"
+      > </a
+      ><a name="2030" class="Symbol"
+      >&#8594;</a
+      ><a name="2031"
+      > </a
+      ><a name="2032" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="2040"
+      > </a
+      ><a name="2041" href="StateSizedIO.GUI.WxBindingsFFI.html#2013" class="Bound"
+      >A</a
+      ><a name="2042"
+      >
+  </a
+      ><a name="2045" href="StateSizedIO.GUI.WxBindingsFFI.html#2045" class="Postulate"
+      >nativePutVar</a
+      ><a name="2057"
+      > </a
+      ><a name="2058" class="Symbol"
+      >:</a
+      ><a name="2059"
+      > </a
+      ><a name="2060" class="Symbol"
+      >{</a
+      ><a name="2061" href="StateSizedIO.GUI.WxBindingsFFI.html#2061" class="Bound"
+      >A</a
+      ><a name="2062"
+      > </a
+      ><a name="2063" class="Symbol"
+      >:</a
+      ><a name="2064"
+      > </a
+      ><a name="2065" class="PrimitiveType"
+      >Set</a
+      ><a name="2068" class="Symbol"
+      >}</a
+      ><a name="2069"
+      > </a
+      ><a name="2070" class="Symbol"
+      >&#8594;</a
+      ><a name="2071"
+      > </a
+      ><a name="2072" href="StateSizedIO.GUI.WxBindingsFFI.html#1905" class="Function"
+      >Var</a
+      ><a name="2075"
+      > </a
+      ><a name="2076" href="StateSizedIO.GUI.WxBindingsFFI.html#2061" class="Bound"
+      >A</a
+      ><a name="2077"
+      > </a
+      ><a name="2078" class="Symbol"
+      >&#8594;</a
+      ><a name="2079"
+      > </a
+      ><a name="2080" href="StateSizedIO.GUI.WxBindingsFFI.html#2061" class="Bound"
+      >A</a
+      ><a name="2081"
+      > </a
+      ><a name="2082" class="Symbol"
+      >&#8594;</a
+      ><a name="2083"
+      > </a
+      ><a name="2084" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="2092"
+      > </a
+      ><a name="2093" href="Unit.html#28" class="Record"
+      >Unit</a
+      ><a name="2097"
+      >
+
+</a
+      ><a name="2099" class="Symbol"
+      >{-#</a
+      ><a name="2102"
+      > </a
+      ><a name="2103" class="Keyword"
+      >COMPILED</a
+      ><a name="2111"
+      > </a
+      ><a name="2112" href="StateSizedIO.GUI.WxBindingsFFI.html#1946" class="Postulate"
+      >nativeNewVar</a
+      ><a name="2124"
+      > (\ _ -&gt; Control.Concurrent.newMVar ) </a
+      ><a name="2162" class="Symbol"
+      >#-}</a
+      ><a name="2165"
+      >
+</a
+      ><a name="2166" class="Symbol"
+      >{-#</a
+      ><a name="2169"
+      > </a
+      ><a name="2170" class="Keyword"
+      >COMPILED</a
+      ><a name="2178"
+      > </a
+      ><a name="2179" href="StateSizedIO.GUI.WxBindingsFFI.html#1996" class="Postulate"
+      >nativeTakeVar</a
+      ><a name="2192"
+      > (\ _ -&gt; Control.Concurrent.takeMVar ) </a
+      ><a name="2231" class="Symbol"
+      >#-}</a
+      ><a name="2234"
+      >
+</a
+      ><a name="2235" class="Symbol"
+      >{-#</a
+      ><a name="2238"
+      > </a
+      ><a name="2239" class="Keyword"
+      >COMPILED</a
+      ><a name="2247"
+      > </a
+      ><a name="2248" href="StateSizedIO.GUI.WxBindingsFFI.html#2045" class="Postulate"
+      >nativePutVar</a
+      ><a name="2260"
+      > (\ _ -&gt; Control.Concurrent.putMVar ) </a
+      ><a name="2298" class="Symbol"
+      >#-}</a
+      ><a name="2301"
+      >
+
+
+</a
+      ><a name="2304" class="Keyword"
+      >postulate</a
+      ><a name="2313"
+      > </a
+      ><a name="2314" href="StateSizedIO.GUI.WxBindingsFFI.html#2314" class="Postulate"
+      >nativeSetButtonHandler</a
+      ><a name="2336"
+      > </a
+      ><a name="2337" class="Symbol"
+      >:</a
+      ><a name="2338"
+      > </a
+      ><a name="2339" href="StateSizedIO.GUI.WxBindingsFFI.html#460" class="Postulate"
+      >Button</a
+      ><a name="2345"
+      > </a
+      ><a name="2346" class="Symbol"
+      >&#8594;</a
+      ><a name="2347"
+      > </a
+      ><a name="2348" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="2356"
+      > </a
+      ><a name="2357" href="Unit.html#28" class="Record"
+      >Unit</a
+      ><a name="2361"
+      > </a
+      ><a name="2362" class="Symbol"
+      >&#8594;</a
+      ><a name="2363"
+      > </a
+      ><a name="2364" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="2372"
+      > </a
+      ><a name="2373" href="Unit.html#28" class="Record"
+      >Unit</a
+      ><a name="2377"
+      >
+</a
+      ><a name="2378" class="Symbol"
+      >{-#</a
+      ><a name="2381"
+      > </a
+      ><a name="2382" class="Keyword"
+      >COMPILED</a
+      ><a name="2390"
+      > </a
+      ><a name="2391" href="StateSizedIO.GUI.WxBindingsFFI.html#2314" class="Postulate"
+      >nativeSetButtonHandler</a
+      ><a name="2413"
+      > (\ bt prog -&gt; Graphics.UI.WX.set bt
+  [Graphics.UI.WX.on Graphics.UI.WX.command Graphics.UI.WX.:= prog ]) </a
+      ><a name="2520" class="Symbol"
+      >#-}</a
+      ><a name="2523"
+      >
+
+</a
+      ><a name="2525" class="Keyword"
+      >postulate</a
+      ><a name="2534"
+      > </a
+      ><a name="2535" href="StateSizedIO.GUI.WxBindingsFFI.html#2535" class="Postulate"
+      >ThreadId</a
+      ><a name="2543"
+      > </a
+      ><a name="2544" class="Symbol"
+      >:</a
+      ><a name="2545"
+      > </a
+      ><a name="2546" class="PrimitiveType"
+      >Set</a
+      ><a name="2549"
+      >
+</a
+      ><a name="2550" class="Symbol"
+      >{-#</a
+      ><a name="2553"
+      > </a
+      ><a name="2554" class="Keyword"
+      >COMPILED_TYPE</a
+      ><a name="2567"
+      > </a
+      ><a name="2568" href="StateSizedIO.GUI.WxBindingsFFI.html#2535" class="Postulate"
+      >ThreadId</a
+      ><a name="2576"
+      > GHC.Conc.Sync.ThreadId </a
+      ><a name="2600" class="Symbol"
+      >#-}</a
+      ><a name="2603"
+      >
+
+</a
+      ><a name="2605" class="Keyword"
+      >postulate</a
+      ><a name="2614"
+      > </a
+      ><a name="2615" href="StateSizedIO.GUI.WxBindingsFFI.html#2615" class="Postulate"
+      >forkIO</a
+      ><a name="2621"
+      > </a
+      ><a name="2622" class="Symbol"
+      >:</a
+      ><a name="2623"
+      > </a
+      ><a name="2624" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="2632"
+      > </a
+      ><a name="2633" href="Unit.html#28" class="Record"
+      >Unit</a
+      ><a name="2637"
+      > </a
+      ><a name="2638" class="Symbol"
+      >&#8594;</a
+      ><a name="2639"
+      > </a
+      ><a name="2640" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="2648"
+      > </a
+      ><a name="2649" href="StateSizedIO.GUI.WxBindingsFFI.html#2535" class="Postulate"
+      >ThreadId</a
+      ><a name="2657"
+      >
+</a
+      ><a name="2658" class="Symbol"
+      >{-#</a
+      ><a name="2661"
+      > </a
+      ><a name="2662" class="Keyword"
+      >COMPILED</a
+      ><a name="2670"
+      > </a
+      ><a name="2671" href="StateSizedIO.GUI.WxBindingsFFI.html#2615" class="Postulate"
+      >forkIO</a
+      ><a name="2677"
+      > GHC.Conc.Sync.forkIO </a
+      ><a name="2699" class="Symbol"
+      >#-}</a
+      ><a name="2702"
+      >
+
+
+</a
+      ><a name="2705" class="Keyword"
+      >postulate</a
+      ><a name="2714"
+      > </a
+      ><a name="2715" href="StateSizedIO.GUI.WxBindingsFFI.html#2715" class="Postulate"
+      >Bitmap</a
+      ><a name="2721"
+      > </a
+      ><a name="2722" class="Symbol"
+      >:</a
+      ><a name="2723"
+      > </a
+      ><a name="2724" class="PrimitiveType"
+      >Set</a
+      ><a name="2727"
+      >
+</a
+      ><a name="2728" class="Symbol"
+      >{-#</a
+      ><a name="2731"
+      > </a
+      ><a name="2732" class="Keyword"
+      >COMPILED_TYPE</a
+      ><a name="2745"
+      > </a
+      ><a name="2746" href="StateSizedIO.GUI.WxBindingsFFI.html#2715" class="Postulate"
+      >Bitmap</a
+      ><a name="2752"
+      > (Graphics.UI.WXCore.Bitmap ()) </a
+      ><a name="2784" class="Symbol"
+      >#-}</a
+      ><a name="2787"
+      >
+
+</a
+      ><a name="2789" class="Keyword"
+      >postulate</a
+      ><a name="2798"
+      > </a
+      ><a name="2799" href="StateSizedIO.GUI.WxBindingsFFI.html#2799" class="Postulate"
+      >bitmap</a
+      ><a name="2805"
+      > </a
+      ><a name="2806" class="Symbol"
+      >:</a
+      ><a name="2807"
+      > </a
+      ><a name="2808" href="Agda.Builtin.String.html#137" class="Postulate"
+      >String</a
+      ><a name="2814"
+      > </a
+      ><a name="2815" class="Symbol"
+      >&#8594;</a
+      ><a name="2816"
+      > </a
+      ><a name="2817" href="StateSizedIO.GUI.WxBindingsFFI.html#2715" class="Postulate"
+      >Bitmap</a
+      ><a name="2823"
+      >
+</a
+      ><a name="2824" class="Symbol"
+      >{-#</a
+      ><a name="2827"
+      > </a
+      ><a name="2828" class="Keyword"
+      >COMPILED</a
+      ><a name="2836"
+      > </a
+      ><a name="2837" href="StateSizedIO.GUI.WxBindingsFFI.html#2799" class="Postulate"
+      >bitmap</a
+      ><a name="2843"
+      > (\s -&gt; Graphics.UI.WX.bitmap (Data.Text.unpack s))  </a
+      ><a name="2896" class="Symbol"
+      >#-}</a
+      ><a name="2899"
+      >
+
+</a
+      ><a name="2901" class="Keyword"
+      >postulate</a
+      ><a name="2910"
+      > </a
+      ><a name="2911" href="StateSizedIO.GUI.WxBindingsFFI.html#2911" class="Postulate"
+      >DC</a
+      ><a name="2913"
+      > </a
+      ><a name="2914" class="Symbol"
+      >:</a
+      ><a name="2915"
+      > </a
+      ><a name="2916" class="PrimitiveType"
+      >Set</a
+      ><a name="2919"
+      >
+</a
+      ><a name="2920" class="Symbol"
+      >{-#</a
+      ><a name="2923"
+      > </a
+      ><a name="2924" class="Keyword"
+      >COMPILED_TYPE</a
+      ><a name="2937"
+      > </a
+      ><a name="2938" href="StateSizedIO.GUI.WxBindingsFFI.html#2911" class="Postulate"
+      >DC</a
+      ><a name="2940"
+      > (Graphics.UI.WXCore.DC ()) </a
+      ><a name="2968" class="Symbol"
+      >#-}</a
+      ><a name="2971"
+      >
+
+</a
+      ><a name="2973" class="Keyword"
+      >postulate</a
+      ><a name="2982"
+      > </a
+      ><a name="2983" href="StateSizedIO.GUI.WxBindingsFFI.html#2983" class="Postulate"
+      >Rect</a
+      ><a name="2987"
+      > </a
+      ><a name="2988" class="Symbol"
+      >:</a
+      ><a name="2989"
+      > </a
+      ><a name="2990" class="PrimitiveType"
+      >Set</a
+      ><a name="2993"
+      >
+</a
+      ><a name="2994" class="Symbol"
+      >{-#</a
+      ><a name="2997"
+      > </a
+      ><a name="2998" class="Keyword"
+      >COMPILED_TYPE</a
+      ><a name="3011"
+      > </a
+      ><a name="3012" href="StateSizedIO.GUI.WxBindingsFFI.html#2983" class="Postulate"
+      >Rect</a
+      ><a name="3016"
+      > Graphics.UI.WXCore.Rect </a
+      ><a name="3041" class="Symbol"
+      >#-}</a
+      ><a name="3044"
+      >
+
+
+</a
+      ><a name="3047" class="Keyword"
+      >postulate</a
+      ><a name="3056"
+      > </a
+      ><a name="3057" href="StateSizedIO.GUI.WxBindingsFFI.html#3057" class="Postulate"
+      >nativeSetOnPaint</a
+      ><a name="3073"
+      > </a
+      ><a name="3074" class="Symbol"
+      >:</a
+      ><a name="3075"
+      > </a
+      ><a name="3076" href="StateSizedIO.GUI.WxBindingsFFI.html#383" class="Postulate"
+      >Frame</a
+      ><a name="3081"
+      > </a
+      ><a name="3082" class="Symbol"
+      >&#8594;</a
+      ><a name="3083"
+      > </a
+      ><a name="3084" class="Symbol"
+      >(</a
+      ><a name="3085" href="StateSizedIO.GUI.WxBindingsFFI.html#2911" class="Postulate"
+      >DC</a
+      ><a name="3087"
+      > </a
+      ><a name="3088" class="Symbol"
+      >&#8594;</a
+      ><a name="3089"
+      > </a
+      ><a name="3090" href="StateSizedIO.GUI.WxBindingsFFI.html#2983" class="Postulate"
+      >Rect</a
+      ><a name="3094"
+      > </a
+      ><a name="3095" class="Symbol"
+      >&#8594;</a
+      ><a name="3096"
+      > </a
+      ><a name="3097" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="3105"
+      > </a
+      ><a name="3106" href="Unit.html#28" class="Record"
+      >Unit</a
+      ><a name="3110" class="Symbol"
+      >)</a
+      ><a name="3111"
+      > </a
+      ><a name="3112" class="Symbol"
+      >&#8594;</a
+      ><a name="3113"
+      > </a
+      ><a name="3114" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="3122"
+      > </a
+      ><a name="3123" href="Unit.html#28" class="Record"
+      >Unit</a
+      ><a name="3127"
+      >
+</a
+      ><a name="3128" class="Symbol"
+      >{-#</a
+      ><a name="3131"
+      > </a
+      ><a name="3132" class="Keyword"
+      >COMPILED</a
+      ><a name="3140"
+      > </a
+      ><a name="3141" href="StateSizedIO.GUI.WxBindingsFFI.html#3057" class="Postulate"
+      >nativeSetOnPaint</a
+      ><a name="3157"
+      > (\ fra prog -&gt; Graphics.UI.WX.set fra [Graphics.UI.WX.on Graphics.UI.WX.paint Graphics.UI.WX.:= prog]) </a
+      ><a name="3261" class="Symbol"
+      >#-}</a
+      ><a name="3264"
+      >
+
+</a
+      ><a name="3266" class="Keyword"
+      >postulate</a
+      ><a name="3275"
+      > </a
+      ><a name="3276" href="StateSizedIO.GUI.WxBindingsFFI.html#3276" class="Postulate"
+      >nativeRepaint</a
+      ><a name="3289"
+      > </a
+      ><a name="3290" class="Symbol"
+      >:</a
+      ><a name="3291"
+      > </a
+      ><a name="3292" href="StateSizedIO.GUI.WxBindingsFFI.html#383" class="Postulate"
+      >Frame</a
+      ><a name="3297"
+      > </a
+      ><a name="3298" class="Symbol"
+      >&#8594;</a
+      ><a name="3299"
+      > </a
+      ><a name="3300" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="3308"
+      > </a
+      ><a name="3309" href="Unit.html#28" class="Record"
+      >Unit</a
+      ><a name="3313"
+      >
+</a
+      ><a name="3314" class="Symbol"
+      >{-#</a
+      ><a name="3317"
+      > </a
+      ><a name="3318" class="Keyword"
+      >COMPILED</a
+      ><a name="3326"
+      > </a
+      ><a name="3327" href="StateSizedIO.GUI.WxBindingsFFI.html#3276" class="Postulate"
+      >nativeRepaint</a
+      ><a name="3340"
+      > Graphics.UI.WX.repaint </a
+      ><a name="3364" class="Symbol"
+      >#-}</a
+      ><a name="3367"
+      >
+
+
+</a
+      ><a name="3370" href="StateSizedIO.GUI.WxBindingsFFI.html#3370" class="Function"
+      >Point</a
+      ><a name="3375"
+      > </a
+      ><a name="3376" class="Symbol"
+      >:</a
+      ><a name="3377"
+      > </a
+      ><a name="3378" class="PrimitiveType"
+      >Set</a
+      ><a name="3381"
+      >
+</a
+      ><a name="3382" href="StateSizedIO.GUI.WxBindingsFFI.html#3370" class="Function"
+      >Point</a
+      ><a name="3387"
+      > </a
+      ><a name="3388" class="Symbol"
+      >=</a
+      ><a name="3389"
+      > </a
+      ><a name="3390" class="Symbol"
+      >(</a
+      ><a name="3391" href="Agda.Builtin.Int.html#150" class="Datatype"
+      >&#8484;</a
+      ><a name="3392"
+      > </a
+      ><a name="3393" href="Data.Product.html#1073" class="Function Operator"
+      >&#215;</a
+      ><a name="3394"
+      > </a
+      ><a name="3395" href="Agda.Builtin.Int.html#150" class="Datatype"
+      >&#8484;</a
+      ><a name="3396" class="Symbol"
+      >)</a
+      ><a name="3397"
+      >
+
+</a
+      ><a name="3399" class="Keyword"
+      >postulate</a
+      ><a name="3408"
+      > </a
+      ><a name="3409" href="StateSizedIO.GUI.WxBindingsFFI.html#3409" class="Postulate"
+      >NativePoint</a
+      ><a name="3420"
+      > </a
+      ><a name="3421" class="Symbol"
+      >:</a
+      ><a name="3422"
+      > </a
+      ><a name="3423" class="PrimitiveType"
+      >Set</a
+      ><a name="3426"
+      >
+</a
+      ><a name="3427" class="Symbol"
+      >{-#</a
+      ><a name="3430"
+      > </a
+      ><a name="3431" class="Keyword"
+      >COMPILED_TYPE</a
+      ><a name="3444"
+      > </a
+      ><a name="3445" href="StateSizedIO.GUI.WxBindingsFFI.html#3409" class="Postulate"
+      >NativePoint</a
+      ><a name="3456"
+      > Graphics.UI.WXCore.Point </a
+      ><a name="3482" class="Symbol"
+      >#-}</a
+      ><a name="3485"
+      >
+
+</a
+      ><a name="3487" class="Keyword"
+      >postulate</a
+      ><a name="3496"
+      > </a
+      ><a name="3497" href="StateSizedIO.GUI.WxBindingsFFI.html#3497" class="Postulate"
+      >nativePoint</a
+      ><a name="3508"
+      > </a
+      ><a name="3509" class="Symbol"
+      >:</a
+      ><a name="3510"
+      > </a
+      ><a name="3511" href="Agda.Builtin.Int.html#150" class="Datatype"
+      >&#8484;</a
+      ><a name="3512"
+      > </a
+      ><a name="3513" class="Symbol"
+      >&#8594;</a
+      ><a name="3514"
+      > </a
+      ><a name="3515" href="Agda.Builtin.Int.html#150" class="Datatype"
+      >&#8484;</a
+      ><a name="3516"
+      > </a
+      ><a name="3517" class="Symbol"
+      >&#8594;</a
+      ><a name="3518"
+      > </a
+      ><a name="3519" href="StateSizedIO.GUI.WxBindingsFFI.html#3409" class="Postulate"
+      >NativePoint</a
+      ><a name="3530"
+      >
+</a
+      ><a name="3531" class="Symbol"
+      >{-#</a
+      ><a name="3534"
+      > </a
+      ><a name="3535" class="Keyword"
+      >COMPILED</a
+      ><a name="3543"
+      > </a
+      ><a name="3544" href="StateSizedIO.GUI.WxBindingsFFI.html#3497" class="Postulate"
+      >nativePoint</a
+      ><a name="3555"
+      > (\ x y -&gt; Graphics.UI.WXCore.point (fromInteger x) (fromInteger y)) </a
+      ><a name="3624" class="Symbol"
+      >#-}</a
+      ><a name="3627"
+      >
+
+
+</a
+      ><a name="3630" class="Keyword"
+      >postulate</a
+      ><a name="3639"
+      > </a
+      ><a name="3640" href="StateSizedIO.GUI.WxBindingsFFI.html#3640" class="Postulate"
+      >nativeDrawBitmapNativePoint</a
+      ><a name="3667"
+      > </a
+      ><a name="3668" class="Symbol"
+      >:</a
+      ><a name="3669"
+      > </a
+      ><a name="3670" href="StateSizedIO.GUI.WxBindingsFFI.html#2911" class="Postulate"
+      >DC</a
+      ><a name="3672"
+      > </a
+      ><a name="3673" class="Symbol"
+      >&#8594;</a
+      ><a name="3674"
+      > </a
+      ><a name="3675" href="StateSizedIO.GUI.WxBindingsFFI.html#2715" class="Postulate"
+      >Bitmap</a
+      ><a name="3681"
+      > </a
+      ><a name="3682" class="Symbol"
+      >&#8594;</a
+      ><a name="3683"
+      > </a
+      ><a name="3684" href="StateSizedIO.GUI.WxBindingsFFI.html#3409" class="Postulate"
+      >NativePoint</a
+      ><a name="3695"
+      > </a
+      ><a name="3696" class="Symbol"
+      >&#8594;</a
+      ><a name="3697"
+      > </a
+      ><a name="3698" href="Agda.Builtin.Bool.html#39" class="Datatype"
+      >Bool</a
+      ><a name="3702"
+      > </a
+      ><a name="3703" class="Symbol"
+      >&#8594;</a
+      ><a name="3704"
+      > </a
+      ><a name="3705" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="3713"
+      > </a
+      ><a name="3714" href="Unit.html#28" class="Record"
+      >Unit</a
+      ><a name="3718"
+      >
+</a
+      ><a name="3719" class="Symbol"
+      >{-#</a
+      ><a name="3722"
+      > </a
+      ><a name="3723" class="Keyword"
+      >COMPILED</a
+      ><a name="3731"
+      > </a
+      ><a name="3732" href="StateSizedIO.GUI.WxBindingsFFI.html#3640" class="Postulate"
+      >nativeDrawBitmapNativePoint</a
+      ><a name="3759"
+      > (\ d bi p bo -&gt; Graphics.UI.WX.drawBitmap d bi p bo [] ) </a
+      ><a name="3817" class="Symbol"
+      >#-}</a
+      ><a name="3820"
+      >
+
+</a
+      ><a name="3822" href="StateSizedIO.GUI.WxBindingsFFI.html#3822" class="Function"
+      >nativeDrawBitmap</a
+      ><a name="3838"
+      > </a
+      ><a name="3839" class="Symbol"
+      >:</a
+      ><a name="3840"
+      > </a
+      ><a name="3841" href="StateSizedIO.GUI.WxBindingsFFI.html#2911" class="Postulate"
+      >DC</a
+      ><a name="3843"
+      > </a
+      ><a name="3844" class="Symbol"
+      >&#8594;</a
+      ><a name="3845"
+      > </a
+      ><a name="3846" href="StateSizedIO.GUI.WxBindingsFFI.html#2715" class="Postulate"
+      >Bitmap</a
+      ><a name="3852"
+      > </a
+      ><a name="3853" class="Symbol"
+      >&#8594;</a
+      ><a name="3854"
+      > </a
+      ><a name="3855" href="StateSizedIO.GUI.WxBindingsFFI.html#3370" class="Function"
+      >Point</a
+      ><a name="3860"
+      > </a
+      ><a name="3861" class="Symbol"
+      >&#8594;</a
+      ><a name="3862"
+      > </a
+      ><a name="3863" href="Agda.Builtin.Bool.html#39" class="Datatype"
+      >Bool</a
+      ><a name="3867"
+      > </a
+      ><a name="3868" class="Symbol"
+      >&#8594;</a
+      ><a name="3869"
+      > </a
+      ><a name="3870" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="3878"
+      > </a
+      ><a name="3879" href="Unit.html#28" class="Record"
+      >Unit</a
+      ><a name="3883"
+      >
+</a
+      ><a name="3884" href="StateSizedIO.GUI.WxBindingsFFI.html#3822" class="Function"
+      >nativeDrawBitmap</a
+      ><a name="3900"
+      > </a
+      ><a name="3901" href="StateSizedIO.GUI.WxBindingsFFI.html#3901" class="Bound"
+      >d</a
+      ><a name="3902"
+      > </a
+      ><a name="3903" href="StateSizedIO.GUI.WxBindingsFFI.html#3903" class="Bound"
+      >bi</a
+      ><a name="3905"
+      > </a
+      ><a name="3906" class="Symbol"
+      >(</a
+      ><a name="3907" href="StateSizedIO.GUI.WxBindingsFFI.html#3907" class="Bound"
+      >x</a
+      ><a name="3908"
+      > </a
+      ><a name="3909" href="Data.Product.html#509" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="3910"
+      > </a
+      ><a name="3911" href="StateSizedIO.GUI.WxBindingsFFI.html#3911" class="Bound"
+      >y</a
+      ><a name="3912" class="Symbol"
+      >)</a
+      ><a name="3913"
+      > </a
+      ><a name="3914" href="StateSizedIO.GUI.WxBindingsFFI.html#3914" class="Bound"
+      >bo</a
+      ><a name="3916"
+      > </a
+      ><a name="3917" class="Symbol"
+      >=</a
+      ><a name="3918"
+      > </a
+      ><a name="3919" href="StateSizedIO.GUI.WxBindingsFFI.html#3640" class="Postulate"
+      >nativeDrawBitmapNativePoint</a
+      ><a name="3946"
+      > </a
+      ><a name="3947" href="StateSizedIO.GUI.WxBindingsFFI.html#3901" class="Bound"
+      >d</a
+      ><a name="3948"
+      > </a
+      ><a name="3949" href="StateSizedIO.GUI.WxBindingsFFI.html#3903" class="Bound"
+      >bi</a
+      ><a name="3951"
+      > </a
+      ><a name="3952" class="Symbol"
+      >(</a
+      ><a name="3953" href="StateSizedIO.GUI.WxBindingsFFI.html#3497" class="Postulate"
+      >nativePoint</a
+      ><a name="3964"
+      > </a
+      ><a name="3965" href="StateSizedIO.GUI.WxBindingsFFI.html#3907" class="Bound"
+      >x</a
+      ><a name="3966"
+      > </a
+      ><a name="3967" href="StateSizedIO.GUI.WxBindingsFFI.html#3911" class="Bound"
+      >y</a
+      ><a name="3968" class="Symbol"
+      >)</a
+      ><a name="3969"
+      > </a
+      ><a name="3970" href="StateSizedIO.GUI.WxBindingsFFI.html#3914" class="Bound"
+      >bo</a
+      ><a name="3972"
+      >
+
+
+</a
+      ><a name="3975" class="Keyword"
+      >postulate</a
+      ><a name="3984"
+      > </a
+      ><a name="3985" href="StateSizedIO.GUI.WxBindingsFFI.html#3985" class="Postulate"
+      >start</a
+      ><a name="3990"
+      > </a
+      ><a name="3991" class="Symbol"
+      >:</a
+      ><a name="3992"
+      > </a
+      ><a name="3993" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="4001"
+      > </a
+      ><a name="4002" href="Unit.html#28" class="Record"
+      >Unit</a
+      ><a name="4006"
+      > </a
+      ><a name="4007" class="Symbol"
+      >&#8594;</a
+      ><a name="4008"
+      > </a
+      ><a name="4009" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="4017"
+      > </a
+      ><a name="4018" href="Unit.html#28" class="Record"
+      >Unit</a
+      ><a name="4022"
+      >
+</a
+      ><a name="4023" class="Symbol"
+      >{-#</a
+      ><a name="4026"
+      > </a
+      ><a name="4027" class="Keyword"
+      >COMPILED</a
+      ><a name="4035"
+      > </a
+      ><a name="4036" href="StateSizedIO.GUI.WxBindingsFFI.html#3985" class="Postulate"
+      >start</a
+      ><a name="4041"
+      > Graphics.UI.WX.start </a
+      ><a name="4063" class="Symbol"
+      >#-}</a
+      ><a name="4066"
+      >
+
+
+</a
+      ><a name="4069" class="Comment"
+      >--</a
+      ><a name="4071"
+      >
+</a
+      ><a name="4072" class="Comment"
+      >--  Note: we add the &quot;key pressed&quot; event to a button</a
+      ><a name="4124"
+      >
+</a
+      ><a name="4125" class="Comment"
+      >--  and not to a frame, because of a bug in wxHaskell that prevents</a
+      ><a name="4192"
+      >
+</a
+      ><a name="4193" class="Comment"
+      >--  adding a key pressed event to a frame (at least on linux plattforms).</a
+      ><a name="4266"
+      >
+</a
+      ><a name="4267" class="Comment"
+      >--</a
+      ><a name="4269"
+      >
+
+
+</a
+      ><a name="4272" class="Keyword"
+      >postulate</a
+      ><a name="4281"
+      >
+  </a
+      ><a name="4284" href="StateSizedIO.GUI.WxBindingsFFI.html#4284" class="Postulate"
+      >Key</a
+      ><a name="4287"
+      > </a
+      ><a name="4288" class="Symbol"
+      >:</a
+      ><a name="4289"
+      > </a
+      ><a name="4290" class="PrimitiveType"
+      >Set</a
+      ><a name="4293"
+      >
+  </a
+      ><a name="4296" href="StateSizedIO.GUI.WxBindingsFFI.html#4296" class="Postulate"
+      >showKey</a
+      ><a name="4303"
+      > </a
+      ><a name="4304" class="Symbol"
+      >:</a
+      ><a name="4305"
+      > </a
+      ><a name="4306" href="StateSizedIO.GUI.WxBindingsFFI.html#4284" class="Postulate"
+      >Key</a
+      ><a name="4309"
+      > </a
+      ><a name="4310" class="Symbol"
+      >-&gt;</a
+      ><a name="4312"
+      > </a
+      ><a name="4313" href="Agda.Builtin.String.html#137" class="Postulate"
+      >String</a
+      ><a name="4319"
+      >
+  </a
+      ><a name="4322" href="StateSizedIO.GUI.WxBindingsFFI.html#4322" class="Postulate"
+      >nativeSetKeyHandler</a
+      ><a name="4341"
+      > </a
+      ><a name="4342" class="Symbol"
+      >:</a
+      ><a name="4343"
+      > </a
+      ><a name="4344" href="StateSizedIO.GUI.WxBindingsFFI.html#460" class="Postulate"
+      >Button</a
+      ><a name="4350"
+      > </a
+      ><a name="4351" class="Symbol"
+      >&#8594;</a
+      ><a name="4352"
+      > </a
+      ><a name="4353" class="Symbol"
+      >(</a
+      ><a name="4354" href="StateSizedIO.GUI.WxBindingsFFI.html#4284" class="Postulate"
+      >Key</a
+      ><a name="4357"
+      > </a
+      ><a name="4358" class="Symbol"
+      >&#8594;</a
+      ><a name="4359"
+      > </a
+      ><a name="4360" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="4368"
+      > </a
+      ><a name="4369" href="Unit.html#28" class="Record"
+      >Unit</a
+      ><a name="4373" class="Symbol"
+      >)</a
+      ><a name="4374"
+      > </a
+      ><a name="4375" class="Symbol"
+      >&#8594;</a
+      ><a name="4376"
+      > </a
+      ><a name="4377" href="NativeIO.html#112" class="Postulate"
+      >NativeIO</a
+      ><a name="4385"
+      > </a
+      ><a name="4386" href="Unit.html#28" class="Record"
+      >Unit</a
+      ><a name="4390"
+      >
+
+</a
+      ><a name="4392" class="Symbol"
+      >{-#</a
+      ><a name="4395"
+      > </a
+      ><a name="4396" class="Keyword"
+      >COMPILED_TYPE</a
+      ><a name="4409"
+      > </a
+      ><a name="4410" href="StateSizedIO.GUI.WxBindingsFFI.html#4284" class="Postulate"
+      >Key</a
+      ><a name="4413"
+      > Graphics.UI.WXCore.Events.Key </a
+      ><a name="4444" class="Symbol"
+      >#-}</a
+      ><a name="4447"
+      >
+</a
+      ><a name="4448" class="Symbol"
+      >{-#</a
+      ><a name="4451"
+      > </a
+      ><a name="4452" class="Keyword"
+      >COMPILED</a
+      ><a name="4460"
+      > </a
+      ><a name="4461" href="StateSizedIO.GUI.WxBindingsFFI.html#4296" class="Postulate"
+      >showKey</a
+      ><a name="4468"
+      > (\ k -&gt; (Data.Text.pack (Graphics.UI.WXCore.Events.showKey k))) </a
+      ><a name="4533" class="Symbol"
+      >#-}</a
+      ><a name="4536"
+      >
+
+</a
+      ><a name="4538" class="Symbol"
+      >{-#</a
+      ><a name="4541"
+      > </a
+      ><a name="4542" class="Keyword"
+      >COMPILED</a
+      ><a name="4550"
+      > </a
+      ><a name="4551" href="StateSizedIO.GUI.WxBindingsFFI.html#4322" class="Postulate"
+      >nativeSetKeyHandler</a
+      ><a name="4570"
+      > (\bt prog -&gt; Graphics.UI.WX.set bt [Graphics.UI.WX.on Graphics.UI.WX.anyKey Graphics.UI.WX.:= prog]) </a
+      ><a name="4672" class="Symbol"
+      >#-}</a
+      ><a name="4675"
+      >
+
+</a
+      ></pre
+    ></body
+  ></html
+>

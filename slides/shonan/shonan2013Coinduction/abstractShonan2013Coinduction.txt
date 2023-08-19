@@ -1,0 +1,9 @@
+Continuing the talk by Andreas Abel on nested (co)pattern matching 
+
+* We show how to unnest nested (co)pattern matching, reduce it to (co)recursion operators, and, in the case it is supposed to pass a termination nchecker, primitive (co)recursion.
+
+* We show a small theorem, that type checking on coalgebras is undecidable, even if we assume
+the simple property that two streams are equal if their heads and tails are equal.
+
+
+
