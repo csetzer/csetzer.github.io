@@ -1,0 +1,8 @@
+[Desktop Entry]
+Exec=/home/staff/a.g.setzer/bin/test
+MimeType=application/zzz;
+Name=abc
+NoDisplay=true
+Terminal=true
+TerminalOptions=--noclose
+Type=Application

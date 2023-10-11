@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>Setting up Linux Machines for use of SPARK Ada and why3 via File Manager (Computer Science, Swansea University)</title>
+  </head>
+
+  <body bgcolor="#ffffff" text="#000000">
+    <h1>Setting up Linux Machines for use of SPARK Ada and why3 via File Manager (Computer Science, Swansea University)</h1>
+
+The following are the steps for configuring the settings in the Linux 
+Lab so that SPARK Ada and why3 can be started from the file Manager without
+using the Command Shell.
+<li> Please study the file
+<a href="basicTerminologyInLinux.html">Basic Terminology
+in Linux</a> explaining the basic terminology of Linux
+such as directory, ~/bin etc.
+<li> Download the git repository using 
+<a href="downloadingGitRepository.html">these instructions</a>
+<li> Then go in the file manager in the git repository downloaded to the directory
+exampleCodeForTesting/
+<ul>
+<li> Rightclick on the file main.gpr &rarr; open with
+&rarr; open with other Appliction
+<li> Choose "Use a custom command" which appears below all the applications
+<li> Browse and go to "/usr/local/gnat/bin/gnatstudio"  (<strong>not</strong> a smilar file ending with exe)
+<ul>
+<li>If you have installed it on your own machine, you need to navigate to where
+gnatstudio is installed.
+<li> During installation the system will tell you to adapt the path, which will includie
+the path to gnatstudio.
+<li> If you have set the path but forgotten where it is you can try on a terminal "which gnatstudio" -- this shows where this file is located.
+</ul>
+<li> Click on "Use as default for this kind of file (you can always change it
+by using the same procedure).
+</ul>
+<li> Once why3 is installed (it will be installed later since it is not
+needed yet) we will similarly associate files with extension .mlw with the
+why3 program
+</ul> 
+<li> Make sure that you <strong>don't use file names and paths containing blanks</strong>.<br>
+<ul>
+<li> We had in the past problems that
+Spark Ada doesn't work when the file name or any file name in the path
+contains a blank.
+<li> Simply replace blanks by underscore "_".
+</ul>
+<li> If you now navigate using a new file manager to a directory containing
+a SPARK Ada project, and left click on main.gpr gnatstudio is opened for this 
+directory.<br>
+<li> We need to change the preferences for executing programs using the terminal xterm.
+<ul>
+<li> In gnatstudio, go to 
+edit &rarr;  preferences &rarr; External commands &rarr; on right side
+change "xterm -hold -e" to "xterm -hold"
+<li> Just delete -e, don't copy from the webpage since it might replace - by a 
+similar but different symbol.
+<li> If you accidentially changed it or have problems later just enter from the keyboard
+"xterm -hold"
+</ul>
+<li> Now study <a href="basicUsageOfSparkAda.html">basic usage instructions of SPARK Ada</a>
+</ul>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>Setting up Linux Machines in Linux Lab at Swansea University for Spark Ada Using Shell</title>
+  </head>
+
+  <body bgcolor="#ffffff" text="#000000">
+    <h1>Setting up Linux Machines in Linux Lab at Swansea University for Spark Ada Using Shell</h1>
+
+<ul>
+<li> The following is if you want to use Spark Ada from the command line.
+<li> In the following by "Directory" I mean what is sometimes called "Folder".<br>
+<li> By "command shell" I mean in  the following "Konsole" or "terminal".
+<li> If you are not using the machines in the Linux lab
+you may need to add a line with the path to the gnat installation
+to your file ~/.bashrc (in the home directory)<br>
+<br>
+export PATH=/usr/local/gnat/bin/:$PATH<br>
+<br>
+where the path (here /usr/local/gnat/bin/ ) is shown during installation of
+gnatstudio.
+The easiest way to cut and paste the two lines below starting with "echo ' " 
+and ending with  "bashrc" in one go into a command shell.<br> 
+Then press return<br>
+<br>
+echo '<br>
+export PATH=/usr/local/gnat/bin/:$PATH' >> ~/.bashrc<br>
+<br>
+<li> Open a new command shell. Now if you execute<br>
+<br>
+echo $PATH<br>
+<br>
+you should get a sequence of paths (separated by :) starting with<br>
+<br>
+/usr/local/gnat/bin/:<br>
+<br>
+For instance (depending on your installation) it could like this:<br>
+<br>
+/usr/local/gnat/bin/:/usr/lib64/mpi/gcc/openmpi/bin:/home/staff/cssetzer/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/X11R6/bin
+<br>
+<br>
+<li> In order to activate the why3 system (likely not necessary 2022/23) you need to do the same steps as 
+above, but with path /usr/bin/<br>
+So in more details this is done as follows:
+<ul>
+<li> You need to add the following line to your file ~/.bashrc (in the home directory)<br>
+<br>
+export PATH=/usr/bin/:$PATH<br>
+<br>
+The easiest way to cut and paste the two lines below starting with "echo ' " 
+and ending with  "bashrc" in one go into a command shell.<br> 
+Then press return<br>
+<br>
+echo '<br>
+export PATH=/usr/bin/:$PATH' >> ~/.bashrc<br>
+<br>
+<li> Open a new command shell. Now if you execute<br>
+<br>
+echo $PATH<br>
+<br>
+you should get a sequence of paths (separated by :) starting with<br>
+<br>
+/usr/local/bin/:<br>
+<br>
+For instance (depending on your installation) it could like this:<br>
+<br>
+/usr/local/bin/:/usr/local/gnat/bin/:/usr/lib64/mpi/gcc/openmpi/bin:/home/staff/cssetzer/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/X11R6/bin
+<br>
+<br>
+<br>
+
+</ul>
+</ul>
+

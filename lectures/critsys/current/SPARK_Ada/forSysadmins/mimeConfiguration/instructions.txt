@@ -1,0 +1,23 @@
+I have now successfully installed a test application with mime type  zzz for extension *.zzz:
+
+The following will probably work system wide if one replaces
+~/.local/share/    by /usr/share/
+
+Steps
+1) in    ~/.local/share/mime/packages/
+     createa a an xml file similar to the ones in the directory xmlFiles/d (same as in my previous mail)
+    
+2) in ~/.local/share/applications/mimeapps.list
+add an entry 
+ which associate the application/mimetype   with a desktop entry
+3) Create a desktop entry in
+~/.local/share/applications/
+like the one we had before.
+4) run 
+update-mime-database ~/.local/share/mime/
+
+In my case it worked for an extension .zzz using the files
+in the directory
+filesForInstallationZZZ/
+When running dolphin and clicking on a file with extension .zzz should
+open a shell and the command ~/bin/test is executed

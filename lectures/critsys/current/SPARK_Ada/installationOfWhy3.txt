@@ -1,0 +1,80 @@
+For viewing and proving verification conditions I found it easier
+to install why3 directly and run why3 on the generated .mlw files
+(which are in a directory gnatprove).
+
+Installation of  why3
+~~~~~~~~~~~~~~~~~~~~~~
+Install as well maybe first altergo (used by sparkada) and other
+theorem provers, see 
+https://www.lri.fr/~marche/MPRI-2-36-1/install.html
+on how to install these together with why3
+
+It is recommended to first install the theorem prover
+Coq 
+http://coq.inria.fr/
+(Under linux this might be part of the packages available)
+
+You need as well to install Ocaml
+https://ocaml.org/
+(Under linux this might be part of the packages available)
+
+
+Download code from  http://why3.lri.fr/
+
+Follow instructions  in 
+http://why3.lri.fr/doc-0.81/manual006.html
+
+Essentially carry out 
+./configure
+
+Check what wasn't installed.
+If you want additional features, install them first
+(under linux most packages should be available from your distribution)
+
+possibly do again
+./configure until everything you need is installed.
+
+Then run
+make
+make install
+
+
+If when executing 
+why3
+you get the Spark Ada installation, you need to adapt your path
+so that the path to Spark Ada (under linux usually /usr/gnat/bin/) 
+occurs at the end of your path.
+
+Follow
+https://www.lri.fr/~marche/MPRI-2-36-1/install.html
+regarding installation of additional theorem provers.
+
+Run
+why3 config --detect-provers
+to activate provers.
+
+In my case I got lots of files from /usr/gnat/* which were part of
+the SparkAda installation, which then let to incompatibilities
+I went to the file 
+~/.why3.conf
+and replaced those files by the corresponding files in 
+/usr/local/share/why3/
+/usr/local/lib/why3/
+
+I actually found it easier to maintain my local version of the configuration
+file, by making a copy of 
+~/.why3.conf in ~/.why3.myversion.conf
+
+I needed as well some ml2 libraries from the sparkAda libraray
+which were located in 
+/usr/gnat/share/spark/theories/
+
+Therefore I executed why3 using the command
+
+why3 ide -C ~/.why3.myversion.conf -L /usr/gnat/share/spark/theories <file.mlw>
+(with <file.mlw> replaced by the file to be used.
+
+Documentation  of why3:
+http://why3.lri.fr/download/manual-0.85.pdf
+
+

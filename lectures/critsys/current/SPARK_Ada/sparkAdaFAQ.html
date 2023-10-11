@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>Frequently Asked Questions on SPARK Ada (Lecture CSCM13/CSC313, Swansea)</title>
+  </head>
+
+  <body bgcolor="#ffffff" text="#000000">
+    <h1>Frequently Asked Questions on SPARK Ada (Lecture CSCM13/CSC313, Swansea)</h1>
+
+<ul>
+<li> <a name="fileDontGetChecked">When checking my program with SPARK Ada some files don't get checked?</a>
+<ul>
+<li> Do you have any SPARK Ada file names having upper case letters or starting with a digit? All of these files will be ignored by SPARK Ada.
+<li> Your files need to start with the line<br>
+<br>
+pragma SPARK_Mode;<br>
+<br>
+or some other statement which turns SPARK Ada checking on.
+<li> Many instructions of spark ada work if there are 
+no blanks in the path towards your files.
+</ul>
+<li> Last time I checked my files and everything was checked as being okay.
+Now this is no longer the case.
+<ul>
+<li> Check the first question "When checking my program with SPARK Ada some files don't get checked?" above.
+</ul>
+<li> How do I compile and run your SPARK Ada programs?
+<ul>
+<li>See <a href="compilingAndRunningPrograms.html">compilingAndRunningPrograms.html</a>
+</ul>
+<li> How do I install why3 on my Windows machine?
+<ul>
+<li> The main website about installing why3 is <a href="https://www.lri.fr/~marche/MPRI-2-36-1/install.html">https://www.lri.fr/~marche/MPRI-2-36-1/install.html</a>
+<li> It says "In case you are still using Windows, install Ubuntu either in a virtual machine (using e.g., VirtualBox), or on a USB stick (using e.g., LinuxLive USB creator), or on a separate partition in parallel of Windows (using e.g., Wubi). You'll save yourself a lot of trouble."
+<li> I recommend to try whether you can running Ubuntu or some other Linux 
+version via a USB stick (so without installing it on your machine)  
+and then remotely login to the linux lab using<br>
+<br>
+ssh -X  username@machinename<br>
+<br>
+where machinename is the address of a machine in the linux lab. 
+<li> I would actually recommend the same if you have a Linux machine
+or Mac, unless you want to make some more substantial use of it.<br>
+Installing the why3 system can be a bit tricky, and remote login might
+be sufficient for answering the coursework.
+</ul>
+<li> SPARK Ada reports that my post conditions fail, how do I find the reason for it?
+<ul>
+<li> You can debug your program by replacing your post condition by a condition which expresses part of it.<br>
+<ul>
+<li>For instance if your post condition is<br>
+<br>
+if &lt;cond&gt; then &lt;ifcase&gt; else &lt;elsecase&gt; <br>
+<br>
+You can create two temporary conditions<br>
+<br>
+if &lt;cond&gt; then &lt;ifcase&gt; <br>
+<br>
+and <br>
+<br>
+if not(&lt;cond&gt;) then &lt;elsecase&gt; <br>
+<br>
+If you now replace the post condition by one of the two you can identify whether the problem
+has to do with the if case or the else case of your condition (or both).<br>
+<li> Similarly you can break longer chains<br>
+<br>
+If .. then  .. elsif .. then ... elsif ..<br>
+<br>
+into subconditions.
+<li> If your problem has the form<br>
+<br>
+A and B<br>
+<br>
+you can break it up for testing into <br>
+<br>
+A<br>
+<br>
+and<br>
+<br>
+B<br>
+<br>
+<li> If your problem has the form<br>
+<br>
+If &lt;cond&gt; then A and B<br>
+<br>
+you can break it up for testing into <br>
+<br>
+If &lt;cond&gt; then A<br>
+<br>
+and<br>
+<br>
+If &lt;cond&gt; then B<br>
+<br>
+</ul>
+</ul>
+<li> How do I run SPARK Ada from the commandline?
+<ul>
+<li> See the end of <a href="basicUsageOfSparkAda.html">basic Usage of Spark Ada</a>
+</ul>
+</ul>
+
+    <hr>
+    <address><img src="http://www.cs.swan.ac.uk/~csetzer/images/signature.gif" height="20" width="200" alt="Replace '_dot_' by '.' and '_at_' by '@' in 'a_dot_g_dot_setzer_at_swan_dot_ac_dot_uk'"></address>
+<!-- Created: Fri Dec 4 15:25 GMT 2015 -->
+<!-- hhmts start -->
+Last modified: Fri Dec 4 15:25 GMT 2015
+<!-- hhmts end -->
+  </body>
+</html>
+
+
+

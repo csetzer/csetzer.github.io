@@ -1,0 +1,167 @@
+ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>Basic Usage of SPARK Ada</title>
+  </head>
+
+  <body bgcolor="#ffffff" text="#000000">
+    <h1>Basic Usage of SPARK Ada</h1>
+
+<ul>
+<li> If using Linux Machines in the Linux Lab
+<ul>
+<li>Please follow the instructions for 
+<a href="settingUpMachineForSparkAdaForUsageFromFileManager.html">Setting up Linux Lab machines using SuSe for use with Spark Ada</a>.
+<li> Please study the page <a href="basicTerminologyInLinux.html">Basic Terminology
+in Linux</a> explaining the basic terminology of Linux
+such as directory, ~/bin etc.
+</ul>
+<li>Examples from the lectures can be found <a href="guideToExamples.html">here</a>
+<li> It is very <strong>important</strong> that you create for each project a 
+new directory.<br>
+A project could be for instance coursework_1_a  (for coursework 1 (a) -
+please note that that you shouldn't use blanks, brackets, since
+that may cause problems with Spark Ada).<br>
+<ul>
+<li>The reason is that SPARK ada will when using the standard 
+main.gpr file 
+check <strong>all files in the current directory</strong> and 
+<strong>no files in any other directory</strong>.
+<ul>
+<li> The main.gpr file can be found in lib/main.gpr in the git repository.
+<li> You can use as well a mainWithoutRangeCheck.gpr file found as well in lib
+- SPARK Ada will <strong>not</strong> create
+verification conditions referring to range conditions when this file is used.
+</ul>
+</ul>
+<li> You can create directories by using the file manager.
+<li> The easiest is to copy using the file manager
+files from an existing project to your new project. 
+<li> Note: File names need to be in <strong>lower case</strong>,
+and should start with a (lower case) letter.
+
+<li> Your project normally should have .ads and .adb files and a file
+main.gpr. I always use the same file, namely lib/main.gpr as found in the git repository.
+<li> The recommended way is to then only open gnatstudio from the file manager by left click on the file main.gpr.
+<ul>
+<li><strong>I highly recommend to open gnatstudio only using this method</strong>
+<li>This method guarantees that the files you see on the left pane are all files which will be checked
+when running checks by Spark Ada.
+<li> If you open other files, e.g. .ads or .adb files directly in gnatstudio, it very often occurs that gnatstudio
+displays files, which it doesn't check (e.g. because they are not in lower case).
+</ul>
+<li> The recommend way is to only open files under gnatstudio using the left side menu under Main and clicking
+on the first folder icon with a ".". Open the files from there.
+<li> This guarantees that only files associated with your project and visible
+to SPARK Ada are opened.
+<li> If you open a file in any other way, when using SPARK Ada it may not
+be checked even though that file is currently open. 
+<li>Especially I don't recommend to open files using the top menu File.
+<li>If you add, delete or edit any files without using gnatstudio it is recommended
+to close gnatstudio and start it again.
+<li> Commands of <strong>gnatstudio</strong> I have been using
+<ul>
+<li> For checking the syntax (only Ada not SPARK Ada) <br>
+<br>
+Build &rarr; Check Syntax<br> 
+<br>
+<li> For compiling all ada files in a directory use<br>
+<br>
+Build &rarr; Project &rarr; Build All <br>
+<ul>
+<li> This will generate files which can than be linked to othe projects.
+It will <strong>not create executable files</strong>.<br> 
+The main purpose for use this command in the labs is to check that the files are correct 
+ada files.
+</ul>
+
+<li> For compiling an executable file (i.e. with input/output) <br>
+Click on the executable .adb file, make sure that it is shown and the active tab,
+and then use<br> 
+<br>
+Build &rarr; Project &rarr; Build < current file ><br>
+<br>
+You need to have a adb file open which has no package and only one procedure with the same
+name as the file and with no arguments. 
+<li> For running an executable file use<br>
+<br>
+Run &rarr; Custom<br>
+<br>
+<ul>
+<li>Under Windows use the option "run  in an external
+terminal" which will open a 
+command shell. From  there you can run the program
+which is usually called main.exe.
+<li>Under Linux 
+<ul>
+<li>You should have set up in preferences
+(edit &rarr;  preferences &rarr; External commands &rarr;
+on right side change "xterm -hold -e" to "xterm -hold".
+<ul>
+<li>Make sure the - is as the - you get from the keyboard (copying from a webpage
+might result in a different character)
+</ul>
+<li> After setting it up when you execute 
+Run &rarr; Custom<br> the command "xterm -hold" should be shown.
+<li> Now you click on both "Run in executables directory"
+and "Run in an external terminal". 
+<ul>
+<li> In case your executable file is not main.adb but myfile.adb type in ./myfile
+</ul>
+<li> You can keep that terminal open and use it for executing the executable again
+later.
+</ul>
+</ul>
+<li> Commands  for running SPARK Ada checks
+<ul>
+<li> SPARK &rarr; Examine All<br>
+<br>
+Runs data flow and examination flow analysis
+<li> SPARK &rarr; Prove all<br>
+<br>
+I use as proof stragegy in the following menu "Progressively Split" (3rd option)<br>
+Runs all 3 levels of SPARK Ada including verification conditions.
+</ul>
+</ul>
+</ul>
+
+<h2>Usage of Why3 (only on Linux)</h2>
+<ul>
+<li> Why3 will be installed later (so please come back once it is installed)
+<li> Please note that why3 
+will not be used for lab tasks 2021/22, but we might have a demo
+so that you see how it works.
+<ul>
+<li> Once you have verified programs involving verification conditions,
+you can use the why3 file as explained in <br>
+<a href="basicUsageOfWhy3.html">Basic Usage of Why3</a>
+</ul>
+</ul>
+
+<h2>Using SPARK Ada from the Command Line (Linux)</h2>
+
+<ul>
+<li> On Linux machines you can run as well SPARK Ada from the command shell. 
+<ul>
+The commands I am using are
+<ul>
+<li> gnatmake file.adb<br>
+For compiling file.adb<br>
+Most of the times we will not create complete programs which can be executed,
+then this command will only create linkable files which cannot be executed,
+and this command is usually not needed.
+<li> gnatprove -P main.gpr --mode=flow<br>
+Runs data flow and examination flow analysis (for project containg main.gpr).
+<li> gnatprove -P main.gpr --proof=progressive<br>
+Runs all 3 levels of SPARK Ada including verification conditions.
+<ul>
+<li> You can use as well a mainWithoutRangeCheck.gpr file - SPARK Ada will <strong>not</strong> create
+verification conditions referring to range conditions when this file is used.
+</ul>
+</ul>
+
+
+
+</body>
+</html>
+

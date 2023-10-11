@@ -1,0 +1,71 @@
+ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>Recommended Usage of SPARK Ada</title>
+  </head>
+
+  <body bgcolor="#ffffff" text="#000000">
+    <h1>Recommended Usage of SPARK Ada</h1>
+
+<ul>
+<li> For terminology such as directory, ~/bin etc see 
+the short file <a href="basicTerminologyInLinux.html">Basic Terminology
+in Linux</a>
+<li> See <a href="basicUsageOfSparkAda.html">basic usage of SPARK Ada</a>
+for basic usage instructions.
+<li> It is recommended that for small projects you 
+<ul>
+<li> have all files 
+(file.ads and file.adb) belonging to it in one directory, 
+<li> add the file <a href="../files/lib/main.gpr">main.gpr</a> to it
+</ul>
+<li> SPARK Ada will generate some files automatically, especially
+there will  be a subdirectory <strong>gnatprove</strong>.
+<li> When you open with gps the main.gpr file provided, 
+all ads and adb files in the
+directory where the main.gpr file is located will belong to the current
+SPARK Ada and nothing else 
+<ul>
+<li> Especially no files in any subdirectories will be added.
+</ul>
+<li> It is recommended that when opening gps to open a terminal,
+navigate using the command<br>
+<br>
+cd dirname<br> 
+<br> 
+for changing the directory to dirname<br> 
+and <br>
+<br>
+cd ..<br>
+<br>
+for moving up one level in the directory hierarchy<br>
+until you have reached the directory with a project containing your
+file main.gpr.<br>
+Then start gps on main.gpr using<br>
+<br>
+gps main.gpr &<br>
+<br>
+<li> Please open any files associated with your project using the side menu,
+and not using the file manu from the top. <br>
+There is a file icon in the side menu
+with a "." (which refers to the home directory of the 
+project) and if you click on it you can access the files in the current directory.
+<li> If you open files directly from the file menu, and they are not in the
+same directory as your gps file, then these files will not be checked
+using SPARK Ada, since
+SPARK Ada will only check files associated with your current gpr file.
+<li> Note that <strong>file names</strong> need to be in 
+<strong>lower case</strong> and should <strong>not start with a digit</strong>
+otherwise gps will <strong>ignore those file</strong>.
+<li> Before deleting/renaming/editing files without using gps it is best
+to close down gps first and then reopen it again. Otherwise you get
+<strong>synchronisation problems</strong> with gps. 
+<li> For creating a new project the best is to create a new directory,
+and copy from an existing example (for instance the 
+<a href="examplesFromLecture/examplesFromLectureInstructions.html">ada examples from
+the lecture</a>) the ads and adb fiels to your directory, possibly rename them,
+and then edit them to suit your needs. 
+</ul>
+</ul>
+
+<a href="index.html">Back to SPARK 2014 page for critical systems</a>

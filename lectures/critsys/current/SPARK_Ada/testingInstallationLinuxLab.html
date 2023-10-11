@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>Testing Installation of SPARK Ada (GPS) on Linux Machines in the Linux Lab</title>
+  </head>
+
+  <body bgcolor="#ffffff" text="#000000">
+    <h1>Testing Installation of SPARK Ada (GPS) on Linux Machines in the Linux Lab</h1>
+
+<h2> Preliminaries</h2>
+<ul>
+<li> In the following we use the Linux terminology 
+"directory" for what is called in Windows 
+"folder".
+<li> The example code for testing SPARK Ada is an adaption of the code from the lecture sect6/example6-19.
+<li> Download the git repository following the <a href="../downloadingGitRepository.html">instructions
+for downloading the git repository</a> 
+<li> The example code for testing can be found in the subdirectory
+<strong>exampleCodeForTestingInstallations</strong>
+</ul>
+
+
+<h2> Testing Installation of SPARK Ada (gps)</h2> 
+<ul>
+<li> Now open the file browser (dolphin) which is on the start menu.
+<li> Navigate to exampleCodeForTestingInstallations
+<li> If you click on the file main.gpr  (NOT main.adb or main.ads) gps should start.<br>
+This might take a while initially because it initialises some data when used the first time.
+<li> It should look approximately like the following
+<a href="https://bitbucket.org/anton_setzer/criticalhighintegritysystems/src/master/screenshots/GPSscreenshot.png">Screenshot</a>
+<li> If it opens instead in an editor (usually kate) you need to manually associate the filextension with the application
+<ul>
+<li> Right click on main.gpr, choose "open with"
+<li> Search for callgps
+<li> Don't tick "open with Konsole"
+<li> Tick to remember the selection.
+<li> Do the same below in section "Testing installtion of why3"
+for a file with extension .mlw, associate it with 
+"callwhy3".
+</ul>
+<li> Should starting of gps fail, gps might not be installed on your machine.
+<ul>
+<li> If in Linux Lab, tell instructors about which machine has
+the problem (need to look at the machine name on a konsole prompt)
+so that system adminstrators
+can  fix it later.
+<li> Go to a different machine.
+</ul>
+<ul>
+</ul>
+<li> If you haven't installed SPARK Ada and Why3 using script (e.g. on your own computer), you can 
+<ul>
+<li> Either  manually associate the extension .gpr with the command callgps and the extension
+.mlw with the command callwhy3
+<li> or start those commands from a console, calling<br>
+callgps  main.gpr<br>
+or<br>
+callwhy3  file.mlw<br>
+where file.mlw is a mlw file you want to see in why3.
+</ul>
+</ul>
+
+<h2> Basic Usage of GPS</h2> 
+See <a href="basicUsageOfGnatStudio.html">Basic Usage of GPS</a>
+
+
+<h2> Testing Installation of Why3 (Optional)</h2> 
+<ul>
+<li> Because of Online Usage during Covid-19 and the 
+Why3 system not being available on Windows machine,
+the lab for CSCM13/CSC313 will not make use of the why3
+system, so setting up the why3 system is optional.
+
+<li> Navigate (in dolphin) to the subdirectory gnatprove
+<li> Click on the file main.mlw
+<li> why3 should start. 
+<ul>
+<li> If it doesn't start why3 might not be installed.
+<li> If in Linux Lab, tell instructors about which machine has
+the problem (need to look at the machine name on a konsole prompt)
+so that system adminstrators
+can  fix it later.
+<li> Go to a different machine.
+</ul>
+<li> Currently why3 will display an error message as in this
+<a href="https://bitbucket.org/anton_setzer/criticalhighintegritysystems/src/master/screenshots/errorWhy3.png">Screenshot</a>. 
+<ul>
+<li>You can ignore this message (which is due to different libraries used by
+SPARK Ada and why3).
+<li> Please press the "close" button.
+</ul>
+<li>The main window  should look approximately look like the following
+<a href="https://bitbucket.org/anton_setzer/criticalhighintegritysystems/src/master/screenshots/why3screenshot.png">Screenshot</a>.
+<li> Close why3, we won't need it at the moment. We only tried it out to test the installation.
+</ul>

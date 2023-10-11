@@ -1,0 +1,73 @@
+Go to
+https://www.adacore.com/download
+
+Download and install from there the latest version
+  (if your operating system is not listed go to
+   More packages, platforms, versions and sources 
+   at the bottom of the page)
+
+Unpack the installed files.
+
+In the diretory you can find a README files giving instructions on how to 
+in stall it.
+
+For viewing and proving verification conditions I found it easier
+to install why3 directly and run why3 on the generated .mlw files
+(which are in a directory gnatprove).
+See the file installationOfSparkAda2014.txt 
+
+
+Running
+~~~~~~~~~
+Just execute gps which will start a GUI for SPARK Ada
+
+Documentation about Spark Ada
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+in the installation in 
+  /usr/gnat/share/doc/
+
+As well online:
+
+Getting started:
+http://docs.adacore.com/spark2014-docs/html/ug/getting_started.html
+
+Refrence manual
+http://docs.adacore.com/spark2014-docs/html/lrm/
+
+Usage of Ada
+~~~~~~~~~~~~~
+Graphical user interface from Spark Ada:
+execute gps
+
+From commandline:
+gnatmake file
+
+
+
+
+Usage of Spark Ada
+~~~~~~~~~~~~~~~~~~
+Graphical user interface
+execute
+gps
+(you might need to adjust your path)
+
+From commandline
+gnatprove -P main.gpr  --proof=progressive
+
+where the simplest version of main.gpr  is
+project Main is
+   package Compiler is
+      for Default_Switches ("ada") use ("-gnatwa");
+   end Compiler;
+end Main;
+
+
+You can use as well a mainWithoutRangeCheck.gpr file  instead of main.gpr
+  - SPARK Ada will NOT create
+   verification conditions referring to range conditions when this file is used.
+
+
+
+
+

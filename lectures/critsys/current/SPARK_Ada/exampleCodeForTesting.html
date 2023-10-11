@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+    <title>Example Code for Testing Installation of Spark Ada</title>
+  </head>
+
+  <body text="#000000" bgcolor="#ffffff">
+    <h1>Example Code for Testing Installation of Spark Ada</h1>
+
+On Linux Machines in the Linux Lab, please follow 
+<a href="testingInstallationLinuxLab.html">Testing Installation of SPARK Ada on Linux Machines in the Linux Lab</a>
+
+
+<h2> Preliminaries</h2>
+<ul>
+<li> In the following we use the Linux terminology 
+"directory" for what is called in Windows 
+"folder".
+</li><li> The example code for testing SPARK Ada is an adaption of the code from the lecture sect6/example6-19.
+</li><li> Download the git repository following the <a href="http://www.cs.swan.ac.uk/~csetzer/lectures/critsys/current/SPARK_Ada/downloadingGitRepository.html">instructions
+for downloading the git repository</a> 
+</li><li> The example code for testing can be found in the subdirectory
+<strong>exampleCodeForTestingInstallations</strong>
+</li></ul>
+
+
+
+<h2> Trying out gnatstudio</h2> 
+
+<ul>
+<li> You can start gnatstudio directly as an application.
+<ul>
+<li> Then you can open from the starting menu or
+file menu  SPARK Ada project
+file main.gpr located in the directory
+exampleCodeForTestingInstallations.<br>
+This file may be called something like GNAT project file.
+</li></ul>
+</li><li> You can as well associate gnatstudio as default application for 
+files with extension gpr, so that it will be opened from 
+SPARK Ada project files.<br>
+This might be already the case if you have
+installed SPARK Ada yourself on a Windows computer.
+<ul>
+<li> In this case you can start gnatstudio directly from the
+main.gpr file in the directory
+exampleCodeForTestingInstallations (called "project file" in windows)
+</li></ul>
+</li><li> Opening gnatstudio  might take a while initially because it initialises some data.
+</li><li> It should look approximately like the following
+<a href="https://bitbucket.org/anton_setzer/criticalhighintegritysystems/src/master/screenshots/gnatStudioScreenshot.png">Screenshot</a>
+</li><li> There should be a menu item SPARK on the top.
+If you don't have this item, you have only installed 
+Ada but not SPARK Ada.
+</li><li> If you execute SPARK &rarr; Examine all,  you should see
+at the buttom a script running which should check your code
+successfully, provided you have the correct version of SPARK
+Ada installed.
+</li></ul>
+
+<h2>Basic Usage of gnatstudio</a></h2> 
+See <a href="basicUsageOfGnatStudio.html">basicUsageOfGnatStudio.html</a>
+
+</ul></body></html>

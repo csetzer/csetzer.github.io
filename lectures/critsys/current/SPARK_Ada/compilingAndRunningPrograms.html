@@ -1,0 +1,56 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="keywords"
+content="proof theory, logic, mathematical logic, theoretical computer science, type theory,
+Martin-Lof type theory, Martin-Loef type theory, Martin-L&ouml;f type theory, Martin-L&ouml;f type theory, proof theoretic strength,
+interactive programs, inductive-recursive, induction-recursion, dependent type theory">
+<title>Compiling and Executing SPARK Ada programs
+(mainly Linux specific)</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+
+<h1><font face="Arial">Compiling and Executing SPARK Ada programs</font></h1>
+
+
+<ul>
+<li>Examples of using IO can be found in <a href="guideToExamples.html">Guide to SPARK Ada Examples</a>
+<li> For compiling using gps open the main.adb file (or other .adb file) you
+want to compile then use <br>
+Build  -&gt;  Project -&gt; Build &lt;current file&gt;
+<li> For compiling using commandline use <br>
+gnatmake 
+<li> For running use  under gps<br>
+Build  -&gt;  Run -&gt; Custom<br>
+<br>
+and then untick everything<br>
+and have as command<br>
+<br>
+xterm -hold -e ./main<br>
+<br>
+in case the file which was compiled was main.adb<br>
+If it was filename.adb then the command would be<br>
+<br>
+xterm -hold -e ./filename<br>
+<li>For executing from commandshell use in case of main.adb<br>
+<br>
+./main<br>
+<br>
+("./" is needed if "." is not an element of your path)
+</ul>
+
+    <address><img src="http://www.cs.swan.ac.uk/~csetzer/images/signature.gif" height="20" width="200" alt="Replace '_dot_' by '.' and '_at_' by '@' in 'a_dot_g_dot_setzer_at_swan_dot_ac_dot_uk'"></address>
+<!-- Created: Fri Nov 27 13:24:15 GMT 2015 -->
+<!-- hhmts start -->
+Last modified: Fri Nov 27 13:27:15 GMT 2015
+<!-- hhmts end -->
+</body>
+
+</html>
+
+
+
