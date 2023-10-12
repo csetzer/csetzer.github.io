@@ -7,15 +7,74 @@
   <body bgcolor="#ffffff" text="#000000">
     <h1>SPARK Ada Examples for Getting Started (includes example similar to coursework)</h1>
 
-
+<h2> Example for getting started with Question 1 of coursework 1</h2>
 <ul>
-<li> Good example to start with: 
+<li> Good example for getting started with Question 1 of coursework 1
+is the clock example.
 <ul>
-<li> sparkAdaCodeLecture/examplesForCoursework/conversion24hrClock12hrAMPMClock<br>
-(as part of the git repository; follow instruction in the README.txt file there)
+  <li> located in the git respository at<br>
+~/git/criticalhighintegritysystems/examplesForCoursework/conversion24hrClock12hrAMPMClock/<br>
+ <a href="https://bitbucket.org/anton_setzer/criticalhighintegritysystems/src/master/examplesForCoursework/conversion24hrClock12hrAMPMClock/">Link to git repository</a><br>
 
-<li> Examples using IO can be found <a href="examplesIO.html">below</a>
+    <ul>
+    <li> This directory contains several versions corresponding to different
+         stages in answering your coursework question.
+    <li> You can read the README.txt file located there for basic instructions.
+    <li> It is best to study with a simple example, which forms
+a template for question 1 (a)
+      <ul>
+	<li> The example is <br>
+~/git/criticalhighintegritysystems/examplesForCoursework/conversion24hrClock12hrAMPMClock/withoutIO/vers01OnlyAdaWithIntegers/<br>
+    This example contains a simple program. It doesn't have 
+(as all files in the subdirectory "withoutIO") a main file, so you can 
+compile it but you don't obtain an executable file<br>
+This allows you to focus on a simple package.
+        <li> As always you should make a copy of that directory and work on that
+copy.
+	<li> For the coursework 1 (a) you can comment out the 
+definition of the function function, since 
+we will create a function only later, once we have introduced a record
+type.
+<li> You cannot execute the code but check that it is syntactically correct 
+by compiling it using<br>
+gnatstudio &rarr; Build &rarr; Project &rarr; Build All
+<li> Now you can adapt it to a solution for Question 1 (a).
 </ul>
+<Li> The second example includes an executable file and is a template
+for Question 1 (b).
+<ul>
+<li> The example is <br>
+~/git/criticalhighintegritysystems/examplesForCoursework/conversion24hrClock12hrAMPMClock/withIO/vers02OnlyAdaWithIOIntegersNoLibrary/<br>
+   <li> It contains a main.adb file, which is the executable file
+   <li> This file you can compile (make sure main.adb is selected) by executing
+Build &rarr; Project &rarr; Build &lt; current file &gt; <br>
+   <li> You can run it as described in <a href="basicUsageOfGnatStudio.html">Basic Usage of gnatstudio</a> by executing<br>
+    Build &rarr; Run &rarr; Custom<br>
+    Click on both "Run in executables directory" and "Run in an external terminal". 
+   <li> A terminal opens. In that opened terminal type in<br>
+./main<br>
+("main" is the executable file, and "./" makes sure that you execute the 
+one in your current directory)
+   <li> If nothing happens you may need to follow the 
+<a href="settingUpMachineForSparkAdaForUsageFromFileManager.html">instructions
+for setting up Spark Ada for Usage from File Manger</a> and
+change preferences so that instead of "xterm -hold -e" you get
+the command "xterm -hold".
+   <li> If everything was correct  the main program of the clock example
+should start.
+   <li> This example can be used as a template for answering question 1 (b)
+</ul>
+
+<li> For later parts of question 1, you can use further versions of the clock example
+as a template.
+</ul>
+</ul>
+</ul>
+
+<h2> Further examples for getting started</h2>
+
+<ul>
+<li> Examples using IO can be found in <a href="examplesIO.html">examplesIO</a>
 <li> <a href="exampleCodeForTesting.html">Complete example with some guidance on how to use SPARK Ada</a>
 (this is the example recommended in the 
 <a href="settingUpMachineForSparkAdaForUsageFromFileManagerUsingScript.html">Instructions for setting up SPARK Ada using file manager</a>)
@@ -23,10 +82,12 @@
 <li>Another example is <br>
 sparkAdaCodeLecture/sect3c/example3c-14
 </br>
+<a href="https://bitbucket.org/anton_setzer/criticalhighintegritysystems/src/master/sparkAdaCodeLecture/sect3c/example3c-14/">link to git repository</a>
+<br>
 This is an example which will give an error message when running flow
 analysis, so it demonstrates how SPRAK Ada reports error. You can then
 go through and modify it.
 <li> Examples of <strong>critical systems</strong> can be found 
-<a href="#examplesCritsys">below</a>
+<a href="examplesCritsys.html">here</a>
 </ul>
 </ul>
