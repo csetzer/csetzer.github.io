@@ -1,0 +1,124 @@
+a:link, a:visited, a:active {
+	color: #6666cc; 
+	text-decoration: none 
+}
+
+a:hover {
+	color: #aaaaff; 
+	text-decoration: none
+}
+
+.normal {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #000000;
+	text-align: justify;
+}
+
+.normalright {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #000000;
+	text-align: right;
+}
+
+.small {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #000000;
+	text-align: justify;
+}
+
+.smallhighlight {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #6666cc;
+	text-align: justify;
+}
+
+
+.hugeheading { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 42pt;
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #6666cc;
+	text-align: justify;
+}
+
+.biggerheading { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 22pt;
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #6666cc;
+	text-align: justify;
+}
+
+
+.bigheading { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18pt;
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #6666cc;
+	text-align: justify;
+}
+
+.centerbigheading { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18pt;
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #6666cc;
+	text-align: center;
+}
+
+
+.heading { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14pt;
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #6666cc;
+	text-align: justify;
+}
+
+.centerheading { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14pt;
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #6666cc;
+	text-align: center;
+}
+
+
+.highlight { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #6666cc;
+	text-align: justify;
+}
+

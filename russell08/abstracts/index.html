@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>Russell'08 - Abstracts</title>
+    <style> body { margin-left: 10%; margin-right: 10%; padding-top: 2ex } </style>
+
+  </head>
+
+   <body bgcolor="white" text="black">  
+
+   <center> 
+    <h1>Russell'08 - Abstracts</h1>
+   </center>
+
+<h3><a name="aczel">Peter Aczel (Manchester)</name> <em>Predicate Logic over a type setup</em> (<a href="../slides/aczel.ps">slides in ps</a>, <a href="../slides/aczel.pdf">slides in pdf</a>, <a href="../slides/aczel.html">usage instructions for printing out slides</a>)</h3>
+There are a variety of closely related category theoretic notions
+aimed at capturing the abstract structure of type dependency in the
+syntax and semantics of dependent type theories.  Examples of such
+notions are category with attributes, category with families, category
+with display maps, contextual category, comprehension category, and
+there are more.
+<p/>
+The notion of a type setup is yet one more such notion, which differs
+from the others in its explicit use of contexts, as finite lists of
+typed variable declarations.  This makes it closer to the syntax of
+dependent type theories, while still abstracting away from the usual
+inductive structure of syntax and the corresponding recursive
+definition of substitution.
+<p/>
+Predicate logic over a type setup is simply defined as a sorted
+predicate logic where the sorts are the types of the type setup and
+the sorted terms and substitution are also given by the type setup.
+Logic over a type setup generalises logic-enriched type theory which,
+in turn generalises dependently sorted logic, a dependent
+generalisation of many-sorted logic.
+<p/>
+Many results of predicate logic generalise to predicate logic over a
+type setup.  I will consider the disjunction and existence properties
+of intuitionistic predicate logic and end with a characterisation of
+the logic of the propositions-as-types interpretation of
+intuitionistic predicate logic.
+
+<h3><a name="altenkirch">Thorsten Altenkirch (Nottingham)</name> <em>Towards Type Theory with Continuity</em> (<a href="../slides/altenkirch.pdf">slides</a>)</h3>
+
+We can model partial computations in Extensional Type Theory with quotient types giving rise to a monad - which we call the Partiality Monad. Using this monad we can model constructions from functional programming like general recursion and recursive datatypes rediscovering constructions from domain theory in a type-theoretic setting. However, we are obliged to show that our functions are continous wrt the domain structure, even though we seem to be unable to define any non-continous function. The analogy with Brouwer's continuity theorem is striking.
+<p/>
+My question is: How does Type Theory with continuity look like? I have some ideas but I am looking for further input (hence this seems to be a good topic for a workshop talk). It seems to me that there is a game-theoretic justification of continuity but maybe this has been studied already.
+<p/>
+The material on the partiality monad is based on yet unpublished work with Tarmo Uustalu and Venanzio Capretta and closely related to Venanzio's paper "General Recursion via Coinductive Types".
+
+<h3><a name="crosilla">Laura Crosilla (Florence)</name> <em>Making constructive set theory explicit (Joint work with Andrea Cantini)</em> (<a href="../slides/crosilla.pdf">slides</a>)</h3>
+
+We introduce a variant of constructive Zermelo-Fraenkel set
+theory (Aczel '78) enriched with urelements and operations.
+This is reminiscent of Feferman's (classical) operational set theory 
+and Beeson's IZF with rules. 
+The urelements represent elements of a combinatory algebra with
+primitive natural numbers. 
+The notion of operation is quite general and 
+it is shown to be essentially non-extensional.
+By combining these features, the theory allows for a (restricted) 
+form of application of sets to sets and for the basic axioms to be 
+expressed in a uniform way. 
+
+<h3><a name="francez">Nissim Francez (Haifa)</name> <em>Discharging sub-derivations: A proof-theoretic Curry-Howard correspondence for a &lambda;-calculus with patterns</em> (<a href="../slides/francez.pdf">slides</a>)</h3>
+
+<a href="francez.pdf">A pdf file containing the abstract can be found here</a>
+
+<h3><a name="gugliemi">Alessio Guglielmi (Bath)</name> <em>Normalisation in Deep Inference via Atomic Flows (joint work with Tom Gundersen, Bath)</em> (<a href="../slides/guglielmi.pdf">slides</a>, <a href="http://www.lmcs-online.org/ojs/viewarticle.php?id=341">link to paper</a>)</h3>
+
+Atomic flows are graphs obtained from derivations by tracing atom occurrences and forgetting the logical structure. Simple manipulations of atomic flows correspond to complex reductions on derivations. We operate in deep inference, which is more general than other syntactic paradigms, and where normalisation is more difficult to control.
+<p/>
+
+Thanks to atomic flows, we can prove, for propositional logic, a new and very general normalisation theorem, which contains cut elimination as a special case. We also can prove cut elimination and Craig interpolation theorems, with very simple and novel constructions.
+<p/>
+
+Atomic flows are much simpler objects than derivations and we can reason on them by geometric and topological methods. However, contrary to proof nets, their size is polynomially related to the size of the derivations that they represent. This allows us to employ atomic flows in proof complexity investigations.
+<p/>
+
+We argue that atomic flows are a significant technical advance for normalisation theory, because 1) the technique they support is largely independent of syntax; 2) indeed, it is largely independent of logical inference rules; 3) they constitute a powerful geometric formalism, which is more intuitive than syntax.
+<p/>
+
+Part of this talk is based on the paper <a href="http://cs.bath.ac.uk/ag/p/NormContrDIAtFl.pdf">'Normalisation Control in Deep Inference via Atomic Flows'</a>, to appear on Logical Methods in Computer Science. 
+<p/>
+
+There is a deep inference overview at <a href="http://alessio.guglielmi.name/res/cos/">this webpage</a>. 
+
+<h3><a name="hancock">Peter Hancock (Nottingham)</name> <em>Church encodings of ordinals, and simulation of ordinal functions</em> (<a href="../slides/hancock.pdf">slides</a>)</h3>
+
+A function on ordinals can be obtained from
+3 things: a function F on sets; a way of
+lifting a Br-algebra on X to a Br-algebra
+on F X; and a way, given a Br-algebra on
+X, of dropping from F X to X.  Br is the functor
+X |-> 1 + X + X^w.
+<p/>
+
+I'll give some examples of these things,
+and sketch some of their nice closure properties,
+particularly that they form a (large) Br-algebra. 
+
+<h3><a name="hindley">Roger Hindley (Swansea)</name> <em>Remarks on Bertrand Russell (informal talk)</em></h3>
+
+Besides the work for which he is famous among logicians, Bertrand Russell had a long, eventful and controversial political career. This talk will sketch a few of his non-logic activities. 
+
+
+<h3><a name="luo">Zhaohui Luo (Royal Holloway)</name> <em>LTT: a type-theoretic framework for foundational pluralism</em> (<a href="../slides/luo.ppt">slides</a>)</h3>
+
+
+Dependent type theory provides a powerful logical calculus for the verification of programs and the formalisation of mathematics.  The associated technology of theorem proving has produced &ldquo;proof assistants&rdquo;, very useful tools for formal proof development.  
+<p/>
+A new type-theoretic framework LTT is presented and its use in formalisation and verification explained.  The features of the LTT framework include:
+<ul>
+<li>LTT supports practical formal reasoning with different logical foundations (&ldquo;foundational pluralism&rdquo;) and establishes the basis for wider applications of the type theory based theorem proving technology.  </li>
+
+<li>LTT employs a notion of &ldquo;typed set&rdquo;, combining the type-theoretical reasoning with the set-theoretical reasoning effectively  </li>
+</ul>
+
+LTT has been implemented and used in the case studies, including the formalisation of Weyl’s predicative mathematics and the analysis of security protocols.  
+
+
+<h3><a name="palmgren">Erik Palmgren (Uppsala)</name> <em>Type universes and ramifications</em> (<a href="../slides/palmgren.pdf">slides</a>)</h3>
+
+We examine the natural interpretation of a ramified type hierarchy
+into Martin-L&ouml;f type theory with an infinite sequence of
+universes. It is shown that under this interpretation a useful
+special case of Russell's reducibility axiom is valid. This is
+enough to make the type hierarchy usable for development of
+constructive mathematics. 
+
+<h3><a name="pohlers">Wolfram Pohlers (M&uuml;nster)</name> <em>A proof of strong normalization for intuitionistic simple type theory</em> (<a href="../slides/pohlers.pdf">slides</a>)</h3>
+
+We give a proof of the strong normalization theorem for a natural deduction
+system of intuitionistic simple type theory. The basic idea is - besides Girard's
+foundation predicates - an embedding of natural deductions into a type free lambda
+calculus.
+
+
+<h3><a name="rathjen">Michael Rathjen (Leeds)</name> <em>Universes and the limits of Martin-L&ouml;f type theory</em> (<a href="../slides/rathjen.pdf">slides</a>)</h3>
+
+Finitism and predicativism (in the form of autonomous progressions
+ of theories) have always held a great deal of attraction. The
+scope of each of these frameworks has been intensively debated and
+ thorough investigations have been carried out with the aim
+of determining the precise limit of their proof-theoretic strength.
+Surprisingly there are almost no studies attempting to find the boundaries
+of Martin-L&ouml;f type theory, MLTT.
+
+In the talk I intend to discuss some of the problems and pitfalls
+one encounters when embarking on such an enterprise.
+Moreover, I shall try to analyze the principles underlying MLTT
+against the backcloth of the history of universe types and their
+counterparts in the classical theory of inductive definitions. 
+
+
+<h3><a name="riba">Colin Riba (INRIA Sophia Antipolis)</name> <em>Unions of Type Interpretations for Lambda-Calculus and Rewriting</em> (<a href="../slides/riba.pdf">slides</a>)</h3>
+
+The most flexible strong normalization proofs methods for various
+extensions of typed lambda-calculi use type interpretations. Among
+them we distinguish Girard's reducibility candidates, Tait's saturated
+sets and interpretations based on biorthogonality.  In this talk we
+compare these different interpretations wrt their ability to handle
+rewriting and wrt their stability by union.
+<p/>
+
+We first propose a generalization of the notion of neutral term in
+Girard's candidates which allows to define candidates in a generic
+way. Concerning stability by union, we recall that there are confluent
+typed rewrite systems that do not admit stable by union type
+interpretations. We present a necessary and sufficient condition for
+Girard's candidate to be stable by union and a necessary and
+sufficient condition for the closure by union of biorthogonals to be
+reduciblity candidates. The second condition is strictly more general
+than the first one, and allows to define Tait's saturated sets for
+rewriting in a uniform way. Moreover, we show that for orthogonal
+constructor rewriting, Girard's candidates are stable by union. 
+
+<h3><a name="stirton">William Stirton (Edinburgh)</name> <em>A sub-system of Girard's F with ordinal strength &epsilon;<sub>0</sub></em> (<a href="../slides/stirton">slides</a>)</h3>
+
+<a href="stirton.doc">A Word document containing the abstract can be found here</a><br>
+<a href="stirtonconverted.pdf">The result of an automatic conversion of this document to pdf can be found here</a>
+
+<h3><a name="trifonov">Trifon Trifonov (LMU Munich)</name> <em>Extraction from classical proofs with uniformities - a case study</em> (<a href="../slides/trifonov.pdf">slides</a>)</h3>
+
+The concept of uniform quantifiers was originally suggested by Berger
+as a tool to optimize programs extracted from proofs. He also gave an
+illustrative example for using A-translation to obtain the
+computational content of a classical theorem stating the reversibility
+of any list while using an appropriate uniform quantifier to improve
+time complexity. We show how the same program can be obtained using a
+uniform extension of G&ouml;del's Dialectica, introduced by Hernest. We
+compare the uniform quantifier annotation of the classical proof
+needed for Dialectica with the one used for A-translation. 
+
+
+
+
+
+
+    <hr>
+    <address><a href="mailto:a.g.setzer@swansea.ac.uk">Anton Setzer</a></address>
+<!-- Created: Thu Mar  6 00:02:42 GMT 2008 -->
+<!-- hhmts start -->
+Last modified: Tue Apr 15 20:07:21 BST 2008
+<!-- hhmts end -->
+  </body>
+</html>
